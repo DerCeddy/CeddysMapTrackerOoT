@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace OoTItemTrackerNew
+namespace CeddyMapTracker
 {
     public class RegionButton : Button
     {

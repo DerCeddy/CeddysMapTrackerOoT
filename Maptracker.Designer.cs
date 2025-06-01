@@ -1,4 +1,4 @@
-﻿namespace OoTItemTrackerNew
+﻿namespace CeddyMapTracker
 {
     partial class Maptracker
     {

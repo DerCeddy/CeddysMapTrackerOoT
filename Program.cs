@@ -1,4 +1,4 @@
-namespace OoTItemTrackerNew
+namespace CeddyMapTracker
 {
     internal static class Program
     {

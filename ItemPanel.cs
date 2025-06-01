@@ -1,4 +1,4 @@
-﻿using OoTItemTrackerNew.Properties;
+﻿using CeddyMapTracker.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OoTItemTrackerNew
+namespace CeddyMapTracker
 {   
     public partial class ItemPanel : UserControl
     {

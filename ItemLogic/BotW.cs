@@ -6,7 +6,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OoTItemTrackerNew
+namespace CeddyMapTracker
 {
     public partial class Maptracker
     {

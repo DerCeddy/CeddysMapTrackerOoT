@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OoTItemTrackerNew
+namespace CeddyMapTracker
 {
     public class Check : Button
     {       

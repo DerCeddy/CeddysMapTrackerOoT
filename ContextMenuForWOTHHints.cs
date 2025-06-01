@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OoTItemTrackerNew.Properties;
+using CeddyMapTracker.Properties;
 using static System.Windows.Forms.AxHost;
 
-namespace OoTItemTrackerNew
+namespace CeddyMapTracker
 {
     public class ContextMenuForWOTHHints : Panel
     {

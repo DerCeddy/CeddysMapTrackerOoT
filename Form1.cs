@@ -1,4 +1,4 @@
-namespace OoTItemTrackerNew
+namespace CeddyMapTracker
 {
     public partial class Form1 : Form
     {

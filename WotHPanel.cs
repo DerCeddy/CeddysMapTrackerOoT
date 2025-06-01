@@ -1,11 +1,11 @@
-﻿using OoTItemTrackerNew.Properties;
+﻿using CeddyMapTracker.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OoTItemTrackerNew
+namespace CeddyMapTracker
 {
     public class WOTHPanel : Panel
     {
