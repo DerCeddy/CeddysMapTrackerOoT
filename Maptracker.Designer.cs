@@ -1650,7 +1650,6 @@
             Controls.Add(Market_Button2);
             Controls.Add(DMC_Button);
             Controls.Add(DMT_Button);
-            Controls.Add(SFM_Button);
             Controls.Add(ZoraRiver_Button);
             Controls.Add(ZoraDomain_Button);
             Controls.Add(ZoraDomain_Button2);
