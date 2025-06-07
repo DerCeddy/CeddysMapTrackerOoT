@@ -98,18 +98,18 @@ namespace CeddyMapTracker
         Region_Panel_Check DekuTreeCompassChest = new("Compass Chest");
         Region_Panel_Check DekuTreeCompassRoomSideChest = new("Compass Room Side Chest");
         Region_Panel_Check DekuTreeBasementChest = new("Basement Chest");
-        Region_Panel_Check DekuTreeQueenGohmaHeart = new("Queen Gohma Heart");
+        Region_Panel_Check DekuTreeQueenGohmaHeart = new("Queen Gohma Heart") { IsBoss = true };
         Region_Panel_Check DodongosCavernMapChest = new("Map Chest");
         Region_Panel_Check DodongosCavernCompassChest = new("Compass Chest");
         Region_Panel_Check DodongosCavernBombFlowerPlatformChest = new("Bomb Flower Platform Chest");
         Region_Panel_Check DodongosCavernBombBagChest = new("Bomb Bag Chest");
         Region_Panel_Check DodongosCavernEndofBridgeChest = new("End of Bridge Chest");
         Region_Panel_Check DodongosCavernBossRoomChest = new("Boss Room Chest");
-        Region_Panel_Check DodongosCavernKingDodongoHeart = new("King Dodongo Heart");
+        Region_Panel_Check DodongosCavernKingDodongoHeart = new("King Dodongo Heart") { IsBoss = true };
         Region_Panel_Check JabuJabusBellyBoomerangChest = new("Boomerang Chest");
         Region_Panel_Check JabuJabusBellyMapChest = new("Map Chest");
         Region_Panel_Check JabuJabusBellyCompassChest = new("Compass Chest");
-        Region_Panel_Check JabuJabusBellyBarinadeHeart = new("Barinade Heart");
+        Region_Panel_Check JabuJabusBellyBarinadeHeart = new("Barinade Heart") { IsBoss = true };
         Region_Panel_Check BotWFrontLeftFakeWallChest = new("Front Left Fake Wall Chest");
         Region_Panel_Check BotWFrontCenterBombableChest = new("Front Center Bombable Chest");
         Region_Panel_Check BotWBackLeftBombableChest = new("Back Left Bombable Chest");
@@ -137,7 +137,7 @@ namespace CeddyMapTracker
         Region_Panel_Check ForestBluePoeChest = new("Blue Poe Chest");
         Region_Panel_Check ForestFallingCeillingRoomChest = new("Falling Ceiling Room Chest");
         Region_Panel_Check ForestBasementChest = new("Basement Chest");
-        Region_Panel_Check ForestPhantomGanonHeart = new("Phantom Ganon Heart");
+        Region_Panel_Check ForestPhantomGanonHeart = new("Phantom Ganon Heart") { IsBoss = true };
         Region_Panel_Check FireNearBossChest = new("Near Boss Chest");
         Region_Panel_Check FireFlareDancerChest = new("Flare Dancer Chest");
         Region_Panel_Check FireBossKeyChest = new("Boss Key Chest");
@@ -152,7 +152,7 @@ namespace CeddyMapTracker
         Region_Panel_Check FireCompassChest = new("Compass Chest");
         Region_Panel_Check FireMegatonHammerChest = new("Megaton Hammer Chest");
         Region_Panel_Check FireHighestGoronChest = new("Highest Goron Chest");
-        Region_Panel_Check FireVolvagiaHeart = new("Volvagia Heart");
+        Region_Panel_Check FireVolvagiaHeart = new("Volvagia Heart") { IsBoss = true };
         Region_Panel_Check WaterCompassChest = new("Compass Chest");
         Region_Panel_Check WaterMapChest = new("Map Chest");
         Region_Panel_Check WaterCrackedWallChest = new("Cracked Wall Chest");
@@ -163,7 +163,7 @@ namespace CeddyMapTracker
         Region_Panel_Check WaterLongshotChest = new("Longshot Chest");
         Region_Panel_Check WaterRiverChest = new("River Chest");
         Region_Panel_Check WaterDragonChest = new("Dragon Chest");
-        Region_Panel_Check WaterMorphaHeart = new("Morpha Heart");
+        Region_Panel_Check WaterMorphaHeart = new("Morpha Heart") { IsBoss = true };
         Region_Panel_Check ShadowMapChest = new("Map Chest");
         Region_Panel_Check ShadowHoverBootsChest = new("Hover Boots Chest");
         Region_Panel_Check ShadowCompassChest = new("Compass Chest");
@@ -181,7 +181,7 @@ namespace CeddyMapTracker
         Region_Panel_Check ShadowSpikeWallsLeftChest = new("Spike Walls Left Chest");
         Region_Panel_Check ShadowBossKeyChest = new("Boss Key Chest");
         Region_Panel_Check ShadowInvisibleFloormasterChest = new("Invisible Floormaster Chest");
-        Region_Panel_Check ShadowBongoBongoHeart = new("Bongo Bongo Heart");
+        Region_Panel_Check ShadowBongoBongoHeart = new("Bongo Bongo Heart") { IsBoss = true};
         Region_Panel_Check SpiritChildBridgeChest = new("Child Bridge Chest");
         Region_Panel_Check SpiritChildEarlyTorchesChest = new("Child Early Torches Chest");
         Region_Panel_Check SpiritChildClimbNorthChest = new("Child Climb North Chest");

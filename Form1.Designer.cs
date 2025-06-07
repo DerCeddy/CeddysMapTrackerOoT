@@ -38,7 +38,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1688, 832);
+            ClientSize = new Size(1484, 748);
             Name = "Form1";
             Text = "Ceddys Maptracker";
             ResumeLayout(false);

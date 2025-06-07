@@ -12,6 +12,7 @@ namespace CeddyMapTracker
         private Color BossSquare = Color.Red;
         private Color CheckSquare = Color.Red;
         private Color BorderColor = Color.Black;
+        public string _name;
         private int BorderSize;
         public int Checks = 0;
         public Color _bosssquare

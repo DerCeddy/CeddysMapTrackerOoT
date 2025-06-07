@@ -13,7 +13,7 @@ namespace CeddyMapTracker
         public List<GoalPathHint> Goals = [];
         public WOTHPanel(Point _location)
         {
-            Size = new Size(260, 180);
+            Size = new Size(260, 174);
             Location = _location;
             BackColor = Color.Black;
             Label label = new()

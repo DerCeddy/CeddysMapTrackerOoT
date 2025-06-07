@@ -54,7 +54,7 @@ namespace CeddyMapTracker
             Region ForestTemple = new(Forest_Button, ForestTemple_Panel, ForestTemple_Check_List, this);
             Region FireTemple = new(Fire_Button, FireTemple_Panel, FireTemple_Check_List, this);
             Region WaterTemple = new(Water_Button, WaterTemple_Panel, WaterTemple_Check_List, this);
-            Region SpiritTemple = new(dungeonButton1, SpiritTemple_Panel, SpiritTemple_Check_List, this);
+            Region SpiritTemple = new(Spirit_Button, SpiritTemple_Panel, SpiritTemple_Check_List, this);
             Region ShadowTemple = new(Shadow_Button, ShadowTemple_Panel, ShadowTemple_Check_List, this);
             Region DekuTree = new(Deku_Button, DekuTree_Panel, DekuTree_Check_List, this);
             Region DodongosCavern = new(DC_Button, DodongosCavern_Panel, DodongosCavern_Check_List, this);
@@ -126,7 +126,12 @@ namespace CeddyMapTracker
                 {
                     region._region_button._name = Denselocations_Names[temp];
                     region._region_button.MouseDown += (sender, e) => AddContextMenu(e, test123, region);
-                }                           
+                }
+                if (region._dungeon_button != null)
+                {
+                    region._dungeon_button._name = Denselocations_Names[temp];
+                    region._dungeon_button.MouseDown += (sender, e) => AddContextMenu(e, test123, region._dungeon_button);
+                }
                 /*
                 foreach(Control c in region._region_panel.Controls)
                 {
@@ -253,6 +258,21 @@ namespace CeddyMapTracker
                 test123.AddContextMenu(this, posX + RegionButton._region_button.Location.X - 70, e.Y + RegionButton._region_button.Location.Y - 70);
                 test123.BringToFront();
                 test123.RegionName = RegionButton._region_button._name;
+            }
+        }
+        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, DungeonButton DungeonButton)
+        {
+            int posX = e.X;
+            if (e.X + DungeonButton.Location.X - 70 <= 70)
+            {
+                posX = 70;
+            }
+
+            if (e.Button == MouseButtons.Right)
+            {
+                test123.AddContextMenu(this, posX + DungeonButton.Location.X - 70, e.Y + DungeonButton.Location.Y - 70);
+                test123.BringToFront();
+                test123.RegionName = DungeonButton._name;
             }
         }
         public void UpdateWOTHGoals(WOTHPanel wothpanel, ContextMenuForWOTHHints test123)

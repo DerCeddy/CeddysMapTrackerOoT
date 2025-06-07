@@ -5,15 +5,15 @@ namespace CeddyMapTracker
         List<int> SmallKeys = [];
 
         public Form1()
-        {
+        {        
             InitializeComponent();                                        
-            WOTHPanel wothPanel = new(new Point(420,0));
-            AlwaysHints alwaysHints = new(new Point(420, 200));
+            WOTHPanel wothPanel = new(new Point(380,0));
+            AlwaysHints alwaysHints = new(new Point(420, 150));
             SometimesHints SometimesHints = new(new Point(420, 360));
             Stats stats = new(new Point(0, 700));
-            Maptracker maptracker = new(wothPanel,new Point(780, 0), stats);
+            Maptracker maptracker = new(wothPanel,new Point(720, 0), stats);
             ItemPanel itemPanel = new(new Point(0, 0));
-            KeyPanel keys = new(new Point(700, 0));
+            KeyPanel keys = new(new Point(640, 0));
             SettingsPanel settingspanel = new(new Point(0,0));
             settingspanel.Visible = false;
             SettingsButton settingsbutton = new (new Point (0, 710));

@@ -53,17 +53,7 @@
             HyruleField_Button = new RegionButton();
             Colossus_Button = new RegionButton();
             Wasteland_Button = new RegionButton();
-            GanonsCastle_Button = new Region_Button_Dense();
-            Fire_Button = new Region_Button_Dense();
-            Forest_Button = new Region_Button_Dense();
-            DC_Button = new Region_Button_Dense();
-            Shadow_Button = new Region_Button_Dense();
             GoronCity_Button = new Region_Button_Dense();
-            Ice_Button = new Region_Button_Dense();
-            Jabu_Button = new Region_Button_Dense();
-            Deku_Button = new Region_Button_Dense();
-            Water_Button = new Region_Button_Dense();
-            Spirit_Button = new Region_Button_Dense();
             Graveyard_Button = new Region_Button_Dense();
             GTG_Button = new Region_Button_Dense();
             BotW_Button = new Region_Button_Dense();
@@ -136,7 +126,16 @@
             GFChest = new Check();
             WastelandChest = new Check();
             toolTip1 = new ToolTip(components);
-            dungeonButton1 = new DungeonButton();
+            Spirit_Button = new DungeonButton();
+            Forest_Button = new DungeonButton();
+            DC_Button = new DungeonButton();
+            Jabu_Button = new DungeonButton();
+            Ice_Button = new Region_Button_Dense();
+            Water_Button = new DungeonButton();
+            Fire_Button = new DungeonButton();
+            Deku_Button = new DungeonButton();
+            Shadow_Button = new DungeonButton();
+            GanonsCastle_Button = new DungeonButton();
             SuspendLayout();
             // 
             // DMC_Button
@@ -451,85 +450,6 @@
             Wasteland_Button.TabIndex = 191;
             Wasteland_Button.UseVisualStyleBackColor = false;
             // 
-            // GanonsCastle_Button
-            // 
-            GanonsCastle_Button.BackColor = Color.Red;
-            GanonsCastle_Button.FlatAppearance.BorderColor = Color.Black;
-            GanonsCastle_Button.FlatAppearance.BorderSize = 0;
-            GanonsCastle_Button.FlatStyle = FlatStyle.Flat;
-            GanonsCastle_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            GanonsCastle_Button.ForeColor = Color.Black;
-            GanonsCastle_Button.Location = new Point(326, 91);
-            GanonsCastle_Button.Name = "GanonsCastle_Button";
-            GanonsCastle_Button.Size = new Size(24, 24);
-            GanonsCastle_Button.TabIndex = 190;
-            GanonsCastle_Button.Text = "region_Button_Dense1";
-            GanonsCastle_Button.UseVisualStyleBackColor = false;
-            // 
-            // Fire_Button
-            // 
-            Fire_Button.BackColor = Color.Red;
-            Fire_Button.FlatAppearance.BorderColor = Color.Black;
-            Fire_Button.FlatAppearance.BorderSize = 0;
-            Fire_Button.FlatStyle = FlatStyle.Flat;
-            Fire_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Fire_Button.ForeColor = Color.Black;
-            Fire_Button.Location = new Point(577, 0);
-            Fire_Button.Name = "Fire_Button";
-            Fire_Button.Size = new Size(24, 24);
-            Fire_Button.TabIndex = 189;
-            Fire_Button.Text = "region_Button_Dense2";
-            toolTip1.SetToolTip(Fire_Button, "Fire Temple");
-            Fire_Button.UseVisualStyleBackColor = false;
-            // 
-            // Forest_Button
-            // 
-            Forest_Button.BackColor = Color.Red;
-            Forest_Button.FlatAppearance.BorderColor = Color.Black;
-            Forest_Button.FlatAppearance.BorderSize = 0;
-            Forest_Button.FlatStyle = FlatStyle.Flat;
-            Forest_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Forest_Button.ForeColor = Color.Black;
-            Forest_Button.Location = new Point(592, 291);
-            Forest_Button.Name = "Forest_Button";
-            Forest_Button.Size = new Size(24, 24);
-            Forest_Button.TabIndex = 188;
-            Forest_Button.Text = "region_Button_Dense2";
-            toolTip1.SetToolTip(Forest_Button, "Forest Temple");
-            Forest_Button.UseVisualStyleBackColor = false;
-            // 
-            // DC_Button
-            // 
-            DC_Button.BackColor = Color.Red;
-            DC_Button.FlatAppearance.BorderColor = Color.Black;
-            DC_Button.FlatAppearance.BorderSize = 0;
-            DC_Button.FlatStyle = FlatStyle.Flat;
-            DC_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            DC_Button.ForeColor = Color.Black;
-            DC_Button.Location = new Point(563, 104);
-            DC_Button.Name = "DC_Button";
-            DC_Button.Size = new Size(24, 24);
-            DC_Button.TabIndex = 187;
-            DC_Button.Text = "region_Button_Dense2";
-            toolTip1.SetToolTip(DC_Button, "Dodongos Cavern");
-            DC_Button.UseVisualStyleBackColor = false;
-            // 
-            // Shadow_Button
-            // 
-            Shadow_Button.BackColor = Color.Red;
-            Shadow_Button.FlatAppearance.BorderColor = Color.Black;
-            Shadow_Button.FlatAppearance.BorderSize = 0;
-            Shadow_Button.FlatStyle = FlatStyle.Flat;
-            Shadow_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Shadow_Button.ForeColor = Color.Black;
-            Shadow_Button.Location = new Point(650, 219);
-            Shadow_Button.Name = "Shadow_Button";
-            Shadow_Button.Size = new Size(24, 24);
-            Shadow_Button.TabIndex = 186;
-            Shadow_Button.Text = "region_Button_Dense2";
-            toolTip1.SetToolTip(Shadow_Button, "Shadow Temple");
-            Shadow_Button.UseVisualStyleBackColor = false;
-            // 
             // GoronCity_Button
             // 
             GoronCity_Button.BackColor = Color.Red;
@@ -545,84 +465,6 @@
             GoronCity_Button.Text = "region_Button_Dense2";
             toolTip1.SetToolTip(GoronCity_Button, "Goron City");
             GoronCity_Button.UseVisualStyleBackColor = false;
-            // 
-            // Ice_Button
-            // 
-            Ice_Button.BackColor = Color.Red;
-            Ice_Button.FlatAppearance.BorderColor = Color.Black;
-            Ice_Button.FlatAppearance.BorderSize = 0;
-            Ice_Button.FlatStyle = FlatStyle.Flat;
-            Ice_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Ice_Button.ForeColor = Color.Black;
-            Ice_Button.Location = new Point(48, 481);
-            Ice_Button.Name = "Ice_Button";
-            Ice_Button.Size = new Size(24, 24);
-            Ice_Button.TabIndex = 184;
-            Ice_Button.Text = "region_Button_Dense2";
-            toolTip1.SetToolTip(Ice_Button, "Ice Cavern");
-            Ice_Button.UseVisualStyleBackColor = false;
-            // 
-            // Jabu_Button
-            // 
-            Jabu_Button.BackColor = Color.Red;
-            Jabu_Button.FlatAppearance.BorderColor = Color.Black;
-            Jabu_Button.FlatAppearance.BorderSize = 0;
-            Jabu_Button.FlatStyle = FlatStyle.Flat;
-            Jabu_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Jabu_Button.ForeColor = Color.Black;
-            Jabu_Button.Location = new Point(685, 182);
-            Jabu_Button.Name = "Jabu_Button";
-            Jabu_Button.Size = new Size(24, 24);
-            Jabu_Button.TabIndex = 183;
-            Jabu_Button.Text = "region_Button_Dense2";
-            Jabu_Button.UseVisualStyleBackColor = false;
-            // 
-            // Deku_Button
-            // 
-            Deku_Button.BackColor = Color.Red;
-            Deku_Button.FlatAppearance.BorderColor = Color.Black;
-            Deku_Button.FlatAppearance.BorderSize = 0;
-            Deku_Button.FlatStyle = FlatStyle.Flat;
-            Deku_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Deku_Button.ForeColor = Color.Black;
-            Deku_Button.Location = new Point(657, 451);
-            Deku_Button.Name = "Deku_Button";
-            Deku_Button.Size = new Size(24, 24);
-            Deku_Button.TabIndex = 182;
-            Deku_Button.Text = "region_Button_Dense2";
-            toolTip1.SetToolTip(Deku_Button, "Deku Tree");
-            Deku_Button.UseVisualStyleBackColor = false;
-            // 
-            // Water_Button
-            // 
-            Water_Button.BackColor = Color.Red;
-            Water_Button.FlatAppearance.BorderColor = Color.Black;
-            Water_Button.FlatAppearance.BorderSize = 0;
-            Water_Button.FlatStyle = FlatStyle.Flat;
-            Water_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Water_Button.ForeColor = Color.Black;
-            Water_Button.Location = new Point(200, 576);
-            Water_Button.Name = "Water_Button";
-            Water_Button.Size = new Size(24, 24);
-            Water_Button.TabIndex = 181;
-            Water_Button.Text = "region_Button_Dense2";
-            Water_Button.UseVisualStyleBackColor = false;
-            // 
-            // Spirit_Button
-            // 
-            Spirit_Button.BackColor = Color.Red;
-            Spirit_Button.FlatAppearance.BorderColor = Color.Black;
-            Spirit_Button.FlatAppearance.BorderSize = 0;
-            Spirit_Button.FlatStyle = FlatStyle.Flat;
-            Spirit_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Spirit_Button.ForeColor = Color.Black;
-            Spirit_Button.Location = new Point(2, 173);
-            Spirit_Button.Name = "Spirit_Button";
-            Spirit_Button.Size = new Size(24, 24);
-            Spirit_Button.TabIndex = 180;
-            Spirit_Button.Text = "region_Button_Dense2";
-            toolTip1.SetToolTip(Spirit_Button, "Spirit Temple");
-            Spirit_Button.UseVisualStyleBackColor = false;
             // 
             // Graveyard_Button
             // 
@@ -1623,59 +1465,188 @@
             toolTip1.SetToolTip(WastelandChest, "Wasteland Chest");
             WastelandChest.UseVisualStyleBackColor = false;
             // 
-            // dungeonButton1
+            // Spirit_Button
             // 
-            dungeonButton1._bordercolor = Color.Black;
-            dungeonButton1._bosssquare = Color.Blue;
-            dungeonButton1._checksquare = Color.Lime;
-            dungeonButton1.BackColor = Color.Transparent;
-            dungeonButton1.Location = new Point(28, 121);
-            dungeonButton1.Name = "dungeonButton1";
-            dungeonButton1.Size = new Size(30, 30);
-            dungeonButton1.TabIndex = 215;
-            dungeonButton1.Text = "dungeonButton1";
-            dungeonButton1.UseVisualStyleBackColor = false;
+            Spirit_Button._bordercolor = Color.Black;
+            Spirit_Button._bosssquare = Color.Blue;
+            Spirit_Button._checksquare = Color.Lime;
+            Spirit_Button.BackColor = Color.Transparent;
+            Spirit_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Spirit_Button.Location = new Point(1, 177);
+            Spirit_Button.Name = "Spirit_Button";
+            Spirit_Button.Size = new Size(30, 30);
+            Spirit_Button.TabIndex = 215;
+            Spirit_Button.Text = "dungeonButton1";
+            Spirit_Button.UseVisualStyleBackColor = false;
+            // 
+            // Forest_Button
+            // 
+            Forest_Button._bordercolor = Color.Black;
+            Forest_Button._bosssquare = Color.Red;
+            Forest_Button._checksquare = Color.Red;
+            Forest_Button.BackColor = Color.Transparent;
+            Forest_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Forest_Button.Location = new Point(590, 287);
+            Forest_Button.Name = "Forest_Button";
+            Forest_Button.Size = new Size(30, 30);
+            Forest_Button.TabIndex = 216;
+            Forest_Button.Text = "dungeonButton1";
+            Forest_Button.UseVisualStyleBackColor = false;
+            // 
+            // DC_Button
+            // 
+            DC_Button._bordercolor = Color.Black;
+            DC_Button._bosssquare = Color.Red;
+            DC_Button._checksquare = Color.Red;
+            DC_Button.BackColor = Color.Transparent;
+            DC_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            DC_Button.Location = new Point(558, 100);
+            DC_Button.Name = "DC_Button";
+            DC_Button.Size = new Size(30, 30);
+            DC_Button.TabIndex = 217;
+            DC_Button.Text = "dungeonButton1";
+            DC_Button.UseVisualStyleBackColor = false;
+            // 
+            // Jabu_Button
+            // 
+            Jabu_Button._bordercolor = Color.Black;
+            Jabu_Button._bosssquare = Color.Red;
+            Jabu_Button._checksquare = Color.Red;
+            Jabu_Button.BackColor = Color.Transparent;
+            Jabu_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Jabu_Button.Location = new Point(682, 177);
+            Jabu_Button.Name = "Jabu_Button";
+            Jabu_Button.Size = new Size(30, 30);
+            Jabu_Button.TabIndex = 218;
+            Jabu_Button.Text = "dungeonButton1";
+            Jabu_Button.UseVisualStyleBackColor = false;
+            // 
+            // Ice_Button
+            // 
+            Ice_Button.BackColor = Color.Red;
+            Ice_Button.FlatAppearance.BorderColor = Color.Black;
+            Ice_Button.FlatAppearance.BorderSize = 0;
+            Ice_Button.FlatStyle = FlatStyle.Flat;
+            Ice_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
+            Ice_Button.ForeColor = Color.Black;
+            Ice_Button.Location = new Point(48, 481);
+            Ice_Button.Name = "Ice_Button";
+            Ice_Button.Size = new Size(24, 24);
+            Ice_Button.TabIndex = 184;
+            Ice_Button.Text = "region_Button_Dense2";
+            toolTip1.SetToolTip(Ice_Button, "Ice Cavern");
+            Ice_Button.UseVisualStyleBackColor = false;
+            // 
+            // Water_Button
+            // 
+            Water_Button._bordercolor = Color.Black;
+            Water_Button._bosssquare = Color.Red;
+            Water_Button._checksquare = Color.Red;
+            Water_Button.BackColor = Color.Transparent;
+            Water_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Water_Button.Location = new Point(199, 574);
+            Water_Button.Name = "Water_Button";
+            Water_Button.Size = new Size(30, 30);
+            Water_Button.TabIndex = 219;
+            Water_Button.Text = "dungeonButton1";
+            Water_Button.UseVisualStyleBackColor = false;
+            // 
+            // Fire_Button
+            // 
+            Fire_Button._bordercolor = Color.Black;
+            Fire_Button._bosssquare = Color.Red;
+            Fire_Button._checksquare = Color.Red;
+            Fire_Button.BackColor = Color.Transparent;
+            Fire_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Fire_Button.Location = new Point(584, -3);
+            Fire_Button.Name = "Fire_Button";
+            Fire_Button.Size = new Size(30, 30);
+            Fire_Button.TabIndex = 220;
+            Fire_Button.Text = "dungeonButton1";
+            Fire_Button.UseVisualStyleBackColor = false;
+            // 
+            // Deku_Button
+            // 
+            Deku_Button._bordercolor = Color.Black;
+            Deku_Button._bosssquare = Color.Red;
+            Deku_Button._checksquare = Color.Red;
+            Deku_Button.BackColor = Color.Transparent;
+            Deku_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Deku_Button.Location = new Point(653, 447);
+            Deku_Button.Name = "Deku_Button";
+            Deku_Button.Size = new Size(30, 30);
+            Deku_Button.TabIndex = 221;
+            Deku_Button.Text = "dungeonButton1";
+            Deku_Button.UseVisualStyleBackColor = false;
+            // 
+            // Shadow_Button
+            // 
+            Shadow_Button._bordercolor = Color.Black;
+            Shadow_Button._bosssquare = Color.Red;
+            Shadow_Button._checksquare = Color.Red;
+            Shadow_Button.BackColor = Color.Transparent;
+            Shadow_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Shadow_Button.Location = new Point(646, 214);
+            Shadow_Button.Name = "Shadow_Button";
+            Shadow_Button.Size = new Size(30, 30);
+            Shadow_Button.TabIndex = 221;
+            Shadow_Button.Text = "dungeonButton1";
+            Shadow_Button.UseVisualStyleBackColor = false;
+            // 
+            // GanonsCastle_Button
+            // 
+            GanonsCastle_Button._bordercolor = Color.Black;
+            GanonsCastle_Button._bosssquare = Color.Red;
+            GanonsCastle_Button._checksquare = Color.Red;
+            GanonsCastle_Button.BackColor = Color.Transparent;
+            GanonsCastle_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            GanonsCastle_Button.Location = new Point(324, 91);
+            GanonsCastle_Button.Name = "GanonsCastle_Button";
+            GanonsCastle_Button.Size = new Size(30, 30);
+            GanonsCastle_Button.TabIndex = 221;
+            GanonsCastle_Button.Text = "dungeonButton1";
+            GanonsCastle_Button.UseVisualStyleBackColor = false;
             // 
             // Maptracker
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.hyrule;
-            Controls.Add(dungeonButton1);
+            Controls.Add(GanonsCastle_Button);
+            Controls.Add(Shadow_Button);
+            Controls.Add(Deku_Button);
+            Controls.Add(Fire_Button);
+            Controls.Add(Water_Button);
+            Controls.Add(Jabu_Button);
+            Controls.Add(DC_Button);
+            Controls.Add(Forest_Button);
+            Controls.Add(Spirit_Button);
             Controls.Add(HC_Button);
-            Controls.Add(OGC_Button);
             Controls.Add(ToT_Button2);
             Controls.Add(ToT_Button1);
             Controls.Add(Market_Button1);
             Controls.Add(Market_Button2);
-            Controls.Add(DMC_Button);
+            Controls.Add(SFM_Button);
             Controls.Add(DMT_Button);
             Controls.Add(ZoraRiver_Button);
             Controls.Add(ZoraDomain_Button);
             Controls.Add(ZoraDomain_Button2);
-            Controls.Add(ZoraFountain_Button2);
-            Controls.Add(ZoraFountain_Button1);
             Controls.Add(KokiriForest_Button);
             Controls.Add(LostWoods_Button);
-            Controls.Add(LakeHylia_Button2);
             Controls.Add(LakeHylia_Button1);
             Controls.Add(GerudoFortress_Button);
             Controls.Add(GerudoValley_Button);
             Controls.Add(LLR_Button);
             Controls.Add(HyruleField_Button);
             Controls.Add(Colossus_Button);
+            Controls.Add(DMC_Button);
+            Controls.Add(OGC_Button);
+            Controls.Add(ZoraFountain_Button2);
+            Controls.Add(ZoraFountain_Button1);
+            Controls.Add(LakeHylia_Button2);
             Controls.Add(Wasteland_Button);
-            Controls.Add(GanonsCastle_Button);
-            Controls.Add(Fire_Button);
-            Controls.Add(Forest_Button);
-            Controls.Add(DC_Button);
-            Controls.Add(Shadow_Button);
             Controls.Add(GoronCity_Button);
             Controls.Add(Ice_Button);
-            Controls.Add(Jabu_Button);
-            Controls.Add(Deku_Button);
-            Controls.Add(Water_Button);
-            Controls.Add(Spirit_Button);
             Controls.Add(Graveyard_Button);
             Controls.Add(GTG_Button);
             Controls.Add(BotW_Button);
@@ -1777,18 +1748,8 @@
         private RegionButton LLR_Button;
         private RegionButton HyruleField_Button;
         private RegionButton Colossus_Button;
-        private RegionButton Wasteland_Button;
-        private Region_Button_Dense GanonsCastle_Button;
-        private Region_Button_Dense Fire_Button;
-        private Region_Button_Dense Forest_Button;
-        private Region_Button_Dense DC_Button;
-        private Region_Button_Dense Shadow_Button;
+        private RegionButton Wasteland_Button;      
         private Region_Button_Dense GoronCity_Button;
-        private Region_Button_Dense Ice_Button;
-        private Region_Button_Dense Jabu_Button;
-        private Region_Button_Dense Deku_Button;
-        private Region_Button_Dense Water_Button;
-        private Region_Button_Dense Spirit_Button;
         private Region_Button_Dense Graveyard_Button;
         private Region_Button_Dense GTG_Button;
         private Region_Button_Dense BotW_Button;
@@ -1861,6 +1822,15 @@
         private Check GFChest;
         private Check WastelandChest;
         private ToolTip toolTip1;
-        private DungeonButton dungeonButton1;
+        private DungeonButton Spirit_Button;
+        private DungeonButton Forest_Button;
+        private DungeonButton DC_Button;
+        private DungeonButton Jabu_Button;
+        private Region_Button_Dense Ice_Button;
+        private DungeonButton Water_Button;
+        private DungeonButton Fire_Button;
+        private DungeonButton Deku_Button;
+        private DungeonButton Shadow_Button;
+        private DungeonButton GanonsCastle_Button;
     }
 }

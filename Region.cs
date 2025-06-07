@@ -170,14 +170,14 @@ namespace CeddyMapTracker
             }
             foreach (Region_Panel_Check c in _checks)
             {
-                if (c.IsBoss == true && c.ForeColor == Color.Lime)
-                {
-                    _dungeon_button._bosssquare = Color.Lime;
-                }
-                else if (c.IsBoss == true && c.Checked == true)
+                if (c.IsBoss == true && c.Checked == true)
                 {
                     _dungeon_button._bosssquare = Color.Gray;
                 }
+                else if (c.IsBoss == true && c.ForeColor == Color.Lime)
+                {
+                    _dungeon_button._bosssquare = Color.Lime;
+                }               
                 else
                 {
                     _dungeon_button._bosssquare = Color.Red;
