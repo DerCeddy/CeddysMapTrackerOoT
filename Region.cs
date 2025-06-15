@@ -177,7 +177,11 @@ namespace CeddyMapTracker
                 else if (c.IsBoss == true && c.ForeColor == Color.Lime)
                 {
                     _dungeon_button._bosssquare = Color.Lime;
-                }               
+                }
+                else if (c.IsBoss == true && c.ForeColor == Color.Yellow)
+                {
+                    _dungeon_button._bosssquare = Color.Orange;
+                }
                 else
                 {
                     _dungeon_button._bosssquare = Color.Red;

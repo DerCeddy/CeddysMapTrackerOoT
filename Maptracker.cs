@@ -14,6 +14,25 @@ namespace CeddyMapTracker
     {
         public List<Region> regions;
         public List<int> SmallKeys = [];
+        public List<Check> LLR_Check_List;
+        public List<Check> Wasteland_Check_List;
+        public List<Check> Colossus_Check_List;
+        public List<Check> GerudoFortress_Check_List;
+        public List<Check> GerudoValley_Check_List;
+        public List<Check> HyruleField_Check_List;
+        public List<Check> LakeHylia_Check_List;
+        public List<Check> KokiriForest_Check_List;
+        public List<Check> LostWoods_Check_List;
+        public List<Check> SFM_Check_List;
+        public List<Check> ZoraRiver_Check_List;
+        public List<Check> ZoraDomain_Check_List;
+        public List<Check> ZoraFountain_Check_List;
+        public List<Check> DMT_Check_List;
+        public List<Check> DMC_Check_List;
+        public List<Check> Market_Check_List;
+        public List<Check> HC_Check_List;
+        public List<Check> OGC_Check_List;
+        public List<Check> ToT_Check_List;
         public Maptracker(WOTHPanel wothPanel, Point location, Stats stats)
         {
             InitializeComponent();
@@ -68,54 +87,33 @@ namespace CeddyMapTracker
             Region GanonsCastle = new(GanonsCastle_Button, GanonsCastle_Panel, GanonsCastle_Check_List, this);
             regions = [ForestTemple, FireTemple, WaterTemple, SpiritTemple, ShadowTemple, DekuTree, DodongosCavern, JabuJabu, BotW, IceCavern, GTG, Kakariko, Graveyard, GoronCity, GanonsCastle];
             List<string> Denselocations_Names = ["Forest Temple", "Fire Temple", "Water Temple", "Spirit Temple", "Shadow Temple", "Deku Tree", "Dodongos Cavern", "Jabu-Jabus Belly", "Bottom of the Well", "Ice Cavern", "Gerudo Training Grounds", "Kakariko Village", "Graveyard", "Goron City", "Ganons Castle"];
-            List<Check> Wasteland_Check_List = [WastelandChest];
-            List<Check> Colossus_Check_List = [ColossusGreatFairy, ColossusPoH, ColossusShiek];
-            List<Check> GerudoFortress_Check_List = [GFChest, HBA];
-            List<Check> GerudoValley_Check_List = [GVWaterFallPoH, GVChest, GVCratePoH];
-            List<Check> HyruleField_Check_List = [HFOoT, HFNearMarketGrottoChest, HFOpenGrottoChest, HFSalesman, HFSoutheastGrottoChest, HFTektikeGrottoPoH];
-            List<Check> LakeHylia_Check_List = [LHChildFishing, LHAdultFishing, LHFreestandingPoH, LHLabDive, LHShootTheSun, LHUnderwaterItem];
-            List<Check> KokiriForest_Check_List = [KFMidos, KFKokiriSwordChest, KFStormGrottoChest];
-            List<Check> LostWoods_Check_List = [LWNearShortcutGrottoChest, LWOcarinaGame, LWScrubGrottoFront, LWScrubNearBridge, LWSkullKid, LWSkullMask, LWTarget];
-            List<Check> SFM_Check_List = [SFMSaria, SFMShiek, SFMWolfosGrotto];
-            List<Check> ZoraRiver_Check_List = [ZRFrogsGame, ZRFrogsStorms, ZRNearGrottoPoH, ZROpenGrotto, ZRPoHNearDomain];
-            List<Check> ZoraDomain_Check_List = [ZDChest, ZRDivingGame, ZDKingZora];
-            List<Check> ZoraFountain_Check_List = [ZFBottomPoH, ZFFreestandingPoH, ZFGreatFairy];
-            List<Check> DMT_Check_List = [DMTBiggoron, DMTChest, DMTGreatFairy, DMTPoH, DMTStormsGrotto];
-            List<Check> DMC_Check_List = [DMCGreatFairy, DMCShiek, DMCUpperGrotto, DMCVolcanoPoH, DMCWallPoH];
-            List<Check> Market_Check_List = [MarketBigPoes, MarketBombchuBowling, MarketRichard, MarketShootingGalleryReward, MarketTreasureChestGame];
-            List<Check> HC_Check_List = [HCGreatFairy];
-            List<Check> OGC_Check_List = [OGCGreatFairy];
-            List<Check> ToT_Check_List = [ToTLACS, ToTShiek];
-            List<Check> LLR_Check_List = [LLRMalon, LLRPoH, LLRTalon];
+            Wasteland_Check_List = [WastelandChest];
+            Colossus_Check_List = [ColossusGreatFairy, ColossusPoH, ColossusShiek];
+            GerudoFortress_Check_List = [GFChest, HBA];
+            GerudoValley_Check_List = [GVWaterFallPoH, GVChest, GVCratePoH];
+            HyruleField_Check_List = [HFOoT, HFNearMarketGrottoChest, HFOpenGrottoChest, HFSalesman, HFSoutheastGrottoChest, HFTektikeGrottoPoH];
+            LakeHylia_Check_List = [LHChildFishing, LHAdultFishing, LHFreestandingPoH, LHLabDive, LHShootTheSun, LHUnderwaterItem];
+            KokiriForest_Check_List = [KFMidos, KFKokiriSwordChest, KFStormGrottoChest];
+            LostWoods_Check_List = [LWNearShortcutGrottoChest, LWOcarinaGame, LWScrubGrottoFront, LWScrubNearBridge, LWSkullKid, LWSkullMask, LWTarget];
+            SFM_Check_List = [SFMSaria, SFMShiek, SFMWolfosGrotto];
+            ZoraRiver_Check_List = [ZRFrogsGame, ZRFrogsStorms, ZRNearGrottoPoH, ZROpenGrotto, ZRPoHNearDomain];
+            ZoraDomain_Check_List = [ZDChest, ZRDivingGame, ZDKingZora];
+            ZoraFountain_Check_List = [ZFBottomPoH, ZFFreestandingPoH, ZFGreatFairy];
+            DMT_Check_List = [DMTBiggoron, DMTChest, DMTGreatFairy, DMTPoH, DMTStormsGrotto];
+            DMC_Check_List = [DMCGreatFairy, DMCShiek, DMCUpperGrotto, DMCVolcanoPoH, DMCWallPoH];
+            Market_Check_List = [MarketBigPoes, MarketBombchuBowling, MarketRichard, MarketShootingGalleryReward, MarketTreasureChestGame];
+            HC_Check_List = [HCGreatFairy];
+            OGC_Check_List = [OGCGreatFairy];
+            ToT_Check_List = [ToTLACS, ToTShiek];
+            LLR_Check_List = [LLRMalon, LLRPoH, LLRTalon];
             //Assign checks to region buttons
             List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];
-            List<List<Check>> Test = [Wasteland_Check_List, Colossus_Check_List, GerudoFortress_Check_List, GerudoValley_Check_List, HyruleField_Check_List, LakeHylia_Check_List, KokiriForest_Check_List, LostWoods_Check_List, SFM_Check_List, ZoraRiver_Check_List, ZoraDomain_Check_List, ZoraFountain_Check_List, DMT_Check_List, DMC_Check_List, Market_Check_List, HC_Check_List, OGC_Check_List, LLR_Check_List, ToT_Check_List];
-            List<RegionButton> RegionButton_List = [Wasteland_Button, Colossus_Button, GerudoFortress_Button, GerudoValley_Button, HyruleField_Button, LakeHylia_Button1, KokiriForest_Button, LostWoods_Button, SFM_Button, ZoraRiver_Button, ZoraDomain_Button, ZoraFountain_Button1, DMT_Button, DMC_Button, Market_Button1, HC_Button, OGC_Button, LLR_Button, ToT_Button1];
+            List<List<Check>> Test = [Wasteland_Check_List, Colossus_Check_List, GerudoFortress_Check_List, GerudoValley_Check_List, HyruleField_Check_List, LakeHylia_Check_List, KokiriForest_Check_List, LostWoods_Check_List, SFM_Check_List, ZoraRiver_Check_List, ZoraDomain_Check_List, ZoraFountain_Check_List, DMT_Check_List, DMC_Check_List, Market_Check_List, HC_Check_List, OGC_Check_List, LLR_Check_List, ToT_Check_List];          
             ContextMenuForWOTHHints test123 = new();
             Controls.Add(test123);
-            test123.Visible = false;
-            for (int i = 0; i < RegionButton_List.Count; i++)
-            {
-                int index = i;
-                RegionButton_List[index].MouseDown += (sender, e) => RegionButton_List[index].ButtonClick(e, wothPanel, Test[index]);
-                
-                RegionButton_List[index].MouseDown += (sender, e) => AddContextMenu(e,test123, RegionButton_List[index]);
-                RegionButton_List[index].RegionName = Region_Names[index];
-            }
+            test123.Visible = false;          
             //Update WOTH Panel Goals
-            test123.ValueChanged += (sender, e) => UpdateWOTHGoals(wothPanel,test123);
-            //Duplicate regions mouse down event
-            LakeHylia_Button2.MouseDown += (sender, e) => LakeHylia_Button2.ButtonClick(e, wothPanel, LakeHylia_Check_List);
-            ZoraFountain_Button2.MouseDown += (sender, e) => ZoraFountain_Button2.ButtonClick(e, wothPanel, ZoraFountain_Check_List);
-            Market_Button2.MouseDown += (sender, e) => Market_Button2.ButtonClick(e, wothPanel, Market_Check_List);
-            ToT_Button2.MouseDown += (sender, e) => ToT_Button2.ButtonClick(e, wothPanel, ToT_Check_List);
-            ZoraDomain_Button2.MouseDown += (sender, e) => ZoraDomain_Button2.ButtonClick(e, wothPanel, ZoraDomain_Check_List);
-            //Duplicate regions assign name
-            LakeHylia_Button2.RegionName = "Lake Hylia";
-            ZoraFountain_Button2.RegionName = "Zora Fountain";
-            Market_Button2.RegionName = "Market";
-            ToT_Button2.RegionName = "Temple of Time";
-            ZoraDomain_Button2.RegionName = "Zora Domain";
+            test123.ValueChanged += (sender, e) => UpdateWOTHGoals(wothPanel,test123);         
             //Add region panels to the map
             var temp = 0;
             foreach (Region region in regions)
@@ -157,7 +155,8 @@ namespace CeddyMapTracker
                 {
                     rbd.BringToFront();
                 }
-            }             
+            }
+            MouseDown += (sender,e) => GetRegionName(e, test123);
         }
 
         public void UpdateCheckColors()
@@ -244,6 +243,140 @@ namespace CeddyMapTracker
                 test123.BringToFront();
                 test123.RegionName = RegionButton.RegionName;
             }
+        }
+        public void GetRegionName(MouseEventArgs e, ContextMenuForWOTHHints test123)
+        {
+            string regionname = "";
+            List<Check> checks = new();        
+            if (e.X >= 340 && e.X <= 533 && e.Y >= 542 && e.Y <= 730)
+            {
+                regionname = "Lake Hylia";
+                checks = LakeHylia_Check_List;
+            }
+            else if (e.X >= 253 && e.X <= 405 && e.Y >= 408 && e.Y <= 566)
+            {
+                regionname = "Gerudo Valley";
+                checks = GerudoValley_Check_List;
+            }
+            if (e.X >= 364 && e.X <= 560 && e.Y >= 289 && e.Y <= 478)
+            {
+                regionname = "Hyrule Field";
+                checks = HyruleField_Check_List;
+            }
+            if (e.X >= 430 && e.X <= 472 && e.Y >= 359 && e.Y <= 401)
+            {
+                regionname = "Lon-Lon-Ranch";
+                checks = LLR_Check_List;
+            }
+            if (e.X >= 243 && e.X <= 417 && e.Y >= 151 && e.Y <= 367)
+            {
+                regionname = "Gerudo Fortress";
+                checks = GerudoFortress_Check_List;
+            }
+            if (e.X >= 49 && e.X <= 246 && e.Y >= 215 && e.Y <= 397)
+            {
+                regionname = "Haunted Wasteland";
+                checks = Wasteland_Check_List;
+            }
+            if (e.X >= 0 && e.X <= 85 && e.Y >= 316 && e.Y <= 385)
+            {
+                regionname = "Desert Colossus";
+                checks = Colossus_Check_List;
+            }
+            if (e.X >= 415 && e.X <= 529 && e.Y >= 239 && e.Y <= 288)
+            {
+                regionname = "Market";
+                checks = Market_Check_List;
+            }
+            if (e.X >= 475 && e.X <= 550 && e.Y >= 146 && e.Y <= 222)
+            {
+                regionname = "Hyrule Castle";
+                checks = HC_Check_List;
+            }
+            if (e.X >= 380 && e.X <= 481 && e.Y >= 111 && e.Y <= 227)
+            {
+                regionname = "Outside Ganons Castle";
+                checks = OGC_Check_List;
+            }          
+            if (e.X >= 560 && e.X <= 716 && e.Y >= 312 && e.Y <= 416)
+            {
+                regionname = "Zora River";
+                checks = ZoraRiver_Check_List;
+            }
+            if (e.X >= 716 && e.X <= 838 && e.Y >= 242 && e.Y <= 371)
+            {
+                regionname = "Zora Domain";
+                checks = ZoraDomain_Check_List;
+            }
+            if (e.X >= 693 && e.X <= 858 && e.Y >= 96 && e.Y <= 242)
+            {
+                regionname = "Zora Fountain";
+                checks = ZoraFountain_Check_List;
+            }
+            if (e.X >= 683 && e.X <= 729 && e.Y >= 362 && e.Y <= 499)
+            {
+                regionname = "Sacred Forest Meadow";
+                checks = SFM_Check_List;
+            }
+            if (e.X >= 581 && e.X <= 764 && e.Y >= 493 && e.Y <= 708)
+            {
+                regionname = "Lost Woods";
+                checks = LostWoods_Check_List;
+            }
+            if (e.X >= 617 && e.X <= 687 && e.Y >= 649 && e.Y <= 723)
+            {
+                regionname = "Kokiri Forest";
+                checks = KokiriForest_Check_List;
+            }
+            if (e.X >= 587 && e.X <= 684 && e.Y >= 110 && e.Y <= 260)
+            {
+                regionname = "Death Mountain Trial";
+                checks = DMT_Check_List;
+            }
+            if (e.X >= 560 && e.X <= 696 && e.Y >= 1 && e.Y <= 117)
+            {
+                regionname = "Death Mountain Crater";
+                checks = DMC_Check_List;
+            }
+            if (e.Button == MouseButtons.Right)
+            {              
+                AddContextMenu(e,test123,regionname);
+            }
+            if(e.Button == MouseButtons.Middle)
+            {
+                int ChecksChecked = 0;
+                int MaxChecks = 0;
+                foreach (Check cb in checks)
+                {
+                    MaxChecks++;
+                    if (cb.done)
+                    {
+                        ChecksChecked++;
+                    }
+                }
+                if (MaxChecks > ChecksChecked)
+                {
+                    foreach (Check cb in checks)
+                    {
+                        cb.done = false;
+                        cb.ChangeColor();
+                    }
+                }
+                else
+                {
+                    foreach (Check cb in checks)
+                    {
+                        cb.done = true;
+                        cb.ChangeColor();
+                    }
+                }
+            }
+        }
+        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, string Regionname)
+        {          
+            test123.AddContextMenu(this, e.X - 70, e.Y - 70);
+            test123.BringToFront();
+            test123.RegionName = Regionname;
         }
         public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, Region RegionButton)
         {

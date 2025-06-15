@@ -29,30 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DMC_Button = new RegionButton();
-            DMT_Button = new RegionButton();
-            HC_Button = new RegionButton();
-            OGC_Button = new RegionButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Maptracker));
             ToT_Button2 = new RegionButton();
-            ToT_Button1 = new RegionButton();
-            Market_Button1 = new RegionButton();
-            Market_Button2 = new RegionButton();
-            ZoraFountain_Button2 = new RegionButton();
-            ZoraDomain_Button2 = new RegionButton();
-            ZoraFountain_Button1 = new RegionButton();
-            ZoraDomain_Button = new RegionButton();
-            ZoraRiver_Button = new RegionButton();
-            SFM_Button = new RegionButton();
-            KokiriForest_Button = new RegionButton();
-            LostWoods_Button = new RegionButton();
-            LakeHylia_Button2 = new RegionButton();
-            LakeHylia_Button1 = new RegionButton();
-            GerudoFortress_Button = new RegionButton();
-            GerudoValley_Button = new RegionButton();
-            LLR_Button = new RegionButton();
-            HyruleField_Button = new RegionButton();
-            Colossus_Button = new RegionButton();
-            Wasteland_Button = new RegionButton();
             GoronCity_Button = new Region_Button_Dense();
             Graveyard_Button = new Region_Button_Dense();
             GTG_Button = new Region_Button_Dense();
@@ -126,69 +104,17 @@
             GFChest = new Check();
             WastelandChest = new Check();
             toolTip1 = new ToolTip(components);
+            Ice_Button = new Region_Button_Dense();
             Spirit_Button = new DungeonButton();
             Forest_Button = new DungeonButton();
             DC_Button = new DungeonButton();
             Jabu_Button = new DungeonButton();
-            Ice_Button = new Region_Button_Dense();
             Water_Button = new DungeonButton();
             Fire_Button = new DungeonButton();
             Deku_Button = new DungeonButton();
             Shadow_Button = new DungeonButton();
             GanonsCastle_Button = new DungeonButton();
             SuspendLayout();
-            // 
-            // DMC_Button
-            // 
-            DMC_Button.BackColor = Color.Transparent;
-            DMC_Button.FlatAppearance.BorderSize = 0;
-            DMC_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            DMC_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            DMC_Button.FlatStyle = FlatStyle.Flat;
-            DMC_Button.Location = new Point(576, 13);
-            DMC_Button.Name = "DMC_Button";
-            DMC_Button.Size = new Size(75, 60);
-            DMC_Button.TabIndex = 214;
-            DMC_Button.UseVisualStyleBackColor = false;
-            // 
-            // DMT_Button
-            // 
-            DMT_Button.BackColor = Color.Transparent;
-            DMT_Button.FlatAppearance.BorderSize = 0;
-            DMT_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            DMT_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            DMT_Button.FlatStyle = FlatStyle.Flat;
-            DMT_Button.Location = new Point(559, 76);
-            DMT_Button.Name = "DMT_Button";
-            DMT_Button.Size = new Size(63, 98);
-            DMT_Button.TabIndex = 213;
-            DMT_Button.UseVisualStyleBackColor = false;
-            // 
-            // HC_Button
-            // 
-            HC_Button.BackColor = Color.Transparent;
-            HC_Button.FlatAppearance.BorderSize = 0;
-            HC_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            HC_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            HC_Button.FlatStyle = FlatStyle.Flat;
-            HC_Button.Location = new Point(450, 73);
-            HC_Button.Name = "HC_Button";
-            HC_Button.Size = new Size(81, 73);
-            HC_Button.TabIndex = 212;
-            HC_Button.UseVisualStyleBackColor = false;
-            // 
-            // OGC_Button
-            // 
-            OGC_Button.BackColor = Color.Transparent;
-            OGC_Button.FlatAppearance.BorderSize = 0;
-            OGC_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            OGC_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            OGC_Button.FlatStyle = FlatStyle.Flat;
-            OGC_Button.Location = new Point(306, 80);
-            OGC_Button.Name = "OGC_Button";
-            OGC_Button.Size = new Size(75, 64);
-            OGC_Button.TabIndex = 211;
-            OGC_Button.UseVisualStyleBackColor = false;
             // 
             // ToT_Button2
             // 
@@ -203,253 +129,6 @@
             ToT_Button2.TabIndex = 210;
             ToT_Button2.UseVisualStyleBackColor = false;
             // 
-            // ToT_Button1
-            // 
-            ToT_Button1.BackColor = Color.Transparent;
-            ToT_Button1.FlatAppearance.BorderSize = 0;
-            ToT_Button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            ToT_Button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            ToT_Button1.FlatStyle = FlatStyle.Flat;
-            ToT_Button1.Location = new Point(493, 165);
-            ToT_Button1.Name = "ToT_Button1";
-            ToT_Button1.Size = new Size(45, 23);
-            ToT_Button1.TabIndex = 209;
-            ToT_Button1.UseVisualStyleBackColor = false;
-            // 
-            // Market_Button1
-            // 
-            Market_Button1.BackColor = Color.Transparent;
-            Market_Button1.FlatAppearance.BorderSize = 0;
-            Market_Button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            Market_Button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            Market_Button1.FlatStyle = FlatStyle.Flat;
-            Market_Button1.Location = new Point(428, 178);
-            Market_Button1.Name = "Market_Button1";
-            Market_Button1.Size = new Size(67, 36);
-            Market_Button1.TabIndex = 208;
-            Market_Button1.UseVisualStyleBackColor = false;
-            // 
-            // Market_Button2
-            // 
-            Market_Button2.BackColor = Color.Transparent;
-            Market_Button2.FlatAppearance.BorderSize = 0;
-            Market_Button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            Market_Button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            Market_Button2.FlatStyle = FlatStyle.Flat;
-            Market_Button2.Location = new Point(297, 172);
-            Market_Button2.Name = "Market_Button2";
-            Market_Button2.Size = new Size(60, 57);
-            Market_Button2.TabIndex = 207;
-            Market_Button2.UseVisualStyleBackColor = false;
-            // 
-            // ZoraFountain_Button2
-            // 
-            ZoraFountain_Button2.BackColor = Color.Transparent;
-            ZoraFountain_Button2.FlatAppearance.BorderSize = 0;
-            ZoraFountain_Button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            ZoraFountain_Button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            ZoraFountain_Button2.FlatStyle = FlatStyle.Flat;
-            ZoraFountain_Button2.Location = new Point(64, 479);
-            ZoraFountain_Button2.Name = "ZoraFountain_Button2";
-            ZoraFountain_Button2.Size = new Size(73, 70);
-            ZoraFountain_Button2.TabIndex = 206;
-            ZoraFountain_Button2.UseVisualStyleBackColor = false;
-            // 
-            // ZoraDomain_Button2
-            // 
-            ZoraDomain_Button2.BackColor = Color.Transparent;
-            ZoraDomain_Button2.FlatAppearance.BorderSize = 0;
-            ZoraDomain_Button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            ZoraDomain_Button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            ZoraDomain_Button2.FlatStyle = FlatStyle.Flat;
-            ZoraDomain_Button2.Location = new Point(44, 552);
-            ZoraDomain_Button2.Name = "ZoraDomain_Button2";
-            ZoraDomain_Button2.Size = new Size(65, 50);
-            ZoraDomain_Button2.TabIndex = 205;
-            ZoraDomain_Button2.UseVisualStyleBackColor = false;
-            // 
-            // ZoraFountain_Button1
-            // 
-            ZoraFountain_Button1.BackColor = Color.Transparent;
-            ZoraFountain_Button1.FlatAppearance.BorderSize = 0;
-            ZoraFountain_Button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            ZoraFountain_Button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            ZoraFountain_Button1.FlatStyle = FlatStyle.Flat;
-            ZoraFountain_Button1.Location = new Point(675, 158);
-            ZoraFountain_Button1.Name = "ZoraFountain_Button1";
-            ZoraFountain_Button1.Size = new Size(69, 69);
-            ZoraFountain_Button1.TabIndex = 204;
-            ZoraFountain_Button1.UseVisualStyleBackColor = false;
-            // 
-            // ZoraDomain_Button
-            // 
-            ZoraDomain_Button.BackColor = Color.Transparent;
-            ZoraDomain_Button.FlatAppearance.BorderSize = 0;
-            ZoraDomain_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            ZoraDomain_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            ZoraDomain_Button.FlatStyle = FlatStyle.Flat;
-            ZoraDomain_Button.Location = new Point(652, 233);
-            ZoraDomain_Button.Name = "ZoraDomain_Button";
-            ZoraDomain_Button.Size = new Size(57, 41);
-            ZoraDomain_Button.TabIndex = 203;
-            ZoraDomain_Button.UseVisualStyleBackColor = false;
-            // 
-            // ZoraRiver_Button
-            // 
-            ZoraRiver_Button.BackColor = Color.Transparent;
-            ZoraRiver_Button.FlatAppearance.BorderSize = 0;
-            ZoraRiver_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            ZoraRiver_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            ZoraRiver_Button.FlatStyle = FlatStyle.Flat;
-            ZoraRiver_Button.Location = new Point(565, 241);
-            ZoraRiver_Button.Name = "ZoraRiver_Button";
-            ZoraRiver_Button.Size = new Size(82, 45);
-            ZoraRiver_Button.TabIndex = 202;
-            ZoraRiver_Button.UseVisualStyleBackColor = false;
-            // 
-            // SFM_Button
-            // 
-            SFM_Button.BackColor = Color.Transparent;
-            SFM_Button.FlatAppearance.BorderSize = 0;
-            SFM_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            SFM_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            SFM_Button.FlatStyle = FlatStyle.Flat;
-            SFM_Button.Location = new Point(587, 316);
-            SFM_Button.Name = "SFM_Button";
-            SFM_Button.Size = new Size(33, 90);
-            SFM_Button.TabIndex = 201;
-            SFM_Button.UseVisualStyleBackColor = false;
-            // 
-            // KokiriForest_Button
-            // 
-            KokiriForest_Button.BackColor = Color.Transparent;
-            KokiriForest_Button.FlatAppearance.BorderSize = 0;
-            KokiriForest_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            KokiriForest_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            KokiriForest_Button.FlatStyle = FlatStyle.Flat;
-            KokiriForest_Button.Location = new Point(562, 461);
-            KokiriForest_Button.Name = "KokiriForest_Button";
-            KokiriForest_Button.Size = new Size(73, 70);
-            KokiriForest_Button.TabIndex = 200;
-            KokiriForest_Button.UseVisualStyleBackColor = false;
-            // 
-            // LostWoods_Button
-            // 
-            LostWoods_Button.BackColor = Color.Transparent;
-            LostWoods_Button.FlatAppearance.BorderSize = 0;
-            LostWoods_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            LostWoods_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            LostWoods_Button.FlatStyle = FlatStyle.Flat;
-            LostWoods_Button.Location = new Point(546, 405);
-            LostWoods_Button.Name = "LostWoods_Button";
-            LostWoods_Button.Size = new Size(77, 88);
-            LostWoods_Button.TabIndex = 199;
-            LostWoods_Button.UseVisualStyleBackColor = false;
-            // 
-            // LakeHylia_Button2
-            // 
-            LakeHylia_Button2.BackColor = Color.Transparent;
-            LakeHylia_Button2.FlatAppearance.BorderSize = 0;
-            LakeHylia_Button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            LakeHylia_Button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            LakeHylia_Button2.FlatStyle = FlatStyle.Flat;
-            LakeHylia_Button2.Location = new Point(150, 450);
-            LakeHylia_Button2.Name = "LakeHylia_Button2";
-            LakeHylia_Button2.Size = new Size(148, 179);
-            LakeHylia_Button2.TabIndex = 198;
-            LakeHylia_Button2.UseVisualStyleBackColor = false;
-            // 
-            // LakeHylia_Button1
-            // 
-            LakeHylia_Button1.BackColor = Color.Transparent;
-            LakeHylia_Button1.FlatAppearance.BorderSize = 0;
-            LakeHylia_Button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            LakeHylia_Button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            LakeHylia_Button1.FlatStyle = FlatStyle.Flat;
-            LakeHylia_Button1.Location = new Point(332, 489);
-            LakeHylia_Button1.Name = "LakeHylia_Button1";
-            LakeHylia_Button1.Size = new Size(149, 131);
-            LakeHylia_Button1.TabIndex = 197;
-            LakeHylia_Button1.UseVisualStyleBackColor = false;
-            // 
-            // GerudoFortress_Button
-            // 
-            GerudoFortress_Button.BackColor = Color.Transparent;
-            GerudoFortress_Button.FlatAppearance.BorderSize = 0;
-            GerudoFortress_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            GerudoFortress_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            GerudoFortress_Button.FlatStyle = FlatStyle.Flat;
-            GerudoFortress_Button.Location = new Point(208, 238);
-            GerudoFortress_Button.Name = "GerudoFortress_Button";
-            GerudoFortress_Button.Size = new Size(57, 71);
-            GerudoFortress_Button.TabIndex = 196;
-            GerudoFortress_Button.UseVisualStyleBackColor = false;
-            // 
-            // GerudoValley_Button
-            // 
-            GerudoValley_Button.BackColor = Color.Transparent;
-            GerudoValley_Button.FlatAppearance.BorderSize = 0;
-            GerudoValley_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            GerudoValley_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            GerudoValley_Button.FlatStyle = FlatStyle.Flat;
-            GerudoValley_Button.Location = new Point(252, 281);
-            GerudoValley_Button.Name = "GerudoValley_Button";
-            GerudoValley_Button.Size = new Size(75, 88);
-            GerudoValley_Button.TabIndex = 195;
-            GerudoValley_Button.UseVisualStyleBackColor = false;
-            // 
-            // LLR_Button
-            // 
-            LLR_Button.BackColor = Color.Transparent;
-            LLR_Button.FlatAppearance.BorderSize = 0;
-            LLR_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            LLR_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            LLR_Button.FlatStyle = FlatStyle.Flat;
-            LLR_Button.Location = new Point(400, 307);
-            LLR_Button.Name = "LLR_Button";
-            LLR_Button.Size = new Size(49, 52);
-            LLR_Button.TabIndex = 194;
-            LLR_Button.UseVisualStyleBackColor = false;
-            // 
-            // HyruleField_Button
-            // 
-            HyruleField_Button.BackColor = Color.Transparent;
-            HyruleField_Button.FlatAppearance.BorderSize = 0;
-            HyruleField_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            HyruleField_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            HyruleField_Button.FlatStyle = FlatStyle.Flat;
-            HyruleField_Button.Location = new Point(337, 218);
-            HyruleField_Button.Name = "HyruleField_Button";
-            HyruleField_Button.Size = new Size(213, 233);
-            HyruleField_Button.TabIndex = 193;
-            HyruleField_Button.UseVisualStyleBackColor = false;
-            // 
-            // Colossus_Button
-            // 
-            Colossus_Button.BackColor = Color.Transparent;
-            Colossus_Button.FlatAppearance.BorderSize = 0;
-            Colossus_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            Colossus_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            Colossus_Button.FlatStyle = FlatStyle.Flat;
-            Colossus_Button.Location = new Point(2, 198);
-            Colossus_Button.Name = "Colossus_Button";
-            Colossus_Button.Size = new Size(75, 75);
-            Colossus_Button.TabIndex = 192;
-            Colossus_Button.UseVisualStyleBackColor = false;
-            // 
-            // Wasteland_Button
-            // 
-            Wasteland_Button.BackColor = Color.Transparent;
-            Wasteland_Button.FlatAppearance.BorderSize = 0;
-            Wasteland_Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            Wasteland_Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            Wasteland_Button.FlatStyle = FlatStyle.Flat;
-            Wasteland_Button.Location = new Point(83, 162);
-            Wasteland_Button.Name = "Wasteland_Button";
-            Wasteland_Button.Size = new Size(119, 153);
-            Wasteland_Button.TabIndex = 191;
-            Wasteland_Button.UseVisualStyleBackColor = false;
-            // 
             // GoronCity_Button
             // 
             GoronCity_Button.BackColor = Color.Red;
@@ -458,7 +137,7 @@
             GoronCity_Button.FlatStyle = FlatStyle.Flat;
             GoronCity_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
             GoronCity_Button.ForeColor = Color.Black;
-            GoronCity_Button.Location = new Point(597, 107);
+            GoronCity_Button.Location = new Point(629, 166);
             GoronCity_Button.Name = "GoronCity_Button";
             GoronCity_Button.Size = new Size(24, 24);
             GoronCity_Button.TabIndex = 185;
@@ -474,7 +153,7 @@
             Graveyard_Button.FlatStyle = FlatStyle.Flat;
             Graveyard_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
             Graveyard_Button.ForeColor = Color.Black;
-            Graveyard_Button.Location = new Point(619, 213);
+            Graveyard_Button.Location = new Point(656, 279);
             Graveyard_Button.Name = "Graveyard_Button";
             Graveyard_Button.Size = new Size(24, 24);
             Graveyard_Button.TabIndex = 179;
@@ -489,7 +168,7 @@
             GTG_Button.FlatStyle = FlatStyle.Flat;
             GTG_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
             GTG_Button.ForeColor = Color.Black;
-            GTG_Button.Location = new Point(208, 283);
+            GTG_Button.Location = new Point(275, 302);
             GTG_Button.Name = "GTG_Button";
             GTG_Button.Size = new Size(24, 24);
             GTG_Button.TabIndex = 178;
@@ -504,7 +183,7 @@
             BotW_Button.FlatStyle = FlatStyle.Flat;
             BotW_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
             BotW_Button.ForeColor = Color.Black;
-            BotW_Button.Location = new Point(581, 209);
+            BotW_Button.Location = new Point(607, 281);
             BotW_Button.Name = "BotW_Button";
             BotW_Button.Size = new Size(24, 24);
             BotW_Button.TabIndex = 177;
@@ -519,7 +198,7 @@
             Kakariko_Button.FlatStyle = FlatStyle.Flat;
             Kakariko_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel, 0);
             Kakariko_Button.ForeColor = Color.Black;
-            Kakariko_Button.Location = new Point(556, 211);
+            Kakariko_Button.Location = new Point(580, 282);
             Kakariko_Button.Name = "Kakariko_Button";
             Kakariko_Button.Size = new Size(24, 24);
             Kakariko_Button.TabIndex = 176;
@@ -534,7 +213,7 @@
             DMCShiek.FlatAppearance.BorderSize = 0;
             DMCShiek.FlatStyle = FlatStyle.Flat;
             DMCShiek.ForeColor = Color.Black;
-            DMCShiek.Location = new Point(589, 27);
+            DMCShiek.Location = new Point(606, 67);
             DMCShiek.Name = "DMCShiek";
             DMCShiek.Size = new Size(13, 13);
             DMCShiek.TabIndex = 175;
@@ -548,7 +227,7 @@
             DMCGreatFairy.FlatAppearance.BorderSize = 0;
             DMCGreatFairy.FlatStyle = FlatStyle.Flat;
             DMCGreatFairy.ForeColor = Color.Black;
-            DMCGreatFairy.Location = new Point(590, 57);
+            DMCGreatFairy.Location = new Point(608, 100);
             DMCGreatFairy.Name = "DMCGreatFairy";
             DMCGreatFairy.Size = new Size(13, 13);
             DMCGreatFairy.TabIndex = 174;
@@ -562,7 +241,7 @@
             DMCUpperGrotto.FlatAppearance.BorderSize = 0;
             DMCUpperGrotto.FlatStyle = FlatStyle.Flat;
             DMCUpperGrotto.ForeColor = Color.Black;
-            DMCUpperGrotto.Location = new Point(621, 56);
+            DMCUpperGrotto.Location = new Point(654, 96);
             DMCUpperGrotto.Name = "DMCUpperGrotto";
             DMCUpperGrotto.Size = new Size(13, 13);
             DMCUpperGrotto.TabIndex = 173;
@@ -576,7 +255,7 @@
             DMCWallPoH.FlatAppearance.BorderSize = 0;
             DMCWallPoH.FlatStyle = FlatStyle.Flat;
             DMCWallPoH.ForeColor = Color.Black;
-            DMCWallPoH.Location = new Point(612, 46);
+            DMCWallPoH.Location = new Point(644, 86);
             DMCWallPoH.Name = "DMCWallPoH";
             DMCWallPoH.Size = new Size(13, 13);
             DMCWallPoH.TabIndex = 172;
@@ -590,7 +269,7 @@
             DMCVolcanoPoH.FlatAppearance.BorderSize = 0;
             DMCVolcanoPoH.FlatStyle = FlatStyle.Flat;
             DMCVolcanoPoH.ForeColor = Color.Black;
-            DMCVolcanoPoH.Location = new Point(595, 39);
+            DMCVolcanoPoH.Location = new Point(613, 76);
             DMCVolcanoPoH.Name = "DMCVolcanoPoH";
             DMCVolcanoPoH.Size = new Size(13, 13);
             DMCVolcanoPoH.TabIndex = 171;
@@ -604,7 +283,7 @@
             DMTBiggoron.FlatAppearance.BorderSize = 0;
             DMTBiggoron.FlatStyle = FlatStyle.Flat;
             DMTBiggoron.ForeColor = Color.Black;
-            DMTBiggoron.Location = new Point(606, 87);
+            DMTBiggoron.Location = new Point(643, 137);
             DMTBiggoron.Name = "DMTBiggoron";
             DMTBiggoron.Size = new Size(13, 13);
             DMTBiggoron.TabIndex = 170;
@@ -618,7 +297,7 @@
             DMTGreatFairy.FlatAppearance.BorderSize = 0;
             DMTGreatFairy.FlatStyle = FlatStyle.Flat;
             DMTGreatFairy.ForeColor = Color.Black;
-            DMTGreatFairy.Location = new Point(597, 74);
+            DMTGreatFairy.Location = new Point(629, 126);
             DMTGreatFairy.Name = "DMTGreatFairy";
             DMTGreatFairy.Size = new Size(13, 13);
             DMTGreatFairy.TabIndex = 169;
@@ -632,7 +311,7 @@
             DMTStormsGrotto.FlatAppearance.BorderSize = 0;
             DMTStormsGrotto.FlatStyle = FlatStyle.Flat;
             DMTStormsGrotto.ForeColor = Color.Black;
-            DMTStormsGrotto.Location = new Point(583, 129);
+            DMTStormsGrotto.Location = new Point(629, 196);
             DMTStormsGrotto.Name = "DMTStormsGrotto";
             DMTStormsGrotto.Size = new Size(13, 13);
             DMTStormsGrotto.TabIndex = 168;
@@ -646,7 +325,7 @@
             DMTChest.FlatAppearance.BorderSize = 0;
             DMTChest.FlatStyle = FlatStyle.Flat;
             DMTChest.ForeColor = Color.Black;
-            DMTChest.Location = new Point(579, 146);
+            DMTChest.Location = new Point(622, 218);
             DMTChest.Name = "DMTChest";
             DMTChest.Size = new Size(13, 13);
             DMTChest.TabIndex = 167;
@@ -660,7 +339,7 @@
             DMTPoH.FlatAppearance.BorderSize = 0;
             DMTPoH.FlatStyle = FlatStyle.Flat;
             DMTPoH.ForeColor = Color.Black;
-            DMTPoH.Location = new Point(563, 130);
+            DMTPoH.Location = new Point(607, 190);
             DMTPoH.Name = "DMTPoH";
             DMTPoH.Size = new Size(13, 13);
             DMTPoH.TabIndex = 166;
@@ -674,7 +353,7 @@
             LHShootTheSun.FlatAppearance.BorderSize = 0;
             LHShootTheSun.FlatStyle = FlatStyle.Flat;
             LHShootTheSun.ForeColor = Color.Black;
-            LHShootTheSun.Location = new Point(233, 586);
+            LHShootTheSun.Location = new Point(467, 674);
             LHShootTheSun.Name = "LHShootTheSun";
             LHShootTheSun.Size = new Size(13, 13);
             LHShootTheSun.TabIndex = 165;
@@ -688,7 +367,7 @@
             LHFreestandingPoH.FlatAppearance.BorderSize = 0;
             LHFreestandingPoH.FlatStyle = FlatStyle.Flat;
             LHFreestandingPoH.ForeColor = Color.Black;
-            LHFreestandingPoH.Location = new Point(183, 537);
+            LHFreestandingPoH.Location = new Point(389, 594);
             LHFreestandingPoH.Name = "LHFreestandingPoH";
             LHFreestandingPoH.Size = new Size(13, 13);
             LHFreestandingPoH.TabIndex = 164;
@@ -702,7 +381,7 @@
             LHLabDive.FlatAppearance.BorderSize = 0;
             LHLabDive.FlatStyle = FlatStyle.Flat;
             LHLabDive.ForeColor = Color.Black;
-            LHLabDive.Location = new Point(361, 526);
+            LHLabDive.Location = new Point(379, 592);
             LHLabDive.Name = "LHLabDive";
             LHLabDive.Size = new Size(13, 13);
             LHLabDive.TabIndex = 163;
@@ -716,7 +395,7 @@
             LHUnderwaterItem.FlatAppearance.BorderSize = 0;
             LHUnderwaterItem.FlatStyle = FlatStyle.Flat;
             LHUnderwaterItem.ForeColor = Color.Black;
-            LHUnderwaterItem.Location = new Point(390, 525);
+            LHUnderwaterItem.Location = new Point(426, 599);
             LHUnderwaterItem.Name = "LHUnderwaterItem";
             LHUnderwaterItem.Size = new Size(13, 13);
             LHUnderwaterItem.TabIndex = 162;
@@ -730,7 +409,7 @@
             LHAdultFishing.FlatAppearance.BorderSize = 0;
             LHAdultFishing.FlatStyle = FlatStyle.Flat;
             LHAdultFishing.ForeColor = Color.Black;
-            LHAdultFishing.Location = new Point(251, 534);
+            LHAdultFishing.Location = new Point(487, 596);
             LHAdultFishing.Name = "LHAdultFishing";
             LHAdultFishing.Size = new Size(13, 13);
             LHAdultFishing.TabIndex = 161;
@@ -744,7 +423,7 @@
             LHChildFishing.FlatAppearance.BorderSize = 0;
             LHChildFishing.FlatStyle = FlatStyle.Flat;
             LHChildFishing.ForeColor = Color.Black;
-            LHChildFishing.Location = new Point(430, 527);
+            LHChildFishing.Location = new Point(486, 583);
             LHChildFishing.Name = "LHChildFishing";
             LHChildFishing.Size = new Size(13, 13);
             LHChildFishing.TabIndex = 160;
@@ -758,7 +437,7 @@
             ZFBottomPoH.FlatAppearance.BorderSize = 0;
             ZFBottomPoH.FlatStyle = FlatStyle.Flat;
             ZFBottomPoH.ForeColor = Color.Black;
-            ZFBottomPoH.Location = new Point(88, 503);
+            ZFBottomPoH.Location = new Point(768, 158);
             ZFBottomPoH.Name = "ZFBottomPoH";
             ZFBottomPoH.Size = new Size(13, 13);
             ZFBottomPoH.TabIndex = 159;
@@ -772,7 +451,7 @@
             ZFFreestandingPoH.FlatAppearance.BorderSize = 0;
             ZFFreestandingPoH.FlatStyle = FlatStyle.Flat;
             ZFFreestandingPoH.ForeColor = Color.Black;
-            ZFFreestandingPoH.Location = new Point(96, 485);
+            ZFFreestandingPoH.Location = new Point(768, 127);
             ZFFreestandingPoH.Name = "ZFFreestandingPoH";
             ZFFreestandingPoH.Size = new Size(13, 13);
             ZFFreestandingPoH.TabIndex = 158;
@@ -786,7 +465,7 @@
             ZFGreatFairy.FlatAppearance.BorderSize = 0;
             ZFGreatFairy.FlatStyle = FlatStyle.Flat;
             ZFGreatFairy.ForeColor = Color.Black;
-            ZFGreatFairy.Location = new Point(126, 510);
+            ZFGreatFairy.Location = new Point(840, 157);
             ZFGreatFairy.Name = "ZFGreatFairy";
             ZFGreatFairy.Size = new Size(13, 13);
             ZFGreatFairy.TabIndex = 157;
@@ -800,7 +479,7 @@
             ZRDivingGame.FlatAppearance.BorderSize = 0;
             ZRDivingGame.FlatStyle = FlatStyle.Flat;
             ZRDivingGame.ForeColor = Color.Black;
-            ZRDivingGame.Location = new Point(682, 236);
+            ZRDivingGame.Location = new Point(759, 278);
             ZRDivingGame.Name = "ZRDivingGame";
             ZRDivingGame.Size = new Size(13, 13);
             ZRDivingGame.TabIndex = 156;
@@ -814,7 +493,7 @@
             ZDChest.FlatAppearance.BorderSize = 0;
             ZDChest.FlatStyle = FlatStyle.Flat;
             ZDChest.ForeColor = Color.Black;
-            ZDChest.Location = new Point(676, 247);
+            ZDChest.Location = new Point(756, 290);
             ZDChest.Name = "ZDChest";
             ZDChest.Size = new Size(13, 13);
             ZDChest.TabIndex = 155;
@@ -828,7 +507,7 @@
             ZDKingZora.FlatAppearance.BorderSize = 0;
             ZDKingZora.FlatStyle = FlatStyle.Flat;
             ZDKingZora.ForeColor = Color.Black;
-            ZDKingZora.Location = new Point(87, 559);
+            ZDKingZora.Location = new Point(797, 243);
             ZDKingZora.Name = "ZDKingZora";
             ZDKingZora.Size = new Size(13, 13);
             ZDKingZora.TabIndex = 154;
@@ -842,7 +521,7 @@
             ZRPoHNearDomain.FlatAppearance.BorderSize = 0;
             ZRPoHNearDomain.FlatStyle = FlatStyle.Flat;
             ZRPoHNearDomain.ForeColor = Color.Black;
-            ZRPoHNearDomain.Location = new Point(632, 237);
+            ZRPoHNearDomain.Location = new Point(695, 315);
             ZRPoHNearDomain.Name = "ZRPoHNearDomain";
             ZRPoHNearDomain.Size = new Size(13, 13);
             ZRPoHNearDomain.TabIndex = 153;
@@ -856,11 +535,11 @@
             ZRFrogsGame.FlatAppearance.BorderSize = 0;
             ZRFrogsGame.FlatStyle = FlatStyle.Flat;
             ZRFrogsGame.ForeColor = Color.Black;
-            ZRFrogsGame.Location = new Point(606, 241);
+            ZRFrogsGame.Location = new Point(636, 331);
             ZRFrogsGame.Name = "ZRFrogsGame";
             ZRFrogsGame.Size = new Size(13, 13);
             ZRFrogsGame.TabIndex = 152;
-            toolTip1.SetToolTip(ZRFrogsGame, "Frogs Ocarina Game");
+            toolTip1.SetToolTip(ZRFrogsGame, "A<>v<>vAvAv><A");
             ZRFrogsGame.UseVisualStyleBackColor = false;
             // 
             // ZRFrogsStorms
@@ -870,7 +549,7 @@
             ZRFrogsStorms.FlatAppearance.BorderSize = 0;
             ZRFrogsStorms.FlatStyle = FlatStyle.Flat;
             ZRFrogsStorms.ForeColor = Color.Black;
-            ZRFrogsStorms.Location = new Point(594, 241);
+            ZRFrogsStorms.Location = new Point(636, 320);
             ZRFrogsStorms.Name = "ZRFrogsStorms";
             ZRFrogsStorms.Size = new Size(13, 13);
             ZRFrogsStorms.TabIndex = 151;
@@ -884,7 +563,7 @@
             ZROpenGrotto.FlatAppearance.BorderSize = 0;
             ZROpenGrotto.FlatStyle = FlatStyle.Flat;
             ZROpenGrotto.ForeColor = Color.Black;
-            ZROpenGrotto.Location = new Point(586, 259);
+            ZROpenGrotto.Location = new Point(618, 358);
             ZROpenGrotto.Name = "ZROpenGrotto";
             ZROpenGrotto.Size = new Size(13, 13);
             ZROpenGrotto.TabIndex = 150;
@@ -898,7 +577,7 @@
             ZRNearGrottoPoH.FlatAppearance.BorderSize = 0;
             ZRNearGrottoPoH.FlatStyle = FlatStyle.Flat;
             ZRNearGrottoPoH.ForeColor = Color.Black;
-            ZRNearGrottoPoH.Location = new Point(584, 243);
+            ZRNearGrottoPoH.Location = new Point(612, 330);
             ZRNearGrottoPoH.Name = "ZRNearGrottoPoH";
             ZRNearGrottoPoH.Size = new Size(13, 13);
             ZRNearGrottoPoH.TabIndex = 149;
@@ -912,7 +591,7 @@
             LLRPoH.FlatAppearance.BorderSize = 0;
             LLRPoH.FlatStyle = FlatStyle.Flat;
             LLRPoH.ForeColor = Color.Black;
-            LLRPoH.Location = new Point(402, 333);
+            LLRPoH.Location = new Point(434, 383);
             LLRPoH.Name = "LLRPoH";
             LLRPoH.Size = new Size(13, 13);
             LLRPoH.TabIndex = 148;
@@ -926,7 +605,7 @@
             LLRMalon.FlatAppearance.BorderSize = 0;
             LLRMalon.FlatStyle = FlatStyle.Flat;
             LLRMalon.ForeColor = Color.Black;
-            LLRMalon.Location = new Point(415, 326);
+            LLRMalon.Location = new Point(443, 374);
             LLRMalon.Name = "LLRMalon";
             LLRMalon.Size = new Size(13, 13);
             LLRMalon.TabIndex = 147;
@@ -940,7 +619,7 @@
             LLRTalon.FlatAppearance.BorderSize = 0;
             LLRTalon.FlatStyle = FlatStyle.Flat;
             LLRTalon.ForeColor = Color.Black;
-            LLRTalon.Location = new Point(431, 323);
+            LLRTalon.Location = new Point(457, 371);
             LLRTalon.Name = "LLRTalon";
             LLRTalon.Size = new Size(13, 13);
             LLRTalon.TabIndex = 146;
@@ -954,7 +633,7 @@
             HCGreatFairy.FlatAppearance.BorderSize = 0;
             HCGreatFairy.FlatStyle = FlatStyle.Flat;
             HCGreatFairy.ForeColor = Color.Black;
-            HCGreatFairy.Location = new Point(517, 122);
+            HCGreatFairy.Location = new Point(530, 182);
             HCGreatFairy.Name = "HCGreatFairy";
             HCGreatFairy.Size = new Size(13, 13);
             HCGreatFairy.TabIndex = 145;
@@ -968,7 +647,7 @@
             ToTShiek.FlatAppearance.BorderSize = 0;
             ToTShiek.FlatStyle = FlatStyle.Flat;
             ToTShiek.ForeColor = Color.Black;
-            ToTShiek.Location = new Point(528, 168);
+            ToTShiek.Location = new Point(572, 217);
             ToTShiek.Name = "ToTShiek";
             ToTShiek.Size = new Size(13, 13);
             ToTShiek.TabIndex = 144;
@@ -982,7 +661,7 @@
             ToTLACS.FlatAppearance.BorderSize = 0;
             ToTLACS.FlatStyle = FlatStyle.Flat;
             ToTLACS.ForeColor = Color.Black;
-            ToTLACS.Location = new Point(512, 168);
+            ToTLACS.Location = new Point(558, 218);
             ToTLACS.Name = "ToTLACS";
             ToTLACS.Size = new Size(13, 13);
             ToTLACS.TabIndex = 143;
@@ -996,7 +675,7 @@
             MarketBigPoes.FlatAppearance.BorderSize = 0;
             MarketBigPoes.FlatStyle = FlatStyle.Flat;
             MarketBigPoes.ForeColor = Color.Black;
-            MarketBigPoes.Location = new Point(332, 211);
+            MarketBigPoes.Location = new Point(484, 286);
             MarketBigPoes.Name = "MarketBigPoes";
             MarketBigPoes.Size = new Size(13, 13);
             MarketBigPoes.TabIndex = 142;
@@ -1010,7 +689,7 @@
             MarketRichard.FlatAppearance.BorderSize = 0;
             MarketRichard.FlatStyle = FlatStyle.Flat;
             MarketRichard.ForeColor = Color.Black;
-            MarketRichard.Location = new Point(432, 200);
+            MarketRichard.Location = new Point(426, 277);
             MarketRichard.Name = "MarketRichard";
             MarketRichard.Size = new Size(13, 13);
             MarketRichard.TabIndex = 141;
@@ -1024,7 +703,7 @@
             MarketTreasureChestGame.FlatAppearance.BorderSize = 0;
             MarketTreasureChestGame.FlatStyle = FlatStyle.Flat;
             MarketTreasureChestGame.ForeColor = Color.Black;
-            MarketTreasureChestGame.Location = new Point(456, 200);
+            MarketTreasureChestGame.Location = new Point(460, 278);
             MarketTreasureChestGame.Name = "MarketTreasureChestGame";
             MarketTreasureChestGame.Size = new Size(13, 13);
             MarketTreasureChestGame.TabIndex = 140;
@@ -1038,7 +717,7 @@
             MarketBombchuBowling.FlatAppearance.BorderSize = 0;
             MarketBombchuBowling.FlatStyle = FlatStyle.Flat;
             MarketBombchuBowling.ForeColor = Color.Black;
-            MarketBombchuBowling.Location = new Point(454, 189);
+            MarketBombchuBowling.Location = new Point(457, 254);
             MarketBombchuBowling.Name = "MarketBombchuBowling";
             MarketBombchuBowling.Size = new Size(13, 13);
             MarketBombchuBowling.TabIndex = 139;
@@ -1052,7 +731,7 @@
             MarketShootingGalleryReward.FlatAppearance.BorderSize = 0;
             MarketShootingGalleryReward.FlatStyle = FlatStyle.Flat;
             MarketShootingGalleryReward.ForeColor = Color.Black;
-            MarketShootingGalleryReward.Location = new Point(458, 178);
+            MarketShootingGalleryReward.Location = new Point(475, 240);
             MarketShootingGalleryReward.Name = "MarketShootingGalleryReward";
             MarketShootingGalleryReward.Size = new Size(13, 13);
             MarketShootingGalleryReward.TabIndex = 138;
@@ -1066,7 +745,7 @@
             HFOoT.FlatAppearance.BorderSize = 0;
             HFOoT.FlatStyle = FlatStyle.Flat;
             HFOoT.ForeColor = Color.Black;
-            HFOoT.Location = new Point(469, 239);
+            HFOoT.Location = new Point(488, 305);
             HFOoT.Name = "HFOoT";
             HFOoT.Size = new Size(13, 13);
             HFOoT.TabIndex = 137;
@@ -1080,7 +759,7 @@
             HFSalesman.FlatAppearance.BorderSize = 0;
             HFSalesman.FlatStyle = FlatStyle.Flat;
             HFSalesman.ForeColor = Color.Black;
-            HFSalesman.Location = new Point(386, 438);
+            HFSalesman.Location = new Point(419, 460);
             HFSalesman.Name = "HFSalesman";
             HFSalesman.Size = new Size(13, 13);
             HFSalesman.TabIndex = 136;
@@ -1094,7 +773,7 @@
             HFOpenGrottoChest.FlatAppearance.BorderSize = 0;
             HFOpenGrottoChest.FlatStyle = FlatStyle.Flat;
             HFOpenGrottoChest.ForeColor = Color.Black;
-            HFOpenGrottoChest.Location = new Point(402, 435);
+            HFOpenGrottoChest.Location = new Point(433, 459);
             HFOpenGrottoChest.Name = "HFOpenGrottoChest";
             HFOpenGrottoChest.Size = new Size(13, 13);
             HFOpenGrottoChest.TabIndex = 135;
@@ -1108,7 +787,7 @@
             HFSoutheastGrottoChest.FlatAppearance.BorderSize = 0;
             HFSoutheastGrottoChest.FlatStyle = FlatStyle.Flat;
             HFSoutheastGrottoChest.ForeColor = Color.Black;
-            HFSoutheastGrottoChest.Location = new Point(468, 413);
+            HFSoutheastGrottoChest.Location = new Point(479, 445);
             HFSoutheastGrottoChest.Name = "HFSoutheastGrottoChest";
             HFSoutheastGrottoChest.Size = new Size(13, 13);
             HFSoutheastGrottoChest.TabIndex = 134;
@@ -1122,7 +801,7 @@
             HFTektikeGrottoPoH.FlatAppearance.BorderSize = 0;
             HFTektikeGrottoPoH.FlatStyle = FlatStyle.Flat;
             HFTektikeGrottoPoH.ForeColor = Color.Black;
-            HFTektikeGrottoPoH.Location = new Point(385, 256);
+            HFTektikeGrottoPoH.Location = new Point(420, 326);
             HFTektikeGrottoPoH.Name = "HFTektikeGrottoPoH";
             HFTektikeGrottoPoH.Size = new Size(13, 13);
             HFTektikeGrottoPoH.TabIndex = 133;
@@ -1136,7 +815,7 @@
             HFNearMarketGrottoChest.FlatAppearance.BorderSize = 0;
             HFNearMarketGrottoChest.FlatStyle = FlatStyle.Flat;
             HFNearMarketGrottoChest.ForeColor = Color.Black;
-            HFNearMarketGrottoChest.Location = new Point(442, 243);
+            HFNearMarketGrottoChest.Location = new Point(463, 306);
             HFNearMarketGrottoChest.Name = "HFNearMarketGrottoChest";
             HFNearMarketGrottoChest.Size = new Size(13, 13);
             HFNearMarketGrottoChest.TabIndex = 132;
@@ -1150,7 +829,7 @@
             SFMShiek.FlatAppearance.BorderSize = 0;
             SFMShiek.FlatStyle = FlatStyle.Flat;
             SFMShiek.ForeColor = Color.Black;
-            SFMShiek.Location = new Point(596, 329);
+            SFMShiek.Location = new Point(705, 380);
             SFMShiek.Name = "SFMShiek";
             SFMShiek.Size = new Size(13, 13);
             SFMShiek.TabIndex = 131;
@@ -1164,7 +843,7 @@
             SFMSaria.FlatAppearance.BorderSize = 0;
             SFMSaria.FlatStyle = FlatStyle.Flat;
             SFMSaria.ForeColor = Color.Black;
-            SFMSaria.Location = new Point(600, 316);
+            SFMSaria.Location = new Point(711, 371);
             SFMSaria.Name = "SFMSaria";
             SFMSaria.Size = new Size(13, 13);
             SFMSaria.TabIndex = 130;
@@ -1178,7 +857,7 @@
             SFMWolfosGrotto.FlatAppearance.BorderSize = 0;
             SFMWolfosGrotto.FlatStyle = FlatStyle.Flat;
             SFMWolfosGrotto.ForeColor = Color.Black;
-            SFMWolfosGrotto.Location = new Point(594, 393);
+            SFMWolfosGrotto.Location = new Point(693, 485);
             SFMWolfosGrotto.Name = "SFMWolfosGrotto";
             SFMWolfosGrotto.Size = new Size(13, 13);
             SFMWolfosGrotto.TabIndex = 129;
@@ -1192,7 +871,7 @@
             LWScrubGrottoFront.FlatAppearance.BorderSize = 0;
             LWScrubGrottoFront.FlatStyle = FlatStyle.Flat;
             LWScrubGrottoFront.ForeColor = Color.Black;
-            LWScrubGrottoFront.Location = new Point(592, 407);
+            LWScrubGrottoFront.Location = new Point(686, 497);
             LWScrubGrottoFront.Name = "LWScrubGrottoFront";
             LWScrubGrottoFront.Size = new Size(13, 13);
             LWScrubGrottoFront.TabIndex = 128;
@@ -1206,7 +885,7 @@
             LWSkullMask.FlatAppearance.BorderSize = 0;
             LWSkullMask.FlatStyle = FlatStyle.Flat;
             LWSkullMask.ForeColor = Color.Black;
-            LWSkullMask.Location = new Point(580, 419);
+            LWSkullMask.Location = new Point(663, 532);
             LWSkullMask.Name = "LWSkullMask";
             LWSkullMask.Size = new Size(13, 13);
             LWSkullMask.TabIndex = 127;
@@ -1220,7 +899,7 @@
             LWNearShortcutGrottoChest.FlatAppearance.BorderSize = 0;
             LWNearShortcutGrottoChest.FlatStyle = FlatStyle.Flat;
             LWNearShortcutGrottoChest.ForeColor = Color.Black;
-            LWNearShortcutGrottoChest.Location = new Point(596, 429);
+            LWNearShortcutGrottoChest.Location = new Point(691, 561);
             LWNearShortcutGrottoChest.Name = "LWNearShortcutGrottoChest";
             LWNearShortcutGrottoChest.Size = new Size(13, 13);
             LWNearShortcutGrottoChest.TabIndex = 126;
@@ -1234,7 +913,7 @@
             LWTarget.FlatAppearance.BorderSize = 0;
             LWTarget.FlatStyle = FlatStyle.Flat;
             LWTarget.ForeColor = Color.Black;
-            LWTarget.Location = new Point(599, 441);
+            LWTarget.Location = new Point(702, 598);
             LWTarget.Name = "LWTarget";
             LWTarget.Size = new Size(13, 13);
             LWTarget.TabIndex = 125;
@@ -1248,7 +927,7 @@
             LWOcarinaGame.FlatAppearance.BorderSize = 0;
             LWOcarinaGame.FlatStyle = FlatStyle.Flat;
             LWOcarinaGame.ForeColor = Color.Black;
-            LWOcarinaGame.Location = new Point(599, 453);
+            LWOcarinaGame.Location = new Point(697, 616);
             LWOcarinaGame.Name = "LWOcarinaGame";
             LWOcarinaGame.Size = new Size(13, 13);
             LWOcarinaGame.TabIndex = 124;
@@ -1262,7 +941,7 @@
             LWSkullKid.FlatAppearance.BorderSize = 0;
             LWSkullKid.FlatStyle = FlatStyle.Flat;
             LWSkullKid.ForeColor = Color.Black;
-            LWSkullKid.Location = new Point(547, 443);
+            LWSkullKid.Location = new Point(604, 587);
             LWSkullKid.Name = "LWSkullKid";
             LWSkullKid.Size = new Size(13, 13);
             LWSkullKid.TabIndex = 123;
@@ -1276,7 +955,7 @@
             LWScrubNearBridge.FlatAppearance.BorderSize = 0;
             LWScrubNearBridge.FlatStyle = FlatStyle.Flat;
             LWScrubNearBridge.ForeColor = Color.Black;
-            LWScrubNearBridge.Location = new Point(545, 485);
+            LWScrubNearBridge.Location = new Point(598, 685);
             LWScrubNearBridge.Name = "LWScrubNearBridge";
             LWScrubNearBridge.Size = new Size(13, 13);
             LWScrubNearBridge.TabIndex = 122;
@@ -1290,7 +969,7 @@
             KFStormGrottoChest.FlatAppearance.BorderSize = 0;
             KFStormGrottoChest.FlatStyle = FlatStyle.Flat;
             KFStormGrottoChest.ForeColor = Color.Black;
-            KFStormGrottoChest.Location = new Point(573, 457);
+            KFStormGrottoChest.Location = new Point(629, 649);
             KFStormGrottoChest.Name = "KFStormGrottoChest";
             KFStormGrottoChest.Size = new Size(13, 13);
             KFStormGrottoChest.TabIndex = 121;
@@ -1304,7 +983,7 @@
             KFKokiriSwordChest.FlatAppearance.BorderSize = 0;
             KFKokiriSwordChest.FlatStyle = FlatStyle.Flat;
             KFKokiriSwordChest.ForeColor = Color.Black;
-            KFKokiriSwordChest.Location = new Point(582, 519);
+            KFKokiriSwordChest.Location = new Point(634, 709);
             KFKokiriSwordChest.Name = "KFKokiriSwordChest";
             KFKokiriSwordChest.Size = new Size(13, 13);
             KFKokiriSwordChest.TabIndex = 120;
@@ -1318,7 +997,7 @@
             KFMidos.FlatAppearance.BorderSize = 0;
             KFMidos.FlatStyle = FlatStyle.Flat;
             KFMidos.ForeColor = Color.Black;
-            KFMidos.Location = new Point(577, 468);
+            KFMidos.Location = new Point(631, 661);
             KFMidos.Name = "KFMidos";
             KFMidos.Size = new Size(13, 13);
             KFMidos.TabIndex = 119;
@@ -1332,7 +1011,7 @@
             OGCGreatFairy.FlatAppearance.BorderSize = 0;
             OGCGreatFairy.FlatStyle = FlatStyle.Flat;
             OGCGreatFairy.ForeColor = Color.Black;
-            OGCGreatFairy.Location = new Point(368, 114);
+            OGCGreatFairy.Location = new Point(473, 127);
             OGCGreatFairy.Name = "OGCGreatFairy";
             OGCGreatFairy.Size = new Size(13, 13);
             OGCGreatFairy.TabIndex = 118;
@@ -1346,7 +1025,7 @@
             ColossusPoH.FlatAppearance.BorderSize = 0;
             ColossusPoH.FlatStyle = FlatStyle.Flat;
             ColossusPoH.ForeColor = Color.Black;
-            ColossusPoH.Location = new Point(20, 225);
+            ColossusPoH.Location = new Point(21, 352);
             ColossusPoH.Name = "ColossusPoH";
             ColossusPoH.Size = new Size(13, 13);
             ColossusPoH.TabIndex = 117;
@@ -1360,7 +1039,7 @@
             ColossusShiek.FlatAppearance.BorderSize = 0;
             ColossusShiek.FlatStyle = FlatStyle.Flat;
             ColossusShiek.ForeColor = Color.Black;
-            ColossusShiek.Location = new Point(8, 225);
+            ColossusShiek.Location = new Point(11, 356);
             ColossusShiek.Name = "ColossusShiek";
             ColossusShiek.Size = new Size(13, 13);
             ColossusShiek.TabIndex = 116;
@@ -1374,7 +1053,7 @@
             ColossusGreatFairy.FlatAppearance.BorderSize = 0;
             ColossusGreatFairy.FlatStyle = FlatStyle.Flat;
             ColossusGreatFairy.ForeColor = Color.Black;
-            ColossusGreatFairy.Location = new Point(49, 206);
+            ColossusGreatFairy.Location = new Point(39, 328);
             ColossusGreatFairy.Name = "ColossusGreatFairy";
             ColossusGreatFairy.Size = new Size(13, 13);
             ColossusGreatFairy.TabIndex = 115;
@@ -1388,7 +1067,7 @@
             GVCratePoH.FlatAppearance.BorderSize = 0;
             GVCratePoH.FlatStyle = FlatStyle.Flat;
             GVCratePoH.ForeColor = Color.Black;
-            GVCratePoH.Location = new Point(273, 320);
+            GVCratePoH.Location = new Point(322, 498);
             GVCratePoH.Name = "GVCratePoH";
             GVCratePoH.Size = new Size(13, 13);
             GVCratePoH.TabIndex = 114;
@@ -1402,7 +1081,7 @@
             GVWaterFallPoH.FlatAppearance.BorderSize = 0;
             GVWaterFallPoH.FlatStyle = FlatStyle.Flat;
             GVWaterFallPoH.ForeColor = Color.Black;
-            GVWaterFallPoH.Location = new Point(274, 299);
+            GVWaterFallPoH.Location = new Point(349, 440);
             GVWaterFallPoH.Name = "GVWaterFallPoH";
             GVWaterFallPoH.Size = new Size(13, 13);
             GVWaterFallPoH.TabIndex = 113;
@@ -1416,7 +1095,7 @@
             GVChest.FlatAppearance.BorderSize = 0;
             GVChest.FlatStyle = FlatStyle.Flat;
             GVChest.ForeColor = Color.Black;
-            GVChest.Location = new Point(258, 318);
+            GVChest.Location = new Point(308, 484);
             GVChest.Name = "GVChest";
             GVChest.Size = new Size(13, 13);
             GVChest.TabIndex = 112;
@@ -1430,7 +1109,7 @@
             HBA.FlatAppearance.BorderSize = 0;
             HBA.FlatStyle = FlatStyle.Flat;
             HBA.ForeColor = Color.Black;
-            HBA.Location = new Point(243, 287);
+            HBA.Location = new Point(361, 291);
             HBA.Name = "HBA";
             HBA.Size = new Size(13, 13);
             HBA.TabIndex = 111;
@@ -1444,7 +1123,7 @@
             GFChest.FlatAppearance.BorderSize = 0;
             GFChest.FlatStyle = FlatStyle.Flat;
             GFChest.ForeColor = Color.Black;
-            GFChest.Location = new Point(218, 270);
+            GFChest.Location = new Point(286, 266);
             GFChest.Name = "GFChest";
             GFChest.Size = new Size(13, 13);
             GFChest.TabIndex = 110;
@@ -1458,12 +1137,28 @@
             WastelandChest.FlatAppearance.BorderSize = 0;
             WastelandChest.FlatStyle = FlatStyle.Flat;
             WastelandChest.ForeColor = Color.Black;
-            WastelandChest.Location = new Point(131, 212);
+            WastelandChest.Location = new Point(114, 273);
             WastelandChest.Name = "WastelandChest";
             WastelandChest.Size = new Size(13, 13);
             WastelandChest.TabIndex = 109;
             toolTip1.SetToolTip(WastelandChest, "Wasteland Chest");
             WastelandChest.UseVisualStyleBackColor = false;
+            // 
+            // Ice_Button
+            // 
+            Ice_Button.BackColor = Color.Red;
+            Ice_Button.FlatAppearance.BorderColor = Color.Black;
+            Ice_Button.FlatAppearance.BorderSize = 0;
+            Ice_Button.FlatStyle = FlatStyle.Flat;
+            Ice_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
+            Ice_Button.ForeColor = Color.Black;
+            Ice_Button.Location = new Point(716, 151);
+            Ice_Button.Name = "Ice_Button";
+            Ice_Button.Size = new Size(24, 24);
+            Ice_Button.TabIndex = 184;
+            Ice_Button.Text = "region_Button_Dense2";
+            toolTip1.SetToolTip(Ice_Button, "Ice Cavern");
+            Ice_Button.UseVisualStyleBackColor = false;
             // 
             // Spirit_Button
             // 
@@ -1472,7 +1167,7 @@
             Spirit_Button._checksquare = Color.Lime;
             Spirit_Button.BackColor = Color.Transparent;
             Spirit_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Spirit_Button.Location = new Point(1, 177);
+            Spirit_Button.Location = new Point(0, 293);
             Spirit_Button.Name = "Spirit_Button";
             Spirit_Button.Size = new Size(30, 30);
             Spirit_Button.TabIndex = 215;
@@ -1486,7 +1181,7 @@
             Forest_Button._checksquare = Color.Red;
             Forest_Button.BackColor = Color.Transparent;
             Forest_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Forest_Button.Location = new Point(590, 287);
+            Forest_Button.Location = new Point(698, 345);
             Forest_Button.Name = "Forest_Button";
             Forest_Button.Size = new Size(30, 30);
             Forest_Button.TabIndex = 216;
@@ -1500,7 +1195,7 @@
             DC_Button._checksquare = Color.Red;
             DC_Button.BackColor = Color.Transparent;
             DC_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            DC_Button.Location = new Point(558, 100);
+            DC_Button.Location = new Point(590, 204);
             DC_Button.Name = "DC_Button";
             DC_Button.Size = new Size(30, 30);
             DC_Button.TabIndex = 217;
@@ -1514,28 +1209,12 @@
             Jabu_Button._checksquare = Color.Red;
             Jabu_Button.BackColor = Color.Transparent;
             Jabu_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Jabu_Button.Location = new Point(682, 177);
+            Jabu_Button.Location = new Point(758, 175);
             Jabu_Button.Name = "Jabu_Button";
             Jabu_Button.Size = new Size(30, 30);
             Jabu_Button.TabIndex = 218;
             Jabu_Button.Text = "dungeonButton1";
             Jabu_Button.UseVisualStyleBackColor = false;
-            // 
-            // Ice_Button
-            // 
-            Ice_Button.BackColor = Color.Red;
-            Ice_Button.FlatAppearance.BorderColor = Color.Black;
-            Ice_Button.FlatAppearance.BorderSize = 0;
-            Ice_Button.FlatStyle = FlatStyle.Flat;
-            Ice_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Ice_Button.ForeColor = Color.Black;
-            Ice_Button.Location = new Point(48, 481);
-            Ice_Button.Name = "Ice_Button";
-            Ice_Button.Size = new Size(24, 24);
-            Ice_Button.TabIndex = 184;
-            Ice_Button.Text = "region_Button_Dense2";
-            toolTip1.SetToolTip(Ice_Button, "Ice Cavern");
-            Ice_Button.UseVisualStyleBackColor = false;
             // 
             // Water_Button
             // 
@@ -1544,7 +1223,7 @@
             Water_Button._checksquare = Color.Red;
             Water_Button.BackColor = Color.Transparent;
             Water_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Water_Button.Location = new Point(199, 574);
+            Water_Button.Location = new Point(419, 655);
             Water_Button.Name = "Water_Button";
             Water_Button.Size = new Size(30, 30);
             Water_Button.TabIndex = 219;
@@ -1558,7 +1237,7 @@
             Fire_Button._checksquare = Color.Red;
             Fire_Button.BackColor = Color.Transparent;
             Fire_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Fire_Button.Location = new Point(584, -3);
+            Fire_Button.Location = new Point(584, 26);
             Fire_Button.Name = "Fire_Button";
             Fire_Button.Size = new Size(30, 30);
             Fire_Button.TabIndex = 220;
@@ -1572,7 +1251,7 @@
             Deku_Button._checksquare = Color.Red;
             Deku_Button.BackColor = Color.Transparent;
             Deku_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Deku_Button.Location = new Point(653, 447);
+            Deku_Button.Location = new Point(708, 636);
             Deku_Button.Name = "Deku_Button";
             Deku_Button.Size = new Size(30, 30);
             Deku_Button.TabIndex = 221;
@@ -1586,7 +1265,7 @@
             Shadow_Button._checksquare = Color.Red;
             Shadow_Button.BackColor = Color.Transparent;
             Shadow_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Shadow_Button.Location = new Point(646, 214);
+            Shadow_Button.Location = new Point(717, 259);
             Shadow_Button.Name = "Shadow_Button";
             Shadow_Button.Size = new Size(30, 30);
             Shadow_Button.TabIndex = 221;
@@ -1600,7 +1279,7 @@
             GanonsCastle_Button._checksquare = Color.Red;
             GanonsCastle_Button.BackColor = Color.Transparent;
             GanonsCastle_Button.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            GanonsCastle_Button.Location = new Point(324, 91);
+            GanonsCastle_Button.Location = new Point(408, 134);
             GanonsCastle_Button.Name = "GanonsCastle_Button";
             GanonsCastle_Button.Size = new Size(30, 30);
             GanonsCastle_Button.TabIndex = 221;
@@ -1611,7 +1290,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.hyrule;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(GanonsCastle_Button);
             Controls.Add(Shadow_Button);
             Controls.Add(Deku_Button);
@@ -1621,30 +1301,7 @@
             Controls.Add(DC_Button);
             Controls.Add(Forest_Button);
             Controls.Add(Spirit_Button);
-            Controls.Add(HC_Button);
             Controls.Add(ToT_Button2);
-            Controls.Add(ToT_Button1);
-            Controls.Add(Market_Button1);
-            Controls.Add(Market_Button2);
-            Controls.Add(SFM_Button);
-            Controls.Add(DMT_Button);
-            Controls.Add(ZoraRiver_Button);
-            Controls.Add(ZoraDomain_Button);
-            Controls.Add(ZoraDomain_Button2);
-            Controls.Add(KokiriForest_Button);
-            Controls.Add(LostWoods_Button);
-            Controls.Add(LakeHylia_Button1);
-            Controls.Add(GerudoFortress_Button);
-            Controls.Add(GerudoValley_Button);
-            Controls.Add(LLR_Button);
-            Controls.Add(HyruleField_Button);
-            Controls.Add(Colossus_Button);
-            Controls.Add(DMC_Button);
-            Controls.Add(OGC_Button);
-            Controls.Add(ZoraFountain_Button2);
-            Controls.Add(ZoraFountain_Button1);
-            Controls.Add(LakeHylia_Button2);
-            Controls.Add(Wasteland_Button);
             Controls.Add(GoronCity_Button);
             Controls.Add(Ice_Button);
             Controls.Add(Graveyard_Button);
@@ -1718,37 +1375,14 @@
             Controls.Add(HBA);
             Controls.Add(GFChest);
             Controls.Add(WastelandChest);
+            DoubleBuffered = true;
             Name = "Maptracker";
-            Size = new Size(760, 668);
+            Size = new Size(857, 728);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private RegionButton DMC_Button;
-        private RegionButton DMT_Button;
-        private RegionButton HC_Button;
-        private RegionButton OGC_Button;
         private RegionButton ToT_Button2;
-        private RegionButton ToT_Button1;
-        private RegionButton Market_Button1;
-        private RegionButton Market_Button2;
-        private RegionButton ZoraFountain_Button2;
-        private RegionButton ZoraDomain_Button2;
-        private RegionButton ZoraFountain_Button1;
-        private RegionButton ZoraDomain_Button;
-        private RegionButton ZoraRiver_Button;
-        private RegionButton SFM_Button;
-        private RegionButton KokiriForest_Button;
-        private RegionButton LostWoods_Button;
-        private RegionButton LakeHylia_Button2;
-        private RegionButton LakeHylia_Button1;
-        private RegionButton GerudoFortress_Button;
-        private RegionButton GerudoValley_Button;
-        private RegionButton LLR_Button;
-        private RegionButton HyruleField_Button;
-        private RegionButton Colossus_Button;
-        private RegionButton Wasteland_Button;      
         private Region_Button_Dense GoronCity_Button;
         private Region_Button_Dense Graveyard_Button;
         private Region_Button_Dense GTG_Button;
