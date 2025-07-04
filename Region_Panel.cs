@@ -11,7 +11,7 @@ namespace CeddyMapTracker
         public Region_Panel(List<Region_Panel_Check> _checks, string _name)
         {
             Size = new Size(300, 550);        
-            Location = new Point(240, 40);
+            Location = new Point(278, 40);
             BackColor = Color.Black;
             AutoScroll = true;
             Label label = new()

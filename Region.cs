@@ -60,7 +60,7 @@ namespace CeddyMapTracker
         {
             if (e.Button == MouseButtons.Left)
             {
-                Panel panel = new() { Location = new Point(0, 0), Size = new Size(760, 668) , BackColor = Color.FromArgb(160, Color.Black) };                              
+                Panel panel = new() { Location = new Point(0, 0), Size = new Size(857, 728) , BackColor = Color.FromArgb(160, Color.Black) };                              
                 panel.MouseDown += (sender, e) => DeletePanel(panel, region_panel);
                 maptracker.Controls.Add(panel);
                 panel.BringToFront();

@@ -7,7 +7,7 @@ namespace CeddyMapTracker
         public Form1()
         {        
             InitializeComponent();                                        
-            WOTHPanel wothPanel = new(new Point(380,0));
+            WOTHPanel wothPanel = new(new Point(380,0)) { Goal_Count = 5};
             AlwaysHints alwaysHints = new(new Point(420, 150));
             SometimesHints SometimesHints = new(new Point(420, 360));
             Stats stats = new(new Point(0, 700));
@@ -26,18 +26,19 @@ namespace CeddyMapTracker
             Controls.Add(stats);
             Controls.Add(settingsbutton);
             Controls.Add(itemPanel);
-            Controls.Add(settingspanel);          
+            Controls.Add(settingspanel);            
             itemPanel.LoadItems();
             itemPanel.LoadEquips();
             itemPanel.LoadQuestItems();
             itemPanel.LoadSongs();
-            Controls.Add(keys);                
+            Controls.Add(keys);          
             List<Keys> SmallKeys = [keys.Forest_SmallKeys, keys.Fire_SmallKeys, keys.Water_SmallKeys, keys.Shadow_SmallKeys, keys.Spirit_SmallKeys, keys.BotW_SmallKeys, keys.GTG_SmallKeys];
             List<Item> BossKeys = [itemPanel.ForestBossKey, itemPanel.FireBossKey, itemPanel.WaterBossKey, itemPanel.ShadowBossKey, itemPanel.SpiritBossKey];                    
             keys.LoadSmallKeys(SmallKeys);
             keys.LoadBossKeys(BossKeys);
             //Precise locations
-            stats.Location = new Point(maptracker.Location.X, maptracker.Size.Height + 1);
+            stats.Location = new Point(maptracker.Location.X, maptracker.Location.Y);
+            stats.BringToFront();
             alwaysHints.Location = new Point(wothPanel.Location.X, wothPanel.Size.Height + 1);
             SometimesHints.Location = new Point(alwaysHints.Location.X, alwaysHints.Size.Height + alwaysHints.Location.Y + 1);
             //Controls.Add(dungeoncounter);
@@ -55,6 +56,11 @@ namespace CeddyMapTracker
             keys.ValueChanged += (sender, e) => maptracker.ItemLogic(itemPanel, keys);
             keys.ValueChanged += (sender, e) => maptracker.UpdateStatVariables(stats);
             keys.ValueChanged += (sender, e) => stats.UpdateChecksAvailable();
-        }                         
+            //Settingspanel assign functions
+            settingspanel.button1.MouseDown += (sender,e) => settingspanel.ConfirmSettings(this, new Point(380,0));
+            
+        }
+
+        
     }
 }

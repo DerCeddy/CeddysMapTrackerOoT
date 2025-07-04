@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace CeddyMapTracker
 {
@@ -33,10 +35,151 @@ namespace CeddyMapTracker
         public List<Check> HC_Check_List;
         public List<Check> OGC_Check_List;
         public List<Check> ToT_Check_List;
+        public class Settings
+        {
+            [JsonProperty("CheckName")]
+            public required CheckName checkname;
+        }
+        public class CheckName
+        {
+            public string ?WastelandChest;
+            public string ?ColossusShiek;
+            public string ?ColossusPoH;
+            public string ?ColossusGreatFairy;
+            public string ?GFChest;
+            public string ?HBA;
+            public string ?GVWaterFallPoH;
+            public string ?GVCratePoH;
+            public string ?GVChest;
+            public string ?LHLabDive;
+            public string ?LHFreestandingPoH;
+            public string ?LHUnderwaterItem;
+            public string ?LHChildFishing;
+            public string ?LHAdultFishing;
+            public string ?LHShootTheSun;
+            public string ?HFTektikeGrottoPoH;
+            public string ?HFNearMarketGrottoChest;
+            public string ?HFOoT;
+            public string ?HFSoutheastGrottoChest;
+            public string ?HFOpenGrottoChest;
+            public string ?HFSalesman;
+            public string ?MarketShootingGalleryReward;
+            public string ?MarketRichard;
+            public string ?MarketTreasureChestGame;
+            public string ?ToTLACS;
+            public string ?ToTShiek;
+            public string ?HCGreatFairy;
+            public string ?OGCGreatFairy;
+            public string ?DMTPoH;
+            public string ?DMTChest;
+            public string ?DMTStormsGrotto;
+            public string ?DMTGreatFairy;
+            public string ?DMTBiggoron;
+            public string ?DMCWallPoH;
+            public string ?DMCUpperGrotto;
+            public string ?DMCShiek;
+            public string ?DMCVolcanoPoH;
+            public string ?DMCGreatFairy;
+            public string ?ZROpenGrotto;
+            public string ?ZRNearGrottoPoH;
+            public string ?ZRPoHNearDomain;
+            public string ?ZRFrogsStorms;
+            public string ?ZRFrogsGame;
+            public string ?ZDChest;
+            public string ?ZRDivingGame;
+            public string ?ZDKingZora;
+            public string ?ZFGreatFairy;
+            public string ?ZFFreestandingPoH;
+            public string ?ZFBottomPoH;
+            public string ?KFMidos;
+            public string ?KFKokiriSwordChest;
+            public string ?KFStormGrottoChest;
+            public string ?LWScrubNearBridge;
+            public string ?LWSkullKid;
+            public string ?LWOcarinaGame;
+            public string ?LWTarget;
+            public string ?LWNearShortcutGrottoChest;
+            public string ?LWSkullMask;
+            public string ?LWScrubGrottoFront;
+            public string ?SFMWolfosGrotto;
+            public string ?SFMSaria;
+            public string ?SFMShiek;
+            public string? LLRTalon;
+            public string? LLRMalon;
+            public string? LLRPoH;
+        }
         public Maptracker(WOTHPanel wothPanel, Point location, Stats stats)
         {
             InitializeComponent();
             Location = location;
+            StreamReader r = new("checknames.json");
+            string json = r.ReadToEnd();
+            Settings Konfig = JsonConvert.DeserializeObject<Settings>(json);                    
+            toolTip1.SetToolTip(WastelandChest, Konfig.checkname.WastelandChest);         
+            toolTip1.SetToolTip(ColossusShiek, Konfig.checkname.ColossusShiek);
+            toolTip1.SetToolTip(ColossusPoH, Konfig.checkname.ColossusPoH);
+            toolTip1.SetToolTip(ColossusGreatFairy, Konfig.checkname.ColossusGreatFairy);
+            toolTip1.SetToolTip(GFChest, Konfig.checkname.GFChest);
+            toolTip1.SetToolTip(HBA, Konfig.checkname.HBA);
+            toolTip1.SetToolTip(GVWaterFallPoH, Konfig.checkname.GVWaterFallPoH);
+            toolTip1.SetToolTip(GVCratePoH, Konfig.checkname.GVCratePoH);
+            toolTip1.SetToolTip(GVChest, Konfig.checkname.GVChest);
+            toolTip1.SetToolTip(LHLabDive, Konfig.checkname.LHLabDive);
+            toolTip1.SetToolTip(LHFreestandingPoH, Konfig.checkname.LHFreestandingPoH);
+            toolTip1.SetToolTip(LHUnderwaterItem, Konfig.checkname.LHUnderwaterItem);
+            toolTip1.SetToolTip(LHChildFishing, Konfig.checkname.LHChildFishing);
+            toolTip1.SetToolTip(LHAdultFishing, Konfig.checkname.LHAdultFishing);
+            toolTip1.SetToolTip(LHShootTheSun, Konfig.checkname.LHShootTheSun);
+            toolTip1.SetToolTip(HFTektikeGrottoPoH, Konfig.checkname.HFTektikeGrottoPoH);
+            toolTip1.SetToolTip(HFNearMarketGrottoChest, Konfig.checkname.HFNearMarketGrottoChest);
+            toolTip1.SetToolTip(HFOoT, Konfig.checkname.HFOoT);
+            toolTip1.SetToolTip(HFSoutheastGrottoChest, Konfig.checkname.HFSoutheastGrottoChest);
+            toolTip1.SetToolTip(HFOpenGrottoChest, Konfig.checkname.HFOpenGrottoChest);
+            toolTip1.SetToolTip(HFSalesman, Konfig.checkname.HFSalesman);
+            toolTip1.SetToolTip(MarketShootingGalleryReward, Konfig.checkname.MarketShootingGalleryReward);
+            toolTip1.SetToolTip(MarketRichard, Konfig.checkname.MarketRichard);
+            toolTip1.SetToolTip(MarketTreasureChestGame, Konfig.checkname.MarketTreasureChestGame);
+            toolTip1.SetToolTip(ToTLACS, Konfig.checkname.ToTLACS);
+            toolTip1.SetToolTip(ToTShiek, Konfig.checkname.ToTShiek);
+            toolTip1.SetToolTip(HCGreatFairy, Konfig.checkname.HCGreatFairy);
+            toolTip1.SetToolTip(OGCGreatFairy, Konfig.checkname.OGCGreatFairy);
+            toolTip1.SetToolTip(DMTPoH, Konfig.checkname.DMTPoH);
+            toolTip1.SetToolTip(DMTChest, Konfig.checkname.DMTChest);
+            toolTip1.SetToolTip(DMTStormsGrotto, Konfig.checkname.DMTStormsGrotto);
+            toolTip1.SetToolTip(DMTGreatFairy, Konfig.checkname.DMTGreatFairy);
+            toolTip1.SetToolTip(DMTBiggoron, Konfig.checkname.DMTBiggoron);
+            toolTip1.SetToolTip(DMCWallPoH, Konfig.checkname.DMCWallPoH);
+            toolTip1.SetToolTip(DMCUpperGrotto, Konfig.checkname.DMCUpperGrotto);
+            toolTip1.SetToolTip(DMCShiek, Konfig.checkname.DMCShiek);
+            toolTip1.SetToolTip(DMCVolcanoPoH, Konfig.checkname.DMCVolcanoPoH);
+            toolTip1.SetToolTip(DMCGreatFairy, Konfig.checkname.DMCGreatFairy);
+            toolTip1.SetToolTip(ZROpenGrotto, Konfig.checkname.ZROpenGrotto);
+            toolTip1.SetToolTip(ZRNearGrottoPoH, Konfig.checkname.ZRNearGrottoPoH);
+            toolTip1.SetToolTip(ZRPoHNearDomain, Konfig.checkname.ZRPoHNearDomain);
+            toolTip1.SetToolTip(ZRFrogsStorms, Konfig.checkname.ZRFrogsStorms);
+            toolTip1.SetToolTip(ZRFrogsGame, Konfig.checkname.ZRFrogsGame);
+            toolTip1.SetToolTip(ZDChest, Konfig.checkname.ZDChest);
+            toolTip1.SetToolTip(ZRDivingGame, Konfig.checkname.ZRDivingGame);
+            toolTip1.SetToolTip(ZDKingZora, Konfig.checkname.ZDKingZora);
+            toolTip1.SetToolTip(ZFGreatFairy, Konfig.checkname.ZFGreatFairy);
+            toolTip1.SetToolTip(ZFFreestandingPoH, Konfig.checkname.ZFFreestandingPoH);
+            toolTip1.SetToolTip(ZFBottomPoH, Konfig.checkname.ZFBottomPoH);
+            toolTip1.SetToolTip(KFMidos, Konfig.checkname.KFMidos);
+            toolTip1.SetToolTip(KFKokiriSwordChest, Konfig.checkname.KFKokiriSwordChest);
+            toolTip1.SetToolTip(KFStormGrottoChest, Konfig.checkname.KFStormGrottoChest);
+            toolTip1.SetToolTip(LWScrubNearBridge, Konfig.checkname.LWScrubNearBridge);
+            toolTip1.SetToolTip(LWSkullKid, Konfig.checkname.LWSkullKid);
+            toolTip1.SetToolTip(LWOcarinaGame, Konfig.checkname.LWOcarinaGame);
+            toolTip1.SetToolTip(LWTarget, Konfig.checkname.LWTarget);
+            toolTip1.SetToolTip(LWNearShortcutGrottoChest, Konfig.checkname.LWNearShortcutGrottoChest);
+            toolTip1.SetToolTip(LWSkullMask, Konfig.checkname.LWSkullMask);
+            toolTip1.SetToolTip(LWScrubGrottoFront, Konfig.checkname.LWScrubGrottoFront);
+            toolTip1.SetToolTip(SFMWolfosGrotto, Konfig.checkname.SFMWolfosGrotto);
+            toolTip1.SetToolTip(SFMSaria, Konfig.checkname.SFMSaria);
+            toolTip1.SetToolTip(SFMShiek, Konfig.checkname.SFMShiek);
+            toolTip1.SetToolTip(LLRTalon, Konfig.checkname.LLRTalon);
+            toolTip1.SetToolTip(LLRMalon, Konfig.checkname.LLRMalon);
+            toolTip1.SetToolTip(LLRPoH, Konfig.checkname.LLRPoH);
             //Assign checks to check list
             List<Region_Panel_Check> ForestTemple_Check_List = [ForestFirstRoomChest, ForestFirstStalfosRoomChest, ForestRaisedIslandCourtyardChest, ForestMapChest, ForestWellChest, ForestEyeSwitchChest, ForestBossKeyChest, ForestFloormasterChest, ForestRedPoeChest, ForestBowChest, ForestBluePoeChest, ForestFallingCeillingRoomChest, ForestBasementChest, ForestPhantomGanonHeart];
             List<Region_Panel_Check> Kakariko_Check_List = [KakAnjuasChild, KakAnjuasAdult, KakImpasHouseFreestandingPoH, KakWindmillFreestandingPoH, WindmillSong, KakManonRoof, KakOpenGrottoChest, KakRedeadGrottoChest, KakShootingGalleryReward, KakShiek, Kak10GoldSkulltulaReward, Kak20GoldSkulltulaReward, Kak30GoldSkulltulaReward, Kak40GoldSkulltulaReward, Kak50GoldSkulltulaReward];
@@ -108,7 +251,7 @@ namespace CeddyMapTracker
             LLR_Check_List = [LLRMalon, LLRPoH, LLRTalon];
             //Assign checks to region buttons
             List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];
-            List<List<Check>> Test = [Wasteland_Check_List, Colossus_Check_List, GerudoFortress_Check_List, GerudoValley_Check_List, HyruleField_Check_List, LakeHylia_Check_List, KokiriForest_Check_List, LostWoods_Check_List, SFM_Check_List, ZoraRiver_Check_List, ZoraDomain_Check_List, ZoraFountain_Check_List, DMT_Check_List, DMC_Check_List, Market_Check_List, HC_Check_List, OGC_Check_List, LLR_Check_List, ToT_Check_List];          
+            //List<List<Check>> Test = [Wasteland_Check_List, Colossus_Check_List, GerudoFortress_Check_List, GerudoValley_Check_List, HyruleField_Check_List, LakeHylia_Check_List, KokiriForest_Check_List, LostWoods_Check_List, SFM_Check_List, ZoraRiver_Check_List, ZoraDomain_Check_List, ZoraFountain_Check_List, DMT_Check_List, DMC_Check_List, Market_Check_List, HC_Check_List, OGC_Check_List, LLR_Check_List, ToT_Check_List];          
             ContextMenuForWOTHHints test123 = new();
             Controls.Add(test123);
             test123.Visible = false;          
@@ -409,7 +552,7 @@ namespace CeddyMapTracker
             }
         }
         public void UpdateWOTHGoals(WOTHPanel wothpanel, ContextMenuForWOTHHints test123)
-        {          
+        {                                
             foreach (GoalPathHint c in wothpanel.Goals)
             {
                 if (c is GoalPathHint gph)
@@ -421,8 +564,8 @@ namespace CeddyMapTracker
                         gph.goalpicture.CheckGoalState();
                         return;
                     }
-                }              
-            }          
+                }            
+            }                            
         }
     }
 }

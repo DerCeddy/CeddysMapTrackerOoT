@@ -38,7 +38,7 @@
             BackgroundImage = Properties.Resources.ItemLayout1;
             BackgroundImageLayout = ImageLayout.None;
             Name = "ItemPanel";
-            Size = new Size(537, 535);
+            Size = new Size(378, 535);
             ResumeLayout(false);
         }
 

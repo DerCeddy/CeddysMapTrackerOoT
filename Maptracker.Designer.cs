@@ -1141,7 +1141,6 @@
             WastelandChest.Name = "WastelandChest";
             WastelandChest.Size = new Size(13, 13);
             WastelandChest.TabIndex = 109;
-            toolTip1.SetToolTip(WastelandChest, "Wasteland Chest");
             WastelandChest.UseVisualStyleBackColor = false;
             // 
             // Ice_Button
