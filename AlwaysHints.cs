@@ -12,6 +12,8 @@ namespace CeddyMapTracker
     public class AlwaysHints : Panel
     {
         public List<Bitmap> bitmaps;
+        private List<PictureBox> pictureBoxes = [];
+        private List<Gossipstone> gossipstones = [];
         public AlwaysHints(Point _location)
         {
             Size = new Size(180, 155);
@@ -29,19 +31,33 @@ namespace CeddyMapTracker
                 {
                     PictureBox pictureBox = new() { Image = bitmaps[i], Size = new Size(32, 32), Location = new Point(10, i * 32 + 24), SizeMode = PictureBoxSizeMode.StretchImage };
                     Controls.Add(pictureBox);
+                    pictureBoxes.Add(pictureBox);
                     Gossipstone gossipstone = new(new Point(50, i * 32 + 28));
                     Controls.Add(gossipstone);
+                    gossipstones.Add(gossipstone);
                 }
                 else
                 {
                     PictureBox pictureBox = new() { Image = bitmaps[i], Size = new Size(32, 32), Location = new Point(90, (i - 4) * 32 + 24), SizeMode = PictureBoxSizeMode.StretchImage };
                     Controls.Add(pictureBox);
-
+                    pictureBoxes.Add(pictureBox);
                     Gossipstone gossipstone = new(new Point(130, (i - 4) * 32 + 28));
                     Controls.Add(gossipstone);
+                    gossipstones.Add(gossipstone);
                 }
 
             }
+        }
+        public void DeleteItems()
+        {
+            foreach (PictureBox pb in pictureBoxes)
+            {
+                pb?.Dispose();
+            }          
+            foreach (Gossipstone gs in gossipstones)
+            {
+                gs?.Dispose();
+            }           
         }
     }
 }

@@ -1,18 +1,22 @@
+using Newtonsoft.Json;
+using System.Security.Principal;
+
 namespace CeddyMapTracker
 {
     public partial class Form1 : Form
     {
         List<int> SmallKeys = [];
-
+        public ItemPanel itemPanel = new(new Point(0, 0));
+        public SometimesHints SometimesHints = new(new Point(420, 360));
+        public WOTHPanel wothPanel = new(new Point(380, 0)) { Goal_Count = 5 };
+        public AlwaysHints alwaysHints = new(new Point(420, 150));
+        public Maptracker? maptracker;
         public Form1()
         {        
             InitializeComponent();                                        
-            WOTHPanel wothPanel = new(new Point(380,0)) { Goal_Count = 5};
-            AlwaysHints alwaysHints = new(new Point(420, 150));
-            SometimesHints SometimesHints = new(new Point(420, 360));
+                      
             Stats stats = new(new Point(0, 700));
-            Maptracker maptracker = new(wothPanel,new Point(720, 0), stats);
-            ItemPanel itemPanel = new(new Point(0, 0));
+            maptracker = new(wothPanel,new Point(720, 0), stats);          
             KeyPanel keys = new(new Point(640, 0));
             SettingsPanel settingspanel = new(new Point(0,0));
             settingspanel.Visible = false;
@@ -26,11 +30,11 @@ namespace CeddyMapTracker
             Controls.Add(stats);
             Controls.Add(settingsbutton);
             Controls.Add(itemPanel);
-            Controls.Add(settingspanel);            
+            Controls.Add(settingspanel);         
             itemPanel.LoadItems();
             itemPanel.LoadEquips();
             itemPanel.LoadQuestItems();
-            itemPanel.LoadSongs();
+            itemPanel.LoadSongs();          
             Controls.Add(keys);          
             List<Keys> SmallKeys = [keys.Forest_SmallKeys, keys.Fire_SmallKeys, keys.Water_SmallKeys, keys.Shadow_SmallKeys, keys.Spirit_SmallKeys, keys.BotW_SmallKeys, keys.GTG_SmallKeys];
             List<Item> BossKeys = [itemPanel.ForestBossKey, itemPanel.FireBossKey, itemPanel.WaterBossKey, itemPanel.ShadowBossKey, itemPanel.SpiritBossKey];                    
@@ -57,10 +61,18 @@ namespace CeddyMapTracker
             keys.ValueChanged += (sender, e) => maptracker.UpdateStatVariables(stats);
             keys.ValueChanged += (sender, e) => stats.UpdateChecksAvailable();
             //Settingspanel assign functions
-            settingspanel.button1.MouseDown += (sender,e) => settingspanel.ConfirmSettings(this, new Point(380,0));
-            
+            settingspanel.button1.MouseDown += (sender,e) => settingspanel.ConfirmSettings(this);
+            settingspanel.button1.MouseDown += (sender, e) => UpdateLocations(alwaysHints,SometimesHints,wothPanel);
+            settingspanel.Load_Preset_Button.MouseDown += (sender, e) => settingspanel.LoadPreset(itemPanel, this, SometimesHints, alwaysHints, wothPanel);
+            settingspanel.Load_Preset_Button.MouseDown += (sender, e) => UpdateLocations(alwaysHints, SometimesHints, wothPanel);
         }
+        public void UpdateLocations(AlwaysHints alwaysHints, SometimesHints sometimesHints, WOTHPanel wothPanel)
+        {
+            alwaysHints.Location = new Point(wothPanel.Location.X, wothPanel.Size.Height + 1);
+            sometimesHints.Location = new Point(alwaysHints.Location.X, alwaysHints.Size.Height + alwaysHints.Location.Y + 1);
 
+        }
         
+
     }
 }

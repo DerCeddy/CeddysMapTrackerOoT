@@ -65,26 +65,26 @@ namespace CeddyMapTracker
                     }
                     break;
             }
-            UpdateItemState(i);
+            UpdateItemState();
         }
-        public static void UpdateItemState(Item i)
+        public void UpdateItemState()
         {
-            switch (i.State)
+            switch (State)
             {
                 case 0:
-                    i.Image = i.ItemPicture_bw;
+                    Image = ItemPicture_bw;
                     break;
                 case 1:
-                    i.Image = i.ItemPicture;
+                    Image = ItemPicture;
                     break;
                 case 2:
-                    i.Image = i.ItemPicture1;
+                    Image = ItemPicture1;
                     break;
                 case 3:
-                    i.Image = i.ItemPicture2;
+                    Image = ItemPicture2;
                     break;
                 case 4:
-                    i.Image = i.ItemPicture3;
+                    Image = ItemPicture3;
                     break;
             }
         }
@@ -106,7 +106,7 @@ namespace CeddyMapTracker
                     if (Item.MaxCount > PreviousItemState)
                     {
                         Item.State--;
-                        UpdateItemState(Item);                      
+                        UpdateItemState();                      
                     }
                     DragAndDrop(Item);
                 }

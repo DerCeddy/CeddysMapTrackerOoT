@@ -39,6 +39,8 @@ namespace CeddyMapTracker
         {
             [JsonProperty("CheckName")]
             public required CheckName checkname;
+            [JsonProperty("Item")]
+            public required Item item;
         }
         public class CheckName
         {

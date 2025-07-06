@@ -17,7 +17,7 @@ namespace CeddyMapTracker
         {
             Width = 260;
             Location = _location;
-            BackColor = Color.Red;
+            BackColor = Color.Black;
             Label label = new()
             {
                 Size = new Size(130, 20),
