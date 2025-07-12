@@ -8,7 +8,10 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
-        public string Goalrequirement = "League";
+        public string Goalrequirement = "SGL";
+        public decimal Medallions = 0;
+        public decimal Stones = 0;
+        public decimal DungeonRewards = 0;
         public void ItemLogic_Helper(ItemPanel i)
         {                           
             //Explosives
@@ -108,10 +111,31 @@ namespace CeddyMapTracker
             //Rainbowbridge
             switch (Goalrequirement)
             {
-                case "League":
+                case "Spiritual Stones":
+                    {                    
+                        int StonesGotten = 0;
+                        List<int> stones = new() { i.KokiriStone.State, i.GoronStone.State, i.ZoraStone.State };
+                        for (int j = 0; j < stones.Count; j++)
+                        {
+                            if (stones[j] == 1)
+                            {
+                                StonesGotten++;
+                            }
+                        }
+                        if (StonesGotten >= Stones)
+                        {
+                            rainbowbridge = true;
+                        }
+                        else
+                        {
+                            rainbowbridge = false;
+                        }
+                        break;                                              
+                    }                   
+                case "Medallions":
                     {
                         int MedsGotten = 0;
-                        List<int> meds = new() { i.ForestMedallion.State, i.FireMedallion.State, i.WaterMedallion.State, i.SpiritMedallion.State, i.ShadowMedallion.State, i.LightMedallion.State};
+                        List<int> meds = new() { i.ForestMedallion.State, i.FireMedallion.State, i.WaterMedallion.State, i.SpiritMedallion.State, i.ShadowMedallion.State, i.LightMedallion.State };
                         for (int j = 0; j < meds.Count; j++)
                         {
                             if (meds[j] == 1)
@@ -119,19 +143,7 @@ namespace CeddyMapTracker
                                 MedsGotten++;
                             }
                         }
-                        if (MedsGotten >= 5)
-                        {
-                            rainbowbridge = true;
-                        }
-                        else
-                        {
-                            rainbowbridge = false;
-                        }
-                        break;
-                    }                   
-                case "Medallions":
-                    {
-                        if (Has(i.ForestMedallion) && Has(i.FireMedallion) && Has(i.WaterMedallion) && Has(i.SpiritMedallion) && Has(i.ShadowMedallion) && Has(i.LightMedallion))
+                        if (MedsGotten >= Medallions)
                         {
                             rainbowbridge = true;
                         }
@@ -141,9 +153,18 @@ namespace CeddyMapTracker
                         }
                         break;
                     }
-                case "AD":
+                case "Dungeon Rewards":
                     {
-                        if (Has(i.ForestMedallion) && Has(i.FireMedallion) && Has(i.WaterMedallion) && Has(i.SpiritMedallion) && Has(i.ShadowMedallion) && Has(i.LightMedallion) && Has(i.KokiriStone) && Has(i.GoronStone) && Has(i.ZoraStone))
+                        int DungeonRewardsGotten = 0;
+                        List<int> dungeonrewards = new() { i.KokiriStone.State, i.GoronStone.State, i.ZoraStone.State, i.ForestMedallion.State, i.FireMedallion.State, i.WaterMedallion.State, i.SpiritMedallion.State, i.ShadowMedallion.State, i.LightMedallion.State };
+                        for (int j = 0; j < dungeonrewards.Count; j++)
+                        {
+                            if (dungeonrewards[j] == 1)
+                            {
+                                DungeonRewardsGotten++;
+                            }
+                        }
+                        if (DungeonRewardsGotten >= DungeonRewards)
                         {
                             rainbowbridge = true;
                         }
@@ -152,20 +173,8 @@ namespace CeddyMapTracker
                             rainbowbridge = false;
                         }
                         break;
-                    }
-                case "SGL":
-                    {
-                        if (Has(i.KokiriStone) && Has(i.GoronStone) && Has(i.ZoraStone))
-                        {
-                            rainbowbridge = true;
-                        }
-                        else
-                        {
-                            rainbowbridge = false;
-                        }
-                        break;
-                    }
-                case "Vanilla":
+                    }      
+                case "Vanilla Requirements":
                     {
                         if (Has(i.SpiritMedallion) && Has(i.ShadowMedallion) && Has(i.LightArrow))
                         {
