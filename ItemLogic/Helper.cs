@@ -8,7 +8,7 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
-        public string Goalrequirement = "SGL";
+        public string Goalrequirement = "Vanilla Requirements";
         public decimal Medallions = 0;
         public decimal Stones = 0;
         public decimal DungeonRewards = 0;

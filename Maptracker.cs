@@ -518,8 +518,19 @@ namespace CeddyMapTracker
             }
         }
         public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, string Regionname)
-        {          
-            test123.AddContextMenu(this, e.X - 70, e.Y - 70);
+        {
+            int posX = e.X;
+            int posY = e.Y;
+            if (e.X - 70 <= 70)
+            {
+                posX = 70;
+            }
+            if (e.Y - 70 <= 70)
+            {
+                posY = 70;
+            }
+            Console.WriteLine($"{Location.X}");
+            test123.AddContextMenu(this, posX - 70, posY - 70);
             test123.BringToFront();
             test123.RegionName = Regionname;
         }

@@ -13,9 +13,8 @@ namespace CeddyMapTracker
         {
             Size = new Size(48,48);
             SizeMode = PictureBoxSizeMode.StretchImage; 
-            BackColor = Color.White;
+            BackColor = Color.White;        
         }
-
         public void OnClick(ItemPanel i)
         {
             List<Item> Items = [i.Sticks,i.Nuts,i.Bomb,i.Bow,i.FireArrow,i.Dins,i.Slingshot,i.Ocarina,i.Bombchu,i.Hookshot,i.IceArrow,i.FaroresWind,i.Boomerang, i.Lens, i.Beans, i.Hammer, i.LightArrow, i.NayrusLove, i.RutoLetter, i.Bottle2, i.Bottle2, i.Bottle3, i.Bottle4, i.AdultTradeItems, i.ChildTradeItems, i.KokiriSword, i.MasterSword, i.BiggoronSword, i.Agony, i.GerudoCard, i.DekuShield, i.HylianShield, i.MirrorShield, i.Strength, i.Scales, i.Wallet, i.KokiriTunic, i.GoronTunic, i.ZoraTunic, i.KokiriBoots, i.IronBoots, i.HoverBoots, i.KokiriStone, i.GoronStone, i.ZoraStone, i.ForestMedallion, i.FireMedallion, i.WaterMedallion, i.ShadowMedallion, i.SpiritMedallion, i.LightMedallion];
