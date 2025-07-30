@@ -342,11 +342,11 @@ namespace CeddyMapTracker
                         ChecksAvailable++;
 
                     }
-                    if (!check.done)
+                    if (!check.Done)
                     {
                         ChecksRemaining++;
                     }
-                    if (check.done)
+                    if (check.Done)
                     {
                         ChecksDone++;
                     }
@@ -494,7 +494,7 @@ namespace CeddyMapTracker
                 foreach (Check cb in checks)
                 {
                     MaxChecks++;
-                    if (cb.done)
+                    if (cb.Done)
                     {
                         ChecksChecked++;
                     }
@@ -503,7 +503,7 @@ namespace CeddyMapTracker
                 {
                     foreach (Check cb in checks)
                     {
-                        cb.done = false;
+                        cb.Done = false;
                         cb.ChangeColor();
                     }
                 }
@@ -511,7 +511,7 @@ namespace CeddyMapTracker
                 {
                     foreach (Check cb in checks)
                     {
-                        cb.done = true;
+                        cb.Done = true;
                         cb.ChangeColor();
                     }
                 }

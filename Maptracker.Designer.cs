@@ -208,7 +208,7 @@
             // 
             // DMCShiek
             // 
-            DMCShiek.done = false;
+            DMCShiek.Done = false;
             DMCShiek.FlatAppearance.BorderColor = Color.Black;
             DMCShiek.FlatAppearance.BorderSize = 0;
             DMCShiek.FlatStyle = FlatStyle.Flat;
@@ -222,7 +222,7 @@
             // 
             // DMCGreatFairy
             // 
-            DMCGreatFairy.done = false;
+            DMCGreatFairy.Done = false;
             DMCGreatFairy.FlatAppearance.BorderColor = Color.Black;
             DMCGreatFairy.FlatAppearance.BorderSize = 0;
             DMCGreatFairy.FlatStyle = FlatStyle.Flat;
@@ -236,7 +236,7 @@
             // 
             // DMCUpperGrotto
             // 
-            DMCUpperGrotto.done = false;
+            DMCUpperGrotto.Done = false;
             DMCUpperGrotto.FlatAppearance.BorderColor = Color.Black;
             DMCUpperGrotto.FlatAppearance.BorderSize = 0;
             DMCUpperGrotto.FlatStyle = FlatStyle.Flat;
@@ -250,7 +250,7 @@
             // 
             // DMCWallPoH
             // 
-            DMCWallPoH.done = false;
+            DMCWallPoH.Done = false;
             DMCWallPoH.FlatAppearance.BorderColor = Color.Black;
             DMCWallPoH.FlatAppearance.BorderSize = 0;
             DMCWallPoH.FlatStyle = FlatStyle.Flat;
@@ -264,7 +264,7 @@
             // 
             // DMCVolcanoPoH
             // 
-            DMCVolcanoPoH.done = false;
+            DMCVolcanoPoH.Done = false;
             DMCVolcanoPoH.FlatAppearance.BorderColor = Color.Black;
             DMCVolcanoPoH.FlatAppearance.BorderSize = 0;
             DMCVolcanoPoH.FlatStyle = FlatStyle.Flat;
@@ -278,7 +278,7 @@
             // 
             // DMTBiggoron
             // 
-            DMTBiggoron.done = false;
+            DMTBiggoron.Done = false;
             DMTBiggoron.FlatAppearance.BorderColor = Color.Black;
             DMTBiggoron.FlatAppearance.BorderSize = 0;
             DMTBiggoron.FlatStyle = FlatStyle.Flat;
@@ -292,7 +292,7 @@
             // 
             // DMTGreatFairy
             // 
-            DMTGreatFairy.done = false;
+            DMTGreatFairy.Done = false;
             DMTGreatFairy.FlatAppearance.BorderColor = Color.Black;
             DMTGreatFairy.FlatAppearance.BorderSize = 0;
             DMTGreatFairy.FlatStyle = FlatStyle.Flat;
@@ -306,7 +306,7 @@
             // 
             // DMTStormsGrotto
             // 
-            DMTStormsGrotto.done = false;
+            DMTStormsGrotto.Done = false;
             DMTStormsGrotto.FlatAppearance.BorderColor = Color.Black;
             DMTStormsGrotto.FlatAppearance.BorderSize = 0;
             DMTStormsGrotto.FlatStyle = FlatStyle.Flat;
@@ -320,7 +320,7 @@
             // 
             // DMTChest
             // 
-            DMTChest.done = false;
+            DMTChest.Done = false;
             DMTChest.FlatAppearance.BorderColor = Color.Black;
             DMTChest.FlatAppearance.BorderSize = 0;
             DMTChest.FlatStyle = FlatStyle.Flat;
@@ -334,7 +334,7 @@
             // 
             // DMTPoH
             // 
-            DMTPoH.done = false;
+            DMTPoH.Done = false;
             DMTPoH.FlatAppearance.BorderColor = Color.Black;
             DMTPoH.FlatAppearance.BorderSize = 0;
             DMTPoH.FlatStyle = FlatStyle.Flat;
@@ -348,7 +348,7 @@
             // 
             // LHShootTheSun
             // 
-            LHShootTheSun.done = false;
+            LHShootTheSun.Done = false;
             LHShootTheSun.FlatAppearance.BorderColor = Color.Black;
             LHShootTheSun.FlatAppearance.BorderSize = 0;
             LHShootTheSun.FlatStyle = FlatStyle.Flat;
@@ -362,7 +362,7 @@
             // 
             // LHFreestandingPoH
             // 
-            LHFreestandingPoH.done = false;
+            LHFreestandingPoH.Done = false;
             LHFreestandingPoH.FlatAppearance.BorderColor = Color.Black;
             LHFreestandingPoH.FlatAppearance.BorderSize = 0;
             LHFreestandingPoH.FlatStyle = FlatStyle.Flat;
@@ -376,7 +376,7 @@
             // 
             // LHLabDive
             // 
-            LHLabDive.done = false;
+            LHLabDive.Done = false;
             LHLabDive.FlatAppearance.BorderColor = Color.Black;
             LHLabDive.FlatAppearance.BorderSize = 0;
             LHLabDive.FlatStyle = FlatStyle.Flat;
@@ -390,7 +390,7 @@
             // 
             // LHUnderwaterItem
             // 
-            LHUnderwaterItem.done = false;
+            LHUnderwaterItem.Done = false;
             LHUnderwaterItem.FlatAppearance.BorderColor = Color.Black;
             LHUnderwaterItem.FlatAppearance.BorderSize = 0;
             LHUnderwaterItem.FlatStyle = FlatStyle.Flat;
@@ -404,7 +404,7 @@
             // 
             // LHAdultFishing
             // 
-            LHAdultFishing.done = false;
+            LHAdultFishing.Done = false;
             LHAdultFishing.FlatAppearance.BorderColor = Color.Black;
             LHAdultFishing.FlatAppearance.BorderSize = 0;
             LHAdultFishing.FlatStyle = FlatStyle.Flat;
@@ -418,7 +418,7 @@
             // 
             // LHChildFishing
             // 
-            LHChildFishing.done = false;
+            LHChildFishing.Done = false;
             LHChildFishing.FlatAppearance.BorderColor = Color.Black;
             LHChildFishing.FlatAppearance.BorderSize = 0;
             LHChildFishing.FlatStyle = FlatStyle.Flat;
@@ -432,7 +432,7 @@
             // 
             // ZFBottomPoH
             // 
-            ZFBottomPoH.done = false;
+            ZFBottomPoH.Done = false;
             ZFBottomPoH.FlatAppearance.BorderColor = Color.Black;
             ZFBottomPoH.FlatAppearance.BorderSize = 0;
             ZFBottomPoH.FlatStyle = FlatStyle.Flat;
@@ -446,7 +446,7 @@
             // 
             // ZFFreestandingPoH
             // 
-            ZFFreestandingPoH.done = false;
+            ZFFreestandingPoH.Done = false;
             ZFFreestandingPoH.FlatAppearance.BorderColor = Color.Black;
             ZFFreestandingPoH.FlatAppearance.BorderSize = 0;
             ZFFreestandingPoH.FlatStyle = FlatStyle.Flat;
@@ -460,7 +460,7 @@
             // 
             // ZFGreatFairy
             // 
-            ZFGreatFairy.done = false;
+            ZFGreatFairy.Done = false;
             ZFGreatFairy.FlatAppearance.BorderColor = Color.Black;
             ZFGreatFairy.FlatAppearance.BorderSize = 0;
             ZFGreatFairy.FlatStyle = FlatStyle.Flat;
@@ -474,7 +474,7 @@
             // 
             // ZRDivingGame
             // 
-            ZRDivingGame.done = false;
+            ZRDivingGame.Done = false;
             ZRDivingGame.FlatAppearance.BorderColor = Color.Black;
             ZRDivingGame.FlatAppearance.BorderSize = 0;
             ZRDivingGame.FlatStyle = FlatStyle.Flat;
@@ -488,7 +488,7 @@
             // 
             // ZDChest
             // 
-            ZDChest.done = false;
+            ZDChest.Done = false;
             ZDChest.FlatAppearance.BorderColor = Color.Black;
             ZDChest.FlatAppearance.BorderSize = 0;
             ZDChest.FlatStyle = FlatStyle.Flat;
@@ -502,7 +502,7 @@
             // 
             // ZDKingZora
             // 
-            ZDKingZora.done = false;
+            ZDKingZora.Done = false;
             ZDKingZora.FlatAppearance.BorderColor = Color.Black;
             ZDKingZora.FlatAppearance.BorderSize = 0;
             ZDKingZora.FlatStyle = FlatStyle.Flat;
@@ -516,7 +516,7 @@
             // 
             // ZRPoHNearDomain
             // 
-            ZRPoHNearDomain.done = false;
+            ZRPoHNearDomain.Done = false;
             ZRPoHNearDomain.FlatAppearance.BorderColor = Color.Black;
             ZRPoHNearDomain.FlatAppearance.BorderSize = 0;
             ZRPoHNearDomain.FlatStyle = FlatStyle.Flat;
@@ -530,7 +530,7 @@
             // 
             // ZRFrogsGame
             // 
-            ZRFrogsGame.done = false;
+            ZRFrogsGame.Done = false;
             ZRFrogsGame.FlatAppearance.BorderColor = Color.Black;
             ZRFrogsGame.FlatAppearance.BorderSize = 0;
             ZRFrogsGame.FlatStyle = FlatStyle.Flat;
@@ -544,7 +544,7 @@
             // 
             // ZRFrogsStorms
             // 
-            ZRFrogsStorms.done = false;
+            ZRFrogsStorms.Done = false;
             ZRFrogsStorms.FlatAppearance.BorderColor = Color.Black;
             ZRFrogsStorms.FlatAppearance.BorderSize = 0;
             ZRFrogsStorms.FlatStyle = FlatStyle.Flat;
@@ -558,7 +558,7 @@
             // 
             // ZROpenGrotto
             // 
-            ZROpenGrotto.done = false;
+            ZROpenGrotto.Done = false;
             ZROpenGrotto.FlatAppearance.BorderColor = Color.Black;
             ZROpenGrotto.FlatAppearance.BorderSize = 0;
             ZROpenGrotto.FlatStyle = FlatStyle.Flat;
@@ -572,7 +572,7 @@
             // 
             // ZRNearGrottoPoH
             // 
-            ZRNearGrottoPoH.done = false;
+            ZRNearGrottoPoH.Done = false;
             ZRNearGrottoPoH.FlatAppearance.BorderColor = Color.Black;
             ZRNearGrottoPoH.FlatAppearance.BorderSize = 0;
             ZRNearGrottoPoH.FlatStyle = FlatStyle.Flat;
@@ -586,7 +586,7 @@
             // 
             // LLRPoH
             // 
-            LLRPoH.done = false;
+            LLRPoH.Done = false;
             LLRPoH.FlatAppearance.BorderColor = Color.Black;
             LLRPoH.FlatAppearance.BorderSize = 0;
             LLRPoH.FlatStyle = FlatStyle.Flat;
@@ -600,7 +600,7 @@
             // 
             // LLRMalon
             // 
-            LLRMalon.done = false;
+            LLRMalon.Done = false;
             LLRMalon.FlatAppearance.BorderColor = Color.Black;
             LLRMalon.FlatAppearance.BorderSize = 0;
             LLRMalon.FlatStyle = FlatStyle.Flat;
@@ -614,7 +614,7 @@
             // 
             // LLRTalon
             // 
-            LLRTalon.done = false;
+            LLRTalon.Done = false;
             LLRTalon.FlatAppearance.BorderColor = Color.Black;
             LLRTalon.FlatAppearance.BorderSize = 0;
             LLRTalon.FlatStyle = FlatStyle.Flat;
@@ -628,7 +628,7 @@
             // 
             // HCGreatFairy
             // 
-            HCGreatFairy.done = false;
+            HCGreatFairy.Done = false;
             HCGreatFairy.FlatAppearance.BorderColor = Color.Black;
             HCGreatFairy.FlatAppearance.BorderSize = 0;
             HCGreatFairy.FlatStyle = FlatStyle.Flat;
@@ -642,7 +642,7 @@
             // 
             // ToTShiek
             // 
-            ToTShiek.done = false;
+            ToTShiek.Done = false;
             ToTShiek.FlatAppearance.BorderColor = Color.Black;
             ToTShiek.FlatAppearance.BorderSize = 0;
             ToTShiek.FlatStyle = FlatStyle.Flat;
@@ -656,7 +656,7 @@
             // 
             // ToTLACS
             // 
-            ToTLACS.done = false;
+            ToTLACS.Done = false;
             ToTLACS.FlatAppearance.BorderColor = Color.Black;
             ToTLACS.FlatAppearance.BorderSize = 0;
             ToTLACS.FlatStyle = FlatStyle.Flat;
@@ -670,7 +670,7 @@
             // 
             // MarketBigPoes
             // 
-            MarketBigPoes.done = false;
+            MarketBigPoes.Done = false;
             MarketBigPoes.FlatAppearance.BorderColor = Color.Black;
             MarketBigPoes.FlatAppearance.BorderSize = 0;
             MarketBigPoes.FlatStyle = FlatStyle.Flat;
@@ -684,7 +684,7 @@
             // 
             // MarketRichard
             // 
-            MarketRichard.done = false;
+            MarketRichard.Done = false;
             MarketRichard.FlatAppearance.BorderColor = Color.Black;
             MarketRichard.FlatAppearance.BorderSize = 0;
             MarketRichard.FlatStyle = FlatStyle.Flat;
@@ -698,7 +698,7 @@
             // 
             // MarketTreasureChestGame
             // 
-            MarketTreasureChestGame.done = false;
+            MarketTreasureChestGame.Done = false;
             MarketTreasureChestGame.FlatAppearance.BorderColor = Color.Black;
             MarketTreasureChestGame.FlatAppearance.BorderSize = 0;
             MarketTreasureChestGame.FlatStyle = FlatStyle.Flat;
@@ -712,7 +712,7 @@
             // 
             // MarketBombchuBowling
             // 
-            MarketBombchuBowling.done = false;
+            MarketBombchuBowling.Done = false;
             MarketBombchuBowling.FlatAppearance.BorderColor = Color.Black;
             MarketBombchuBowling.FlatAppearance.BorderSize = 0;
             MarketBombchuBowling.FlatStyle = FlatStyle.Flat;
@@ -726,7 +726,7 @@
             // 
             // MarketShootingGalleryReward
             // 
-            MarketShootingGalleryReward.done = false;
+            MarketShootingGalleryReward.Done = false;
             MarketShootingGalleryReward.FlatAppearance.BorderColor = Color.Black;
             MarketShootingGalleryReward.FlatAppearance.BorderSize = 0;
             MarketShootingGalleryReward.FlatStyle = FlatStyle.Flat;
@@ -740,7 +740,7 @@
             // 
             // HFOoT
             // 
-            HFOoT.done = false;
+            HFOoT.Done = false;
             HFOoT.FlatAppearance.BorderColor = Color.Black;
             HFOoT.FlatAppearance.BorderSize = 0;
             HFOoT.FlatStyle = FlatStyle.Flat;
@@ -754,7 +754,7 @@
             // 
             // HFSalesman
             // 
-            HFSalesman.done = false;
+            HFSalesman.Done = false;
             HFSalesman.FlatAppearance.BorderColor = Color.Black;
             HFSalesman.FlatAppearance.BorderSize = 0;
             HFSalesman.FlatStyle = FlatStyle.Flat;
@@ -768,7 +768,7 @@
             // 
             // HFOpenGrottoChest
             // 
-            HFOpenGrottoChest.done = false;
+            HFOpenGrottoChest.Done = false;
             HFOpenGrottoChest.FlatAppearance.BorderColor = Color.Black;
             HFOpenGrottoChest.FlatAppearance.BorderSize = 0;
             HFOpenGrottoChest.FlatStyle = FlatStyle.Flat;
@@ -782,7 +782,7 @@
             // 
             // HFSoutheastGrottoChest
             // 
-            HFSoutheastGrottoChest.done = false;
+            HFSoutheastGrottoChest.Done = false;
             HFSoutheastGrottoChest.FlatAppearance.BorderColor = Color.Black;
             HFSoutheastGrottoChest.FlatAppearance.BorderSize = 0;
             HFSoutheastGrottoChest.FlatStyle = FlatStyle.Flat;
@@ -796,7 +796,7 @@
             // 
             // HFTektikeGrottoPoH
             // 
-            HFTektikeGrottoPoH.done = false;
+            HFTektikeGrottoPoH.Done = false;
             HFTektikeGrottoPoH.FlatAppearance.BorderColor = Color.Black;
             HFTektikeGrottoPoH.FlatAppearance.BorderSize = 0;
             HFTektikeGrottoPoH.FlatStyle = FlatStyle.Flat;
@@ -810,7 +810,7 @@
             // 
             // HFNearMarketGrottoChest
             // 
-            HFNearMarketGrottoChest.done = false;
+            HFNearMarketGrottoChest.Done = false;
             HFNearMarketGrottoChest.FlatAppearance.BorderColor = Color.Black;
             HFNearMarketGrottoChest.FlatAppearance.BorderSize = 0;
             HFNearMarketGrottoChest.FlatStyle = FlatStyle.Flat;
@@ -824,7 +824,7 @@
             // 
             // SFMShiek
             // 
-            SFMShiek.done = false;
+            SFMShiek.Done = false;
             SFMShiek.FlatAppearance.BorderColor = Color.Black;
             SFMShiek.FlatAppearance.BorderSize = 0;
             SFMShiek.FlatStyle = FlatStyle.Flat;
@@ -838,7 +838,7 @@
             // 
             // SFMSaria
             // 
-            SFMSaria.done = false;
+            SFMSaria.Done = false;
             SFMSaria.FlatAppearance.BorderColor = Color.Black;
             SFMSaria.FlatAppearance.BorderSize = 0;
             SFMSaria.FlatStyle = FlatStyle.Flat;
@@ -852,7 +852,7 @@
             // 
             // SFMWolfosGrotto
             // 
-            SFMWolfosGrotto.done = false;
+            SFMWolfosGrotto.Done = false;
             SFMWolfosGrotto.FlatAppearance.BorderColor = Color.Black;
             SFMWolfosGrotto.FlatAppearance.BorderSize = 0;
             SFMWolfosGrotto.FlatStyle = FlatStyle.Flat;
@@ -866,7 +866,7 @@
             // 
             // LWScrubGrottoFront
             // 
-            LWScrubGrottoFront.done = false;
+            LWScrubGrottoFront.Done = false;
             LWScrubGrottoFront.FlatAppearance.BorderColor = Color.Black;
             LWScrubGrottoFront.FlatAppearance.BorderSize = 0;
             LWScrubGrottoFront.FlatStyle = FlatStyle.Flat;
@@ -880,7 +880,7 @@
             // 
             // LWSkullMask
             // 
-            LWSkullMask.done = false;
+            LWSkullMask.Done = false;
             LWSkullMask.FlatAppearance.BorderColor = Color.Black;
             LWSkullMask.FlatAppearance.BorderSize = 0;
             LWSkullMask.FlatStyle = FlatStyle.Flat;
@@ -894,7 +894,7 @@
             // 
             // LWNearShortcutGrottoChest
             // 
-            LWNearShortcutGrottoChest.done = false;
+            LWNearShortcutGrottoChest.Done = false;
             LWNearShortcutGrottoChest.FlatAppearance.BorderColor = Color.Black;
             LWNearShortcutGrottoChest.FlatAppearance.BorderSize = 0;
             LWNearShortcutGrottoChest.FlatStyle = FlatStyle.Flat;
@@ -908,7 +908,7 @@
             // 
             // LWTarget
             // 
-            LWTarget.done = false;
+            LWTarget.Done = false;
             LWTarget.FlatAppearance.BorderColor = Color.Black;
             LWTarget.FlatAppearance.BorderSize = 0;
             LWTarget.FlatStyle = FlatStyle.Flat;
@@ -922,7 +922,7 @@
             // 
             // LWOcarinaGame
             // 
-            LWOcarinaGame.done = false;
+            LWOcarinaGame.Done = false;
             LWOcarinaGame.FlatAppearance.BorderColor = Color.Black;
             LWOcarinaGame.FlatAppearance.BorderSize = 0;
             LWOcarinaGame.FlatStyle = FlatStyle.Flat;
@@ -936,7 +936,7 @@
             // 
             // LWSkullKid
             // 
-            LWSkullKid.done = false;
+            LWSkullKid.Done = false;
             LWSkullKid.FlatAppearance.BorderColor = Color.Black;
             LWSkullKid.FlatAppearance.BorderSize = 0;
             LWSkullKid.FlatStyle = FlatStyle.Flat;
@@ -950,7 +950,7 @@
             // 
             // LWScrubNearBridge
             // 
-            LWScrubNearBridge.done = false;
+            LWScrubNearBridge.Done = false;
             LWScrubNearBridge.FlatAppearance.BorderColor = Color.Black;
             LWScrubNearBridge.FlatAppearance.BorderSize = 0;
             LWScrubNearBridge.FlatStyle = FlatStyle.Flat;
@@ -964,7 +964,7 @@
             // 
             // KFStormGrottoChest
             // 
-            KFStormGrottoChest.done = false;
+            KFStormGrottoChest.Done = false;
             KFStormGrottoChest.FlatAppearance.BorderColor = Color.Black;
             KFStormGrottoChest.FlatAppearance.BorderSize = 0;
             KFStormGrottoChest.FlatStyle = FlatStyle.Flat;
@@ -978,7 +978,7 @@
             // 
             // KFKokiriSwordChest
             // 
-            KFKokiriSwordChest.done = false;
+            KFKokiriSwordChest.Done = false;
             KFKokiriSwordChest.FlatAppearance.BorderColor = Color.Black;
             KFKokiriSwordChest.FlatAppearance.BorderSize = 0;
             KFKokiriSwordChest.FlatStyle = FlatStyle.Flat;
@@ -992,7 +992,7 @@
             // 
             // KFMidos
             // 
-            KFMidos.done = false;
+            KFMidos.Done = false;
             KFMidos.FlatAppearance.BorderColor = Color.Black;
             KFMidos.FlatAppearance.BorderSize = 0;
             KFMidos.FlatStyle = FlatStyle.Flat;
@@ -1006,7 +1006,7 @@
             // 
             // OGCGreatFairy
             // 
-            OGCGreatFairy.done = false;
+            OGCGreatFairy.Done = false;
             OGCGreatFairy.FlatAppearance.BorderColor = Color.Black;
             OGCGreatFairy.FlatAppearance.BorderSize = 0;
             OGCGreatFairy.FlatStyle = FlatStyle.Flat;
@@ -1020,7 +1020,7 @@
             // 
             // ColossusPoH
             // 
-            ColossusPoH.done = false;
+            ColossusPoH.Done = false;
             ColossusPoH.FlatAppearance.BorderColor = Color.Black;
             ColossusPoH.FlatAppearance.BorderSize = 0;
             ColossusPoH.FlatStyle = FlatStyle.Flat;
@@ -1034,7 +1034,7 @@
             // 
             // ColossusShiek
             // 
-            ColossusShiek.done = false;
+            ColossusShiek.Done = false;
             ColossusShiek.FlatAppearance.BorderColor = Color.Black;
             ColossusShiek.FlatAppearance.BorderSize = 0;
             ColossusShiek.FlatStyle = FlatStyle.Flat;
@@ -1048,7 +1048,7 @@
             // 
             // ColossusGreatFairy
             // 
-            ColossusGreatFairy.done = false;
+            ColossusGreatFairy.Done = false;
             ColossusGreatFairy.FlatAppearance.BorderColor = Color.Black;
             ColossusGreatFairy.FlatAppearance.BorderSize = 0;
             ColossusGreatFairy.FlatStyle = FlatStyle.Flat;
@@ -1062,7 +1062,7 @@
             // 
             // GVCratePoH
             // 
-            GVCratePoH.done = false;
+            GVCratePoH.Done = false;
             GVCratePoH.FlatAppearance.BorderColor = Color.Black;
             GVCratePoH.FlatAppearance.BorderSize = 0;
             GVCratePoH.FlatStyle = FlatStyle.Flat;
@@ -1076,7 +1076,7 @@
             // 
             // GVWaterFallPoH
             // 
-            GVWaterFallPoH.done = false;
+            GVWaterFallPoH.Done = false;
             GVWaterFallPoH.FlatAppearance.BorderColor = Color.Black;
             GVWaterFallPoH.FlatAppearance.BorderSize = 0;
             GVWaterFallPoH.FlatStyle = FlatStyle.Flat;
@@ -1090,7 +1090,7 @@
             // 
             // GVChest
             // 
-            GVChest.done = false;
+            GVChest.Done = false;
             GVChest.FlatAppearance.BorderColor = Color.Black;
             GVChest.FlatAppearance.BorderSize = 0;
             GVChest.FlatStyle = FlatStyle.Flat;
@@ -1104,7 +1104,7 @@
             // 
             // HBA
             // 
-            HBA.done = false;
+            HBA.Done = false;
             HBA.FlatAppearance.BorderColor = Color.Black;
             HBA.FlatAppearance.BorderSize = 0;
             HBA.FlatStyle = FlatStyle.Flat;
@@ -1118,7 +1118,7 @@
             // 
             // GFChest
             // 
-            GFChest.done = false;
+            GFChest.Done = false;
             GFChest.FlatAppearance.BorderColor = Color.Black;
             GFChest.FlatAppearance.BorderSize = 0;
             GFChest.FlatStyle = FlatStyle.Flat;
@@ -1132,7 +1132,7 @@
             // 
             // WastelandChest
             // 
-            WastelandChest.done = false;
+            WastelandChest.Done = false;
             WastelandChest.FlatAppearance.BorderColor = Color.Black;
             WastelandChest.FlatAppearance.BorderSize = 0;
             WastelandChest.FlatStyle = FlatStyle.Flat;
@@ -1418,7 +1418,6 @@
         private Check LLRMalon;
         private Check LLRTalon;
         private Check HCGreatFairy;
-        private Check ToTShiek;
         private Check ToTLACS;
         private Check MarketBigPoes;
         private Check MarketRichard;
@@ -1465,5 +1464,6 @@
         private DungeonButton Deku_Button;
         private DungeonButton Shadow_Button;
         private DungeonButton GanonsCastle_Button;
+        public Check ToTShiek;
     }
 }

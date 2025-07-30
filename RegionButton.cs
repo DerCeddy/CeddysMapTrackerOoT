@@ -44,7 +44,7 @@ namespace CeddyMapTracker
                     foreach (Check cb in listchecks)
                     {                        
                         MaxChecks++;
-                        if (cb.done)
+                        if (cb.Done)
                         {
                             ChecksChecked++;
                         }                       
@@ -53,7 +53,7 @@ namespace CeddyMapTracker
                     {
                         foreach (Check cb in listchecks)
                         {                         
-                            cb.done = false;                           
+                            cb.Done = false;                           
                             cb.ChangeColor();                           
                         }
                     }
@@ -61,7 +61,7 @@ namespace CeddyMapTracker
                     {
                         foreach (Check cb in listchecks)
                         {                          
-                            cb.done = true;
+                            cb.Done = true;
                             cb.ChangeColor();                           
                         }
                     }

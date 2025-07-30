@@ -10,8 +10,9 @@ namespace CeddyMapTracker
 {
     public class Check : Button
     {       
-        public Color color;      
-        public bool done
+        public Color color;
+        private Color Color_Done = Color.Gray;
+        public bool Done
         {
             get
             {
@@ -46,23 +47,27 @@ namespace CeddyMapTracker
         }
         public void ChangeColor()
         {          
-            if(!done)
+            if(!Done)
             {             
-                BackColor = Color.Gray;
-                done = true;
+                BackColor = Color_Done;
+                Done = true;
             }             
             else
             {
                 BackColor = color;
-                done = false;
+                Done = false;
             }
         }
         public void UpdateColor()
         {
-            if(!done)
+            if(!Done)
             {
                 BackColor = color;
-            }           
+            }  
+            else
+            {
+                BackColor = Color_Done;
+            }
         }
         public event EventHandler ValueChanged;
         protected virtual void OnValueChanged(EventArgs e)

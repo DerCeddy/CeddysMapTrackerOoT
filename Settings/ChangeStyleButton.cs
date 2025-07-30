@@ -1,0 +1,263 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CeddyMapTracker
+{
+    public class ChangeStyleButton : PictureBox 
+    {
+        private int _state = 0;
+        public ChangeStyleButton()
+        {
+            Size = new Size(48,48);
+            SizeMode = PictureBoxSizeMode.StretchImage;          
+        }
+
+        public void OnClick(ItemPanel i)
+        {
+            List<Item> Items = [i.Sticks,i.Nuts,i.Bomb,i.Bow,i.FireArrow,i.Dins,i.Slingshot,i.Ocarina,i.Bombchu,i.Hookshot,i.IceArrow,i.FaroresWind,i.Boomerang, i.Lens, i.Beans, i.Hammer, i.LightArrow, i.NayrusLove, i.RutoLetter, i.Bottle2, i.Bottle2, i.Bottle3, i.Bottle4, i.AdultTradeItems, i.ChildTradeItems, i.KokiriSword, i.MasterSword, i.BiggoronSword, i.Agony, i.GerudoCard, i.DekuShield, i.HylianShield, i.MirrorShield, i.Strength, i.Scales, i.Wallet, i.KokiriTunic, i.GoronTunic, i.ZoraTunic, i.KokiriBoots, i.IronBoots, i.HoverBoots, i.KokiriStone, i.GoronStone, i.ZoraStone, i.ForestMedallion, i.FireMedallion, i.WaterMedallion, i.ShadowMedallion, i.SpiritMedallion, i.LightMedallion];
+            if(_state == 0)
+            {
+                _state = 1;
+                Image = (Bitmap)Image.FromFile("Textures/Settings/3DS.png");
+                i.Sticks.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Deku_Stick_Icon.png");
+                i.Sticks.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Deku_Stick_Icon_bw.png");
+                i.Nuts.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Deku_Nut_Icon.png");
+                i.Nuts.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Deku_Nut_Icon_bw.png");
+                i.Bomb.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bomb_Icon.png");
+                i.Bomb.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bomb_Icon_bw.png");
+                i.Bow.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fairy_Bow_Icon.png");
+                i.Bow.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fairy_Bow_Icon_bw.png");
+                i.FireArrow.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fire_Arrow_Icon.png");
+                i.FireArrow.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fire_Arrow_Icon_bw.png");
+                i.Dins.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Din's_Fire_Icon.png");
+                i.Dins.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Din's_Fire_Icon_bw.png");
+                i.Slingshot.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fairy_Slingshot_Icon.png");
+                i.Slingshot.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fairy_Slingshot_Icon_bw.png");
+                i.Ocarina.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fairy_Ocarina_Icon.png");
+                i.Ocarina.ItemPicture1 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Ocarina_of_Time_Icon.png");
+                i.Ocarina.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fairy_Ocarina_Icon_bw.png");
+                i.Bombchu.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bombchu_Icon.png");
+                i.Bombchu.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bombchu_Icon_bw.png");
+                i.Hookshot.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Hookshot_Icon.png");
+                i.Hookshot.ItemPicture1 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Longshot_Icon.png");
+                i.Hookshot.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Hookshot_Icon_bw.png");
+                i.IceArrow.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Ice_Arrow_Icon.png");
+                i.IceArrow.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Ice_Arrow_Icon_bw.png");
+                i.FaroresWind.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Farore's_Wind_Icon.png");
+                i.FaroresWind.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Farore's_Wind_Icon_bw.png");
+                i.Boomerang.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Boomerang_Icon.png");
+                i.Boomerang.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Boomerang_Icon_bw.png");
+                i.Lens.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Lens_of_Truth_Icon.png");
+                i.Lens.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Lens_of_Truth_Icon_bw.png");
+                i.Beans.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Magic_Bean_Icon.png");
+                i.Beans.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Magic_Bean_Icon_bw.png");
+                i.Hammer.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Megaton_Hammer_Icon.png");
+                i.Hammer.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Megaton_Hammer_Icon_bw.png");
+                i.LightArrow.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Light_Arrow_Icon.png");
+                i.LightArrow.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Light_Arrow_Icon_bw.png");
+                i.NayrusLove.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Nayru's_Love_Icon.png");
+                i.NayrusLove.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Nayru's_Love_Icon_bw.png");
+                i.RutoLetter.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Ruto's_Letter_Icon.png");
+                i.RutoLetter.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Ruto's_Letter_Icon_bw.png");
+                i.Bottle2.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bottle_Icon.png");
+                i.Bottle2.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bottle_Icon_bw.png");
+                i.Bottle3.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bottle_Icon.png");
+                i.Bottle3.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bottle_Icon_bw.png");
+                i.Bottle4.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bottle_Icon.png");
+                i.Bottle4.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Bottle_Icon_bw.png");
+                i.AdultTradeItems.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Prescription_Icon.png");
+                i.AdultTradeItems.ItemPicture1 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Eyeball_Frog_Icon.png");
+                i.AdultTradeItems.ItemPicture2 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_World's_Finest_Eyedrops_Icon.png");
+                i.AdultTradeItems.ItemPicture3 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Claim_Check_Icon.png");
+                i.AdultTradeItems.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Prescription_Icon_bw.png");
+                i.ChildTradeItems.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Keaton_Mask_Icon.png");
+                i.ChildTradeItems.ItemPicture1 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Skull_Mask_Icon.png");
+                i.ChildTradeItems.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Keaton_Mask_Icon_bw.png");
+                i.KokiriSword.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Kokiri_Sword_Icon.png");
+                i.KokiriSword.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Kokiri_Sword_Icon_bw.png");
+                i.MasterSword.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Master_Sword_Icon.png");
+                i.MasterSword.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Master_Sword_Icon_bw.png");
+                i.BiggoronSword.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Biggoron's_Sword_Icon.png");
+                i.BiggoronSword.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Biggoron's_Sword_Icon_bw.png");
+                i.Agony.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Shard_of_Agony_Icon.png");
+                i.Agony.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Shard_of_Agony_Icon_bw.png");
+                i.GerudoCard.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Gerudo_Token_Icon.png");
+                i.GerudoCard.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Gerudo_Token_Icon_bw.png");
+                i.DekuShield.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Deku_Shield_Icon.png");
+                i.DekuShield.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Deku_Shield_Icon_bw.png");
+                i.HylianShield.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Hylian_Shield_Icon.png");
+                i.HylianShield.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Hylian_Shield_Icon_bw.png");
+                i.MirrorShield.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Mirror_Shield_Icon.png");
+                i.MirrorShield.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Mirror_Shield_Icon_bw.png");
+                i.Strength.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Goron_Bracelet_Icon.png");
+                i.Strength.ItemPicture1 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Silver_Gauntlets_Icon.png");
+                i.Strength.ItemPicture2 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Golden_Gauntlets_Icon.png");
+                i.Strength.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Goron_Bracelet_Icon_bw.png");
+                i.Scales.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Silver_Scale_Icon.png");
+                i.Scales.ItemPicture1 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Golden_Scale_Icon.png");
+                i.Scales.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Silver_Scale_Icon_bw.png");
+                i.Wallet.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Adult's_Wallet_Icon.png");
+                i.Wallet.ItemPicture1 = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Giant's_Wallet_Icon.png");
+                i.Wallet.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Adult's_Wallet_Icon_bw.png");
+                i.KokiriTunic.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Kokiri_Tunic_Icon.png");
+                i.KokiriTunic.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Kokiri_Tunic_Icon_bw.png");
+                i.GoronTunic.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Goron_Tunic_Icon.png");
+                i.GoronTunic.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Goron_Tunic_Icon_bw.png");
+                i.ZoraTunic.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Zora_Tunic_Icon.png");
+                i.ZoraTunic.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Zora_Tunic_Icon_bw.png");
+                i.KokiriBoots.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Kokiri_Boots_Icon.png");
+                i.KokiriBoots.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Kokiri_Boots_Icon_bw.png");
+                i.IronBoots.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Iron_Boots_Icon.png");
+                i.IronBoots.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Iron_Boots_Icon_bw.png");
+                i.HoverBoots.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Hover_Boots_Icon.png");
+                i.HoverBoots.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Hover_Boots_Icon_bw.png");
+                i.KokiriStone.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Spiritual_Stone_of_the_Forest_Icon.png");
+                i.KokiriStone.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Spiritual_Stone_of_the_Forest_Icon_bw.png");
+                i.GoronStone.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Spiritual_Stone_of_Fire_Icon.png");
+                i.GoronStone.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Spiritual_Stone_of_Fire_Icon_bw.png");
+                i.ZoraStone.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Spiritual_Stone_of_Water_Icon.png");
+                i.ZoraStone.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Spiritual_Stone_of_Water_Icon_bw.png");
+                i.ForestMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Forest_Medallion_Icon.png");
+                i.ForestMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Forest_Medallion_Icon_bw.png");
+                i.FireMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fire_Medallion_Icon.png");
+                i.FireMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Fire_Medallion_Icon_bw.png");
+                i.WaterMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Water_Medallion_Icon.png");
+                i.WaterMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Water_Medallion_Icon_bw.png");
+                i.ShadowMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Shadow_Medallion_Icon.png");
+                i.ShadowMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Shadow_Medallion_Icon_bw.png");
+                i.SpiritMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Spirit_Medallion_Icon.png");
+                i.SpiritMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Spirit_Medallion_Icon_bw.png");
+                i.LightMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Light_Medallion_Icon.png");
+                i.LightMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/3DS/OoT3D_Light_Medallion_Icon_bw.png");
+                foreach (Item Item in Items)
+                {
+                    Item.UpdateItemState();
+                }
+                return;
+            }
+            else if (_state == 1)
+            {
+                _state = 0;
+                Image = (Bitmap)Image.FromFile("Textures/Settings/N64.png");
+                i.Sticks.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Sticks_N64.png");
+                i.Sticks.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Sticks_N64_bw.png");
+                i.Nuts.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Nuts_N64.png");
+                i.Nuts.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Nuts_N64_bw.png");
+                i.Bomb.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Bombs_N64.png");
+                i.Bomb.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Bombs_N64_bw.png");
+                i.Bow.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Fairy_Bow_N64.png");
+                i.Bow.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Fairy_Bow_N64_bw.png");
+                i.FireArrow.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Fire_Arrows_N64.png");
+                i.FireArrow.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Fire_Arrows_N64_bw.png");
+                i.Dins.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Dins_N64.png");
+                i.Dins.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Dins_N64_bw.png");
+                i.Slingshot.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Slingshot_N64.png");
+                i.Slingshot.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Slingshot_N64_bw.png");
+                i.Ocarina.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Fairy_Ocarina_N64.png");
+                i.Ocarina.ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Ocarina_of_Time_N64.png");
+                i.Ocarina.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Fairy_Ocarina_N64_bw.png");
+                i.Bombchu.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Bombchu_N64.png");
+                i.Bombchu.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Bombchu_N64_bw.png");
+                i.Hookshot.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Hookshot_N64.png");
+                i.Hookshot.ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Longshot_N64.png");
+                i.Hookshot.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Hookshot_N64_bw.png");
+                i.IceArrow.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Ice_Arrows_N64.png");
+                i.IceArrow.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Ice_Arrows_N64_bw.png");
+                i.FaroresWind.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Farore's_Wind_N64.png");
+                i.FaroresWind.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Farore's_Wind_N64_bw.png");
+                i.Boomerang.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Boomerang_N64.png");
+                i.Boomerang.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Boomerang_N64_bw.png");
+                i.Lens.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Lens_N64.png");
+                i.Lens.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Lens_N64_bw.png");
+                i.Beans.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Beans_N64.png");
+                i.Beans.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Beans_N64_bw.png");
+                i.Hammer.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Hammer_N64.png");
+                i.Hammer.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Hammer_N64_bw.png");
+                i.LightArrow.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Light_Arrow_N64.png");
+                i.LightArrow.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Light_Arrow_N64_bw.png");
+                i.NayrusLove.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Nayru's_Love_N64.png");
+                i.NayrusLove.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Nayru's_Love_N64_bw.png");
+                i.RutoLetter.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Letter_N64.png");
+                i.RutoLetter.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Letter_N64_bw.png");
+                i.Bottle2.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Empty_Bottle_N64.png");
+                i.Bottle2.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Empty_Bottle_N64_bw.png");
+                i.Bottle3.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Empty_Bottle_N64.png");
+                i.Bottle3.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Empty_Bottle_N64_bw.png");
+                i.Bottle4.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Empty_Bottle_N64.png");
+                i.Bottle4.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Empty_Bottle_N64_bw.png");
+                i.AdultTradeItems.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Prescription_N64.png");
+                i.AdultTradeItems.ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Eyeball_Frog_N64.png");
+                i.AdultTradeItems.ItemPicture2 = (Bitmap)Image.FromFile("Textures/N64/World's_Finest_Eye_Drops_N64.png");
+                i.AdultTradeItems.ItemPicture3 = (Bitmap)Image.FromFile("Textures/N64/Claim_Check_N64.png");
+                i.AdultTradeItems.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Prescription_N64_bw.png");
+                i.ChildTradeItems.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Keaton_Mask_N64.png");
+                i.ChildTradeItems.ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Skull_Mask_N64.png");
+                i.ChildTradeItems.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Keaton_Mask_N64_bw.png");
+                i.KokiriSword.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Kokiri_Sword_N64.png");
+                i.KokiriSword.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Kokiri_Sword_N64_bw.png");
+                i.MasterSword.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Master_Sword_N64.png");
+                i.MasterSword.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Master_Sword_N64_bw.png");
+                i.BiggoronSword.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Biggoron's_Sword_N64.png");
+                i.BiggoronSword.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Biggoron's_Sword_N64_bw.png");
+                i.Agony.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Stone_of_Agony_N64.png");
+                i.Agony.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Stone_of_Agony_N64_bw.png");
+                i.GerudoCard.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Gerudo's_Card_N64.png");
+                i.GerudoCard.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Gerudo's_Card_N64_bw.png");
+                i.DekuShield.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Deku_Shield_N64.png");
+                i.DekuShield.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Deku_Shield_N64_bw.png");
+                i.HylianShield.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Hylian_Shield_N64.png");
+                i.HylianShield.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Hylian_Shield_N64_bw.png");
+                i.MirrorShield.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Mirror_Shield_N64.png");
+                i.MirrorShield.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Mirror_Shield_N64_bw.png");
+                i.Strength.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Goron's_Bracelet_N64.png");
+                i.Strength.ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Silver_Gauntlets_N64.png");
+                i.Strength.ItemPicture2 = (Bitmap)Image.FromFile("Textures/N64/Golden_Gauntlets_N64.png");
+                i.Strength.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Goron's_Bracelet_N64_bw.png");
+                i.Scales.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Silver_Scale_N64.png");
+                i.Scales.ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Golden_Scale_N64.png");
+                i.Scales.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Silver_Scale_N64_bw.png");
+                i.Wallet.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Adult_Wallet_N64.png");
+                i.Wallet.ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Giant's_Wallet_N64.png");
+                i.Wallet.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Adult_Wallet_N64_bw.png");
+                i.KokiriTunic.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Kokiri_Tunic_N64.png");
+                i.KokiriTunic.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Kokiri_Tunic_N64_bw.png");
+                i.GoronTunic.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Goron_Tunic_N64.png");
+                i.GoronTunic.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Goron_Tunic_N64_bw.png");
+                i.ZoraTunic.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Zora_Tunic_N64.png");
+                i.ZoraTunic.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Zora_Tunic_N64_bw.png");
+                i.KokiriBoots.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Kokiri_Boots_N64.png");
+                i.KokiriBoots.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Kokiri_Boots_N64_bw.png");
+                i.IronBoots.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Iron_Boots_N64.png");
+                i.IronBoots.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Iron_Boots_N64_bw.png");
+                i.HoverBoots.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Hover_Boots_N64.png");
+                i.HoverBoots.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Hover_Boots_N64_bw.png");
+                i.KokiriStone.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Spiritual_Stone_of_the_Forest_Icon_N64.png");
+                i.KokiriStone.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Spiritual_Stone_of_the_Forest_Icon_N64_bw.png");
+                i.GoronStone.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Spiritual_Stone_of_Fire_Icon_N64.png");
+                i.GoronStone.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Spiritual_Stone_of_Fire_Icon_N64_bw.png");
+                i.ZoraStone.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Spiritual_Stone_of_Water_Icon_N64.png");
+                i.ZoraStone.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Spiritual_Stone_of_Water_Icon_N64_bw.png");
+                i.ForestMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Forest_Medallion_Icon_N64.png");
+                i.ForestMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Forest_Medallion_Icon_N64_bw.png");
+                i.FireMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Fire_Medallion_Icon_N64.png");
+                i.FireMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Fire_Medallion_Icon_N64_bw.png");
+                i.WaterMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Water_Medallion_Icon_N64.png");
+                i.WaterMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Water_Medallion_Icon_N64_bw.png");
+                i.ShadowMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Shadow_Medallion_Icon_N64.png");
+                i.ShadowMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Shadow_Medallion_Icon_N64_bw.png");
+                i.SpiritMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Spirit_Medallion_Icon_N64.png");
+                i.SpiritMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Spirit_Medallion_Icon_N64_bw.png");
+                i.LightMedallion.ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Light_Medallion_Icon_N64.png");
+                i.LightMedallion.ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Light_Medallion_Icon_N64_bw.png");
+                foreach (Item Item in Items)
+                {
+                    Item.UpdateItemState();
+                }
+                return;
+            }
+        }
+    }
+}
