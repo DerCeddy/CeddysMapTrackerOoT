@@ -45,6 +45,9 @@ namespace CeddyMapTracker
             AlwaysHints.Location = new Point(WotHPanel.Location.X, WotHPanel.Size.Height + 1);
             SometimesHints.Location = new Point(AlwaysHints.Location.X, AlwaysHints.Size.Height + AlwaysHints.Location.Y + 1);
             //Controls.Add(dungeoncounter);
+            //Load Hints
+            AlwaysHints.DrawPanel();
+            SometimesHints.GenerateHintsAndStones();
             //Load logic for the first time
             MapTracker.Sphere0Checks();
             MapTracker.ItemLogic(ItemPanel, Keys);            

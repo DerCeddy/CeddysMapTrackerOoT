@@ -43,6 +43,8 @@ namespace CeddyMapTracker
         private Label label9;
         private Label label10;
         private Label label11;
+        private Label label1;
+        private Label label12;
         public Button button1;
 
         private void InitializeComponent()
@@ -68,6 +70,8 @@ namespace CeddyMapTracker
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+            label1 = new Label();
+            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)WotH_Hint_Counter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Sometimes_Hint_Counter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Sometimes_DualHint_Counter).BeginInit();
@@ -86,7 +90,7 @@ namespace CeddyMapTracker
             // 
             // button1
             // 
-            button1.Location = new Point(552, 413);
+            button1.Location = new Point(368, 362);
             button1.Name = "button1";
             button1.Size = new Size(144, 23);
             button1.TabIndex = 1;
@@ -237,7 +241,8 @@ namespace CeddyMapTracker
             // 
             // changeStyleButton1
             // 
-            changeStyleButton1.Location = new Point(1056, 152);
+            changeStyleButton1.BackColor = Color.White;
+            changeStyleButton1.Location = new Point(865, 99);
             changeStyleButton1.Name = "changeStyleButton1";
             changeStyleButton1.Size = new Size(48, 48);
             changeStyleButton1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -273,9 +278,32 @@ namespace CeddyMapTracker
             label11.TabIndex = 21;
             label11.Text = "Hint Layout";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(829, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(57, 15);
+            label1.TabIndex = 22;
+            label1.Text = "Cosmetic";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(801, 117);
+            label12.Name = "label12";
+            label12.Size = new Size(58, 15);
+            label12.TabIndex = 23;
+            label12.Text = "Icon Style";
+            // 
             // SettingsPanel
             // 
             BackColor = Color.Black;
+            BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(label12);
+            Controls.Add(label1);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -298,7 +326,7 @@ namespace CeddyMapTracker
             Controls.Add(button1);
             Controls.Add(WotH_Hint_Counter);
             Name = "SettingsPanel";
-            Size = new Size(1270, 534);
+            Size = new Size(1268, 532);
             Load += SettingsPanel_Load;
             ((System.ComponentModel.ISupportInitialize)WotH_Hint_Counter).EndInit();
             ((System.ComponentModel.ISupportInitialize)Sometimes_Hint_Counter).EndInit();

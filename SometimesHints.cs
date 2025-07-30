@@ -10,8 +10,8 @@ namespace CeddyMapTracker
     {
         public string[] SingleHints = [];
         public string[] DualHints = [];
-        public decimal Hint_Count = 3;
-        public decimal Dual_Hint_Count = 7;
+        public decimal Hint_Count = 8;
+        public decimal Dual_Hint_Count = 2;
         private List<ComboBox> comboBoxes = [];
         private List<Gossipstone> gossipStones = [];
         public SometimesHints(Point _location)

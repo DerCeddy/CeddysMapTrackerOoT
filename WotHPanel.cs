@@ -12,7 +12,7 @@ namespace CeddyMapTracker
         //public List<int> Goals = [];
         public List<GoalPathHint> Goals = [];
         private List<Gossipstone> gossipstones = [];
-        public decimal Goal_Count;
+        public decimal Goal_Count = 5;
         public WOTHPanel(Point _location)
         {
             Width = 260;

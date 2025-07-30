@@ -12,7 +12,8 @@ namespace CeddyMapTracker
         public ChangeStyleButton()
         {
             Size = new Size(48,48);
-            SizeMode = PictureBoxSizeMode.StretchImage;          
+            SizeMode = PictureBoxSizeMode.StretchImage; 
+            BackColor = Color.White;
         }
 
         public void OnClick(ItemPanel i)
