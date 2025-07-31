@@ -254,11 +254,11 @@ namespace CeddyMapTracker
             //Assign checks to region buttons
             List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];
             //List<List<Check>> Test = [Wasteland_Check_List, Colossus_Check_List, GerudoFortress_Check_List, GerudoValley_Check_List, HyruleField_Check_List, LakeHylia_Check_List, KokiriForest_Check_List, LostWoods_Check_List, SFM_Check_List, ZoraRiver_Check_List, ZoraDomain_Check_List, ZoraFountain_Check_List, DMT_Check_List, DMC_Check_List, Market_Check_List, HC_Check_List, OGC_Check_List, LLR_Check_List, ToT_Check_List];          
-            ContextMenuForWOTHHints test123 = new();
-            Controls.Add(test123);
-            test123.Visible = false;          
+            ContextMenuForWOTHHints ContextWheel = new();
+            Controls.Add(ContextWheel);
+            ContextWheel.Visible = false;          
             //Update WOTH Panel Goals
-            test123.ValueChanged += (sender, e) => UpdateWOTHGoals(wothPanel,test123);         
+            ContextWheel.ValueChanged += (sender, e) => UpdateWOTHGoals(wothPanel,ContextWheel);         
             //Add region panels to the map
             var temp = 0;
             foreach (Region region in regions)
@@ -268,12 +268,12 @@ namespace CeddyMapTracker
                 if (region._region_button != null)
                 {
                     region._region_button._name = Denselocations_Names[temp];
-                    region._region_button.MouseDown += (sender, e) => AddContextMenu(e, test123, region);
+                    region._region_button.MouseDown += (sender, e) => AddContextMenu(e, ContextWheel, region);
                 }
                 if (region._dungeon_button != null)
                 {
                     region._dungeon_button._name = Denselocations_Names[temp];
-                    region._dungeon_button.MouseDown += (sender, e) => AddContextMenu(e, test123, region._dungeon_button);
+                    region._dungeon_button.MouseDown += (sender, e) => AddContextMenu(e, ContextWheel, region._dungeon_button);
                 }
                 /*
                 foreach(Control c in region._region_panel.Controls)
@@ -301,7 +301,7 @@ namespace CeddyMapTracker
                     rbd.BringToFront();
                 }
             }
-            MouseDown += (sender,e) => GetRegionName(e, test123);
+            MouseDown += (sender,e) => GetRegionName(e, ContextWheel);
         }
 
         public void UpdateCheckColors()
