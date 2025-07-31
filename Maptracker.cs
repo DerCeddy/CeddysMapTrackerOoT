@@ -521,45 +521,77 @@ namespace CeddyMapTracker
         {
             int posX = e.X;
             int posY = e.Y;
-            if (e.X - 70 <= 70)
+            if (e.X - 70 <= 0)
             {
                 posX = 70;
             }
-            if (e.Y - 70 <= 70)
+            if (e.Y - 70 <= 0)
             {
                 posY = 70;
             }
-            Console.WriteLine($"{Location.X}");
+            if (e.X + 70 >= 857)
+            {
+                posX = 787;
+            }
+            if (e.Y + 70 >= 728)
+            {
+                posY = 658;
+            }
             test123.AddContextMenu(this, posX - 70, posY - 70);
             test123.BringToFront();
             test123.RegionName = Regionname;
         }
         public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, Region RegionButton)
         {
-            int posX = e.X;
-            if (e.X + RegionButton._region_button.Location.X - 70 <= 70)
+            int posX = e.X + RegionButton._region_button.Location.X;
+            int posY = e.Y + RegionButton._region_button.Location.Y;
+            if (posX - 70 <= 0)
             {
                 posX = 70;
             }
-            
+            if (posY - 70 <= 0)
+            {
+                posY = 70;
+            }
+            if (posX + 70 >= 857)
+            {
+                posX = 787;
+            }
+            if (posY + 70 >= 728)
+            {
+                posY = 658;
+            }
             if (e.Button == MouseButtons.Right)
             {
-                test123.AddContextMenu(this, posX + RegionButton._region_button.Location.X - 70, e.Y + RegionButton._region_button.Location.Y - 70);
+                test123.AddContextMenu(this, posX - 70, posY - 70);
                 test123.BringToFront();
                 test123.RegionName = RegionButton._region_button._name;
             }
         }
         public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, DungeonButton DungeonButton)
         {
-            int posX = e.X;
-            if (e.X + DungeonButton.Location.X - 70 <= 70)
+            int posX = e.X + DungeonButton.Location.X;
+            int posY = e.Y + DungeonButton.Location.Y;
+            if (posX - 70 <= 0)
             {
                 posX = 70;
+            }
+            if (posY - 70 <= 0)
+            {
+                posY = 70;
+            }
+            if (posX + 70 >= 857)
+            {
+                posX = 787;
+            }
+            if (posY + 70 >= 728)
+            {
+                posY = 658;
             }
 
             if (e.Button == MouseButtons.Right)
             {
-                test123.AddContextMenu(this, posX + DungeonButton.Location.X - 70, e.Y + DungeonButton.Location.Y - 70);
+                test123.AddContextMenu(this, posX - 70, posY - 70);
                 test123.BringToFront();
                 test123.RegionName = DungeonButton._name;
             }
