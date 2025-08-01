@@ -13,20 +13,20 @@ namespace CeddyMapTracker
             //Light Arrow Cutscene
             if (Has(i.SpiritMedallion) && Has(i.ShadowMedallion))
             {
-                ToTLACS.color = Available;
+                ToTLACS.ForeColor = Available;
             }
             else
             {
-                ToTLACS.color = NotAvailable;
+                ToTLACS.ForeColor = NotAvailable;
             }
             //Shiek at Temple
             if (Has(i.ForestMedallion))
             {
-                ToTShiek.color = Available;
+                ToTShiek.ForeColor = Available;
             }
             else
             {
-                ToTShiek.color = NotAvailable;
+                ToTShiek.ForeColor = NotAvailable;
             }
         }
     }

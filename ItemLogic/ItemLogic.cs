@@ -175,7 +175,7 @@ namespace CeddyMapTracker
             ItemLogic_ZoraRiver(i);         
             ItemLogic_Skulltulas(i);
             UpdateCheckColors();
-            UpdateDenseLocations(regions);
+            UpdateDenseLocations();
         }       
         /*
         public void ItemLogic(Item i)

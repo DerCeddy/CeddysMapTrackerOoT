@@ -140,8 +140,7 @@ namespace CeddyMapTracker
             toolTip1.SetToolTip(HFSalesman, Konfig.checkname.HFSalesman);
             toolTip1.SetToolTip(MarketShootingGalleryReward, Konfig.checkname.MarketShootingGalleryReward);
             toolTip1.SetToolTip(MarketRichard, Konfig.checkname.MarketRichard);
-            toolTip1.SetToolTip(MarketTreasureChestGame, Konfig.checkname.MarketTreasureChestGame);
-            toolTip1.SetToolTip(ToTLACS, Konfig.checkname.ToTLACS);
+            toolTip1.SetToolTip(MarketTreasureChestGame, Konfig.checkname.MarketTreasureChestGame);          
             toolTip1.SetToolTip(ToTShiek, Konfig.checkname.ToTShiek);
             toolTip1.SetToolTip(HCGreatFairy, Konfig.checkname.HCGreatFairy);
             toolTip1.SetToolTip(OGCGreatFairy, Konfig.checkname.OGCGreatFairy);
@@ -186,6 +185,7 @@ namespace CeddyMapTracker
             List<Region_Panel_Check> ForestTemple_Check_List = [ForestFirstRoomChest, ForestFirstStalfosRoomChest, ForestRaisedIslandCourtyardChest, ForestMapChest, ForestWellChest, ForestEyeSwitchChest, ForestBossKeyChest, ForestFloormasterChest, ForestRedPoeChest, ForestBowChest, ForestBluePoeChest, ForestFallingCeillingRoomChest, ForestBasementChest, ForestPhantomGanonHeart];
             List<Region_Panel_Check> Kakariko_Check_List = [KakAnjuasChild, KakAnjuasAdult, KakImpasHouseFreestandingPoH, KakWindmillFreestandingPoH, WindmillSong, KakManonRoof, KakOpenGrottoChest, KakRedeadGrottoChest, KakShootingGalleryReward, KakShiek, Kak10GoldSkulltulaReward, Kak20GoldSkulltulaReward, Kak30GoldSkulltulaReward, Kak40GoldSkulltulaReward, Kak50GoldSkulltulaReward];
             List<Region_Panel_Check> Graveyard_Check_List = [GraveyardShieldGraveChest, GraveyardHeartPieceGraveChest, GraveyardRoyalFamilysTombChest, GraveyardFreestandingPoH, GraveyardDampeGravediggingTour, GraveyardDampeRaceHookshotChest, GraveyardDampeRaceFreestandingPoH, GraveyardComposerSong];
+            List<Region_Panel_Check> ToT_Check_List = [ToTLACS, ToTShiek];
             List<Region_Panel_Check> ShadowTemple_Check_List = [ShadowMapChest, ShadowHoverBootsChest, ShadowCompassChest, ShadowEarlySilverRupeeChest, ShadowInvisibleBladesVisibleChest, ShadowInvisibleBladesInvisibleChest, ShadowFallingSpikesLowerChest, ShadowFallingSpikesUpperChest, ShadowFallingSpikesSwitchChest, ShadowInvisibleSpikesChest, ShadowFreestandingKey, ShadowWindHintChest, ShadowAfterWindEnemyChest, ShadowAfterWindHiddenChest, ShadowSpikeWallsLeftChest, ShadowBossKeyChest, ShadowInvisibleFloormasterChest, ShadowBongoBongoHeart];
             List<Region_Panel_Check> FireTemple_Check_List = [FireNearBossChest, FireFlareDancerChest, FireBossKeyChest, FireBigLavaRoomLowerDoorChest, FireBigLavaRoomBlockedDoorChest, FireBoulderMazeLowerChest, FireBoulderMazeSideRoomChest, FireMapChest, FireBoulderMazeShortcutChest, FireBoulderMazeUpperChest, FireScarecrowChest, FireCompassChest, FireMegatonHammerChest, FireHighestGoronChest, FireVolvagiaHeart];
             List<Region_Panel_Check> WaterTemple_Check_List = [WaterCompassChest, WaterMapChest, WaterCrackedWallChest, WaterTorchesChest, WaterBossKeyChest, WaterCentralPillarChest, WaterCentralBowTargetChest, WaterLongshotChest, WaterRiverChest, WaterDragonChest, WaterMorphaHeart];
@@ -197,11 +197,12 @@ namespace CeddyMapTracker
             List<Region_Panel_Check> GanonsCastle_Check_List = [GanonsCastleForestTrialChest, GanonsCastleWaterTrialLeftChest, GanonsCastleWaterTrialRightChest, GanonsCastleShadowTrialFrontChest, GanonsCastleShadowTrialGoldenGauntletsChest, GanonsCastleLightTrialFirstLeftChest, GanonsCastleLightTrialSecondLeftChest, GanonsCastleLightTrialThirdLeftChest, GanonsCastleLightTrialFirstRightChest, GanonsCastleLightTrialSecondRightChest, GanonsCastleLightTrialThirdRightChest, GanonsCastleLightTrialInvisibleEnemiesChest, GanonsCastleLightTrialLullabyChest, GanonsCastleSpiritTrialCrystalSwitchChest, GanonsCastleSpiritTrialInvisibleChest, GanonsTowerBossKeyChest];
             List<Region_Panel_Check> IceCavern_Check_List = [IceCavernMapChest, IceCavernCompassChest, IceCavernIronBootsChest, IceCavernFreestandingPoH, IceCavernShiek];
             List<Region_Panel_Check> GoronCity_Check_List = [GCDaruniasJoy, GCPotFreestandingPoH, GCRollingGoronasChild, GCRollingGoronasAdult, GCMazeLeftChest, GCMazeCenterChest, GCMazeRightChest];
-            List<Region_Panel_Check> BotW_Check_List = [BotWFrontLeftFakeWallChest, BotWFrontCenterBombableChest, BotWBackLeftBombableChest, BotWUnderwaterLeftChest, BotWFreestandingKey, BotWCompassChest, BotWCenterSkulltulaChest, BotWRightBottomFakeWallChest, BotWFireKeeseChest, BotWLikeLikeChest, BotWMapChest, BotWUnderwaterFrontChest, BotWInvisibleChest, BotWLensofTruthChest];
+            List<Region_Panel_Check> BotW_Check_List = [BotWFrontLeftFakeWallChest, BotWFrontCenterBombableChest, BotWBackLeftBombableChest, BotWUnderwaterLeftChest, BotWFreestandingKey, BotWCompassChest, BotWCenterSkulltulaChest, BotWRightBottomFakeWallChest, BotWFireKeeseChest, BotWLikeLikeChest, BotWMapChest, BotWUnderwaterFrontChest, BotWInvisibleChest, BotWLensofTruthChest];           
             //Assign check list to the regions panel
             Region_Panel ForestTemple_Panel = new(ForestTemple_Check_List, "Forest Temple");
             Region_Panel Kakariko_Panel = new(Kakariko_Check_List, "Kakariko");
             Region_Panel Graveyard_Panel = new(Graveyard_Check_List, "Graveyard");
+            Region_Panel ToT_Panel = new(ToT_Check_List, "Temple of Time");
             Region_Panel ShadowTemple_Panel = new(ShadowTemple_Check_List, "Shadow Temple");
             Region_Panel FireTemple_Panel = new(FireTemple_Check_List, "Fire Temple");
             Region_Panel WaterTemple_Panel = new(WaterTemple_Check_List, "Water Temple");
@@ -229,9 +230,10 @@ namespace CeddyMapTracker
             Region Kakariko = new(Kakariko_Button, Kakariko_Panel, Kakariko_Check_List, this);
             Region Graveyard = new(Graveyard_Button, Graveyard_Panel, Graveyard_Check_List, this);
             Region GoronCity = new(GoronCity_Button, GoronCity_Panel, GoronCity_Check_List, this);
+            Region ToT = new(ToT_Button, ToT_Panel, ToT_Check_List, this);
             Region GanonsCastle = new(GanonsCastle_Button, GanonsCastle_Panel, GanonsCastle_Check_List, this);
-            regions = [ForestTemple, FireTemple, WaterTemple, SpiritTemple, ShadowTemple, DekuTree, DodongosCavern, JabuJabu, BotW, IceCavern, GTG, Kakariko, Graveyard, GoronCity, GanonsCastle];
-            List<string> Denselocations_Names = ["Forest Temple", "Fire Temple", "Water Temple", "Spirit Temple", "Shadow Temple", "Deku Tree", "Dodongos Cavern", "Jabu-Jabus Belly", "Bottom of the Well", "Ice Cavern", "Gerudo Training Grounds", "Kakariko Village", "Graveyard", "Goron City", "Ganons Castle"];
+            regions = [ForestTemple, FireTemple, WaterTemple, SpiritTemple, ShadowTemple, DekuTree, DodongosCavern, JabuJabu, BotW, IceCavern, GTG, Kakariko, Graveyard, GoronCity, ToT, GanonsCastle];
+            List<string> Denselocations_Names = ["Forest Temple", "Fire Temple", "Water Temple", "Spirit Temple", "Shadow Temple", "Deku Tree", "Dodongos Cavern", "Jabu-Jabus Belly", "Bottom of the Well", "Ice Cavern", "Gerudo Training Grounds", "Kakariko Village", "Graveyard", "Goron City", "Temple of Time", "Ganons Castle"];
             Wasteland_Check_List = [WastelandChest];
             Colossus_Check_List = [ColossusGreatFairy, ColossusPoH, ColossusShiek];
             GerudoFortress_Check_List = [GFChest, HBA];
@@ -248,8 +250,7 @@ namespace CeddyMapTracker
             DMC_Check_List = [DMCGreatFairy, DMCShiek, DMCUpperGrotto, DMCVolcanoPoH, DMCWallPoH];
             Market_Check_List = [MarketBigPoes, MarketBombchuBowling, MarketRichard, MarketShootingGalleryReward, MarketTreasureChestGame];
             HC_Check_List = [HCGreatFairy];
-            OGC_Check_List = [OGCGreatFairy];
-            ToT_Check_List = [ToTLACS, ToTShiek];
+            OGC_Check_List = [OGCGreatFairy];          
             LLR_Check_List = [LLRMalon, LLRPoH, LLRTalon];
             //Assign checks to region buttons
             List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];
@@ -314,7 +315,7 @@ namespace CeddyMapTracker
                 }
             }
         }
-        public void UpdateDenseLocations(List<Region> regions)
+        public void UpdateDenseLocations()
         {
             foreach (Region region in regions)
             {
@@ -324,7 +325,7 @@ namespace CeddyMapTracker
                 } 
                 else
                 {
-                    region.UpdateDungeonCounter();
+                    region.UpdateDungeonCounter();                  
                 }
             }
         }
@@ -380,16 +381,16 @@ namespace CeddyMapTracker
             stats.SkulltulaAvailable = tokensAvailable;
             stats.UpdateChecksAvailable();
         }
-        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, RegionButton RegionButton)
+        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel, RegionButton RegionButton)
         {
             if (e.Button == MouseButtons.Right)
             {
-                test123.AddContextMenu(this,e.X + RegionButton.Location.X - 70, e.Y + RegionButton.Location.Y - 70);
-                test123.BringToFront();
-                test123.RegionName = RegionButton.RegionName;
+                ContextWheel.AddContextMenu(this,e.X + RegionButton.Location.X - 70, e.Y + RegionButton.Location.Y - 70);
+                ContextWheel.BringToFront();
+                ContextWheel.RegionName = RegionButton.RegionName;
             }
         }
-        public void GetRegionName(MouseEventArgs e, ContextMenuForWOTHHints test123)
+        public void GetRegionName(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel)
         {
             string regionname = "";
             List<Check> checks = new();        
@@ -485,7 +486,7 @@ namespace CeddyMapTracker
             }
             if (e.Button == MouseButtons.Right)
             {              
-                AddContextMenu(e,test123,regionname);
+                AddContextMenu(e,ContextWheel,regionname);
             }
             if(e.Button == MouseButtons.Middle)
             {
@@ -517,7 +518,7 @@ namespace CeddyMapTracker
                 }
             }
         }
-        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, string Regionname)
+        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel, string Regionname)
         {
             int posX = e.X;
             int posY = e.Y;
@@ -537,11 +538,11 @@ namespace CeddyMapTracker
             {
                 posY = 658;
             }
-            test123.AddContextMenu(this, posX - 70, posY - 70);
-            test123.BringToFront();
-            test123.RegionName = Regionname;
+            ContextWheel.AddContextMenu(this, posX - 70, posY - 70);
+            ContextWheel.BringToFront();
+            ContextWheel.RegionName = Regionname;
         }
-        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, Region RegionButton)
+        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel, Region RegionButton)
         {
             int posX = e.X + RegionButton._region_button.Location.X;
             int posY = e.Y + RegionButton._region_button.Location.Y;
@@ -563,12 +564,12 @@ namespace CeddyMapTracker
             }
             if (e.Button == MouseButtons.Right)
             {
-                test123.AddContextMenu(this, posX - 70, posY - 70);
-                test123.BringToFront();
-                test123.RegionName = RegionButton._region_button._name;
+                ContextWheel.AddContextMenu(this, posX - 70, posY - 70);
+                ContextWheel.BringToFront();
+                ContextWheel.RegionName = RegionButton._region_button._name;
             }
         }
-        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints test123, DungeonButton DungeonButton)
+        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel, DungeonButton DungeonButton)
         {
             int posX = e.X + DungeonButton.Location.X;
             int posY = e.Y + DungeonButton.Location.Y;
@@ -591,12 +592,12 @@ namespace CeddyMapTracker
 
             if (e.Button == MouseButtons.Right)
             {
-                test123.AddContextMenu(this, posX - 70, posY - 70);
-                test123.BringToFront();
-                test123.RegionName = DungeonButton._name;
+                ContextWheel.AddContextMenu(this, posX - 70, posY - 70);
+                ContextWheel.BringToFront();
+                ContextWheel.RegionName = DungeonButton._name;
             }
         }
-        public void UpdateWOTHGoals(WOTHPanel wothpanel, ContextMenuForWOTHHints test123)
+        public void UpdateWOTHGoals(WOTHPanel wothpanel, ContextMenuForWOTHHints ContextWheel)
         {                                
             foreach (GoalPathHint c in wothpanel.Goals)
             {
@@ -604,8 +605,8 @@ namespace CeddyMapTracker
                 {
                     if (gph.goaltext.Text == string.Empty)
                     {
-                        gph.goaltext.Text = test123.RegionName;
-                        gph.goalpicture.State = test123.Goal;
+                        gph.goaltext.Text = ContextWheel.RegionName;
+                        gph.goalpicture.State = ContextWheel.Goal;
                         gph.goalpicture.CheckGoalState();
                         return;
                     }

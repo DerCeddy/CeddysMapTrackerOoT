@@ -67,8 +67,6 @@
             LLRMalon = new Check();
             LLRTalon = new Check();
             HCGreatFairy = new Check();
-            ToTShiek = new Check();
-            ToTLACS = new Check();
             MarketBigPoes = new Check();
             MarketRichard = new Check();
             MarketTreasureChestGame = new Check();
@@ -114,6 +112,7 @@
             Deku_Button = new DungeonButton();
             Shadow_Button = new DungeonButton();
             GanonsCastle_Button = new DungeonButton();
+            ToT_Button = new Region_Button_Dense();
             SuspendLayout();
             // 
             // ToT_Button2
@@ -173,7 +172,7 @@
             GTG_Button.Size = new Size(24, 24);
             GTG_Button.TabIndex = 178;
             GTG_Button.Text = "region_Button_Dense3";
-            toolTip1.SetToolTip(GTG_Button, "Gerudo Training Ground");
+            toolTip1.SetToolTip(GTG_Button, "Gerudo Training Grounds");
             GTG_Button.UseVisualStyleBackColor = true;
             // 
             // BotW_Button
@@ -639,34 +638,6 @@
             HCGreatFairy.TabIndex = 145;
             toolTip1.SetToolTip(HCGreatFairy, "Great Fairy Reward");
             HCGreatFairy.UseVisualStyleBackColor = false;
-            // 
-            // ToTShiek
-            // 
-            ToTShiek.Done = false;
-            ToTShiek.FlatAppearance.BorderColor = Color.Black;
-            ToTShiek.FlatAppearance.BorderSize = 0;
-            ToTShiek.FlatStyle = FlatStyle.Flat;
-            ToTShiek.ForeColor = Color.Black;
-            ToTShiek.Location = new Point(572, 217);
-            ToTShiek.Name = "ToTShiek";
-            ToTShiek.Size = new Size(13, 13);
-            ToTShiek.TabIndex = 144;
-            toolTip1.SetToolTip(ToTShiek, "Shieks Song");
-            ToTShiek.UseVisualStyleBackColor = false;
-            // 
-            // ToTLACS
-            // 
-            ToTLACS.Done = false;
-            ToTLACS.FlatAppearance.BorderColor = Color.Black;
-            ToTLACS.FlatAppearance.BorderSize = 0;
-            ToTLACS.FlatStyle = FlatStyle.Flat;
-            ToTLACS.ForeColor = Color.Black;
-            ToTLACS.Location = new Point(558, 218);
-            ToTLACS.Name = "ToTLACS";
-            ToTLACS.Size = new Size(13, 13);
-            ToTLACS.TabIndex = 143;
-            toolTip1.SetToolTip(ToTLACS, "Light Arrows Cutscene");
-            ToTLACS.UseVisualStyleBackColor = false;
             // 
             // MarketBigPoes
             // 
@@ -1171,6 +1142,7 @@
             Spirit_Button.Size = new Size(30, 30);
             Spirit_Button.TabIndex = 215;
             Spirit_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(Spirit_Button, "Spirit Temple");
             Spirit_Button.UseVisualStyleBackColor = false;
             // 
             // Forest_Button
@@ -1185,6 +1157,7 @@
             Forest_Button.Size = new Size(30, 30);
             Forest_Button.TabIndex = 216;
             Forest_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(Forest_Button, "Forest Temple");
             Forest_Button.UseVisualStyleBackColor = false;
             // 
             // DC_Button
@@ -1199,6 +1172,7 @@
             DC_Button.Size = new Size(30, 30);
             DC_Button.TabIndex = 217;
             DC_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(DC_Button, "Dodongo's Cavern");
             DC_Button.UseVisualStyleBackColor = false;
             // 
             // Jabu_Button
@@ -1213,6 +1187,7 @@
             Jabu_Button.Size = new Size(30, 30);
             Jabu_Button.TabIndex = 218;
             Jabu_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(Jabu_Button, "Jabu-Jabu's Belly");
             Jabu_Button.UseVisualStyleBackColor = false;
             // 
             // Water_Button
@@ -1227,6 +1202,7 @@
             Water_Button.Size = new Size(30, 30);
             Water_Button.TabIndex = 219;
             Water_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(Water_Button, "Water Temple");
             Water_Button.UseVisualStyleBackColor = false;
             // 
             // Fire_Button
@@ -1241,6 +1217,7 @@
             Fire_Button.Size = new Size(30, 30);
             Fire_Button.TabIndex = 220;
             Fire_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(Fire_Button, "Fire Temple");
             Fire_Button.UseVisualStyleBackColor = false;
             // 
             // Deku_Button
@@ -1255,6 +1232,7 @@
             Deku_Button.Size = new Size(30, 30);
             Deku_Button.TabIndex = 221;
             Deku_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(Deku_Button, "Deku Tree");
             Deku_Button.UseVisualStyleBackColor = false;
             // 
             // Shadow_Button
@@ -1269,6 +1247,7 @@
             Shadow_Button.Size = new Size(30, 30);
             Shadow_Button.TabIndex = 221;
             Shadow_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(Shadow_Button, "Shadow Temple");
             Shadow_Button.UseVisualStyleBackColor = false;
             // 
             // GanonsCastle_Button
@@ -1283,7 +1262,25 @@
             GanonsCastle_Button.Size = new Size(30, 30);
             GanonsCastle_Button.TabIndex = 221;
             GanonsCastle_Button.Text = "dungeonButton1";
+            toolTip1.SetToolTip(GanonsCastle_Button, "Ganon's Castle");
             GanonsCastle_Button.UseVisualStyleBackColor = false;
+            // 
+            // ToT_Button
+            // 
+            ToT_Button.BackColor = Color.Red;
+            ToT_Button.FlatAppearance.BorderColor = Color.Black;
+            ToT_Button.FlatAppearance.BorderSize = 0;
+            ToT_Button.FlatStyle = FlatStyle.Flat;
+            ToT_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
+            ToT_Button.ForeColor = Color.Black;
+            ToT_Button.Location = new Point(552, 211);
+            ToT_Button.Name = "ToT_Button";
+            ToT_Button.Size = new Size(24, 24);
+            ToT_Button.TabIndex = 222;
+            ToT_Button.Tag = "";
+            ToT_Button.Text = "region_Button_Dense1";
+            toolTip1.SetToolTip(ToT_Button, "Temple of Time");
+            ToT_Button.UseVisualStyleBackColor = false;
             // 
             // Maptracker
             // 
@@ -1291,6 +1288,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(ToT_Button);
             Controls.Add(GanonsCastle_Button);
             Controls.Add(Shadow_Button);
             Controls.Add(Deku_Button);
@@ -1338,8 +1336,6 @@
             Controls.Add(LLRMalon);
             Controls.Add(LLRTalon);
             Controls.Add(HCGreatFairy);
-            Controls.Add(ToTShiek);
-            Controls.Add(ToTLACS);
             Controls.Add(MarketBigPoes);
             Controls.Add(MarketRichard);
             Controls.Add(MarketTreasureChestGame);
@@ -1399,7 +1395,6 @@
         private DungeonButton Deku_Button;
         private DungeonButton Shadow_Button;
         private DungeonButton GanonsCastle_Button;
-        public Check ToTShiek;
         public Check LHShootTheSun;
         public Check LHFreestandingPoH;
         public Check LHLabDive;
@@ -1464,6 +1459,6 @@
         public Check DMTStormsGrotto;
         public Check DMTChest;
         public Check DMTPoH;
-        public Check ToTLACS;
+        private Region_Button_Dense ToT_Button;
     }
 }

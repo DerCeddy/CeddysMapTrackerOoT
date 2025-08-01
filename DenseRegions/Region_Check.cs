@@ -92,6 +92,8 @@ namespace CeddyMapTracker
         public Region_Panel_Check GCMazeLeftChest = new("Maze Left Chest");
         public Region_Panel_Check GCMazeCenterChest = new("Maze Center Chest");
         public Region_Panel_Check GCMazeRightChest = new("Maze Right Chest");
+        public Region_Panel_Check ToTLACS = new("Light Arrow Cutscene");
+        public Region_Panel_Check ToTShiek = new("Song from Shiek");
         public Region_Panel_Check DekuTreeMapChest = new("Map Chest");
         public Region_Panel_Check DekuTreeSlingshotRoomSideChest = new("Slingshot Room Side Chest");
         public Region_Panel_Check DekuTreeSlingshotChest = new("Slingshot Chest");
@@ -206,7 +208,7 @@ namespace CeddyMapTracker
         public Region_Panel_Check IceCavernCompassChest = new("Compass Chest");
         public Region_Panel_Check IceCavernIronBootsChest = new("Iron Boots Chest");
         public Region_Panel_Check IceCavernFreestandingPoH = new("Freestanding PoH");
-        public Region_Panel_Check IceCavernShiek = new("Shiek");
+        public Region_Panel_Check IceCavernShiek = new("Song from Shiek");
         public Region_Panel_Check GTGLobbyLeftChest = new("Lobby Left Chest");
         public Region_Panel_Check GTGLobbyRightChest = new("Lobby Right Chest");
         public Region_Panel_Check GTGStalfosChest = new("Stalfos Chest");
