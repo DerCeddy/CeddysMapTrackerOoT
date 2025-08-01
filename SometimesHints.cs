@@ -8,8 +8,8 @@ namespace CeddyMapTracker
 {
     public class SometimesHints : Panel
     {
-        public string[] SingleHints = [];
-        public string[] DualHints = [];
+        public string[] SingleHints = ["", "20 Skulls", "Big Poes", "Chickens", "Composer Torches", "Darunia's Joy", "Frogs 1", "Goron Pot", "King Zora", "Lab Dive", "Shoot the Sun", "Skull Kid", "Sun's Song Grave", "Target in the Woods", "Treasure Chest Game", "Wasteland Torches", "ZF Icy Waters", "Fire Temple Hammer Chest", "Fire Temple Scarecrow", "Ganon's Castle Shadow Trial 2", "GTG Toilet", "Ice Cavern Final Chest", "Jabu Stingers", "Shadow Temple Skull Pot", "Water Temple BK Chest", "Water Temple Central Pillar"];
+        public string[] DualHints = ["", "Adult Lake Bean Checks", "Bombchu Bowling", "Castle Great Fairies", "Child Domain", "Gerudo Valley PoH Ledges", "Horseback Archery", "BotW Dead Hand", "Fire Temple Lower Hammer Loop", "Ganon's Castle Spirit Trial", "Shadow Temple Invisible Blades", "Shadow Temple Spiked Walls", "Spirit Temple Child Loop", "Spirit Temple Colossus Hands", "Spirit Temple Early Adult", "Water Temple Dark Link Loop"];
         public decimal Hint_Count = 8;
         public decimal Dual_Hint_Count = 2;
         private List<ComboBox> comboBoxes = [];
