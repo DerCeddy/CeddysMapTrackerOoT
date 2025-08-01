@@ -158,7 +158,7 @@ namespace CeddyMapTracker
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Soldout;
-            pictureBox1.Location = new Point(1228, 0);
+            pictureBox1.Location = new Point(966, -1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(42, 42);
             pictureBox1.TabIndex = 9;
@@ -326,7 +326,7 @@ namespace CeddyMapTracker
             Controls.Add(button1);
             Controls.Add(WotH_Hint_Counter);
             Name = "SettingsPanel";
-            Size = new Size(1268, 532);
+            Size = new Size(1007, 580);
             Load += SettingsPanel_Load;
             ((System.ComponentModel.ISupportInitialize)WotH_Hint_Counter).EndInit();
             ((System.ComponentModel.ISupportInitialize)Sometimes_Hint_Counter).EndInit();
