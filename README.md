@@ -35,7 +35,8 @@ This works the same as in the Gossip Stone Tracker. Simply hold left click on an
 Clicking the gear symbol in the bottom left corner opens the settings panel. Here you can select presets, change the amount of hints, change the the style of the icons (N64 or 3Ds), etc..
 ## Presets
 With presets you can load starting items, hint counts, enabled/disabled checks and customize sometimes hints. Presets are contained in the "Preset" folder in the json format. I try to update them regulary if a new tournament begins
-
+## Misc
+Overworld check names are renameable in the "checknames.json" file
 # Credits
 Item layout is modeled after [Barinade's Item Tracker](https://wiki.ootrandomizer.com/index.php/Trackers#Barinade's_Item_Tracker)
 
