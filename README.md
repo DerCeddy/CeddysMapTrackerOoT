@@ -40,6 +40,9 @@ Overworld check names are renameable in the "checknames.json" file
 # Credits
 Item layout is modeled after [Barinade's Item Tracker](https://wiki.ootrandomizer.com/index.php/Trackers#Barinade's_Item_Tracker)
 
-Map Tracker Desing is inspired by [LinSoraK's](https://discord.com/invite/n7AzcMpwXf) and the [ALTTP Community Tracker](https://alttprtracker.dunka.net/)
+Map Tracker Design is inspired by [LinSoraK's](https://discord.com/invite/n7AzcMpwXf) and the [ALTTP Community Tracker](https://alttprtracker.dunka.net/)
+
+Map made by me using the data from the [OoT Interactive Map](https://ootmap.com)
 
 Gossip Stone Drag & Drop is inspired from [Gossip Stone Tracker](https://github.com/HapaxL/GSTHD)([Original GSTHD](https://github.com/Draeko/ootr_gst/tree/ladder_version))
+
