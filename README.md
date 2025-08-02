@@ -4,6 +4,8 @@ A Map Tracker combined with features known from the Gossip Stone Tracker fully u
 
 <img width="1585" height="729" alt="grafik" src="https://github.com/user-attachments/assets/94f20d53-d653-4eea-80a0-dcbf8ad016d8" />
 
+# Download
+[Click](https://github.com/DerCeddy/CeddysMapTrackerOoT/releases/tag/1.0)
 # Manual
 ## Map Tracker Colors
 Green = You can do the check
