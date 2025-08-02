@@ -8,7 +8,7 @@ A Map Tracker combined with features known from the Gossip Stone Tracker fully u
 ## Map Tracker Colors
 Green = You can do the check
 
-Yellow = You can theoretically do the check but need to get one item to do it. For example beans or keys
+Yellow = You can theoretically do the check but you need to get one item that is not randomized/randomized in a specific area. For example beans or keys
 
 Red = You can't do the check
 
