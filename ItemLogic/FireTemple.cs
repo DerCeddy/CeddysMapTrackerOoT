@@ -65,7 +65,7 @@ namespace CeddyMapTracker
             }
             else if (has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1)
             {
-                FireBoulderMazeLowerChest.ForeColor = Available;
+                FireBoulderMazeLowerChest.ForeColor = coulddo;
                 FireBoulderMazeSideRoomChest.ForeColor = coulddo;
             }
             else
