@@ -1,0 +1,81 @@
+{
+	"ItemPanel":
+	{
+		"KokiriBoots": 
+		{
+			"State": 1
+		},
+		"KokiriTunic":
+		{
+			"State": 1
+		},
+		"DekuShield": 
+		{
+			"State": 1
+		},
+		"MasterSword":
+		{
+			"State": 1
+		},
+		"Sticks":
+		{
+			"State": 1
+		},
+		"Nuts":
+		{
+			"State": 1
+		},
+		"Ocarina":
+		{
+			"State": 1
+		},
+		"Lens":
+		{
+			"State": 1
+		},
+		"FaroresWind":
+		{
+			"State": 1
+		},
+		"Prelude":
+		{
+			"State": 1
+		},
+		"ForestMedallion":
+		{
+			"State": 1
+		},
+		"LightMedallion":
+		{
+			"State": 1
+		}
+	},
+	"MapTracker": 
+	{
+		"Goalrequirement": "Spiritual Stones",
+		"Stones": 3,
+		"Kak40GoldSkulltulaReward":
+		{
+			"Checked": true
+		},
+		"Kak50GoldSkulltulaReward":
+		{
+			"Checked": true
+		},
+		"ToTShiek":
+		{
+			"Checked": true
+		},
+	},
+	"WotHPanel":
+	{
+		"Goal_Count": 5
+	},
+	"SometimesHints":
+	{
+		"Hint_Count": 9,
+		"Dual_Hint_Count": 3,
+		"SingleHints": ["","Anju's Chickens","Big Poes","Boomerang Chest","Dancing Darunia","Fire Temple Scarecrow","Frogs in the Rain","Golden Gauntlets Chest","GTG Underwater Silvers","Hyrule Castle Fairy","King Zora Defrosted","Outside Ganon's Castle Fairy","Skull Kid","Song from Ocarina of Time","Sun's Song Grave","Target in the Woods","Treasure Chest Game","Wasteland Chest","Water Temple Central Pillar","Water Temple River","Zora's Fountain Bottom"],
+		"DualHints": ["", "Bombchu Bowling","Gerudo Valley Crate and Waterfall","Horseback Archery","Hyrule Castle and OGC Fairies","Lake Hylia Bean Checks","Spirit Temple Lower Child","Water Temple Dark Link and River","Zora's Domain as Child","Dead Hand in the Well"]
+	}
+}
