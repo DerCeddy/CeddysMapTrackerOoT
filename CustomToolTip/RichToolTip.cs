@@ -112,6 +112,10 @@ namespace CeddyMapTracker
                         CheckKeyWord(Key.KeyCount9, Key.KeyCount9_Color, 0);
                     }
                 }
+                if(c is Item Bosskey && c != null)
+                {
+                    CheckKeyWord(Bosskey.Item_Name, Bosskey.NameColor, 0);
+                }
             }
         }
         public void CheckKeyWord(string Word, Color Color, int StartIndex)

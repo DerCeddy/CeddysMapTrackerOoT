@@ -132,13 +132,13 @@ namespace CeddyMapTracker
                 SpiritCompassChest.ForeColor = NotAvailable;
             }
             //Adult Climb
-            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Bomb)))
+            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3)
             {
 
                 SpiritFirstMirrorLeftChest.ForeColor = Available;
                 SpiritFirstMirrorRightChest.ForeColor = Available;
             }
-            else if (desertaccess == 1 && i.Strength.State >= 2 && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Bomb)))
+            else if (desertaccess == 1 && i.Strength.State >= 2)
             {
 
                 SpiritFirstMirrorLeftChest.ForeColor = coulddo;
@@ -150,11 +150,11 @@ namespace CeddyMapTracker
                 SpiritFirstMirrorRightChest.ForeColor = NotAvailable;
             }
             //Adult Centerroom
-            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Bomb)) && Has(i.ZeldasLullaby))
+            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3  && Has(i.ZeldasLullaby))
             {
                 SpiritStatueRoomHandChest.ForeColor = Available;
             }
-            else if (desertaccess == 1 && i.Strength.State >= 2 && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Bomb)) && Has(i.ZeldasLullaby))
+            else if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.ZeldasLullaby))
             {
                 SpiritStatueRoomHandChest.ForeColor = coulddo;
             }
@@ -176,13 +176,13 @@ namespace CeddyMapTracker
                 SpiritStatueRoomNortheastChest.ForeColor = NotAvailable;
             }
             //Adult beyond Anubis Room
-            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 4 && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Bomb)) && i.Bomb.State == 1)
+            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 4 && i.Bomb.State == 1)
             {
                 SpiritHallwayLeftInvisibleChest.ForeColor = Available;
                 SpiritHallwayRightInvisibleChest.ForeColor = Available;
                 SpiritMirrorShieldChest.ForeColor = Available;
             }
-            else if (desertaccess == 1 && i.Strength.State >= 2 && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Bomb)) && i.Bomb.State == 1)
+            else if (desertaccess == 1 && i.Strength.State >= 2 && i.Bomb.State == 1)
             {
                 SpiritHallwayLeftInvisibleChest.ForeColor = coulddo;
                 SpiritHallwayRightInvisibleChest.ForeColor = coulddo;
@@ -195,11 +195,11 @@ namespace CeddyMapTracker
                 SpiritMirrorShieldChest.ForeColor = NotAvailable;
             }
             //Near Four Armors
-            if (desertaccess == 1 && i.Strength.State >= 2 && (Has(i.Hookshot) || Has(i.Bow)) && i.Bomb.State == 1 && Has(i.MirrorShield) && keys.Spirit_SmallKeys.currentKeys >= 4)
+            if (desertaccess == 1 && i.Strength.State >= 2 && i.Bomb.State == 1 && Has(i.MirrorShield) && keys.Spirit_SmallKeys.currentKeys >= 4)
             {
                 SpiritNearFourArmosChest.ForeColor = Available;
             }
-            else if (desertaccess == 1 && i.Strength.State >= 2 && (Has(i.Hookshot) || Has(i.Bow)) && i.Bomb.State == 1 && Has(i.MirrorShield))
+            else if (desertaccess == 1 && i.Strength.State >= 2 && i.Bomb.State == 1 && Has(i.MirrorShield))
             {
                 SpiritNearFourArmosChest.ForeColor = coulddo;
             }
@@ -208,11 +208,11 @@ namespace CeddyMapTracker
                 SpiritNearFourArmosChest.ForeColor = NotAvailable;
             }
             //Boss Key Chest
-            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.ZeldasLullaby) && keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.Hookshot) && Has(i.Bow) && ((has_longshot || i.Bomb.State == 1) || ((i.Bomb.State == 1 || (Has(i.Dins) && Has(i.Magic)) || Has(i.Nuts)) && (Has(i.Bow) || Has(i.Hookshot) || Has(i.Hammer)))))
+            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.ZeldasLullaby) && keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.Hookshot) && Has(i.Bow))
             {
                 SpiritBossKeyChest.ForeColor = Available;
             }
-            else if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.ZeldasLullaby) && Has(i.Hookshot) && Has(i.Bow) && ((has_longshot || i.Bomb.State == 1) || ((i.Bomb.State == 1 || (Has(i.Dins) && Has(i.Magic)) || Has(i.Nuts)) && (Has(i.Bow) || Has(i.Hookshot) || Has(i.Hammer)))))
+            else if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.ZeldasLullaby) && Has(i.Hookshot) && Has(i.Bow))
             {
                 SpiritBossKeyChest.ForeColor = coulddo;
             }
@@ -221,11 +221,11 @@ namespace CeddyMapTracker
                 SpiritBossKeyChest.ForeColor = NotAvailable;
             }
             //Topmost Chest
-            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.MirrorShield) && (Has(i.Hookshot) || Has(i.Bow)) && ((has_longshot || i.Bomb.State == 1) || ((i.Bomb.State == 1 || (Has(i.Dins) && Has(i.Magic)) || Has(i.Nuts)) && (Has(i.Bow) || Has(i.Hookshot) || Has(i.Hammer)))))
+            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.MirrorShield) && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Hammer) || Has(i.Bomb)))
             {
                 SpiritTopmostChest.ForeColor = Available;
             }
-            else if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.MirrorShield) && (Has(i.Hookshot) || Has(i.Bow)) && ((has_longshot || i.Bomb.State == 1) || ((i.Bomb.State == 1 || (Has(i.Dins) && Has(i.Magic)) || Has(i.Nuts)) && (Has(i.Bow) || Has(i.Hookshot) || Has(i.Hammer)))))
+            else if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.MirrorShield) && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Hammer) || Has(i.Bomb)))
             {
                 SpiritTopmostChest.ForeColor = coulddo;
             }
@@ -234,11 +234,11 @@ namespace CeddyMapTracker
                 SpiritTopmostChest.ForeColor = NotAvailable;
             }
             //Twinrova Heart
-            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.MirrorShield) && Has(i.SpiritBossKey) && keys.Spirit_SmallKeys.currentKeys == 5 && (Has(i.Hookshot) || Has(i.Bow)) && ((has_longshot || i.Bomb.State == 1) || ((i.Bomb.State == 1 || (Has(i.Dins) && Has(i.Magic)) || Has(i.Nuts)) && (Has(i.Bow) || Has(i.Hookshot) || Has(i.Hammer)))))
+            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.MirrorShield) && Has(i.SpiritBossKey) && keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.Hookshot) && Has(i.Bomb))
             {
                 SpiritTwinrovaHeart.ForeColor = Available;
             }
-            else if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.MirrorShield) && (Has(i.Hookshot) || Has(i.Bow)) && ((has_longshot || i.Bomb.State == 1) || ((i.Bomb.State == 1 || (Has(i.Dins) && Has(i.Magic)) || Has(i.Nuts)) && (Has(i.Bow) || Has(i.Hookshot) || Has(i.Hammer)))))
+            else if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.MirrorShield) && Has(i.Hookshot) && Has(i.Bomb))
             {
                 SpiritTwinrovaHeart.ForeColor = coulddo;
             }

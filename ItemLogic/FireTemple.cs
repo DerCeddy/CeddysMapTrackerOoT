@@ -141,7 +141,7 @@ namespace CeddyMapTracker
                 FireCompassChest.ForeColor = NotAvailable;
             }
             //Highest Goron chest
-            if ((keys.Fire_SmallKeys.currentKeys >= 7 || (Has(i.Hammer) && Has(i.HoverBoots) && keys.Fire_SmallKeys.currentKeys >= 6)) && Has(i.Hammer) && (Has(i.SongOfTime) || Has(i.HoverBoots) || i.Bomb.State == 1) && has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1)
+            if ((keys.Fire_SmallKeys.currentKeys >= 7 || (Has(i.HoverBoots) && keys.Fire_SmallKeys.currentKeys >= 6)) && Has(i.Hammer) && (Has(i.SongOfTime) || Has(i.HoverBoots) || i.Bomb.State == 1) && has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1)
             {
                 FireHighestGoronChest.ForeColor = Available;
             }
@@ -167,7 +167,7 @@ namespace CeddyMapTracker
                 FireMegatonHammerChest.ForeColor = NotAvailable;
             }
             //Volvo defeat
-            if (Has(i.Hammer) && has_or_can_red_tunic == 1 && craterplatformaccess == 1 && (Has(i.HoverBoots) || keys.Fire_SmallKeys.currentKeys >= 7) && Has(i.FireBossKey))
+            if (Has(i.Hammer) && has_or_can_red_tunic == 1 && craterplatformaccess == 1 && Has(i.FireBossKey) && (Has(i.HoverBoots) || keys.Fire_SmallKeys.currentKeys >= 7 && (Has(i.Bomb) || Has(i.SongOfTime))))
             {
                 FireVolvagiaHeart.ForeColor = Available;
             }
