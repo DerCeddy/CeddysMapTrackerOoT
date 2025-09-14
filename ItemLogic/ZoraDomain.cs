@@ -14,17 +14,17 @@ namespace CeddyMapTracker
             if (Has(i.Scales) || (i.Bomb.State == 1 && Has(i.ZeldasLullaby)))
             {
                 ZDChest.color = Available;
-                ZRDivingGame.color = Available;
+                ZDDivingGame.color = Available;
             }
             else if (Has(i.Bombchu) && Has(i.ZeldasLullaby))
             {
                 ZDChest.color = OoLwithBombchus;
-                ZRDivingGame.color = OoLwithBombchus;
+                ZDDivingGame.color = OoLwithBombchus;
             }
             else
             {
                 ZDChest.color = NotAvailable;
-                ZRDivingGame.color = NotAvailable;
+                ZDDivingGame.color = NotAvailable;
             }
             //King Zora Thawed
             if (Has(i.ZeldasLullaby) && ((Has(i.RutoLetter) && (Has(i.Bomb) || Has(i.Scales))) || ((i.Wallet.State == 2 || rainbowbridge) && has_bottle)))

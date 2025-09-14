@@ -13,13 +13,13 @@ namespace CeddyMapTracker
 {
     public class KeyPanel : Panel
     {
-        public Keys Forest_SmallKeys = new() { maxKeys = 5, Image = Resources.keyForest_32x32 };
-        public Keys Fire_SmallKeys = new() { maxKeys = 8, Image = Resources.keyFire_32x32 };
-        public Keys Water_SmallKeys = new() { maxKeys = 6, Image = Resources.keyWater_32x32 };
-        public Keys Shadow_SmallKeys = new() { maxKeys = 5, Image = Resources.keyShadow_32x32 };
-        public Keys Spirit_SmallKeys = new() { maxKeys = 5, Image = Resources.keySpirit_32x32 };
-        public Keys BotW_SmallKeys = new() { maxKeys = 3, Image = Resources.keyBotW_32x32 };
-        public Keys GTG_SmallKeys = new() { maxKeys = 9, Image = Resources.keyGTG_32x32 };
+        public Keys Forest_SmallKeys = new() { maxKeys = 5, Image = Resources.keyForest_32x32, KeyCount1 = "Forest Temple Small Keys 1x", KeyCount2 = "Forest Temple Small Keys 2x", KeyCount3 = "Forest Temple Small Keys 3x", KeyCount4 = "Forest Temple Small Keys 4x", KeyCount5 = "Forest Temple Small Keys 5x" };
+        public Keys Fire_SmallKeys = new() { maxKeys = 8, Image = Resources.keyFire_32x32, KeyCount1 = "Fire Temple Small Keys 1x", KeyCount2 = "Fire Temple Small Keys 2x", KeyCount3 = "Fire Temple Small Keys 3x", KeyCount4 = "Fire Temple Small Keys 4x", KeyCount5 = "Fire Temple Small Keys 5x", KeyCount6 = "Fire Temple Small Keys 6x", KeyCount7 = "Fire Temple Small Keys 7x", KeyCount8 = "Fire Temple Small Keys 8x" };
+        public Keys Water_SmallKeys = new() { maxKeys = 6, Image = Resources.keyWater_32x32, KeyCount1 = "Water Temple Small Keys 1x", KeyCount2 = "Water Temple Small Keys 2x", KeyCount3 = "Water Temple Small Keys 3x", KeyCount4 = "Water Temple Small Keys 4x", KeyCount5 = "Water Temple Small Keys 5x", KeyCount6 = "Water Temple Small Keys 6x" };
+        public Keys Shadow_SmallKeys = new() { maxKeys = 5, Image = Resources.keyShadow_32x32, KeyCount1 = "Shadow Temple Small Keys 1x", KeyCount2 = "Shadow Temple Small Keys 2x", KeyCount3 = "Shadow Temple Small Keys 3x", KeyCount4 = "Shadow Temple Small Keys 4x", KeyCount5 = "Shadow Temple Small Keys 5x" };
+        public Keys Spirit_SmallKeys = new() { maxKeys = 5, Image = Resources.keySpirit_32x32, KeyCount1 = "Spirit Temple Small Keys 1x", KeyCount2 = "Spirit Temple Small Keys 2x", KeyCount3 = "Spirit Temple Small Keys 3x", KeyCount4 = "Spirit Temple Small Keys 4x", KeyCount5 = "Spirit Temple Small Keys 5x" };
+        public Keys BotW_SmallKeys = new() { maxKeys = 3, Image = Resources.keyBotW_32x32, KeyCount1 = "Bottom of the Well Small Keys 1x", KeyCount2 = "Bottom of the Well Small Keys 2x", KeyCount3 = "Bottom of the Well Small Keys 3x" };
+        public Keys GTG_SmallKeys = new() { maxKeys = 9, Image = Resources.keyGTG_32x32, KeyCount1 = "Gerudo Training Ground Small Keys 1x", KeyCount2 = "Gerudo Training Ground Small Keys 2x", KeyCount3 = "Gerudo Training Ground Small Keys 3x", KeyCount4 = "Gerudo Training Ground Small Keys 4x", KeyCount5 = "Gerudo Training Ground Small Keys 5x", KeyCount6 = "Gerudo Training Ground Small Keys 6x", KeyCount7 = "Fire Temple Small Keys 7x", KeyCount8 = "Gerudo Training Ground Small Keys 8x", KeyCount9 = "Gerudo Training Ground Small Keys 9x" };
         public int State
         {
             get

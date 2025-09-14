@@ -100,7 +100,7 @@ namespace CeddyMapTracker
             {
                 desertaccess = 0;
             }
-            if (Has(i.Bolero) || ((Has(i.Hookshot) || Has(i.HoverBoots)) && (Has(i.Bomb) || Has(i.Bow) || Has(i.Strength))))
+            if (Has(i.Bolero) || ((Has(i.Hookshot) || Has(i.HoverBoots)) && (can_blast_or_smash || Has(i.Bow) || Has(i.Strength))))
             {
                 craterplatformaccess = 1;
             }

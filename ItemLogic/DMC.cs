@@ -11,7 +11,7 @@ namespace CeddyMapTracker
         public void ItemLogic_DMC(ItemPanel i)
         {
             //DMC Freestanding PoH
-            if (has_explosives || Has(i.Strength) || Has(i.Bow) || (Has(i.Bolero) && (Has(i.Hookshot) || Has(i.HoverBoots))))
+            if (can_blast_or_smash || Has(i.Strength) || Has(i.Bow) || (Has(i.Bolero) && (Has(i.Hookshot) || Has(i.HoverBoots))))
             {
                 DMCWallPoH.color = Available;
             }
@@ -24,7 +24,7 @@ namespace CeddyMapTracker
                 DMCWallPoH.color = NotAvailable;
             }
             //DMC Upper Grotto
-            if (Has(i.Bomb) || (Has(i.Hammer) && (Has(i.Strength) || Has(i.Bow) || (Has(i.Bolero) && (Has(i.Hookshot) || Has(i.HoverBoots))))))
+            if (Has(i.Bomb) || Has(i.Hammer))
             {
                 DMCUpperGrotto.color = Available;
             }
@@ -37,7 +37,7 @@ namespace CeddyMapTracker
                 DMCUpperGrotto.color = NotAvailable;
             }
             //DMC Volcano PoH
-            if (Has(i.HoverBoots) && (has_explosives || Has(i.Strength) || Has(i.Bow) || Has(i.Bolero)) || (Has(i.Beans) && Has(i.Bolero)))
+            if (Has(i.HoverBoots) && (can_blast_or_smash || Has(i.Strength) || Has(i.Bow) || Has(i.Bolero)) || (Has(i.Beans) && Has(i.Bolero)))
             {
                 DMCVolcanoPoH.color = Available;
             }
@@ -50,7 +50,7 @@ namespace CeddyMapTracker
                 DMCVolcanoPoH.color = NotAvailable;
             }
             //DMC Greaty Fairy
-            if (Has(i.Hammer) && Has(i.ZeldasLullaby) && (i.Bomb.State == 1 || Has(i.Strength) || Has(i.Bow) || (Has(i.Bolero) && (Has(i.Hookshot) || Has(i.HoverBoots)))))
+            if (Has(i.Hammer) && Has(i.ZeldasLullaby) && (Has(i.Bomb) || Has(i.Strength) || Has(i.Bow) || Has(i.HoverBoots) || (Has(i.Bolero) && Has(i.Hookshot))))
             {
                 DMCGreatFairy.color = Available;
             }

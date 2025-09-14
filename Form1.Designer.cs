@@ -34,11 +34,13 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(5F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1582, 728);
+            ClientSize = new Size(1594, 731);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Pixel);
+            Margin = new Padding(2);
             Name = "Form1";
             Text = "Ceddys Maptracker";
             ResumeLayout(false);

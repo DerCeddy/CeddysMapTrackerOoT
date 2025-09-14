@@ -12,6 +12,7 @@ namespace CeddyMapTracker
     {       
         public Color color;
         private Color Color_Done = Color.Gray;
+        public RichToolTip RichToolTip = new();
         public bool Done
         {
             get
@@ -33,7 +34,8 @@ namespace CeddyMapTracker
             ForeColor = Color.Black;
             MouseDown += (sender,e) => ChangeColor();
             FlatAppearance.BorderSize = 1;
-            FlatAppearance.BorderColor = Color.Black;
+            FlatAppearance.BorderColor = Color.Black;    
+            RichToolTip.Location = this.Location;            
         }
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
         {

@@ -46,7 +46,7 @@ namespace CeddyMapTracker
                 DMTGreatFairy.color = NotAvailable;
             }
             //Big Goron
-            if (i.AdultTradeItems.State >= 3 && can_blast_or_smash)
+            if (i.AdultTradeItems.State >= 3 && (can_blast_or_smash || Has(i.Strength) || Has(i.Bow)))
             {
                 DMTBiggoron.color = Available;
             }

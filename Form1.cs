@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
-using System.Security.Principal;
+using System.Diagnostics.Metrics;
+using System.Drawing;
 
 namespace CeddyMapTracker
 {
@@ -10,13 +11,15 @@ namespace CeddyMapTracker
         public WOTHPanel WotHPanel = new(new Point(380, 0)) { Goal_Count = 5 };
         public AlwaysHints AlwaysHints = new(new Point(420, 150));
         public Maptracker? MapTracker;
+        public KeyPanel Keys;
         public Form1()
         {        
-            InitializeComponent();                                        
-                      
+            InitializeComponent();                                                             
             Stats Stats = new(new Point(0, 700));
-            MapTracker = new(WotHPanel,new Point(720, 0), Stats);          
-            KeyPanel Keys = new(new Point(640, 0));
+            MapTracker = new(WotHPanel,new Point(720, 0), Stats); 
+            AutoScaleMode = AutoScaleMode.None;
+            MapTracker.AutoScaleMode = AutoScaleMode.None;
+            Keys = new(new Point(640, 0));
             SettingsPanel SettingsPanel = new(new Point(0,0));
             SettingsPanel.Visible = false;
             SettingsButton SettingsButton = new (new Point (0, 490));
@@ -69,14 +72,30 @@ namespace CeddyMapTracker
             SettingsPanel.Load_Preset_Button.MouseDown += (sender, e) => UpdateLocations(AlwaysHints, SometimesHints, WotHPanel);
             SettingsPanel.Load_Preset_Button.MouseDown += (sender, e) => MapTracker.UpdateStatVariables(Stats);
             SettingsPanel.changeStyleButton1.MouseDown += (sender, e) => SettingsPanel.changeStyleButton1.OnClick(ItemPanel);
+            //Update text color for richtooltip
+            AssignTextToRichToolTips();
+            foreach(Control c in MapTracker.Controls)
+            {
+                if(c is Check check && c != null)
+                {
+                    check.MouseEnter += (sender, e) => check.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys);
+                }
+                
+            }   
+            foreach(Region Region in MapTracker.regions)
+            {
+                foreach (Region_Panel_Check c in Region._checks)
+                {
+                    c.MouseEnter += (sender, e) => c.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys);                   
+                }
+            }
         }
+
         public void UpdateLocations(AlwaysHints alwaysHints, SometimesHints sometimesHints, WOTHPanel wothPanel)
         {
             alwaysHints.Location = new Point(wothPanel.Location.X, wothPanel.Size.Height + 1);
             sometimesHints.Location = new Point(alwaysHints.Location.X, alwaysHints.Size.Height + alwaysHints.Location.Y + 1);
 
         }
-        
-
     }
 }

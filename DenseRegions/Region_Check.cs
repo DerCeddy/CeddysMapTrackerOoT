@@ -10,6 +10,7 @@ namespace CeddyMapTracker
     {
         public string _name;
         public bool IsBoss;
+        public RichToolTip RichToolTip = new();
         public bool State
         {
             get

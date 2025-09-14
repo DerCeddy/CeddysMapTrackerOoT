@@ -33,7 +33,14 @@ namespace CeddyMapTracker
         public Bitmap? ItemPicture3;
         public Bitmap? ItemPicture_bw;
         public string? Item_Name;
-        bool IsDragging = false;       
+        public string? Item_Name1;
+        public string? Item_Name2;
+        public string? Item_Name3;
+        bool IsDragging = false;
+        public Color NameColor = Color.Red;
+        public Color NameColor1 = Color.Red;
+        public Color NameColor2 = Color.Red;
+        public Color NameColor3 = Color.Red;
         Point PreviousMousePos;
         int PreviousItemState;
         public Item()
@@ -73,18 +80,38 @@ namespace CeddyMapTracker
             {
                 case 0:
                     Image = ItemPicture_bw;
+                    NameColor = Color.Red;
+                    NameColor1 = Color.Red;
+                    NameColor2 = Color.Red;
+                    NameColor3 = Color.Red;
                     break;
                 case 1:
                     Image = ItemPicture;
+                    NameColor = Color.LimeGreen;
+                    NameColor1 = Color.Red;
+                    NameColor2 = Color.Red;
+                    NameColor3 = Color.Red;
                     break;
                 case 2:
                     Image = ItemPicture1;
+                    NameColor = Color.LimeGreen;
+                    NameColor1 = Color.LimeGreen;
+                    NameColor2 = Color.Red;
+                    NameColor3 = Color.Red;
                     break;
                 case 3:
                     Image = ItemPicture2;
+                    NameColor = Color.LimeGreen;
+                    NameColor1 = Color.LimeGreen;
+                    NameColor2 = Color.LimeGreen;
+                    NameColor3 = Color.Red;
                     break;
                 case 4:
                     Image = ItemPicture3;
+                    NameColor = Color.LimeGreen;
+                    NameColor1 = Color.LimeGreen;
+                    NameColor2 = Color.LimeGreen;
+                    NameColor3 = Color.LimeGreen;
                     break;
             }
         }

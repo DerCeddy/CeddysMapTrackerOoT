@@ -38,7 +38,7 @@ namespace CeddyMapTracker
                 ForestWellChest.ForeColor = NotAvailable;
             }
             //Forest Eye Switch Chest
-            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && keys.Forest_SmallKeys.currentKeys >= 1 && Has(i.Bow))
+            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && keys.Forest_SmallKeys.currentKeys >= 1 && Has(i.Bow) && Has(i.Strength))
             {
                 ForestEyeSwitchChest.ForeColor = Available;
             }
