@@ -1,0 +1,113 @@
+{
+	"ItemPanel":
+	{
+		"KokiriBoots": 
+		{
+			"State": 1
+		},
+		"KokiriTunic":
+		{
+			"State": 1
+		},
+		"DekuShield": 
+		{
+			"State": 1
+		},
+		"HylianShield": 
+		{
+			"State": 1
+		},
+		"MasterSword":
+		{
+			"State": 1
+		},
+		"Sticks":
+		{
+			"State": 1
+		},
+		"Nuts":
+		{
+			"State": 1
+		},
+		"Ocarina":
+		{
+			"State": 1
+		},
+		"Lens":
+		{
+			"State": 1
+		},
+		"FaroresWind":
+		{
+			"State": 1
+		},
+		"Prelude":
+		{
+			"State": 1
+		},
+		"DoubleDefense":
+		{
+			"State": 1
+		},		
+	},
+	"MapTracker": 
+	{
+		"Goalrequirement": "Dungeon Rewards",
+		"DungeonRewards": 9,
+		"Kak40GoldSkulltulaReward":
+		{
+			"Checked": true
+		},
+		"Kak50GoldSkulltulaReward":
+		{
+			"Checked": true
+		},
+		"ToTShiek":
+		{
+			"Checked": true
+		},
+		"GanonsCastleLightTrialFirstLeftChest":
+		{
+			"Checked": true
+		},
+		"GanonsCastleLightTrialSecondLeftChest":
+		{
+			"Checked": true
+		},
+		"GanonsCastleLightTrialThirdLeftChest":
+		{
+			"Checked": true
+		},
+		"GanonsCastleLightTrialFirstRightChest":
+		{
+			"Checked": true
+		},
+		"GanonsCastleLightTrialSecondRightChest":
+		{
+			"Checked": true
+		},
+		"GanonsCastleLightTrialThirdRightChest":
+		{
+			"Checked": true
+		},
+		"GanonsCastleLightTrialInvisibleEnemiesChest":
+		{
+			"Checked": true
+		},
+		"GanonsCastleLightTrialLullabyChest":
+		{
+			"Checked": true
+		},
+	},
+	"WotHPanel":
+	{
+		"Goal_Count": 5
+	},
+	"SometimesHints":
+	{
+		"Hint_Count": 8,
+		"Dual_Hint_Count": 2,
+		"SingleHints": ["", "Market 10 Big Poes", "Kak Anju as Child", "GC Darunias Joy", "LW Skull Kid", "LH Sun", "Market Treasure Chest Game Reward", "Graveyard Heart Piece Grave Chest", "GC Maze Left Chest", "GV Chest", "Wasteland Chest", "Graveyard Royal Familys Tomb Chest", "ZF Bottom Freestanding PoH", "GC Pot Freestanding PoH", "ZD King Zora Thawed", "LW Target in Woods", "LH Lab Dive", "HC Great Fairy Reward", "OGC Great Fairy Reward", "Fire Temple Scarecrow Chest", "Fire Temple Megaton Hammer Chest", "Water Temple River Chest", "Water Temple Central Pillar Chest", "Water Temple Boss Key Chest", "Gerudo Training Ground Underwater Silver Rupee Chest", "Gerudo Training Ground Maze Path Final Chest", "Spirit Temple Silver Gauntlets Chest", "Spirit Temple Mirror Shield Chest", "Shadow Temple Freestanding Key", "Ganons Castle Shadow Trial Golden Gauntlets Chest"],
+		"DualHints": ["Market Bombchu Bowling Rewards", "ZD Child Checks", "LH Adult Bean Destination Checks", "GV Pieces of Heart Ledges", "Graveyard Dampe Race Rewards", "Graveyard Royal Family Tomb Contents", "Castle Fairy Checks", "Fire Temple Lower Loop", "Water Temple River Loop Chests", "Spirit Temple Colossus Hands", "Spirit Temple Child Lower", "Spirit Temple Adult Lower", "Shadow Temple Invisible Blades Chests", "Shadow Temple Spike Walls Room", "Bottom of the Well Dead Hand Room", "Ganons Castle Spirit Trial Chests"]
+	}
+}
