@@ -71,6 +71,7 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.Red;
                     key.KeyCount7_Color = Color.Red;
                     key.KeyCount8_Color = Color.Red;
+                    key.KeyCount9_Color = Color.Red;
                     break;
                 case 1:
                     key.KeyCount1_Color = Color.LimeGreen;
@@ -81,6 +82,7 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.Red;
                     key.KeyCount7_Color = Color.Red;
                     key.KeyCount8_Color = Color.Red;
+                    key.KeyCount9_Color = Color.Red;
                     break;
                 case 2:
                     key.KeyCount1_Color = Color.LimeGreen;
@@ -91,6 +93,7 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.Red;
                     key.KeyCount7_Color = Color.Red;
                     key.KeyCount8_Color = Color.Red;
+                    key.KeyCount9_Color = Color.Red;
                     break;
                 case 3:
                     key.KeyCount1_Color = Color.LimeGreen;
@@ -101,6 +104,7 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.Red;
                     key.KeyCount7_Color = Color.Red;
                     key.KeyCount8_Color = Color.Red;
+                    key.KeyCount9_Color = Color.Red;
                     break;
                 case 4:
                     key.KeyCount1_Color = Color.LimeGreen;
@@ -111,6 +115,7 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.Red;
                     key.KeyCount7_Color = Color.Red;
                     key.KeyCount8_Color = Color.Red;
+                    key.KeyCount9_Color = Color.Red;
                     break;
                 case 5:
                     key.KeyCount1_Color = Color.LimeGreen;
@@ -121,6 +126,7 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.Red;
                     key.KeyCount7_Color = Color.Red;
                     key.KeyCount8_Color = Color.Red;
+                    key.KeyCount9_Color = Color.Red;
                     break;
                 case 6:
                     key.KeyCount1_Color = Color.LimeGreen;
@@ -131,6 +137,7 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.LimeGreen;
                     key.KeyCount7_Color = Color.Red;
                     key.KeyCount8_Color = Color.Red;
+                    key.KeyCount9_Color = Color.Red;
                     break;
                 case 7:
                     key.KeyCount1_Color = Color.LimeGreen;
@@ -141,6 +148,7 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.LimeGreen;
                     key.KeyCount7_Color = Color.LimeGreen;
                     key.KeyCount8_Color = Color.Red;
+                    key.KeyCount9_Color = Color.Red;
                     break;
                 case 8:
                     key.KeyCount1_Color = Color.LimeGreen;
@@ -151,6 +159,18 @@ namespace CeddyMapTracker
                     key.KeyCount6_Color = Color.LimeGreen;
                     key.KeyCount7_Color = Color.LimeGreen;
                     key.KeyCount8_Color = Color.LimeGreen;
+                    key.KeyCount9_Color = Color.Red;
+                    break;
+                case 9:               
+                    key.KeyCount1_Color = Color.LimeGreen;
+                    key.KeyCount2_Color = Color.LimeGreen;
+                    key.KeyCount3_Color = Color.LimeGreen;
+                    key.KeyCount4_Color = Color.LimeGreen;
+                    key.KeyCount5_Color = Color.LimeGreen;
+                    key.KeyCount6_Color = Color.LimeGreen;
+                    key.KeyCount7_Color = Color.LimeGreen;
+                    key.KeyCount8_Color = Color.LimeGreen;
+                    key.KeyCount9_Color = Color.LimeGreen;
                     break;
 
             }

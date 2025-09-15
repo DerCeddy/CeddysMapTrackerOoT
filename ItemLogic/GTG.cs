@@ -48,15 +48,11 @@ namespace CeddyMapTracker
                 GTGBeamosChest.ForeColor = NotAvailable;
             }
             //Toilet
-            if (has_or_can_get_gerudocard && Has(i.IronBoots) && Has(i.SongOfTime) && (Has(i.Bomb) || Has(i.Hookshot)))
+            if (has_or_can_get_gerudocard && Has(i.IronBoots) && Has(i.SongOfTime) && Has(i.Hookshot))
             {
                 GTGUnderwaterSilverRupeeChest.ForeColor = Available;
                 gtg_available_checks++;
-            }
-            else if (has_or_can_get_gerudocard && Has(i.IronBoots) && Has(i.SongOfTime) && Has(i.Bombchu))
-            {
-                GTGUnderwaterSilverRupeeChest.ForeColor = OoLwithBombchus;
-            }
+            }          
             else
             {
                 GTGUnderwaterSilverRupeeChest.ForeColor = NotAvailable;

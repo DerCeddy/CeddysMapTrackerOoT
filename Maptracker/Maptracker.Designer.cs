@@ -757,7 +757,7 @@
             HFSoutheastGrottoChest.FlatAppearance.BorderSize = 0;
             HFSoutheastGrottoChest.FlatStyle = FlatStyle.Flat;
             HFSoutheastGrottoChest.ForeColor = Color.Black;
-            HFSoutheastGrottoChest.Location = new Point(341, 356);
+            HFSoutheastGrottoChest.Location = new Point(481, 444);
             HFSoutheastGrottoChest.Margin = new Padding(1, 2, 1, 2);
             HFSoutheastGrottoChest.Name = "HFSoutheastGrottoChest";
             HFSoutheastGrottoChest.Size = new Size(13, 13);
