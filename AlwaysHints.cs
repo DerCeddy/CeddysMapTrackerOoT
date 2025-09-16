@@ -21,7 +21,8 @@ namespace CeddyMapTracker
             Location = _location;
             Label label = new() { Text = "Always Hints", Location = new Point(0, 0), ForeColor = Color.White };
             Controls.Add(label);
-            bitmaps = [Resources.OoT3D_Ocarina_of_Time_Icon, Resources.biggoron_32x32, Resources.frogs_32x32, Resources.OoT3D_Skull_Mask_Icon, Resources.nocturne_32x40, Resources._30_gold_skulltula_32x32, Resources._40_gold_skulltula_32x32, Resources._50_gold_skulltula_32x32];          
+            bitmaps = [Resources.OoT3D_Ocarina_of_Time_Icon, Resources.biggoron_32x32, Resources.frogs_32x32, Resources.OoT3D_Skull_Mask_Icon, Resources.nocturne_32x40, Resources._30_gold_skulltula_32x32, Resources._40_gold_skulltula_32x32, Resources._50_gold_skulltula_32x32];
+            Font = new Font("Arial", 12, GraphicsUnit.Pixel);
         }
         public void DrawPanel()
         {

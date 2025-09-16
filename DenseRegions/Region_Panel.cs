@@ -14,13 +14,15 @@ namespace CeddyMapTracker
             Location = new Point(278, 40);
             BackColor = Color.Black;
             AutoScroll = true;
+            Font = new Font("Arial", 12, GraphicsUnit.Pixel);
             Label label = new()
             {
                 Text = _name,
-                Size = new Size(160, 20),
+                Size = new Size(200, 20),
                 Location = new Point(70, 0),
                 ForeColor = Color.White,
                 TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Arial", 16, GraphicsUnit.Pixel),
                 //Font = new Font("Arial", 24, FontStyle.Bold)
             };
             Controls.Add(label);

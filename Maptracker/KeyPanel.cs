@@ -37,7 +37,8 @@ namespace CeddyMapTracker
         {
             Size = new Size(80, 260);
             BackColor = Color.Black;
-            Location = _location;                            
+            Location = _location;
+            Font = new Font("Arial", 12, GraphicsUnit.Pixel);
         }
         public void LoadSmallKeys(List<Keys> keys)
         {

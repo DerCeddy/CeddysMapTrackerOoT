@@ -18,12 +18,13 @@ namespace CeddyMapTracker
             Width = 260;
             Location = _location;
             BackColor = Color.Black;
+            Font = new Font("Arial", 12, GraphicsUnit.Pixel);
             Label label = new()
             {
                 Size = new Size(130, 20),
                 Location = new Point(0, 0),
                 Text = "Path Hints",
-                ForeColor = Color.White
+                ForeColor = Color.White,             
             };
             Controls.Add(label);
             GenerateHintsAndStones();

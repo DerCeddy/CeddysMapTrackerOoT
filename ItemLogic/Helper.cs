@@ -9,6 +9,7 @@ namespace CeddyMapTracker
     partial class Maptracker
     {
         public string Goalrequirement = "Vanilla Requirements";
+        public Color RainBowBridge_Color = Color.Red;
         public decimal Medallions = 0;
         public decimal Stones = 0;
         public decimal DungeonRewards = 0;
@@ -125,10 +126,12 @@ namespace CeddyMapTracker
                         if (StonesGotten >= Stones)
                         {
                             rainbowbridge = true;
+                            RainBowBridge_Color = Color.LimeGreen;
                         }
                         else
                         {
                             rainbowbridge = false;
+                            RainBowBridge_Color = Color.Red;
                         }
                         break;                                              
                     }                   
@@ -146,10 +149,12 @@ namespace CeddyMapTracker
                         if (MedsGotten >= Medallions)
                         {
                             rainbowbridge = true;
+                            RainBowBridge_Color = Color.LimeGreen;
                         }
                         else
                         {
                             rainbowbridge = false;
+                            RainBowBridge_Color = Color.Red;
                         }
                         break;
                     }
@@ -167,10 +172,12 @@ namespace CeddyMapTracker
                         if (DungeonRewardsGotten >= DungeonRewards)
                         {
                             rainbowbridge = true;
+                            RainBowBridge_Color = Color.LimeGreen;
                         }
                         else
                         {
                             rainbowbridge = false;
+                            RainBowBridge_Color = Color.Red;
                         }
                         break;
                     }      
@@ -179,10 +186,12 @@ namespace CeddyMapTracker
                         if (Has(i.SpiritMedallion) && Has(i.ShadowMedallion) && Has(i.LightArrow))
                         {
                             rainbowbridge = true;
+                            RainBowBridge_Color = Color.LimeGreen;
                         }
                         else
                         {
                             rainbowbridge = false;
+                            RainBowBridge_Color = Color.Red;
                         }
                         break;
                     }

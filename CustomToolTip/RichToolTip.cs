@@ -25,7 +25,7 @@ namespace CeddyMapTracker
         }
         public void DrawToolTip(Control Control)
         {
-            Control.Controls.Add(this);
+            Control.Controls.Add(this);          
             DrawText();
             BringToFront();
         }       
@@ -34,23 +34,25 @@ namespace CeddyMapTracker
             Control.Controls.Remove(this);
             Text = null;
         }
-        public void SetLocation(Control c)
+        public void SetLocation(Control c, Point CheckLocation)
         {
             int LocationX = Location.X;
-            if(Location.X + Size.Width >= c.Size.Width)
+            int LocationY = Location.Y;
+            if (Location.X + Size.Width >= c.Size.Width)
             {
                 LocationX = c.Size.Width - Size.Width;
             }
-            Location = new Point(LocationX, Location.Y);
-        }
-        public void SetLocation()
-        {
-            Location = PointToClient(new Point(Cursor.Position.X + 10, Cursor.Position.Y + 20));
-        }
-        public void RichToolTipTextChanged(ItemPanel i, KeyPanel KeyPanel)
+            if (Location.Y + Size.Height >= c.Size.Height)
+            {
+                LocationY = CheckLocation.Y - Size.Height;
+            }
+            Location = new Point(LocationX, LocationY);
+        }       
+        public void RichToolTipTextChanged(ItemPanel i, KeyPanel KeyPanel, Maptracker MapTracker)
         {
             CheckKeyWord("Nothing", Color.LimeGreen, 0);
             CheckKeyWord("•", Color.White, 0);
+            CheckKeyWord("Ganon's Castle Access", MapTracker.RainBowBridge_Color, 0);
             foreach (Control c in i.Controls)
             {
                if(c is Item Item && c!= null)

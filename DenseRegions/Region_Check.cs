@@ -28,7 +28,7 @@ namespace CeddyMapTracker
         {
             _name = name;
             Text = _name;
-            Font = new Font("Arial", 9);
+            Font = new Font("Arial", 12, GraphicsUnit.Pixel);
             ForeColor = Color.Red;
             Size = new Size(200, 20);
             AutoSize = true;

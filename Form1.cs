@@ -78,7 +78,7 @@ namespace CeddyMapTracker
             {
                 if(c is Check check && c != null)
                 {
-                    check.MouseEnter += (sender, e) => check.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys);
+                    check.MouseEnter += (sender, e) => check.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys, MapTracker);
                 }
                 
             }   
@@ -86,7 +86,7 @@ namespace CeddyMapTracker
             {
                 foreach (Region_Panel_Check c in Region._checks)
                 {
-                    c.MouseEnter += (sender, e) => c.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys);                   
+                    c.MouseEnter += (sender, e) => c.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys, MapTracker);                   
                 }
             }
         }

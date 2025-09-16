@@ -17,6 +17,7 @@ namespace CeddyMapTracker
             UpdateGoalRequirementCounter();
             Rainbow_Bridge_Requirements_ComboBox.TextChanged += (sender, e) => UpdateGoalRequirementCounter();
             string[] files = Directory.GetFiles("Presets");
+            Font = new Font("Arial", 12, GraphicsUnit.Pixel);
             foreach (string file in files)
             {
                 comboBox1.Items.Add(Path.GetFileName(file));

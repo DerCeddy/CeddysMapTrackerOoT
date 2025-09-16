@@ -20,11 +20,11 @@ namespace CeddyMapTracker
             AutoSize = true;
             BackColor = Color.Black;
             Location = _location;
-            Label label = new() { Text = "Sometimes Hints" , Location = new Point(0,0), ForeColor = Color.White }; 
+            Label label = new() { Text = "Sometimes Hints" , Location = new Point(0,0), ForeColor = Color.White, Size = new Size(120,20) }; 
             Controls.Add(label);
+            Font = new Font("Arial", 12, GraphicsUnit.Pixel);
             //SingleHints = ["","20 Skulls", "Big Poes", "Chickens", "Composer Torches", "Darunia's Joy" , "Frogs 1", "Goron Pot", "King Zora", "Lab Dive", "Shoot the Sun", "Skull Kid", "Sun's Song Grave", "Target in the Woods", "Treasure Chest Game", "Wasteland Torches", "ZF Icy Waters", "Fire Temple Hammer Chest", "Fire Temple Scarecrow", "Ganon's Castle Shadow Trial 2", "GTG Toilet", "Ice Cavern Final Chest", "Jabu Stingers", "Shadow Temple Skull Pot", "Water Temple BK Chest", "Water Temple Central Pillar"];
-            //DualHints = ["", "Adult Lake Bean Checks", "Bombchu Bowling", "Castle Great Fairies", "Child Domain", "Gerudo Valley PoH Ledges", "Horseback Archery", "BotW Dead Hand", "Fire Temple Lower Hammer Loop", "Ganon's Castle Spirit Trial", "Shadow Temple Invisible Blades", "Shadow Temple Spiked Walls", "Spirit Temple Child Loop", "Spirit Temple Colossus Hands", "Spirit Temple Early Adult", "Water Temple Dark Link Loop"];
-                     
+            //DualHints = ["", "Adult Lake Bean Checks", "Bombchu Bowling", "Castle Great Fairies", "Child Domain", "Gerudo Valley PoH Ledges", "Horseback Archery", "BotW Dead Hand", "Fire Temple Lower Hammer Loop", "Ganon's Castle Spirit Trial", "Shadow Temple Invisible Blades", "Shadow Temple Spiked Walls", "Spirit Temple Child Loop", "Spirit Temple Colossus Hands", "Spirit Temple Early Adult", "Water Temple Dark Link Loop"];                    
         }
         public void GenerateHintsAndStones()
         {

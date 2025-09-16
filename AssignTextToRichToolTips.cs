@@ -160,7 +160,7 @@ namespace CeddyMapTracker
             // Zora's Domain
             MapTracker.ZDDivingGame.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Scales.Item_Name} or ({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name})";
             MapTracker.ZDChest.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Scales.Item_Name} or ({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name})";
-            MapTracker.ZDKingZora.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.RutoLetter.Item_Name} and ({ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name})) or ({ItemPanel.Bottle2.Item_Name} and ({ItemPanel.Wallet.Item_Name1} or Ganons Castle Access))\r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
+            MapTracker.ZDKingZora.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.RutoLetter.Item_Name} and ({ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name})) or ({ItemPanel.Bottle2.Item_Name} and ({ItemPanel.Wallet.Item_Name1} or Ganon's Castle Access))\r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
             //Zora Fountain
             MapTracker.ZFFreestandingPoH.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name}\r\n• {ItemPanel.RutoLetter.Item_Name} \r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
             MapTracker.ZFGreatFairy.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.RutoLetter.Item_Name}\r\n• {ItemPanel.Bomb.Item_Name} \r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
@@ -223,7 +223,7 @@ namespace CeddyMapTracker
             MapTracker.WaterCrackedWallChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hookshot.Item_Name}\r\n• {ItemPanel.IronBoots.Item_Name}\r\n• {ItemPanel.Bomb.Item_Name}\r\n• {ItemPanel.ZeldasLullaby.Item_Name}\r\n• {ItemPanel.Bow.Item_Name} or ({ItemPanel.Dins.Item_Name} and {ItemPanel.Magic.Item_Name}) or {Keys.Water_SmallKeys.KeyCount5}";
             MapTracker.WaterTorchesChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hookshot.Item_Name}\r\n• {ItemPanel.IronBoots.Item_Name}\r\n• {ItemPanel.ZeldasLullaby.Item_Name}\r\n• {ItemPanel.Bow.Item_Name} or ({ItemPanel.Dins.Item_Name} and {ItemPanel.Magic.Item_Name})";
             MapTracker.WaterBossKeyChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hookshot.Item_Name1}\r\n• {ItemPanel.IronBoots.Item_Name}\r\n• {ItemPanel.HoverBoots.Item_Name} or ({ItemPanel.Bomb.Item_Name} and {ItemPanel.Strength.Item_Name})\r\n• {Keys.Water_SmallKeys.KeyCount5}";
-            MapTracker.WaterCentralPillarChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hookshot.Item_Name}\r\n• {ItemPanel.IronBoots.Item_Name}\r\n• {ItemPanel.ZeldasLullaby.Item_Name}\r\n• {ItemPanel.ZoraTunic.Item_Name} or (({ItemPanel.RutoLetter.Item_Name} and ({ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name})) or ({ItemPanel.Bottle2.Item_Name} and Ganons Castle Access) and {ItemPanel.Wallet.Item_Name1})\r\n• {Keys.Water_SmallKeys.KeyCount5} or {ItemPanel.Bow.Item_Name} or ({ItemPanel.Dins.Item_Name} and {ItemPanel.Magic.Item_Name})";
+            MapTracker.WaterCentralPillarChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hookshot.Item_Name}\r\n• {ItemPanel.IronBoots.Item_Name}\r\n• {ItemPanel.ZeldasLullaby.Item_Name}\r\n• {ItemPanel.ZoraTunic.Item_Name} or (({ItemPanel.RutoLetter.Item_Name} and ({ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name})) or ({ItemPanel.Bottle2.Item_Name} and Ganon's Castle Access) and {ItemPanel.Wallet.Item_Name1})\r\n• {Keys.Water_SmallKeys.KeyCount5} or {ItemPanel.Bow.Item_Name} or ({ItemPanel.Dins.Item_Name} and {ItemPanel.Magic.Item_Name})";
             MapTracker.WaterCentralBowTargetChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hookshot.Item_Name}\r\n• {ItemPanel.IronBoots.Item_Name}\r\n• {ItemPanel.ZeldasLullaby.Item_Name}\r\n• {ItemPanel.Strength.Item_Name}\r\n• {ItemPanel.HoverBoots.Item_Name} or {ItemPanel.Hookshot.Item_Name1}";
             MapTracker.WaterLongshotChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hookshot.Item_Name}\r\n• {ItemPanel.IronBoots.Item_Name}\r\n• {Keys.Water_SmallKeys.KeyCount5}";
             MapTracker.WaterRiverChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hookshot.Item_Name}\r\n• {ItemPanel.IronBoots.Item_Name}\r\n• {ItemPanel.Bow.Item_Name}\r\n• {ItemPanel.SongOfTime.Item_Name}\r\n• {Keys.Water_SmallKeys.KeyCount5}";
@@ -350,22 +350,22 @@ namespace CeddyMapTracker
             MapTracker.ToTLACS.RichToolTip.CheckLogic = $"• {ItemPanel.SpiritMedallion.Item_Name}\r\n• {ItemPanel.ShadowMedallion.Item_Name}";
             MapTracker.ToTShiek.RichToolTip.CheckLogic = $"• {ItemPanel.ForestMedallion.Item_Name}";
             //Ganons Castle
-            MapTracker.GanonsCastleForestTrialChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleWaterTrialLeftChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleWaterTrialRightChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleShadowTrialFrontChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleShadowTrialGoldenGauntletsChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleLightTrialFirstLeftChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleLightTrialSecondLeftChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleLightTrialThirdLeftChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleLightTrialFirstRightChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleLightTrialSecondRightChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleLightTrialThirdRightChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleLightTrialInvisibleEnemiesChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleLightTrialLullabyChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleSpiritTrialCrystalSwitchChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsCastleSpiritTrialInvisibleChest.RichToolTip.CheckLogic = $"";
-            MapTracker.GanonsTowerBossKeyChest.RichToolTip.CheckLogic = $"";
+            MapTracker.GanonsCastleForestTrialChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access";
+            MapTracker.GanonsCastleWaterTrialLeftChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access";
+            MapTracker.GanonsCastleWaterTrialRightChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access";
+            MapTracker.GanonsCastleShadowTrialFrontChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Hookshot.Item_Name} or {ItemPanel.HoverBoots.Item_Name} or {ItemPanel.SongOfTime.Item_Name} or ({ItemPanel.Bow.Item_Name} and {ItemPanel.FireArrow.Item_Name} and {ItemPanel.Magic.Item_Name})";
+            MapTracker.GanonsCastleShadowTrialGoldenGauntletsChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• ({ItemPanel.Hookshot.Item_Name1} and ({ItemPanel.HoverBoots.Item_Name} or ({ItemPanel.Magic.Item_Name} and {ItemPanel.Dins.Item_Name}))) or ({ItemPanel.Bow.Item_Name} and {ItemPanel.FireArrow.Item_Name} and {ItemPanel.Magic.Item_Name})";
+            MapTracker.GanonsCastleLightTrialFirstLeftChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Strength.Item_Name2}";
+            MapTracker.GanonsCastleLightTrialSecondLeftChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Strength.Item_Name2}";
+            MapTracker.GanonsCastleLightTrialThirdLeftChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Strength.Item_Name2}";
+            MapTracker.GanonsCastleLightTrialFirstRightChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Strength.Item_Name2}";
+            MapTracker.GanonsCastleLightTrialSecondRightChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Strength.Item_Name2}";
+            MapTracker.GanonsCastleLightTrialThirdRightChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Strength.Item_Name2}";
+            MapTracker.GanonsCastleLightTrialInvisibleEnemiesChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Strength.Item_Name2}";
+            MapTracker.GanonsCastleLightTrialLullabyChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Strength.Item_Name2}\r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
+            MapTracker.GanonsCastleSpiritTrialCrystalSwitchChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Hookshot.Item_Name}";
+            MapTracker.GanonsCastleSpiritTrialInvisibleChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access\r\n• {ItemPanel.Hookshot.Item_Name}\r\n• {ItemPanel.Bomb.Item_Name}";
+            MapTracker.GanonsTowerBossKeyChest.RichToolTip.CheckLogic = $"• Ganon's Castle Access";
         }
     }
 }

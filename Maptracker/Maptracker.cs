@@ -142,10 +142,10 @@ namespace CeddyMapTracker
             Region_Panel FireTemple_Panel = new(FireTemple_Check_List, "Fire Temple");
             Region_Panel WaterTemple_Panel = new(WaterTemple_Check_List, "Water Temple");
             Region_Panel SpiritTemple_Panel = new(SpiritTemple_Check_List, "Spirit Temple");
-            Region_Panel GTG_Panel = new(GTG_Check_List, "Gerudo Trainings Grounds");
+            Region_Panel GTG_Panel = new(GTG_Check_List, "Gerudo Training Grounds");
             Region_Panel DekuTree_Panel = new(DekuTree_Check_List, "Deku Tree");
-            Region_Panel DodongosCavern_Panel = new(DodongosCavern_Check_List, "Dodongos Cavern");
-            Region_Panel JabuJabu_Panel = new(JabuJabu_Check_List, "Jabu-Jabus Belly");
+            Region_Panel DodongosCavern_Panel = new(DodongosCavern_Check_List, "Dodongo's Cavern");
+            Region_Panel JabuJabu_Panel = new(JabuJabu_Check_List, "Jabu-Jabu's Belly");
             Region_Panel GanonsCastle_Panel = new(GanonsCastle_Check_List, "Ganons Castle");
             Region_Panel IceCavern_Panel = new(IceCavern_Check_List, "Ice Cavern");
             Region_Panel GoronCity_Panel = new(GoronCity_Check_List, "Goron City");
@@ -239,9 +239,9 @@ namespace CeddyMapTracker
                     check.BringToFront();
                     check.ValueChanged += (sender, e) => UpdateStatVariables(stats);
                     check.MouseEnter += (sender, e) => check.RichToolTip.DrawToolTip(this);
+                    check.MouseEnter += (sender, e) => check.RichToolTip.SetLocation(this, check.Location);
                     check.MouseLeave += (sender, e) => check.RichToolTip.DeleteToolTip(this);
                     check.RichToolTip.Location = new Point(check.Location.X + 10, check.Location.Y + 20);
-                    check.RichToolTip.SetLocation(this);
                 }
                 if (c != null && c is Region_Button_Dense rbd)
                 {
