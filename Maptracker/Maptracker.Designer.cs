@@ -111,6 +111,12 @@
             Shadow_Button = new DungeonButton();
             GanonsCastle_Button = new DungeonButton();
             ToT_Button = new Region_Button_Dense();
+            WastelandSalesman = new Check();
+            MarketPotionShop = new ShopButton();
+            MarketBazaar = new ShopButton();
+            MarketBombchuShop = new ShopButton();
+            ZDShop = new ShopButton();
+            KFShop = new ShopButton();
             SuspendLayout();
             // 
             // ToT_Button2
@@ -1282,12 +1288,101 @@
             ToT_Button.Text = "region_Button_Dense1";
             ToT_Button.UseVisualStyleBackColor = false;
             // 
+            // WastelandSalesman
+            // 
+            WastelandSalesman.Done = false;
+            WastelandSalesman.FlatAppearance.BorderColor = Color.Black;
+            WastelandSalesman.FlatStyle = FlatStyle.Flat;
+            WastelandSalesman.ForeColor = Color.Black;
+            WastelandSalesman.Location = new Point(164, 322);
+            WastelandSalesman.Name = "WastelandSalesman";
+            WastelandSalesman.Size = new Size(13, 13);
+            WastelandSalesman.TabIndex = 223;
+            WastelandSalesman.Text = "check1";
+            WastelandSalesman.UseVisualStyleBackColor = false;
+            // 
+            // MarketPotionShop
+            // 
+            MarketPotionShop.BackColor = Color.Red;
+            MarketPotionShop.FlatAppearance.BorderColor = Color.Black;
+            MarketPotionShop.FlatStyle = FlatStyle.Flat;
+            MarketPotionShop.ForeColor = Color.Red;
+            MarketPotionShop.Location = new Point(499, 257);
+            MarketPotionShop.Name = "MarketPotionShop";
+            MarketPotionShop.Size = new Size(13, 13);
+            MarketPotionShop.State = false;
+            MarketPotionShop.TabIndex = 224;
+            MarketPotionShop.Text = "shopButton1";
+            MarketPotionShop.UseVisualStyleBackColor = false;
+            // 
+            // MarketBazaar
+            // 
+            MarketBazaar.BackColor = Color.Red;
+            MarketBazaar.FlatAppearance.BorderColor = Color.Black;
+            MarketBazaar.FlatStyle = FlatStyle.Flat;
+            MarketBazaar.ForeColor = Color.Red;
+            MarketBazaar.Location = new Point(499, 270);
+            MarketBazaar.Name = "MarketBazaar";
+            MarketBazaar.Size = new Size(13, 13);
+            MarketBazaar.State = false;
+            MarketBazaar.TabIndex = 225;
+            MarketBazaar.Text = "shopButton1";
+            MarketBazaar.UseVisualStyleBackColor = false;
+            // 
+            // MarketBombchuShop
+            // 
+            MarketBombchuShop.BackColor = Color.Red;
+            MarketBombchuShop.FlatAppearance.BorderColor = Color.Black;
+            MarketBombchuShop.FlatStyle = FlatStyle.Flat;
+            MarketBombchuShop.ForeColor = Color.Red;
+            MarketBombchuShop.Location = new Point(443, 279);
+            MarketBombchuShop.Name = "MarketBombchuShop";
+            MarketBombchuShop.Size = new Size(13, 13);
+            MarketBombchuShop.State = false;
+            MarketBombchuShop.TabIndex = 226;
+            MarketBombchuShop.Text = "shopButton1";
+            MarketBombchuShop.UseVisualStyleBackColor = false;
+            // 
+            // ZDShop
+            // 
+            ZDShop.BackColor = Color.Red;
+            ZDShop.FlatAppearance.BorderColor = Color.Black;
+            ZDShop.FlatStyle = FlatStyle.Flat;
+            ZDShop.ForeColor = Color.Red;
+            ZDShop.Location = new Point(791, 340);
+            ZDShop.Name = "ZDShop";
+            ZDShop.Size = new Size(13, 13);
+            ZDShop.State = false;
+            ZDShop.TabIndex = 227;
+            ZDShop.Text = "shopButton1";
+            ZDShop.UseVisualStyleBackColor = false;
+            // 
+            // KFShop
+            // 
+            KFShop.BackColor = Color.Red;
+            KFShop.FlatAppearance.BorderColor = Color.Black;
+            KFShop.FlatStyle = FlatStyle.Flat;
+            KFShop.ForeColor = Color.Red;
+            KFShop.Location = new Point(656, 663);
+            KFShop.Name = "KFShop";
+            KFShop.Size = new Size(13, 13);
+            KFShop.State = false;
+            KFShop.TabIndex = 228;
+            KFShop.Text = "shopButton1";
+            KFShop.UseVisualStyleBackColor = false;
+            // 
             // Maptracker
             // 
             AutoScaleDimensions = new SizeF(5F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(KFShop);
+            Controls.Add(ZDShop);
+            Controls.Add(MarketBombchuShop);
+            Controls.Add(MarketBazaar);
+            Controls.Add(MarketPotionShop);
+            Controls.Add(WastelandSalesman);
             Controls.Add(ToT_Button);
             Controls.Add(GanonsCastle_Button);
             Controls.Add(Shadow_Button);
@@ -1461,5 +1556,11 @@
         public Check DMTPoH;
         private Region_Button_Dense ToT_Button;
         public Check GFChest;
+        public Check WastelandSalesman;
+        public ShopButton MarketPotionShop;
+        public ShopButton MarketBazaar;
+        public ShopButton MarketBombchuShop;
+        public ShopButton ZDShop;
+        public ShopButton KFShop;
     }
 }

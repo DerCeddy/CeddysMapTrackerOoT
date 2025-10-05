@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace CeddyMapTracker
 {
@@ -12,13 +13,26 @@ namespace CeddyMapTracker
         public bool IsDragging = false;
         public Point PreviousMousePos;
         public int PreviousState;
-        public Image PreviousImg;
+        public Image PreviousImg;       
         public int _state;
         public Gossipstone(Point _location)
-        {
+        {      
             Image = Resources.gossip_stone_bw_32x32;
             Size = new Size(24, 24);
             Location = _location;
+            AllowDrop = true;
+            SizeMode = PictureBoxSizeMode.StretchImage;
+            MouseUp += GossipStone_MouseUp;
+            DragEnter += GossipStone_DragEnter;
+            DragDrop += (sender, e) => GossipStone_DragDrop(e, this);
+            MouseDown += (sender, e) => Drag_MouseDown(e, this);
+            MouseMove += (sender, e) => MouseMoveForDrag(e, this);
+            MouseDown += (sender, e) => GossipStone_Click(e, this);
+        }
+        public Gossipstone()
+        {           
+            Image = Resources.gossip_stone_bw_32x32;
+            Size = new Size(24, 24);           
             AllowDrop = true;
             SizeMode = PictureBoxSizeMode.StretchImage;
             MouseUp += GossipStone_MouseUp;
@@ -60,10 +74,10 @@ namespace CeddyMapTracker
             if (e.Data.GetDataPresent(DataFormats.Bitmap))
                 e.Effect = DragDropEffects.Move;
         }
-        static void GossipStone_DragDrop(DragEventArgs e, PictureBox PathStone)
+        static void GossipStone_DragDrop(DragEventArgs e, Gossipstone PathStone)
         {
             Bitmap bmp = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
-            PathStone.Image = bmp;
+            PathStone.Image = bmp;           
         }
         public void Drag_MouseDown(MouseEventArgs e, Gossipstone g)
         {
@@ -90,7 +104,7 @@ namespace CeddyMapTracker
                 if ((System.Math.Abs(e.X - PreviousMousePos.X) > 10) || (System.Math.Abs(e.Y - PreviousMousePos.Y) > 10))
                 {
                     DragAndDrop(p);
-                    p._state = 0;
+                    p._state = 0;                 
                 }
             }
         }
@@ -102,7 +116,7 @@ namespace CeddyMapTracker
                     Image = Resources.gossip_stone_bw_32x32;
                     break;
                 case 1:
-                    Image = Resources.Soldout;
+                    Image = Resources.Soldout;                   
                     break;
                 case 2:
                     Image = Resources.MM3D_Small_Key_Icon;

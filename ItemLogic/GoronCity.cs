@@ -84,6 +84,23 @@ namespace CeddyMapTracker
             {
                 GCMazeLeftChest.ForeColor = NotAvailable;
             }
+            //Medigoron
+            if ((can_blast_or_smash || Has(i.Strength)) && Has(i.Wallet))
+            {
+                GCMedigoron.ForeColor = Available;
+            }
+            else if(Has(i.Bombchu) && Has(i.Wallet))
+            {
+                GCMedigoron.ForeColor = OoLwithBombchus;
+            }
+            else if (can_blast_or_smash || Has(i.Strength))
+            {
+                GCMedigoron.ForeColor = CanSee;
+            }
+            else
+            {
+                GCMedigoron.ForeColor = NotAvailable;
+            }
             //Skulls
             if (has_explosives)
             {

@@ -183,6 +183,16 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ganons_Tower {
+            get {
+                object obj = ResourceManager.GetObject("Ganons_Tower", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap go_mode_32x32 {
             get {
                 object obj = ResourceManager.GetObject("go_mode_32x32", resourceCulture);
@@ -666,6 +676,16 @@ namespace CeddyMapTracker.Properties {
         internal static System.Drawing.Bitmap suns_song_bw_32x40 {
             get {
                 object obj = ResourceManager.GetObject("suns_song_bw_32x40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trials {
+            get {
+                object obj = ResourceManager.GetObject("trials", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

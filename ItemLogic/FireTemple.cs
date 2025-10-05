@@ -154,11 +154,11 @@ namespace CeddyMapTracker
                 FireHighestGoronChest.ForeColor = NotAvailable;
             }
             //Hammer Chest
-            if ((keys.Fire_SmallKeys.currentKeys >= 7 || (Has(i.Hammer) && Has(i.HoverBoots) && keys.Fire_SmallKeys.currentKeys >= 6)) && i.Bomb.State == 1)
+            if ((keys.Fire_SmallKeys.currentKeys >= 7 || (Has(i.Hammer) && Has(i.HoverBoots) && keys.Fire_SmallKeys.currentKeys >= 6)) && i.Bomb.State == 1 && Has(i.Strength) && (Has(i.GoronTunic) || Has(i.Wallet)))
             {
                 FireMegatonHammerChest.ForeColor = Available;
             }
-            else if (Has(i.Hammer) && Has(i.HoverBoots) && i.Bomb.State == 1)
+            else if (Has(i.Hammer) && Has(i.HoverBoots) && i.Bomb.State == 1 && Has(i.Strength) && (Has(i.GoronTunic) || Has(i.Wallet)))
             {
                 FireMegatonHammerChest.ForeColor = coulddo;
             }

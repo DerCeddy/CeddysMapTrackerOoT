@@ -16,6 +16,7 @@ namespace CeddyMapTracker
         public WOTHPanel(Point _location)
         {
             Width = 260;
+            Height = 0;
             Location = _location;
             BackColor = Color.Black;
             Font = new Font("Arial", 12, GraphicsUnit.Pixel);

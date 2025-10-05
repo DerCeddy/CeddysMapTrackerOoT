@@ -76,7 +76,7 @@ namespace CeddyMapTracker
             }          
             //g.DrawEllipse(selPen, 0, 0, 13, 13);
         }
-        public void ButtonClick(MouseEventArgs e, Region_Panel region_panel)
+        public void ButtonClick(MouseEventArgs e, List<Region_Panel_Check> Checks)
         {
             switch (e.Button)
             {
@@ -85,7 +85,7 @@ namespace CeddyMapTracker
                 case MouseButtons.Middle:
                     int ChecksChecked = 0;
                     int MaxChecks = 0;
-                    foreach (Control c in region_panel.Controls)
+                    foreach (Control c in Checks)
                     {
                         if (c is CheckBox cb)
                         {
@@ -98,7 +98,7 @@ namespace CeddyMapTracker
                     }
                     if (MaxChecks > ChecksChecked)
                     {
-                        foreach (Control c in region_panel.Controls)
+                        foreach (Control c in Checks)
                         {
                             if (c is CheckBox cb)
                             {
@@ -108,7 +108,7 @@ namespace CeddyMapTracker
                     }
                     else
                     {
-                        foreach (Control c in region_panel.Controls)
+                        foreach (Control c in Checks)
                         {
                             if (c is CheckBox cb)
                             {

@@ -28,7 +28,7 @@ namespace CeddyMapTracker
         private bool _done;
         public Check()
         {
-            Size = new Size(12, 12);
+            Size = new Size(13, 13);
             FlatStyle = FlatStyle.Flat;
             BackColor = color;
             ForeColor = Color.Black;

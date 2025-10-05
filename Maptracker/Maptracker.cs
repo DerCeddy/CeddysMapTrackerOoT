@@ -14,27 +14,66 @@ namespace CeddyMapTracker
 {
     public partial class Maptracker : UserControl
     {
-        public List<Region> regions;
+        public List<Region> DenseRegions;
+        public List<OverworldRegions> OverworldRegions;
         public List<int> SmallKeys = [];
-        public List<Check> LLR_Check_List;
-        public List<Check> Wasteland_Check_List;
-        public List<Check> Colossus_Check_List;
-        public List<Check> GerudoFortress_Check_List;
-        public List<Check> GerudoValley_Check_List;
-        public List<Check> HyruleField_Check_List;
-        public List<Check> LakeHylia_Check_List;
-        public List<Check> KokiriForest_Check_List;
-        public List<Check> LostWoods_Check_List;
-        public List<Check> SFM_Check_List;
-        public List<Check> ZoraRiver_Check_List;
-        public List<Check> ZoraDomain_Check_List;
-        public List<Check> ZoraFountain_Check_List;
-        public List<Check> DMT_Check_List;
-        public List<Check> DMC_Check_List;
-        public List<Check> Market_Check_List;
-        public List<Check> HC_Check_List;
-        public List<Check> OGC_Check_List;
-        public List<Check> ToT_Check_List;
+        public OverworldRegions LLR = new();
+        public OverworldRegions Wasteland = new();
+        public OverworldRegions Colossus = new();
+        public OverworldRegions GerudoFortress = new();
+        public OverworldRegions GerudoValley = new();
+        public OverworldRegions HyruleField = new();
+        public OverworldRegions LakeHylia = new();
+        public OverworldRegions KokiriForest = new();
+        public OverworldRegions LostWoods = new();
+        public OverworldRegions SFM = new();
+        public OverworldRegions ZoraRiver = new();
+        public OverworldRegions ZoraDomain = new();
+        public OverworldRegions ZoraFountain = new();
+        public OverworldRegions DMT = new();
+        public OverworldRegions DMC = new();       
+        public OverworldRegions HC = new();
+        public OverworldRegions OGC = new();
+        public OverworldRegions Market = new();
+        public List<Region_Panel_Check> ForestTemple_Check_List;
+        public List<Region_Panel_Check> Kakariko_Check_List;
+        public List<Region_Panel_Check> Graveyard_Check_List;
+        public List<Region_Panel_Check> ToT_Check_List;
+        public List<Region_Panel_Check> ShadowTemple_Check_List;
+        public List<Region_Panel_Check> FireTemple_Check_List;
+        public List<Region_Panel_Check> WaterTemple_Check_List;
+        public List<Region_Panel_Check> SpiritTemple_Check_List;
+        public List<Region_Panel_Check> GTG_Check_List;
+        public List<Region_Panel_Check> DekuTree_Check_List;
+        public List<Region_Panel_Check> DodongosCavern_Check_List;
+        public List<Region_Panel_Check> JabuJabu_Check_List;
+        public List<Region_Panel_Check> GanonsCastle_Check_List;
+        public List<Region_Panel_Check> IceCavern_Check_List;
+        public List<Region_Panel_Check> GoronCity_Check_List;
+        public List<Region_Panel_Check> BotW_Check_List;
+        public List<ShopPanelCheck> KakarikoShops = [];
+        public List<ShopPanelCheck> GoronShop = [];
+        public bool ExpensiveMerchantShuffle;
+        public bool ShopShuffle;
+        public int UpdateStats
+        {
+            get
+            {
+                return _updatestats;
+            }
+            set
+            {
+                _updatestats = value;
+                OnValueChanged(null);
+            }
+        }
+        private int _updatestats;
+        public event EventHandler ValueChanged;
+        protected virtual void OnValueChanged(EventArgs e)
+        {
+            if (ValueChanged != null)
+                ValueChanged(this, e);
+        }
         public class Settings
         {
             [JsonProperty("CheckName")]
@@ -45,6 +84,7 @@ namespace CeddyMapTracker
         public class CheckName
         {
             public string? WastelandChest;
+            public string? WastelandSalesman;
             public string? ColossusShiek;
             public string? ColossusPoH;
             public string? ColossusGreatFairy;
@@ -70,6 +110,9 @@ namespace CeddyMapTracker
             public string? MarketTreasureChestGame;
             public string? MarketBigPoes;
             public string? MarketBombchuBowling;
+            public string? MarketBazaar;
+            public string? MarketPotionShop;
+            public string? MarketBombchuShop;
             public string? ToTLACS;
             public string? ToTShiek;
             public string? HCGreatFairy;
@@ -91,6 +134,7 @@ namespace CeddyMapTracker
             public string? ZRFrogsGame;
             public string? ZDChest;
             public string? ZRDivingGame;
+            public string? ZDShop;
             public string? ZDKingZora;
             public string? ZFGreatFairy;
             public string? ZFFreestandingPoH;
@@ -98,6 +142,7 @@ namespace CeddyMapTracker
             public string? KFMidos;
             public string? KFKokiriSwordChest;
             public string? KFStormGrottoChest;
+            public string? KFShop;
             public string? LWScrubNearBridge;
             public string? LWSkullKid;
             public string? LWOcarinaGame;
@@ -116,117 +161,96 @@ namespace CeddyMapTracker
         {
             InitializeComponent();
             Location = location;
+            
             //Assign checks to check list
-            List<Region_Panel_Check> ForestTemple_Check_List = [ForestFirstRoomChest, ForestFirstStalfosRoomChest, ForestRaisedIslandCourtyardChest, ForestMapChest, ForestWellChest, ForestEyeSwitchChest, ForestBossKeyChest, ForestFloormasterChest, ForestRedPoeChest, ForestBowChest, ForestBluePoeChest, ForestFallingCeillingRoomChest, ForestBasementChest, ForestPhantomGanonHeart];
-            List<Region_Panel_Check> Kakariko_Check_List = [KakAnjuasChild, KakAnjuasAdult, KakImpasHouseFreestandingPoH, KakWindmillFreestandingPoH, WindmillSong, KakManonRoof, KakOpenGrottoChest, KakRedeadGrottoChest, KakShootingGalleryReward, KakShiek, Kak10GoldSkulltulaReward, Kak20GoldSkulltulaReward, Kak30GoldSkulltulaReward, Kak40GoldSkulltulaReward, Kak50GoldSkulltulaReward];
-            List<Region_Panel_Check> Graveyard_Check_List = [GraveyardShieldGraveChest, GraveyardHeartPieceGraveChest, GraveyardRoyalFamilysTombChest, GraveyardFreestandingPoH, GraveyardDampeGravediggingTour, GraveyardDampeRaceHookshotChest, GraveyardDampeRaceFreestandingPoH, GraveyardComposerSong];
-            List<Region_Panel_Check> ToT_Check_List = [ToTLACS, ToTShiek];
-            List<Region_Panel_Check> ShadowTemple_Check_List = [ShadowMapChest, ShadowHoverBootsChest, ShadowCompassChest, ShadowEarlySilverRupeeChest, ShadowInvisibleBladesVisibleChest, ShadowInvisibleBladesInvisibleChest, ShadowFallingSpikesLowerChest, ShadowFallingSpikesUpperChest, ShadowFallingSpikesSwitchChest, ShadowInvisibleSpikesChest, ShadowFreestandingKey, ShadowWindHintChest, ShadowAfterWindEnemyChest, ShadowAfterWindHiddenChest, ShadowSpikeWallsLeftChest, ShadowBossKeyChest, ShadowInvisibleFloormasterChest, ShadowBongoBongoHeart];
-            List<Region_Panel_Check> FireTemple_Check_List = [FireNearBossChest, FireFlareDancerChest, FireBossKeyChest, FireBigLavaRoomLowerDoorChest, FireBigLavaRoomBlockedDoorChest, FireBoulderMazeLowerChest, FireBoulderMazeSideRoomChest, FireMapChest, FireBoulderMazeShortcutChest, FireBoulderMazeUpperChest, FireScarecrowChest, FireCompassChest, FireMegatonHammerChest, FireHighestGoronChest, FireVolvagiaHeart];
-            List<Region_Panel_Check> WaterTemple_Check_List = [WaterCompassChest, WaterMapChest, WaterCrackedWallChest, WaterTorchesChest, WaterBossKeyChest, WaterCentralPillarChest, WaterCentralBowTargetChest, WaterLongshotChest, WaterRiverChest, WaterDragonChest, WaterMorphaHeart];
-            List<Region_Panel_Check> SpiritTemple_Check_List = [SpiritChildBridgeChest, SpiritChildEarlyTorchesChest, SpiritChildClimbNorthChest, SpiritChildClimbEastChest, SpiritMapChest, SpiritSunBlockRoomChest, SpiritSilverGauntletsChest, SpiritCompassChest, SpiritEarlyAdultRightChest, SpiritFirstMirrorLeftChest, SpiritFirstMirrorRightChest, SpiritStatueRoomNortheastChest, SpiritStatueRoomHandChest, SpiritNearFourArmosChest, SpiritHallwayRightInvisibleChest, SpiritHallwayLeftInvisibleChest, SpiritMirrorShieldChest, SpiritBossKeyChest, SpiritTopmostChest, SpiritTwinrovaHeart];
-            List<Region_Panel_Check> GTG_Check_List = [GTGLobbyLeftChest, GTGLobbyRightChest, GTGStalfosChest, GTGBeforeHeavyBlockChest, GTGHeavyBlockFirstChest, GTGHeavyBlockSecondChest, GTGHeavyBlockThirdChest, GTGHeavyBlockFourthChest, GTGEyeStatueChest, GTGNearScarecrowChest, GTGHammerRoomClearChest, GTGHammerRoomSwitchChest, GTGFreestandingKey, GTGMazeRightCentralChest, GTGMazeRightSideChest, GTGUnderwaterSilverRupeeChest, GTGBeamosChest, GTGHiddenCeilingChest, GTGMazePathFirstChest, GTGMazePathSecondChest, GTGMazePathThirdChest, GTGMazePathFinalChest];
-            List<Region_Panel_Check> DekuTree_Check_List = [DekuTreeMapChest, DekuTreeSlingshotRoomSideChest, DekuTreeSlingshotChest, DekuTreeCompassChest, DekuTreeCompassRoomSideChest, DekuTreeBasementChest, DekuTreeQueenGohmaHeart];
-            List<Region_Panel_Check> DodongosCavern_Check_List = [DodongosCavernMapChest, DodongosCavernCompassChest, DodongosCavernBombFlowerPlatformChest, DodongosCavernBombBagChest, DodongosCavernEndofBridgeChest, DodongosCavernBossRoomChest, DodongosCavernKingDodongoHeart];
-            List<Region_Panel_Check> JabuJabu_Check_List = [JabuJabusBellyBoomerangChest, JabuJabusBellyMapChest, JabuJabusBellyCompassChest, JabuJabusBellyBarinadeHeart];
-            List<Region_Panel_Check> GanonsCastle_Check_List = [GanonsCastleForestTrialChest, GanonsCastleWaterTrialLeftChest, GanonsCastleWaterTrialRightChest, GanonsCastleShadowTrialFrontChest, GanonsCastleShadowTrialGoldenGauntletsChest, GanonsCastleLightTrialFirstLeftChest, GanonsCastleLightTrialSecondLeftChest, GanonsCastleLightTrialThirdLeftChest, GanonsCastleLightTrialFirstRightChest, GanonsCastleLightTrialSecondRightChest, GanonsCastleLightTrialThirdRightChest, GanonsCastleLightTrialInvisibleEnemiesChest, GanonsCastleLightTrialLullabyChest, GanonsCastleSpiritTrialCrystalSwitchChest, GanonsCastleSpiritTrialInvisibleChest, GanonsTowerBossKeyChest];
-            List<Region_Panel_Check> IceCavern_Check_List = [IceCavernMapChest, IceCavernCompassChest, IceCavernIronBootsChest, IceCavernFreestandingPoH, IceCavernShiek];
-            List<Region_Panel_Check> GoronCity_Check_List = [GCDaruniasJoy, GCPotFreestandingPoH, GCRollingGoronasChild, GCRollingGoronasAdult, GCMazeLeftChest, GCMazeCenterChest, GCMazeRightChest];
-            List<Region_Panel_Check> BotW_Check_List = [BotWFrontLeftFakeWallChest, BotWFrontCenterBombableChest, BotWBackLeftBombableChest, BotWUnderwaterLeftChest, BotWFreestandingKey, BotWCompassChest, BotWCenterSkulltulaChest, BotWRightBottomFakeWallChest, BotWFireKeeseChest, BotWLikeLikeChest, BotWMapChest, BotWUnderwaterFrontChest, BotWInvisibleChest, BotWLensofTruthChest];
-            //Assign check list to the regions panel
-            Region_Panel ForestTemple_Panel = new(ForestTemple_Check_List, "Forest Temple");
-            Region_Panel Kakariko_Panel = new(Kakariko_Check_List, "Kakariko");
-            Region_Panel Graveyard_Panel = new(Graveyard_Check_List, "Graveyard");
-            Region_Panel ToT_Panel = new(ToT_Check_List, "Temple of Time");
-            Region_Panel ShadowTemple_Panel = new(ShadowTemple_Check_List, "Shadow Temple");
-            Region_Panel FireTemple_Panel = new(FireTemple_Check_List, "Fire Temple");
-            Region_Panel WaterTemple_Panel = new(WaterTemple_Check_List, "Water Temple");
-            Region_Panel SpiritTemple_Panel = new(SpiritTemple_Check_List, "Spirit Temple");
-            Region_Panel GTG_Panel = new(GTG_Check_List, "Gerudo Training Grounds");
-            Region_Panel DekuTree_Panel = new(DekuTree_Check_List, "Deku Tree");
-            Region_Panel DodongosCavern_Panel = new(DodongosCavern_Check_List, "Dodongo's Cavern");
-            Region_Panel JabuJabu_Panel = new(JabuJabu_Check_List, "Jabu-Jabu's Belly");
-            Region_Panel GanonsCastle_Panel = new(GanonsCastle_Check_List, "Ganons Castle");
-            Region_Panel IceCavern_Panel = new(IceCavern_Check_List, "Ice Cavern");
-            Region_Panel GoronCity_Panel = new(GoronCity_Check_List, "Goron City");
-            Region_Panel BotW_Panel = new(BotW_Check_List, "Bottom of the Well");
+            ForestTemple_Check_List = [ForestFirstRoomChest, ForestFirstStalfosRoomChest, ForestRaisedIslandCourtyardChest, ForestMapChest, ForestWellChest, ForestEyeSwitchChest, ForestBossKeyChest, ForestFloormasterChest, ForestRedPoeChest, ForestBowChest, ForestBluePoeChest, ForestFallingCeillingRoomChest, ForestBasementChest, ForestPhantomGanonHeart];
+            Kakariko_Check_List = [KakAnjuasChild, KakAnjuasAdult, KakImpasHouseFreestandingPoH, KakWindmillFreestandingPoH, WindmillSong, KakManonRoof, KakOpenGrottoChest, KakRedeadGrottoChest, KakShootingGalleryReward, KakShiek, Kak10GoldSkulltulaReward, Kak20GoldSkulltulaReward, Kak30GoldSkulltulaReward, Kak40GoldSkulltulaReward, Kak50GoldSkulltulaReward];
+            Graveyard_Check_List = [GraveyardShieldGraveChest, GraveyardHeartPieceGraveChest, GraveyardRoyalFamilysTombChest, GraveyardFreestandingPoH, GraveyardDampeGravediggingTour, GraveyardDampeRaceHookshotChest, GraveyardDampeRaceFreestandingPoH, GraveyardComposerSong];
+            ToT_Check_List = [ToTLACS, ToTShiek];
+            ShadowTemple_Check_List = [ShadowMapChest, ShadowHoverBootsChest, ShadowCompassChest, ShadowEarlySilverRupeeChest, ShadowInvisibleBladesVisibleChest, ShadowInvisibleBladesInvisibleChest, ShadowFallingSpikesLowerChest, ShadowFallingSpikesUpperChest, ShadowFallingSpikesSwitchChest, ShadowInvisibleSpikesChest, ShadowFreestandingKey, ShadowWindHintChest, ShadowAfterWindEnemyChest, ShadowAfterWindHiddenChest, ShadowSpikeWallsLeftChest, ShadowBossKeyChest, ShadowInvisibleFloormasterChest, ShadowBongoBongoHeart];
+            FireTemple_Check_List = [FireNearBossChest, FireFlareDancerChest, FireBossKeyChest, FireBigLavaRoomLowerDoorChest, FireBigLavaRoomBlockedDoorChest, FireBoulderMazeLowerChest, FireBoulderMazeSideRoomChest, FireMapChest, FireBoulderMazeShortcutChest, FireBoulderMazeUpperChest, FireScarecrowChest, FireCompassChest, FireMegatonHammerChest, FireHighestGoronChest, FireVolvagiaHeart];
+            WaterTemple_Check_List = [WaterCompassChest, WaterMapChest, WaterCrackedWallChest, WaterTorchesChest, WaterBossKeyChest, WaterCentralPillarChest, WaterCentralBowTargetChest, WaterLongshotChest, WaterRiverChest, WaterDragonChest, WaterMorphaHeart];
+            SpiritTemple_Check_List = [SpiritChildBridgeChest, SpiritChildEarlyTorchesChest, SpiritChildClimbNorthChest, SpiritChildClimbEastChest, SpiritMapChest, SpiritSunBlockRoomChest, SpiritSilverGauntletsChest, SpiritCompassChest, SpiritEarlyAdultRightChest, SpiritFirstMirrorLeftChest, SpiritFirstMirrorRightChest, SpiritStatueRoomNortheastChest, SpiritStatueRoomHandChest, SpiritNearFourArmosChest, SpiritHallwayRightInvisibleChest, SpiritHallwayLeftInvisibleChest, SpiritMirrorShieldChest, SpiritBossKeyChest, SpiritTopmostChest, SpiritTwinrovaHeart];
+            GTG_Check_List = [GTGLobbyLeftChest, GTGLobbyRightChest, GTGStalfosChest, GTGBeforeHeavyBlockChest, GTGHeavyBlockFirstChest, GTGHeavyBlockSecondChest, GTGHeavyBlockThirdChest, GTGHeavyBlockFourthChest, GTGEyeStatueChest, GTGNearScarecrowChest, GTGHammerRoomClearChest, GTGHammerRoomSwitchChest, GTGFreestandingKey, GTGMazeRightCentralChest, GTGMazeRightSideChest, GTGUnderwaterSilverRupeeChest, GTGBeamosChest, GTGHiddenCeilingChest, GTGMazePathFirstChest, GTGMazePathSecondChest, GTGMazePathThirdChest, GTGMazePathFinalChest];
+            DekuTree_Check_List = [DekuTreeMapChest, DekuTreeSlingshotRoomSideChest, DekuTreeSlingshotChest, DekuTreeCompassChest, DekuTreeCompassRoomSideChest, DekuTreeBasementChest, DekuTreeQueenGohmaHeart];
+            DodongosCavern_Check_List = [DodongosCavernMapChest, DodongosCavernCompassChest, DodongosCavernBombFlowerPlatformChest, DodongosCavernBombBagChest, DodongosCavernEndofBridgeChest, DodongosCavernBossRoomChest, DodongosCavernKingDodongoHeart];
+            JabuJabu_Check_List = [JabuJabusBellyBoomerangChest, JabuJabusBellyMapChest, JabuJabusBellyCompassChest, JabuJabusBellyBarinadeHeart];
+            GanonsCastle_Check_List = [GanonsCastleForestTrialChest, GanonsCastleWaterTrialLeftChest, GanonsCastleWaterTrialRightChest, GanonsCastleShadowTrialFrontChest, GanonsCastleShadowTrialGoldenGauntletsChest, GanonsCastleLightTrialFirstLeftChest, GanonsCastleLightTrialSecondLeftChest, GanonsCastleLightTrialThirdLeftChest, GanonsCastleLightTrialFirstRightChest, GanonsCastleLightTrialSecondRightChest, GanonsCastleLightTrialThirdRightChest, GanonsCastleLightTrialInvisibleEnemiesChest, GanonsCastleLightTrialLullabyChest, GanonsCastleSpiritTrialCrystalSwitchChest, GanonsCastleSpiritTrialInvisibleChest, GanonsTowerBossKeyChest];
+            IceCavern_Check_List = [IceCavernMapChest, IceCavernCompassChest, IceCavernIronBootsChest, IceCavernFreestandingPoH, IceCavernShiek];
+            GoronCity_Check_List = [GCDaruniasJoy, GCPotFreestandingPoH, GCRollingGoronasChild, GCRollingGoronasAdult, GCMazeLeftChest, GCMazeCenterChest, GCMazeRightChest];
+            BotW_Check_List = [BotWFrontLeftFakeWallChest, BotWFrontCenterBombableChest, BotWBackLeftBombableChest, BotWUnderwaterLeftChest, BotWFreestandingKey, BotWCompassChest, BotWCenterSkulltulaChest, BotWRightBottomFakeWallChest, BotWFireKeeseChest, BotWLikeLikeChest, BotWMapChest, BotWUnderwaterFrontChest, BotWInvisibleChest, BotWLensofTruthChest];           
             //Combine everything to the class region
-            Region ForestTemple = new(Forest_Button, ForestTemple_Panel, ForestTemple_Check_List, this);
-            Region FireTemple = new(Fire_Button, FireTemple_Panel, FireTemple_Check_List, this);
-            Region WaterTemple = new(Water_Button, WaterTemple_Panel, WaterTemple_Check_List, this);
-            Region SpiritTemple = new(Spirit_Button, SpiritTemple_Panel, SpiritTemple_Check_List, this);
-            Region ShadowTemple = new(Shadow_Button, ShadowTemple_Panel, ShadowTemple_Check_List, this);
-            Region DekuTree = new(Deku_Button, DekuTree_Panel, DekuTree_Check_List, this);
-            Region DodongosCavern = new(DC_Button, DodongosCavern_Panel, DodongosCavern_Check_List, this);
-            Region JabuJabu = new(Jabu_Button, JabuJabu_Panel, JabuJabu_Check_List, this);
-            Region BotW = new(BotW_Button, BotW_Panel, BotW_Check_List, this);
-            Region IceCavern = new(Ice_Button, IceCavern_Panel, IceCavern_Check_List, this);
-            Region GTG = new(GTG_Button, GTG_Panel, GTG_Check_List, this);
-            Region Kakariko = new(Kakariko_Button, Kakariko_Panel, Kakariko_Check_List, this);
-            Region Graveyard = new(Graveyard_Button, Graveyard_Panel, Graveyard_Check_List, this);
-            Region GoronCity = new(GoronCity_Button, GoronCity_Panel, GoronCity_Check_List, this);
-            Region ToT = new(ToT_Button, ToT_Panel, ToT_Check_List, this);
-            Region GanonsCastle = new(GanonsCastle_Button, GanonsCastle_Panel, GanonsCastle_Check_List, this);
-            regions = [ForestTemple, FireTemple, WaterTemple, SpiritTemple, ShadowTemple, DekuTree, DodongosCavern, JabuJabu, BotW, IceCavern, GTG, Kakariko, Graveyard, GoronCity, ToT, GanonsCastle];
+            Region ForestTemple = new(Forest_Button, ForestTemple_Check_List, this) { RegionName = "Forest Temple"};
+            Region FireTemple = new(Fire_Button, FireTemple_Check_List, this) { RegionName = "Fire Temple" };
+            Region WaterTemple = new(Water_Button, WaterTemple_Check_List, this) { RegionName = "Water Temple" };
+            Region SpiritTemple = new(Spirit_Button, SpiritTemple_Check_List, this) { RegionName = "Spirit Temple" };
+            Region ShadowTemple = new(Shadow_Button, ShadowTemple_Check_List, this) { RegionName = "Shadow Temple" };
+            Region DekuTree = new(Deku_Button, DekuTree_Check_List, this) { RegionName = "Deku Tree" };
+            Region DodongosCavern = new(DC_Button, DodongosCavern_Check_List, this) { RegionName = "Dodongo's Cavern" };
+            Region JabuJabu = new(Jabu_Button, JabuJabu_Check_List, this) { RegionName = "Jabu-Jabu's Belly" };
+            Region BotW = new(BotW_Button, BotW_Check_List, this) { RegionName = "Bottom of the Well" };
+            Region IceCavern = new(Ice_Button, IceCavern_Check_List, this) { RegionName = "Ice Cavern" };
+            Region GTG = new(GTG_Button, GTG_Check_List, this) { RegionName = "Gerudo Training Ground" };
+            Region Kakariko = new(Kakariko_Button, Kakariko_Check_List, this) { RegionName = "Kakariko", ShopChecks = KakarikoShops };
+            Region Graveyard = new(Graveyard_Button, Graveyard_Check_List, this) { RegionName = "Graveyard" };
+            Region GoronCity = new(GoronCity_Button, GoronCity_Check_List, this) { RegionName = "Goron City", ShopChecks =  GoronShop};
+            Region ToT = new(ToT_Button, ToT_Check_List, this) { RegionName = "Temple of Time" };
+            Region GanonsCastle = new(GanonsCastle_Button, GanonsCastle_Check_List, this) { RegionName = "Ganon's Castle" };
+            DenseRegions = [ForestTemple, FireTemple, WaterTemple, SpiritTemple, ShadowTemple, DekuTree, DodongosCavern, JabuJabu, BotW, IceCavern, GTG, Kakariko, Graveyard, GoronCity, ToT, GanonsCastle];
             List<string> Denselocations_Names = ["Forest Temple", "Fire Temple", "Water Temple", "Spirit Temple", "Shadow Temple", "Deku Tree", "Dodongos Cavern", "Jabu-Jabus Belly", "Bottom of the Well", "Ice Cavern", "Gerudo Training Grounds", "Kakariko Village", "Graveyard", "Goron City", "Temple of Time", "Ganons Castle"];
-            Wasteland_Check_List = [WastelandChest];
-            Colossus_Check_List = [ColossusGreatFairy, ColossusPoH, ColossusShiek];
-            GerudoFortress_Check_List = [GFChest, HBA];
-            GerudoValley_Check_List = [GVWaterFallPoH, GVChest, GVCratePoH];
-            HyruleField_Check_List = [HFOoT, HFNearMarketGrottoChest, HFOpenGrottoChest, HFSalesman, HFSoutheastGrottoChest, HFTektikeGrottoPoH];
-            LakeHylia_Check_List = [LHChildFishing, LHAdultFishing, LHFreestandingPoH, LHLabDive, LHShootTheSun, LHUnderwaterItem];
-            KokiriForest_Check_List = [KFMidos, KFKokiriSwordChest, KFStormGrottoChest];
-            LostWoods_Check_List = [LWNearShortcutGrottoChest, LWOcarinaGame, LWScrubGrottoFront, LWScrubNearBridge, LWSkullKid, LWSkullMask, LWTarget];
-            SFM_Check_List = [SFMSaria, SFMShiek, SFMWolfosGrotto];
-            ZoraRiver_Check_List = [ZRFrogsGame, ZRFrogsStorms, ZRNearGrottoPoH, ZROpenGrotto, ZRPoHNearDomain];
-            ZoraDomain_Check_List = [ZDChest, ZDDivingGame, ZDKingZora];
-            ZoraFountain_Check_List = [ZFBottomPoH, ZFFreestandingPoH, ZFGreatFairy];
-            DMT_Check_List = [DMTBiggoron, DMTChest, DMTGreatFairy, DMTPoH, DMTStormsGrotto];
-            DMC_Check_List = [DMCGreatFairy, DMCShiek, DMCUpperGrotto, DMCVolcanoPoH, DMCWallPoH];
-            Market_Check_List = [MarketBigPoes, MarketBombchuBowling, MarketRichard, MarketShootingGalleryReward, MarketTreasureChestGame];
-            HC_Check_List = [HCGreatFairy];
-            OGC_Check_List = [OGCGreatFairy];
-            LLR_Check_List = [LLRMalon, LLRPoH, LLRTalon];
+            Wasteland.Checks = [WastelandChest];
+            Colossus.Checks = [ColossusGreatFairy, ColossusPoH, ColossusShiek];
+            GerudoFortress.Checks = [GFChest, HBA];
+            GerudoValley.Checks = [GVWaterFallPoH, GVChest, GVCratePoH];
+            HyruleField.Checks = [HFOoT, HFNearMarketGrottoChest, HFOpenGrottoChest, HFSalesman, HFSoutheastGrottoChest, HFTektikeGrottoPoH];
+            LakeHylia.Checks = [LHChildFishing, LHAdultFishing, LHFreestandingPoH, LHLabDive, LHShootTheSun, LHUnderwaterItem];
+            KokiriForest.Checks = [KFMidos, KFKokiriSwordChest, KFStormGrottoChest];
+            LostWoods.Checks = [LWNearShortcutGrottoChest, LWOcarinaGame, LWScrubGrottoFront, LWScrubNearBridge, LWSkullKid, LWSkullMask, LWTarget];
+            SFM.Checks = [SFMSaria, SFMShiek, SFMWolfosGrotto];
+            ZoraRiver.Checks = [ZRFrogsGame, ZRFrogsStorms, ZRNearGrottoPoH, ZROpenGrotto, ZRPoHNearDomain];
+            ZoraDomain.Checks = [ZDChest, ZDDivingGame, ZDKingZora];
+            ZoraFountain.Checks = [ZFBottomPoH, ZFFreestandingPoH, ZFGreatFairy];
+            DMT.Checks = [DMTBiggoron, DMTChest, DMTGreatFairy, DMTPoH, DMTStormsGrotto];
+            DMC.Checks = [DMCGreatFairy, DMCShiek, DMCUpperGrotto, DMCVolcanoPoH, DMCWallPoH];
+            Market.Checks = [MarketBigPoes, MarketBombchuBowling, MarketRichard, MarketShootingGalleryReward, MarketTreasureChestGame];
+            HC.Checks = [HCGreatFairy];
+            OGC.Checks = [OGCGreatFairy];
+            LLR.Checks = [LLRMalon, LLRPoH, LLRTalon];
+            OverworldRegions = [LLR, Wasteland, Colossus, GerudoFortress, GerudoValley, HyruleField, LakeHylia, KokiriForest, LostWoods, SFM, ZoraRiver, ZoraDomain, ZoraFountain, DMT, DMC, Market, HC, OGC];
+            //MarketTest.Checks = Market_Check_List;
             //Assign checks to region buttons
             List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];
-            //List<List<Check>> Test = [Wasteland_Check_List, Colossus_Check_List, GerudoFortress_Check_List, GerudoValley_Check_List, HyruleField_Check_List, LakeHylia_Check_List, KokiriForest_Check_List, LostWoods_Check_List, SFM_Check_List, ZoraRiver_Check_List, ZoraDomain_Check_List, ZoraFountain_Check_List, DMT_Check_List, DMC_Check_List, Market_Check_List, HC_Check_List, OGC_Check_List, LLR_Check_List, ToT_Check_List];          
             ContextMenuForWOTHHints ContextWheel = new();
             Controls.Add(ContextWheel);
             ContextWheel.Visible = false;
             //Update WOTH Panel Goals
             ContextWheel.ValueChanged += (sender, e) => UpdateWOTHGoals(wothPanel, ContextWheel);
             //Add region panels to the map
-            var temp = 0;
-            foreach (Region region in regions)
-            {
-                Controls.Add(region._region_panel);
-                region._region_panel.Visible = false;
-                if (region._region_button != null)
+            ExpensiveMerchantShuffle = true;
+            ShopShuffle = true;
+            AddExtraChecks();
+            var temp = 0;         
+            foreach (Region region in DenseRegions)
+            {               
+                if (region.RegionButton != null)
                 {
-                    region._region_button._name = Denselocations_Names[temp];
-                    region._region_button.MouseDown += (sender, e) => AddContextMenu(e, ContextWheel, region);
+                    region.RegionButton._name = Denselocations_Names[temp];
+                    region.RegionButton.MouseDown += (sender, e) => AddContextMenu(e, ContextWheel, region);
                 }
-                if (region._dungeon_button != null)
+                if (region.DungeonButton != null)
                 {
-                    region._dungeon_button._name = Denselocations_Names[temp];
-                    region._dungeon_button.MouseDown += (sender, e) => AddContextMenu(e, ContextWheel, region._dungeon_button);
+                    region.DungeonButton._name = Denselocations_Names[temp];
+                    region.DungeonButton.MouseDown += (sender, e) => AddContextMenu(e, ContextWheel, region.DungeonButton);
                 }
-                foreach (Region_Panel_Check c in region._checks)
+                foreach (Region_Panel_Check c in region.Checks)
                 {
+                    
                     c.MouseEnter += (sender, e) => c.RichToolTip.DrawToolTip(this);
                     c.MouseLeave += (sender, e) => c.RichToolTip.DeleteToolTip(this);
-                    c.RichToolTip.Location = new Point(c.Location.X + region._region_panel.Location.X + 10, c.Location.Y + 60);
+                    //c.MouseEnter += (sender,e) => c.RichToolTip.SetRegionCheckLocation(c) ;
+                    c.MouseEnter += (sender, e) => c.RichToolTip.Location = new Point(c.Location.X + 300, c.Location.Y + 65);
                     //c.RichToolTip.SetLocation(this);
-                }
-                /*
-                foreach(Control c in region._region_panel.Controls)
-                {
-                    if(c != null && c is Region_Panel_Check rpc)
-                    {
-                        rpc.MouseDown += (sender, e) => GetChecksAvailable(stats);
-                    }
-                }
-                */
+                }       
                 //Test stage change
                 region.ValueChanged += (sender, e) => UpdateStatVariables(stats);
                 temp++;
@@ -239,7 +263,7 @@ namespace CeddyMapTracker
                     check.BringToFront();
                     check.ValueChanged += (sender, e) => UpdateStatVariables(stats);
                     check.MouseEnter += (sender, e) => check.RichToolTip.DrawToolTip(this);
-                    check.MouseEnter += (sender, e) => check.RichToolTip.SetLocation(this, check.Location);
+                    check.MouseEnter += (sender, e) => check.RichToolTip.PreventTooltipOoB(this, check.Location);
                     check.MouseLeave += (sender, e) => check.RichToolTip.DeleteToolTip(this);
                     check.RichToolTip.Location = new Point(check.Location.X + 10, check.Location.Y + 20);
                 }
@@ -247,8 +271,26 @@ namespace CeddyMapTracker
                 {
                     rbd.BringToFront();
                 }
+                if (c != null && c is ShopButton ShopButton)
+                {
+                    ShopButton.MouseDown += (sender, e) => ShopButton.CreatePanel(this, e);
+                    ShopButton.MouseEnter += (sender, e) => ShopButton.RichToolTip.DrawToolTip(this);
+                    ShopButton.MouseEnter += (sender, e) => ShopButton.RichToolTip.PreventTooltipOoB(this, ShopButton.Location);
+                    ShopButton.MouseLeave += (sender, e) => ShopButton.RichToolTip.DeleteToolTip(this);
+                    ShopButton.ValueChanged += (sender, e) => UpdateStatVariables(stats);
+                    ShopButton.RichToolTip.Location = new Point(ShopButton.Location.X + 10, ShopButton.Location.Y + 20);
+                }
             }
-            MouseDown += (sender, e) => GetRegionName(e, ContextWheel);
+            //Assign tooltips to Goron City and Zora's Domain Shops
+            List<ShopPanelCheck> KakAndGCShopChecks = [GoronShopTopLeft, GoronShopTopRight, GoronShopBottomLeft, GoronShopBottomRight,KakBazaarTopLeft, KakBazaarTopRight, KakBazaarBottomLeft, KakBazaarBottomRight, KakPotionShopTopLeft, KakPotionShopTopRight, KakPotionShopBottomLeft, KakPotionShopBottomRight];
+            foreach (ShopPanelCheck spc in KakAndGCShopChecks)
+            {
+                spc.MouseEnter += (sender, e) => spc.RichToolTip.DrawToolTip(this);
+                spc.MouseEnter += (sender, e) => spc.RichToolTip.PreventTooltipOoB(this, spc.Location);
+                spc.MouseLeave += (sender, e) => spc.RichToolTip.DeleteToolTip(this);
+                spc.MouseEnter += (sender, e) => spc.RichToolTip.Location = new Point(spc.Location.X + 300, spc.Location.Y + 65);
+            }
+            MouseDown += (sender, e) => GetRegionName(e, ContextWheel);          
         }
 
         public void UpdateCheckColors()
@@ -263,9 +305,9 @@ namespace CeddyMapTracker
         }
         public void UpdateDenseLocations()
         {
-            foreach (Region region in regions)
+            foreach (Region region in DenseRegions)
             {
-                if (region._region_button != null)
+                if (region.RegionButton != null)
                 {
                     region.UpdateCounter();
                 }
@@ -275,160 +317,257 @@ namespace CeddyMapTracker
                 }
             }
         }
+        public void AddExpensiveMerchants()
+        {
+            if (ExpensiveMerchantShuffle == true)
+            {
+                Kakariko_Check_List.Add(KakGranny);
+                GoronCity_Check_List.Add(GCMedigoron);
+                Wasteland.Checks.Add(WastelandSalesman);
+                WastelandSalesman.Show();
+            }
+            else
+            {
+                Kakariko_Check_List.Remove(KakGranny);
+                GoronCity_Check_List.Remove(GCMedigoron);
+                Wasteland.Checks.Remove(WastelandSalesman);
+                WastelandSalesman.Hide();
+            }
+            UpdateStats = 1;
+        }
+        public void AddShopShuffle()
+        {
+            if (ShopShuffle == true)
+            {
+                Market.ShopChecks.Add(MarketPotionShop);
+                Market.ShopChecks.Add(MarketBazaar);
+                Market.ShopChecks.Add(MarketBombchuShop);
+                KokiriForest.ShopChecks.Add(KFShop);
+                ZoraDomain.ShopChecks.Add(ZDShop);
+                MarketPotionShop.Show();
+                MarketBazaar.Show();
+                MarketBombchuShop.Show();
+                KFShop.Show();
+                ZDShop.Show();
+                KakarikoShops.Add(KakBazaarTopLeft);
+                KakarikoShops.Add(KakBazaarTopRight);
+                KakarikoShops.Add(KakBazaarBottomLeft);
+                KakarikoShops.Add(KakBazaarBottomRight);
+                KakarikoShops.Add(KakPotionShopTopLeft);
+                KakarikoShops.Add(KakPotionShopTopRight);
+                KakarikoShops.Add(KakPotionShopBottomLeft);
+                KakarikoShops.Add(KakPotionShopBottomRight);
+                GoronShop.Add(GoronShopTopLeft);
+                GoronShop.Add(GoronShopTopRight);
+                GoronShop.Add(GoronShopBottomLeft);
+                GoronShop.Add(GoronShopBottomRight);
+            }
+            else
+            {
+                Market.ShopChecks.Remove(MarketPotionShop);
+                Market.ShopChecks.Remove(MarketBazaar);
+                Market.ShopChecks.Remove(MarketBombchuShop);
+                KokiriForest.ShopChecks.Remove(KFShop);
+                ZoraDomain.ShopChecks.Remove(ZDShop);
+                MarketPotionShop.Hide();
+                MarketBazaar.Hide();
+                MarketBombchuShop.Hide();
+                KFShop.Hide();
+                ZDShop.Hide();
+                KakarikoShops.Remove(KakBazaarTopLeft);
+                KakarikoShops.Remove(KakBazaarTopRight);
+                KakarikoShops.Remove(KakBazaarBottomLeft);
+                KakarikoShops.Remove(KakBazaarBottomRight);
+                KakarikoShops.Remove(KakPotionShopTopLeft);
+                KakarikoShops.Remove(KakPotionShopTopRight);
+                KakarikoShops.Remove(KakPotionShopBottomLeft);
+                KakarikoShops.Remove(KakPotionShopBottomRight);
+                GoronShop.Remove(GoronShopTopLeft);
+                GoronShop.Remove(GoronShopTopRight);
+                GoronShop.Remove(GoronShopBottomLeft);
+                GoronShop.Remove(GoronShopBottomRight);
+            }
+            UpdateStats = 1;
+        }
+        public void AddExtraChecks()
+        {
+            AddExpensiveMerchants();
+            AddShopShuffle();
+            UpdateStats = 1;
+        }
         public void UpdateStatVariables(Stats stats)
         {
             int ChecksAvailable = 0;
             int ChecksRemaining = 0;
             int ChecksDone = 0;
-            foreach (Control c in Controls)
+            for (int i = 0; i < DenseRegions.Count; i++)
             {
-                if (c is Check check)
+                foreach(Region_Panel_Check RegionPanelCheck in  DenseRegions[i].Checks)
                 {
-                    if (check.BackColor == Color.Lime)
-                    {
-                        ChecksAvailable++;
-
-                    }
-                    if (!check.Done)
+                    if (!RegionPanelCheck.Checked)
                     {
                         ChecksRemaining++;
                     }
-                    if (check.Done)
+                    if (RegionPanelCheck.ForeColor == Color.Lime && !RegionPanelCheck.Checked)
+                    {
+                        ChecksAvailable++;
+                    }
+                    if (RegionPanelCheck.Checked)
                     {
                         ChecksDone++;
                     }
                 }
-                if (c is Region_Panel panel)
+                foreach (ShopPanelCheck ShopPanelCheck in DenseRegions[i].ShopChecks)
                 {
-                    foreach (Control c1 in panel.Controls)
+                    if (!ShopPanelCheck.Checked)
                     {
-                        if (c1 is Region_Panel_Check rpc)
-                        {
-                            if (!rpc.Checked)
-                            {
-                                ChecksRemaining++;
-                            }
-                            if (rpc.ForeColor == Color.Lime && !rpc.Checked)
-                            {
-                                ChecksAvailable++;
-                            }
-                            if (rpc.Checked)
-                            {
-                                ChecksDone++;
-                            }
-                        }
-
+                        ChecksRemaining++;
+                    }
+                    if (ShopPanelCheck.ForeColor == Color.Lime && !ShopPanelCheck.Checked)
+                    {
+                        ChecksAvailable++;
+                    }
+                    if (ShopPanelCheck.Checked)
+                    {
+                        ChecksDone++;
                     }
                 }
             }
+            for(int i = 0;i < OverworldRegions.Count; i++)
+            {
+                foreach (Check Check in OverworldRegions[i].Checks)
+                {
+                    if (!Check.Done)
+                    {
+                        ChecksRemaining++;
+                    }
+                    if (Check.color == Available && !Check.Done)
+                    {
+                        ChecksAvailable++;
+                    }
+                    if (Check.Done)
+                    {
+                        ChecksDone++;
+                    }
+                }
+                foreach (ShopButton sc in OverworldRegions[i].ShopChecks)
+                {
+                    foreach (ShopPanelCheck sc1 in sc.ShopChecks)
+                    {
+                        if (!sc1.Checked)
+                        {
+                            ChecksRemaining++;
+                        }
+                        if (sc1.ForeColor == Available && !sc1.Checked)
+                        {
+                            ChecksAvailable++;
+                        }
+                        if (sc1.Checked)
+                        {
+                            ChecksDone++;
+                        }
+                    }
+                }
+            }           
             stats.ChecksAvailable = ChecksAvailable;
             stats.ChecksRemaining = ChecksRemaining;
             stats.ChecksDone = ChecksDone;
             stats.SkulltulaAvailable = tokensAvailable;
             stats.UpdateChecksAvailable();
-        }
-        public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel, RegionButton RegionButton)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                ContextWheel.AddContextMenu(this, e.X + RegionButton.Location.X - 70, e.Y + RegionButton.Location.Y - 70);
-                ContextWheel.BringToFront();
-                ContextWheel.RegionName = RegionButton.RegionName;
-            }
-        }
+        }      
         public void GetRegionName(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel)
         {
             string regionname = "";
-            List<Check> checks = new();
+            OverworldRegions Region = new();
             if (e.X >= 340 && e.X <= 533 && e.Y >= 542 && e.Y <= 730)
             {
                 regionname = "Lake Hylia";
-                checks = LakeHylia_Check_List;
+                Region = LakeHylia;
             }
             else if (e.X >= 253 && e.X <= 405 && e.Y >= 408 && e.Y <= 566)
             {
                 regionname = "Gerudo Valley";
-                checks = GerudoValley_Check_List;
+                Region = GerudoValley;
             }
             if (e.X >= 364 && e.X <= 560 && e.Y >= 289 && e.Y <= 478)
             {
                 regionname = "Hyrule Field";
-                checks = HyruleField_Check_List;
+                Region = HyruleField;
             }
             if (e.X >= 430 && e.X <= 472 && e.Y >= 359 && e.Y <= 401)
             {
                 regionname = "Lon-Lon-Ranch";
-                checks = LLR_Check_List;
+                Region = LLR;
             }
             if (e.X >= 243 && e.X <= 417 && e.Y >= 151 && e.Y <= 367)
             {
                 regionname = "Gerudo Fortress";
-                checks = GerudoFortress_Check_List;
+                Region = GerudoFortress;
             }
             if (e.X >= 49 && e.X <= 246 && e.Y >= 215 && e.Y <= 397)
             {
                 regionname = "Haunted Wasteland";
-                checks = Wasteland_Check_List;
+                Region = Wasteland;
             }
             if (e.X >= 0 && e.X <= 85 && e.Y >= 316 && e.Y <= 385)
             {
                 regionname = "Desert Colossus";
-                checks = Colossus_Check_List;
+                Region = Colossus;
             }
             if (e.X >= 415 && e.X <= 529 && e.Y >= 239 && e.Y <= 288)
             {
                 regionname = "Market";
-                checks = Market_Check_List;
+                Region = Market;
             }
             if (e.X >= 475 && e.X <= 550 && e.Y >= 146 && e.Y <= 222)
             {
                 regionname = "Hyrule Castle";
-                checks = HC_Check_List;
+                Region = HC;
             }
             if (e.X >= 380 && e.X <= 481 && e.Y >= 111 && e.Y <= 227)
             {
                 regionname = "Outside Ganons Castle";
-                checks = OGC_Check_List;
+                Region = OGC;
             }
             if (e.X >= 560 && e.X <= 716 && e.Y >= 312 && e.Y <= 416)
             {
                 regionname = "Zora River";
-                checks = ZoraRiver_Check_List;
+                Region = ZoraRiver;
             }
             if (e.X >= 716 && e.X <= 838 && e.Y >= 242 && e.Y <= 371)
             {
                 regionname = "Zora Domain";
-                checks = ZoraDomain_Check_List;
+                Region = ZoraDomain;
             }
             if (e.X >= 693 && e.X <= 858 && e.Y >= 96 && e.Y <= 242)
             {
                 regionname = "Zora Fountain";
-                checks = ZoraFountain_Check_List;
+                Region = ZoraFountain;
             }
             if (e.X >= 683 && e.X <= 729 && e.Y >= 362 && e.Y <= 499)
             {
                 regionname = "Sacred Forest Meadow";
-                checks = SFM_Check_List;
+                Region = SFM;
             }
             if (e.X >= 581 && e.X <= 764 && e.Y >= 493 && e.Y <= 708)
             {
                 regionname = "Lost Woods";
-                checks = LostWoods_Check_List;
+                Region = LostWoods;
             }
             if (e.X >= 617 && e.X <= 687 && e.Y >= 649 && e.Y <= 723)
             {
                 regionname = "Kokiri Forest";
-                checks = KokiriForest_Check_List;
+                Region = KokiriForest;
             }
             if (e.X >= 587 && e.X <= 684 && e.Y >= 110 && e.Y <= 260)
             {
                 regionname = "Death Mountain Trial";
-                checks = DMT_Check_List;
+                Region = DMT;
             }
             if (e.X >= 560 && e.X <= 696 && e.Y >= 1 && e.Y <= 117)
             {
                 regionname = "Death Mountain Crater";
-                checks = DMC_Check_List;
+                Region = DMC;
             }
             if (e.Button == MouseButtons.Right)
             {
@@ -438,7 +577,7 @@ namespace CeddyMapTracker
             {
                 int ChecksChecked = 0;
                 int MaxChecks = 0;
-                foreach (Check cb in checks)
+                foreach (Check cb in Region.Checks)
                 {
                     MaxChecks++;
                     if (cb.Done)
@@ -446,22 +585,50 @@ namespace CeddyMapTracker
                         ChecksChecked++;
                     }
                 }
+                foreach (ShopButton sc in Region.ShopChecks)
+                {
+                    foreach(ShopPanelCheck sc1 in sc.ShopChecks)
+                    {
+                        MaxChecks++;
+                        if (sc1.Checked)
+                        {
+                            ChecksChecked++;
+                        }
+                    }
+                }
                 if (MaxChecks > ChecksChecked)
                 {
-                    foreach (Check cb in checks)
+                    foreach (Check cb in Region.Checks)
                     {
                         cb.Done = false;
                         cb.ChangeColor();
                     }
+                    foreach (ShopButton sc in Region.ShopChecks)
+                    {
+                        foreach (ShopPanelCheck sc1 in sc.ShopChecks)
+                        {
+                            sc1.Checked = true;           
+                        }
+                        sc.UpdateColor();
+                    }
                 }
                 else
                 {
-                    foreach (Check cb in checks)
+                    foreach (Check cb in Region.Checks)
                     {
                         cb.Done = true;
                         cb.ChangeColor();
                     }
+                    foreach (ShopButton sc in Region.ShopChecks)
+                    {
+                        foreach (ShopPanelCheck sc1 in sc.ShopChecks)
+                        {
+                            sc1.Checked = false;                        
+                        }
+                        sc.UpdateColor();
+                    }
                 }
+                UpdateStats = 1;
             }
         }
         public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel, string Regionname)
@@ -490,8 +657,8 @@ namespace CeddyMapTracker
         }
         public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel, Region RegionButton)
         {
-            int posX = e.X + RegionButton._region_button.Location.X;
-            int posY = e.Y + RegionButton._region_button.Location.Y;
+            int posX = e.X + RegionButton.RegionButton.Location.X;
+            int posY = e.Y + RegionButton.RegionButton.Location.Y;
             if (posX - 70 <= 0)
             {
                 posX = 70;
@@ -512,7 +679,7 @@ namespace CeddyMapTracker
             {
                 ContextWheel.AddContextMenu(this, posX - 70, posY - 70);
                 ContextWheel.BringToFront();
-                ContextWheel.RegionName = RegionButton._region_button._name;
+                ContextWheel.RegionName = RegionButton.RegionName;
             }
         }
         public void AddContextMenu(MouseEventArgs e, ContextMenuForWOTHHints ContextWheel, DungeonButton DungeonButton)
@@ -540,7 +707,7 @@ namespace CeddyMapTracker
             {
                 ContextWheel.AddContextMenu(this, posX - 70, posY - 70);
                 ContextWheel.BringToFront();
-                ContextWheel.RegionName = DungeonButton._name;
+                ContextWheel.RegionName = DungeonButton._name;           
             }
         }
         public void UpdateWOTHGoals(WOTHPanel wothpanel, ContextMenuForWOTHHints ContextWheel)
@@ -558,6 +725,7 @@ namespace CeddyMapTracker
                     }
                 }
             }
-        }       
+        }
+        
     }
 }

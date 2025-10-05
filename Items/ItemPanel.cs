@@ -27,7 +27,7 @@ namespace CeddyMapTracker
         public Item Reqiuem = new() { ItemPicture = Resources.requiem_32x40, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.requiem_bw_32x40, Item_Name = "Requiem of Spirit" };
         public Item Prelude = new() { ItemPicture = Resources.prelude_32x40, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.prelude_bw_32x40, Item_Name = "Prelude of Light" };
         public Item Hammer = new() { ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Hammer_N64.png"), State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Hammer_N64_bw.png"), Item_Name = "Megaton Hammer" };
-        public Item Strength = new() { ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Goron's_Bracelet_N64.png"), State = 0, MaxCount = 3, MinCount = 0, ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Goron's_Bracelet_N64_bw.png"), ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Silver_Gauntlets_N64.png"), ItemPicture2 = (Bitmap)Image.FromFile("Textures/N64/Golden_Gauntlets_N64.png"), Item_Name = "Goron's Braclet", Item_Name1 = "Silver Gauntlets", Item_Name2 = "Golden Gauntlets" };
+        public Item Strength = new() { ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Goron's_Bracelet_N64.png"), State = 0, MaxCount = 3, MinCount = 0, ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Goron's_Bracelet_N64_bw.png"), ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Silver_Gauntlets_N64.png"), ItemPicture2 = (Bitmap)Image.FromFile("Textures/N64/Golden_Gauntlets_N64.png"), Item_Name = "Goron's Bracelet", Item_Name1 = "Silver Gauntlets", Item_Name2 = "Golden Gauntlets" };
         public Item Bow = new() { ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Fairy_Bow_N64.png"), MaxCount = 1, MinCount = 0, State = 0, ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Fairy_Bow_N64_bw.png"), Item_Name = "Bow" };
         public Item Wallet = new() { ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Adult_Wallet_N64.png"), ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Adult_Wallet_N64_bw.png"), ItemPicture1 = (Bitmap)Image.FromFile("Textures/N64/Giant's_Wallet_N64.png"), MaxCount = 2, MinCount = 0, State = 0, Item_Name = "Adult Wallet", Item_Name1 = "Giant's Wallet" };
         public Item Bottle2 = new() { ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Empty_Bottle_N64.png"), State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Empty_Bottle_N64_bw.png"), Item_Name = "Bottle" };
@@ -85,6 +85,7 @@ namespace CeddyMapTracker
         public Item SpiritBossKey = new() { ItemPicture = Resources.OoT3D_Boss_Key_Icon, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.OoT3D_Boss_Key_Icon_bw, Item_Name = "Spirit Temple Boss Key" };       
         public List<int> Goallabel_States = [];
         public List<Item> Items = [];
+        public List<string> Starting_Items = [];
         private int distanceX = 49;
         private int startX = 8;
         private int startY = 9;

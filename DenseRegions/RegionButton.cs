@@ -9,7 +9,7 @@ namespace CeddyMapTracker
 {
     public class RegionButton : Button
     {
-        public string RegionName;
+        //public string RegionName;
         public RegionButton()
         {
             BackColor = Color.Transparent;

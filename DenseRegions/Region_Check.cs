@@ -34,6 +34,7 @@ namespace CeddyMapTracker
             AutoSize = true;
             AutoCheck = false;
             MouseDown += (sender, e) => ClickEvent(e);
+            //RichToolTip.Location = new Point(Location.X, Location.Y + 30);
         }
         public void ClickEvent(MouseEventArgs e)
         {
@@ -248,5 +249,21 @@ namespace CeddyMapTracker
         public Region_Panel_Check GanonsCastleSpiritTrialCrystalSwitchChest = new("Spirit Trial Crystal Switch Chest");
         public Region_Panel_Check GanonsCastleSpiritTrialInvisibleChest = new("Spirit Trial Invisible Chest");
         public Region_Panel_Check GanonsTowerBossKeyChest = new("Boss Key Chest");
+        //Expensive Merchants
+        public Region_Panel_Check GCMedigoron = new("Medigoron");
+        public Region_Panel_Check KakGranny = new("Granny Potion Shop");
+        //Shop Shuffle
+        public ShopPanelCheck KakBazaarTopLeft = new("Bazaar Top Left");
+        public ShopPanelCheck KakBazaarTopRight = new("Bazaar Top Right");
+        public ShopPanelCheck KakBazaarBottomLeft = new("Bazaar Bottom Left");
+        public ShopPanelCheck KakBazaarBottomRight = new("Bazaar Bottom Right");
+        public ShopPanelCheck KakPotionShopTopLeft = new("Potion Shop Top Left");
+        public ShopPanelCheck KakPotionShopTopRight = new("Potion Shop Top Right");
+        public ShopPanelCheck KakPotionShopBottomLeft = new("Potion Shop Bottom Left");
+        public ShopPanelCheck KakPotionShopBottomRight = new("Potion Shop Bottom Right");
+        public ShopPanelCheck GoronShopTopLeft = new("Shop Top Left");
+        public ShopPanelCheck GoronShopTopRight = new("Shop Top Right");
+        public ShopPanelCheck GoronShopBottomLeft = new("Shop Bottom Left");
+        public ShopPanelCheck GoronShopBottomRight = new("Shop Bottom Right");
     }
 }

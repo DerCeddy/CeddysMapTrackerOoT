@@ -34,7 +34,7 @@ namespace CeddyMapTracker
             Control.Controls.Remove(this);
             Text = null;
         }
-        public void SetLocation(Control c, Point CheckLocation)
+        public void PreventTooltipOoB(Control c, Point CheckLocation)
         {
             int LocationX = Location.X;
             int LocationY = Location.Y;
@@ -47,7 +47,11 @@ namespace CeddyMapTracker
                 LocationY = CheckLocation.Y - Size.Height;
             }
             Location = new Point(LocationX, LocationY);
-        }       
+        }  
+        public void SetRegionCheckLocation(Region_Panel_Check Check)
+        {
+            Check.RichToolTip.Location = new Point(Check.Location.X, Check.Location.Y + 20);
+        }
         public void RichToolTipTextChanged(ItemPanel i, KeyPanel KeyPanel, Maptracker MapTracker)
         {
             CheckKeyWord("Nothing", Color.LimeGreen, 0);

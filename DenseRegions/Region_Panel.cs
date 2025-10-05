@@ -8,7 +8,9 @@ namespace CeddyMapTracker
 {
     public class Region_Panel : Panel
     {
-        public Region_Panel(List<Region_Panel_Check> _checks, string _name)
+        public List<Region_Panel_Check> _checks;
+        public string _name;
+        public Region_Panel()
         {
             Size = new Size(300, 550);        
             Location = new Point(278, 40);

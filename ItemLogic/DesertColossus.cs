@@ -33,11 +33,11 @@ namespace CeddyMapTracker
                 ColossusGreatFairy.color = NotAvailable;
             }
             //Arc
-            if (desertaccess == 1 && Has(i.Beans))
+            if (Has(i.Reqiuem) && Has(i.Beans))
             {
                 ColossusPoH.color = Available;
             }
-            else if (desertaccess == 1 && (Has(i.Bomb) || Has(i.Scales)))
+            else if (Has(i.Reqiuem) && (Has(i.Bomb) || Has(i.Scales)))
             {
                 ColossusPoH.color = coulddo;
             }

@@ -16,6 +16,7 @@ namespace CeddyMapTracker
             string json = r.ReadToEnd();
             Settings Konfig = JsonConvert.DeserializeObject<Settings>(json);           
             MapTracker.WastelandChest.RichToolTip.CheckName = Konfig.checkname.WastelandChest;
+            MapTracker.WastelandSalesman.RichToolTip.CheckName = Konfig.checkname.WastelandSalesman;
             MapTracker.ColossusShiek.RichToolTip.CheckName = Konfig.checkname.ColossusShiek;
             MapTracker.ColossusPoH.RichToolTip.CheckName = Konfig.checkname.ColossusPoH;
             MapTracker.ColossusGreatFairy.RichToolTip.CheckName = Konfig.checkname.ColossusGreatFairy;
@@ -41,6 +42,9 @@ namespace CeddyMapTracker
             MapTracker.MarketTreasureChestGame.RichToolTip.CheckName = Konfig.checkname.MarketTreasureChestGame;
             MapTracker.MarketBigPoes.RichToolTip.CheckName = Konfig.checkname.MarketBigPoes;
             MapTracker.MarketBombchuBowling.RichToolTip.CheckName = Konfig.checkname.MarketBombchuBowling;
+            MapTracker.MarketBazaar.RichToolTip.CheckName = Konfig.checkname.MarketBazaar;
+            MapTracker.MarketPotionShop.RichToolTip.CheckName = Konfig.checkname.MarketPotionShop;
+            MapTracker.MarketBombchuShop.RichToolTip.CheckName = Konfig.checkname.MarketBombchuShop;
             MapTracker.HCGreatFairy.RichToolTip.CheckName = Konfig.checkname.HCGreatFairy;
             MapTracker.OGCGreatFairy.RichToolTip.CheckName = Konfig.checkname.OGCGreatFairy;
             MapTracker.DMTPoH.RichToolTip.CheckName = Konfig.checkname.DMTPoH;
@@ -61,12 +65,14 @@ namespace CeddyMapTracker
             MapTracker.ZDChest.RichToolTip.CheckName = Konfig.checkname.ZDChest;
             MapTracker.ZDDivingGame.RichToolTip.CheckName = Konfig.checkname.ZRDivingGame;
             MapTracker.ZDKingZora.RichToolTip.CheckName = Konfig.checkname.ZDKingZora;
+            MapTracker.ZDShop.RichToolTip.CheckName = Konfig.checkname.ZDShop;
             MapTracker.ZFGreatFairy.RichToolTip.CheckName = Konfig.checkname.ZFGreatFairy;
             MapTracker.ZFFreestandingPoH.RichToolTip.CheckName = Konfig.checkname.ZFFreestandingPoH;
             MapTracker.ZFBottomPoH.RichToolTip.CheckName = Konfig.checkname.ZFBottomPoH;
             MapTracker.KFMidos.RichToolTip.CheckName = Konfig.checkname.KFMidos;
             MapTracker.KFKokiriSwordChest.RichToolTip.CheckName = Konfig.checkname.KFKokiriSwordChest;
             MapTracker.KFStormGrottoChest.RichToolTip.CheckName = Konfig.checkname.KFStormGrottoChest;
+            MapTracker.KFShop.RichToolTip.CheckName = Konfig.checkname.KFShop;
             MapTracker.LWScrubNearBridge.RichToolTip.CheckName = Konfig.checkname.LWScrubNearBridge;
             MapTracker.LWSkullKid.RichToolTip.CheckName = Konfig.checkname.LWSkullKid;
             MapTracker.LWOcarinaGame.RichToolTip.CheckName = Konfig.checkname.LWOcarinaGame;
@@ -86,10 +92,11 @@ namespace CeddyMapTracker
             MapTracker.KFMidos.RichToolTip.CheckLogic = $"\r\n• Nothing";
             MapTracker.KFKokiriSwordChest.RichToolTip.CheckLogic = $"\r\n• Nothing";
             MapTracker.KFStormGrottoChest.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.SongOfStorms.Item_Name}";
+            MapTracker.KFShop.RichToolTip.CheckLogic = $"\r\n• Nothing";
             //Lost Woods
             MapTracker.LWScrubNearBridge.RichToolTip.CheckLogic = $"\r\n• Nothing";
             MapTracker.LWSkullKid.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.SariasSong.Item_Name}";
-            MapTracker.LWOcarinaGame.RichToolTip.CheckLogic = $"\r\n• NothingOcarina";
+            MapTracker.LWOcarinaGame.RichToolTip.CheckLogic = $"\r\n• Nothing";
             MapTracker.LWTarget.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Slingshot.Item_Name}";
             MapTracker.LWNearShortcutGrottoChest.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Hammer.Item_Name} ";
             MapTracker.LWSkullMask.RichToolTip.CheckLogic = $"\r\n• Nothing";
@@ -125,6 +132,7 @@ namespace CeddyMapTracker
             MapTracker.GFChest.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.EponasSong.Item_Name} and ({ItemPanel.Hookshot.Item_Name} or {ItemPanel.HoverBoots.Item_Name})) or {ItemPanel.Hookshot.Item_Name1}";
             //Wasteland
             MapTracker.WastelandChest.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.EponasSong.Item_Name} and {ItemPanel.HoverBoots.Item_Name}) or {ItemPanel.Hookshot.Item_Name1}\r\n• ({ItemPanel.Bow.Item_Name} and {ItemPanel.FireArrow.Item_Name}) or {ItemPanel.Dins.Item_Name}\r\n• {ItemPanel.Magic.Item_Name}";
+            MapTracker.WastelandSalesman.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.EponasSong.Item_Name} and {ItemPanel.HoverBoots.Item_Name}) or {ItemPanel.Hookshot.Item_Name1}\r\n• {ItemPanel.Wallet.Item_Name}";
             //Desert Colossus
             MapTracker.ColossusGreatFairy.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Reqiuem.Item_Name} or ((({ItemPanel.EponasSong.Item_Name} and {ItemPanel.HoverBoots.Item_Name}) or {ItemPanel.Hookshot.Item_Name1}) and {ItemPanel.Magic.Item_Name} and {ItemPanel.Lens.Item_Name})\r\n• {ItemPanel.ZeldasLullaby.Item_Name}\r\n• {ItemPanel.Bomb.Item_Name}";
             MapTracker.ColossusPoH.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Reqiuem.Item_Name}\r\n• {ItemPanel.Beans.Item_Name}";
@@ -135,6 +143,9 @@ namespace CeddyMapTracker
             MapTracker.MarketBombchuBowling.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Bomb.Item_Name}";
             MapTracker.MarketTreasureChestGame.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Magic.Item_Name}\r\n• {ItemPanel.Lens.Item_Name}";
             MapTracker.MarketBigPoes.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.EponasSong.Item_Name}\r\n• {ItemPanel.Bow.Item_Name}\r\n• {ItemPanel.Bottle2.Item_Name} or ({ItemPanel.RutoLetter.Item_Name} and (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name})) ";
+            MapTracker.MarketBazaar.RichToolTip.CheckLogic = $"\r\n• Nothing";
+            MapTracker.MarketPotionShop.RichToolTip.CheckLogic = $"\r\n• Nothing";
+            MapTracker.MarketBombchuShop.RichToolTip.CheckLogic = $"\r\n• Nothing";
             //Hyrule Castle
             MapTracker.HCGreatFairy.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Bomb.Item_Name}\r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
             //Outside Ganons Castle
@@ -161,6 +172,7 @@ namespace CeddyMapTracker
             MapTracker.ZDDivingGame.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Scales.Item_Name} or ({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name})";
             MapTracker.ZDChest.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Scales.Item_Name} or ({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name})";
             MapTracker.ZDKingZora.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.RutoLetter.Item_Name} and ({ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name})) or ({ItemPanel.Bottle2.Item_Name} and ({ItemPanel.Wallet.Item_Name1} or Ganon's Castle Access))\r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
+            MapTracker.ZDShop.RichToolTip.CheckLogic = $"\r\nChild access\r\n• {ItemPanel.Scales.Item_Name} or ({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name})\r\n•Adult access\r\n• {ItemPanel.Bottle2.Item_Name} and ({ItemPanel.Wallet.Item_Name1} or Ganon's Castle Access) and {ItemPanel.ZeldasLullaby.Item_Name}";
             //Zora Fountain
             MapTracker.ZFFreestandingPoH.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name}\r\n• {ItemPanel.RutoLetter.Item_Name} \r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
             MapTracker.ZFGreatFairy.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.RutoLetter.Item_Name}\r\n• {ItemPanel.Bomb.Item_Name} \r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
@@ -329,6 +341,15 @@ namespace CeddyMapTracker
             MapTracker.Kak30GoldSkulltulaReward.RichToolTip.CheckLogic = $"• 30 Skulls";
             MapTracker.Kak40GoldSkulltulaReward.RichToolTip.CheckLogic = $"• 40 Skulls";
             MapTracker.Kak50GoldSkulltulaReward.RichToolTip.CheckLogic = $"• 50 Skulls";
+            MapTracker.KakGranny.RichToolTip.CheckLogic = $"• {ItemPanel.Wallet.Item_Name}";
+            MapTracker.KakBazaarTopLeft.RichToolTip.CheckLogic = $"• Nothing";
+            MapTracker.KakBazaarTopRight.RichToolTip.CheckLogic = $"• Nothing";
+            MapTracker.KakBazaarBottomLeft.RichToolTip.CheckLogic = $"• Nothing";
+            MapTracker.KakBazaarBottomRight.RichToolTip.CheckLogic = $"• Nothing";
+            MapTracker.KakPotionShopTopLeft.RichToolTip.CheckLogic = $"• Nothing";
+            MapTracker.KakPotionShopTopRight.RichToolTip.CheckLogic = $"• Nothing";
+            MapTracker.KakPotionShopBottomLeft.RichToolTip.CheckLogic = $"• Nothing";
+            MapTracker.KakPotionShopBottomRight.RichToolTip.CheckLogic = $"• Nothing";
             //Graveyard
             MapTracker.GraveyardShieldGraveChest.RichToolTip.CheckLogic = $"• Nothing";
             MapTracker.GraveyardHeartPieceGraveChest.RichToolTip.CheckLogic = $"• {ItemPanel.SunSong.Item_Name}";
@@ -346,6 +367,11 @@ namespace CeddyMapTracker
             MapTracker.GCMazeLeftChest.RichToolTip.CheckLogic = $"• {ItemPanel.Hammer.Item_Name} or {ItemPanel.Strength.Item_Name1}";
             MapTracker.GCMazeCenterChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Hammer.Item_Name} or {ItemPanel.Strength.Item_Name1}";
             MapTracker.GCMazeRightChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Hammer.Item_Name} or {ItemPanel.Strength.Item_Name1}";
+            MapTracker.GCMedigoron.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Hammer.Item_Name} or {ItemPanel.Strength.Item_Name}\r\n• {ItemPanel.Wallet.Item_Name}";
+            MapTracker.GoronShopTopLeft.RichToolTip.CheckLogic = $"• {ItemPanel.Strength.Item_Name} or {ItemPanel.Bomb.Item_Name} or {ItemPanel.Bow.Item_Name} or {ItemPanel.ZeldasLullaby.Item_Name} or ({ItemPanel.Magic.Item_Name} and {ItemPanel.Dins.Item_Name})";
+            MapTracker.GoronShopTopRight.RichToolTip.CheckLogic = $"• {ItemPanel.Strength.Item_Name} or {ItemPanel.Bomb.Item_Name} or {ItemPanel.Bow.Item_Name} or {ItemPanel.ZeldasLullaby.Item_Name} or ({ItemPanel.Magic.Item_Name} and {ItemPanel.Dins.Item_Name})";
+            MapTracker.GoronShopBottomLeft.RichToolTip.CheckLogic = $"• {ItemPanel.Strength.Item_Name} or {ItemPanel.Bomb.Item_Name} or {ItemPanel.Bow.Item_Name} or {ItemPanel.ZeldasLullaby.Item_Name} or ({ItemPanel.Magic.Item_Name} and {ItemPanel.Dins.Item_Name})";
+            MapTracker.GoronShopBottomRight.RichToolTip.CheckLogic = $"• {ItemPanel.Strength.Item_Name} or {ItemPanel.Bomb.Item_Name} or {ItemPanel.Bow.Item_Name} or {ItemPanel.ZeldasLullaby.Item_Name} or ({ItemPanel.Magic.Item_Name} and {ItemPanel.Dins.Item_Name})";
             //ToT
             MapTracker.ToTLACS.RichToolTip.CheckLogic = $"• {ItemPanel.SpiritMedallion.Item_Name}\r\n• {ItemPanel.ShadowMedallion.Item_Name}";
             MapTracker.ToTShiek.RichToolTip.CheckLogic = $"• {ItemPanel.ForestMedallion.Item_Name}";

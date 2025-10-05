@@ -19,7 +19,7 @@ namespace CeddyMapTracker
             BackColor = Color.Red;
             Font = new Font("Arial",9, FontStyle.Bold, GraphicsUnit.Pixel);
         }
-        public void ButtonClick(MouseEventArgs e, Region_Panel region_panel)
+        public void ButtonClick(MouseEventArgs e, List<Region_Panel_Check> Checks, List<ShopPanelCheck> ShopChecks)
         {
             switch (e.Button)
             {              
@@ -28,35 +28,42 @@ namespace CeddyMapTracker
                 case MouseButtons.Middle:
                     int ChecksChecked = 0;
                     int MaxChecks = 0;
-                    foreach (Control c in region_panel.Controls)
-                    {
-                        if (c is CheckBox cb)
+                    foreach (Region_Panel_Check rpc in Checks)
+                    {            
+                        MaxChecks++;
+                        if (rpc.Checked)
                         {
-                            MaxChecks++;
-                            if (cb.Checked)
-                            {
-                                ChecksChecked++;
-                            }
+                            ChecksChecked++;
+                        }
+                    }
+                    foreach (ShopPanelCheck spc in ShopChecks)
+                    {
+                        MaxChecks++;
+                        if (spc.Checked)
+                        {
+                            ChecksChecked++;
                         }
                     }
                     if (MaxChecks > ChecksChecked)
                     {
-                        foreach (Control c in region_panel.Controls)
+                        foreach (Region_Panel_Check rpc in Checks)
                         {
-                            if (c is CheckBox cb)
-                            {
-                                cb.Checked = true;
-                            }
+                            rpc.Checked = true;
+                        }
+                        foreach (ShopPanelCheck spc in ShopChecks)
+                        {
+                            spc.Checked = true;
                         }
                     }
                     else
                     {
-                        foreach (Control c in region_panel.Controls)
+                        foreach (Region_Panel_Check rpc in Checks)
                         {
-                            if (c is CheckBox cb)
-                            {
-                                cb.Checked = false;
-                            }
+                            rpc.Checked = false;
+                        }
+                        foreach (ShopPanelCheck spc in ShopChecks)
+                        {
+                            spc.Checked = false;
                         }
                     }                  
                     break;

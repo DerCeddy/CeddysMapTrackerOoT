@@ -51,6 +51,15 @@ namespace CeddyMapTracker
             {
                 tokensAvailable++;
             }
+            //Granny
+            if(ExpensiveMerchantShuffle && Has(i.Wallet))
+            {
+                KakGranny.ForeColor = Available;
+            }
+            else
+            {
+                KakGranny.ForeColor = CanSee;
+            }
         }
     }
 }

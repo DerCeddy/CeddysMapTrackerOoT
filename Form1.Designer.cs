@@ -42,7 +42,7 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Pixel);
             Margin = new Padding(2);
             Name = "Form1";
-            Text = "Ceddys Maptracker";
+            Text = "Ceddy's Maptracker";
             ResumeLayout(false);
         }
 

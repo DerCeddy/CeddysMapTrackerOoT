@@ -19,7 +19,21 @@ namespace CeddyMapTracker
             else
             {
                 WastelandChest.color = NotAvailable;
+            }  
+            //Salesman
+            if(has_or_can_get_gerudocard && Has(i.Wallet) && (has_longshot || Has(i.HoverBoots)))
+            {
+                WastelandSalesman.color = Available;
             }
+            else if (has_or_can_get_gerudocard && (has_longshot || Has(i.HoverBoots)))
+            {
+                WastelandSalesman.color = CanSee;
+            }
+            else
+            {
+                WastelandSalesman.color = NotAvailable;
+            }
+            
             //Skulltula
             if (has_or_can_get_gerudocard && Has(i.Hookshot) && (has_longshot || Has(i.HoverBoots)))
             {
