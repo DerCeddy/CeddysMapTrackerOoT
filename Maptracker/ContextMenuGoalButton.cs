@@ -13,7 +13,8 @@ namespace CeddyMapTracker
         public ContextMenuGoalButton(Bitmap _Image, Point _Location, int iD)
         {
             Image = _Image;
-            Size = new Size(28, 28);
+            SizeMode = PictureBoxSizeMode.StretchImage;
+            Size = new Size(24, 24);
             Location = _Location;
             ID = iD;
         }

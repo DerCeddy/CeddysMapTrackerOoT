@@ -219,12 +219,7 @@ namespace CeddyMapTracker
             OverworldRegions = [LLR, Wasteland, Colossus, GerudoFortress, GerudoValley, HyruleField, LakeHylia, KokiriForest, LostWoods, SFM, ZoraRiver, ZoraDomain, ZoraFountain, DMT, DMC, Market, HC, OGC];
             //MarketTest.Checks = Market_Check_List;
             //Assign checks to region buttons
-            List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];
-            ContextMenuForWOTHHints ContextWheel = new();
-            Controls.Add(ContextWheel);
-            ContextWheel.Visible = false;
-            //Update WOTH Panel Goals
-            ContextWheel.ValueChanged += (sender, e) => UpdateWOTHGoals(wothPanel, ContextWheel);
+            List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];           
             //Add region panels to the map
             ExpensiveMerchantShuffle = true;
             ShopShuffle = true;
@@ -235,12 +230,10 @@ namespace CeddyMapTracker
                 if (region.RegionButton != null)
                 {
                     region.RegionButton._name = Denselocations_Names[temp];
-                    region.RegionButton.MouseDown += (sender, e) => AddContextMenu(e, ContextWheel, region);
                 }
                 if (region.DungeonButton != null)
                 {
                     region.DungeonButton._name = Denselocations_Names[temp];
-                    region.DungeonButton.MouseDown += (sender, e) => AddContextMenu(e, ContextWheel, region.DungeonButton);
                 }
                 foreach (Region_Panel_Check c in region.Checks)
                 {
@@ -289,8 +282,7 @@ namespace CeddyMapTracker
                 spc.MouseEnter += (sender, e) => spc.RichToolTip.PreventTooltipOoB(this, spc.Location);
                 spc.MouseLeave += (sender, e) => spc.RichToolTip.DeleteToolTip(this);
                 spc.MouseEnter += (sender, e) => spc.RichToolTip.Location = new Point(spc.Location.X + 300, spc.Location.Y + 65);
-            }
-            MouseDown += (sender, e) => GetRegionName(e, ContextWheel);          
+            }                    
         }
 
         public void UpdateCheckColors()
@@ -710,19 +702,34 @@ namespace CeddyMapTracker
                 ContextWheel.RegionName = DungeonButton._name;           
             }
         }
-        public void UpdateWOTHGoals(WOTHPanel wothpanel, ContextMenuForWOTHHints ContextWheel)
+        public void UpdateWOTHGoals(WOTHPanel wothpanel, ImportantHintPanel ImportantHints, ContextMenuForWOTHHints ContextWheel)
         {
-            foreach (GoalPathHint c in wothpanel.Goals)
+            if(ContextWheel.Goal >= -3 &&  ContextWheel.Goal <= 6)
             {
-                if (c is GoalPathHint gph)
+                foreach (GoalPathHint c in wothpanel.Goals)
                 {
-                    if (gph.goaltext.Text == string.Empty)
+                    if (c is GoalPathHint gph)
                     {
-                        gph.goaltext.Text = ContextWheel.RegionName;
-                        gph.goalpicture.State = ContextWheel.Goal;
-                        gph.goalpicture.CheckGoalState();
-                        return;
+                        if (gph.goaltext.Text == string.Empty)
+                        {
+                            gph.goaltext.Text = ContextWheel.RegionName;
+                            gph.goalpicture.State = ContextWheel.Goal;
+                            gph.goalpicture.CheckGoalState();
+                            return;
+                        }
                     }
+                }
+            }
+            else
+            {
+                foreach (ImportantHint Hint in ImportantHints.ImportantHints)
+                {
+                    
+                    if (Hint.RegionName.Text == string.Empty)
+                    {
+                        Hint.RegionName.Text = ContextWheel.RegionName;                     
+                        return;
+                    }                  
                 }
             }
         }

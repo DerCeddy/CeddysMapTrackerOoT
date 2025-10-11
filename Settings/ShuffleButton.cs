@@ -29,6 +29,7 @@ namespace CeddyMapTracker
             Font = new Font("Arial", 12, GraphicsUnit.Pixel);
             MouseDown += (sender,e) => ClickEvent(e);
             AutoCheck = false;
+            CheckedChanged += (sender, e) => State = true;
         }
         public void ClickEvent(MouseEventArgs e)
         {
@@ -37,17 +38,15 @@ namespace CeddyMapTracker
                 case MouseButtons.Left:
                     if (!Checked)
                     {
-                        Checked = true;
-                        State = true;
+                        Checked = true;                      
                     }
                     else
                     {
                         Checked = false;
-                        State = false;
                     }
                     break;
             }
-        }
+        }      
         public event EventHandler ValueChanged;
         protected virtual void OnValueChanged(EventArgs e)
         {

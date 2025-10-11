@@ -166,20 +166,11 @@
   <data name="zeldas_lullaby_32x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zeldas-lullaby_32x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_40_gold_skulltula_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\40-gold-skulltula_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_50_gold_skulltula_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\50-gold-skulltula_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="minuet_bw_32x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minuet-bw_32x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bolero_bw_32x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bolero-bw_32x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="unknown_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unknown_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="keyFire_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyFire_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,9 +180,6 @@
   </data>
   <data name="go_mode_bw_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\go-mode-bw_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="frogs_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\frogs_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bongo_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bongo_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -243,9 +231,6 @@
   </data>
   <data name="minuet_32x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minuet_32x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_30_gold_skulltula_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\30-gold-skulltula_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="saria_bw_32x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saria-bw_32x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -321,5 +306,35 @@
   </data>
   <data name="Ganons_Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ganons_Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IceCavern" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IceCavern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skulltulas30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skulltulas30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skulltulas50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skulltulas50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skulltulas40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skulltulas40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skulltulas20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skulltulas20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImportantHint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImportantHint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unknown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Frogs2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frogs2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Frogs_Dual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frogs_Dual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Castle_Fairy_Dual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Castle_Fairy_Dual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

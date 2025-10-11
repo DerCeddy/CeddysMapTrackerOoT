@@ -63,36 +63,6 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _30_gold_skulltula_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("_30_gold_skulltula_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _40_gold_skulltula_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("_40_gold_skulltula_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _50_gold_skulltula_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("_50_gold_skulltula_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap barinade_32x32 {
             get {
                 object obj = ResourceManager.GetObject("barinade_32x32", resourceCulture);
@@ -143,6 +113,16 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Castle_Fairy_Dual {
+            get {
+                object obj = ResourceManager.GetObject("Castle_Fairy_Dual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dodongo_32x32 {
             get {
                 object obj = ResourceManager.GetObject("dodongo_32x32", resourceCulture);
@@ -173,9 +153,19 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap frogs_32x32 {
+        internal static System.Drawing.Bitmap Frogs_Dual {
             get {
-                object obj = ResourceManager.GetObject("frogs_32x32", resourceCulture);
+                object obj = ResourceManager.GetObject("Frogs_Dual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frogs2 {
+            get {
+                object obj = ResourceManager.GetObject("Frogs2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +226,26 @@ namespace CeddyMapTracker.Properties {
         internal static System.Drawing.Bitmap hyrule {
             get {
                 object obj = ResourceManager.GetObject("hyrule", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IceCavern {
+            get {
+                object obj = ResourceManager.GetObject("IceCavern", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImportantHint {
+            get {
+                object obj = ResourceManager.GetObject("ImportantHint", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -613,6 +623,46 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Skulltulas20 {
+            get {
+                object obj = ResourceManager.GetObject("Skulltulas20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Skulltulas30 {
+            get {
+                object obj = ResourceManager.GetObject("Skulltulas30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Skulltulas40 {
+            get {
+                object obj = ResourceManager.GetObject("Skulltulas40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Skulltulas50 {
+            get {
+                object obj = ResourceManager.GetObject("Skulltulas50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Soldout {
             get {
                 object obj = ResourceManager.GetObject("Soldout", resourceCulture);
@@ -703,9 +753,9 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap unknown_32x32 {
+        internal static System.Drawing.Bitmap Unknown {
             get {
-                object obj = ResourceManager.GetObject("unknown_32x32", resourceCulture);
+                object obj = ResourceManager.GetObject("Unknown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

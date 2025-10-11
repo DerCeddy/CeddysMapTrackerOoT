@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using CeddyMapTracker.Properties;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +45,21 @@ namespace CeddyMapTracker
                     ShuffleButton.ValueChanged += (sender, e) => State = 1;
                 }
             }
+            //Assign pictures to settings always buttons
+            SongOfTime_Button.Picture.Image = Resources.song_of_time_32x40;
+            Nocturne_Button.Picture.Image = Resources.nocturne_32x40;
+            BigGoron_Button.Picture.Image = Resources.biggoron_32x32;
+            Frogs2_Button.Picture.Image = Resources.Frogs2;
+            SkullMask_Button.Picture.Image = Resources.OoT3D_Skull_Mask_Icon;
+            Skulls20_Button.Picture.Image = Resources.Skulltulas20;
+            Skulls30_Button.Picture.Image = Resources.Skulltulas30;
+            Skulls40_Button.Picture.Image = Resources.Skulltulas40;
+            Skulls50_Button.Picture.Image = Resources.Skulltulas50;
+            Trials_Button.Picture.Image = Resources.trials;
+            CastleFairies_Button.Picture.Image = Resources.Castle_Fairy_Dual;
+            FrogsDual_Button.Picture.Image = Resources.Frogs_Dual;
+            IceDual_Button.Picture.Image = Resources.IceCavern;
+
         }
 
         public NumericUpDown WotH_Hint_Counter;
@@ -68,11 +85,25 @@ namespace CeddyMapTracker
         private Label label1;
         private Label label12;
         private Label label13;
-        public ShuffleButton ExpensiveMerchants_Button;
-        public ShuffleButton ShopShuffle_Button;
+        public ShuffleButton ExpensiveMerchants;
+        public ShuffleButton ShopShuffle;
         private Label label14;
         private NumericUpDown Important_Hint_Counter;
         private Label label15;
+        private SettingsAlwaysHint SongOfTime_Button;
+        private SettingsAlwaysHint Nocturne_Button;
+        private SettingsAlwaysHint BigGoron_Button;
+        private SettingsAlwaysHint Frogs2_Button;
+        private SettingsAlwaysHint SkullMask_Button;
+        private SettingsAlwaysHint Skulls20_Button;
+        private SettingsAlwaysHint Skulls30_Button;
+        private SettingsAlwaysHint Skulls40_Button;
+        private SettingsAlwaysHint Skulls50_Button;
+        private SettingsAlwaysHint IceDual_Button;
+        private SettingsAlwaysHint Trials_Button;
+        private SettingsAlwaysHint CastleFairies_Button;
+        private SettingsAlwaysHint FrogsDual_Button;
+        private Label label16;
         public Button button1;
 
         private void InitializeComponent()
@@ -101,11 +132,25 @@ namespace CeddyMapTracker
             label1 = new Label();
             label12 = new Label();
             label13 = new Label();
-            ExpensiveMerchants_Button = new ShuffleButton();
-            ShopShuffle_Button = new ShuffleButton();
+            ExpensiveMerchants = new ShuffleButton();
+            ShopShuffle = new ShuffleButton();
             label14 = new Label();
             Important_Hint_Counter = new NumericUpDown();
             label15 = new Label();
+            SongOfTime_Button = new SettingsAlwaysHint();
+            Nocturne_Button = new SettingsAlwaysHint();
+            BigGoron_Button = new SettingsAlwaysHint();
+            Frogs2_Button = new SettingsAlwaysHint();
+            SkullMask_Button = new SettingsAlwaysHint();
+            Skulls20_Button = new SettingsAlwaysHint();
+            Skulls30_Button = new SettingsAlwaysHint();
+            Skulls40_Button = new SettingsAlwaysHint();
+            Skulls50_Button = new SettingsAlwaysHint();
+            IceDual_Button = new SettingsAlwaysHint();
+            Trials_Button = new SettingsAlwaysHint();
+            CastleFairies_Button = new SettingsAlwaysHint();
+            FrogsDual_Button = new SettingsAlwaysHint();
+            label16 = new Label();
             ((System.ComponentModel.ISupportInitialize)WotH_Hint_Counter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Sometimes_Hint_Counter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Sometimes_DualHint_Counter).BeginInit();
@@ -127,11 +172,11 @@ namespace CeddyMapTracker
             // button1
             // 
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
-            button1.Location = new Point(194, 354);
+            button1.Location = new Point(316, 417);
             button1.Name = "button1";
-            button1.Size = new Size(144, 23);
+            button1.Size = new Size(236, 23);
             button1.TabIndex = 1;
-            button1.Text = "Confirm settings";
+            button1.Text = "Confirm Hint Layout and Goal Conditions";
             button1.UseVisualStyleBackColor = true;
             // 
             // Sometimes_Hint_Counter
@@ -200,7 +245,7 @@ namespace CeddyMapTracker
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Soldout;
+            pictureBox1.Image = Resources.Soldout;
             pictureBox1.Location = new Point(1548, -1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(42, 42);
@@ -213,7 +258,7 @@ namespace CeddyMapTracker
             label5.BorderStyle = BorderStyle.Fixed3D;
             label5.Location = new Point(434, 60);
             label5.Name = "label5";
-            label5.Size = new Size(2, 225);
+            label5.Size = new Size(2, 310);
             label5.TabIndex = 10;
             label5.Text = "label5";
             // 
@@ -275,7 +320,7 @@ namespace CeddyMapTracker
             label8.BorderStyle = BorderStyle.Fixed3D;
             label8.Location = new Point(145, 60);
             label8.Name = "label8";
-            label8.Size = new Size(2, 225);
+            label8.Size = new Size(2, 310);
             label8.TabIndex = 16;
             label8.Text = "label8";
             // 
@@ -313,7 +358,7 @@ namespace CeddyMapTracker
             label10.BorderStyle = BorderStyle.Fixed3D;
             label10.Location = new Point(793, 60);
             label10.Name = "label10";
-            label10.Size = new Size(2, 225);
+            label10.Size = new Size(2, 310);
             label10.TabIndex = 20;
             label10.Text = "label10";
             // 
@@ -361,35 +406,35 @@ namespace CeddyMapTracker
             label13.TabIndex = 24;
             label13.Text = "Shuffle Options";
             // 
-            // ExpensiveMerchants_Button
+            // ExpensiveMerchants
             // 
-            ExpensiveMerchants_Button.AutoCheck = false;
-            ExpensiveMerchants_Button.AutoSize = true;
-            ExpensiveMerchants_Button.BackColor = Color.Black;
-            ExpensiveMerchants_Button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
-            ExpensiveMerchants_Button.ForeColor = Color.White;
-            ExpensiveMerchants_Button.Location = new Point(801, 95);
-            ExpensiveMerchants_Button.Name = "ExpensiveMerchants_Button";
-            ExpensiveMerchants_Button.Size = new Size(176, 19);
-            ExpensiveMerchants_Button.State = false;
-            ExpensiveMerchants_Button.TabIndex = 25;
-            ExpensiveMerchants_Button.Text = "Shuffle Expensive Merchants";
-            ExpensiveMerchants_Button.UseVisualStyleBackColor = false;
+            ExpensiveMerchants.AutoCheck = false;
+            ExpensiveMerchants.AutoSize = true;
+            ExpensiveMerchants.BackColor = Color.Black;
+            ExpensiveMerchants.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            ExpensiveMerchants.ForeColor = Color.White;
+            ExpensiveMerchants.Location = new Point(801, 95);
+            ExpensiveMerchants.Name = "ExpensiveMerchants";
+            ExpensiveMerchants.Size = new Size(176, 19);
+            ExpensiveMerchants.State = false;
+            ExpensiveMerchants.TabIndex = 25;
+            ExpensiveMerchants.Text = "Shuffle Expensive Merchants";
+            ExpensiveMerchants.UseVisualStyleBackColor = false;
             // 
-            // ShopShuffle_Button
+            // ShopShuffle
             // 
-            ShopShuffle_Button.AutoCheck = false;
-            ShopShuffle_Button.AutoSize = true;
-            ShopShuffle_Button.BackColor = Color.Black;
-            ShopShuffle_Button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
-            ShopShuffle_Button.ForeColor = Color.White;
-            ShopShuffle_Button.Location = new Point(801, 119);
-            ShopShuffle_Button.Name = "ShopShuffle_Button";
-            ShopShuffle_Button.Size = new Size(98, 19);
-            ShopShuffle_Button.State = false;
-            ShopShuffle_Button.TabIndex = 26;
-            ShopShuffle_Button.Text = "Shuffle Shops";
-            ShopShuffle_Button.UseVisualStyleBackColor = false;
+            ShopShuffle.AutoCheck = false;
+            ShopShuffle.AutoSize = true;
+            ShopShuffle.BackColor = Color.Black;
+            ShopShuffle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            ShopShuffle.ForeColor = Color.White;
+            ShopShuffle.Location = new Point(801, 119);
+            ShopShuffle.Name = "ShopShuffle";
+            ShopShuffle.Size = new Size(98, 19);
+            ShopShuffle.State = false;
+            ShopShuffle.TabIndex = 26;
+            ShopShuffle.Text = "Shuffle Shops";
+            ShopShuffle.UseVisualStyleBackColor = false;
             // 
             // label14
             // 
@@ -417,19 +462,136 @@ namespace CeddyMapTracker
             label15.BorderStyle = BorderStyle.Fixed3D;
             label15.Location = new Point(1113, 60);
             label15.Name = "label15";
-            label15.Size = new Size(2, 225);
+            label15.Size = new Size(2, 310);
             label15.TabIndex = 29;
             label15.Text = "label15";
+            // 
+            // SongOfTime_Button
+            // 
+            SongOfTime_Button.Location = new Point(153, 232);
+            SongOfTime_Button.Name = "SongOfTime_Button";
+            SongOfTime_Button.Size = new Size(48, 32);
+            SongOfTime_Button.TabIndex = 30;
+            // 
+            // Nocturne_Button
+            // 
+            Nocturne_Button.Location = new Point(207, 232);
+            Nocturne_Button.Name = "Nocturne_Button";
+            Nocturne_Button.Size = new Size(48, 32);
+            Nocturne_Button.TabIndex = 31;
+            // 
+            // BigGoron_Button
+            // 
+            BigGoron_Button.Location = new Point(261, 232);
+            BigGoron_Button.Name = "BigGoron_Button";
+            BigGoron_Button.Size = new Size(48, 32);
+            BigGoron_Button.TabIndex = 32;
+            // 
+            // Frogs2_Button
+            // 
+            Frogs2_Button.Location = new Point(315, 232);
+            Frogs2_Button.Name = "Frogs2_Button";
+            Frogs2_Button.Size = new Size(48, 32);
+            Frogs2_Button.TabIndex = 33;
+            // 
+            // SkullMask_Button
+            // 
+            SkullMask_Button.Location = new Point(369, 232);
+            SkullMask_Button.Name = "SkullMask_Button";
+            SkullMask_Button.Size = new Size(48, 32);
+            SkullMask_Button.TabIndex = 34;
+            // 
+            // Skulls20_Button
+            // 
+            Skulls20_Button.Location = new Point(153, 308);
+            Skulls20_Button.Name = "Skulls20_Button";
+            Skulls20_Button.Size = new Size(48, 32);
+            Skulls20_Button.TabIndex = 35;
+            // 
+            // Skulls30_Button
+            // 
+            Skulls30_Button.Location = new Point(207, 308);
+            Skulls30_Button.Name = "Skulls30_Button";
+            Skulls30_Button.Size = new Size(48, 32);
+            Skulls30_Button.TabIndex = 36;
+            // 
+            // Skulls40_Button
+            // 
+            Skulls40_Button.Location = new Point(261, 308);
+            Skulls40_Button.Name = "Skulls40_Button";
+            Skulls40_Button.Size = new Size(48, 32);
+            Skulls40_Button.TabIndex = 37;
+            // 
+            // Skulls50_Button
+            // 
+            Skulls50_Button.Location = new Point(315, 308);
+            Skulls50_Button.Name = "Skulls50_Button";
+            Skulls50_Button.Size = new Size(48, 32);
+            Skulls50_Button.TabIndex = 38;
+            // 
+            // IceDual_Button
+            // 
+            IceDual_Button.Location = new Point(153, 270);
+            IceDual_Button.Name = "IceDual_Button";
+            IceDual_Button.Size = new Size(48, 32);
+            IceDual_Button.TabIndex = 39;
+            // 
+            // Trials_Button
+            // 
+            Trials_Button.Location = new Point(207, 270);
+            Trials_Button.Name = "Trials_Button";
+            Trials_Button.Size = new Size(48, 32);
+            Trials_Button.TabIndex = 40;
+            // 
+            // CastleFairies_Button
+            // 
+            CastleFairies_Button.Location = new Point(261, 270);
+            CastleFairies_Button.Name = "CastleFairies_Button";
+            CastleFairies_Button.Size = new Size(48, 32);
+            CastleFairies_Button.TabIndex = 41;
+            // 
+            // FrogsDual_Button
+            // 
+            FrogsDual_Button.Location = new Point(315, 270);
+            FrogsDual_Button.Name = "FrogsDual_Button";
+            FrogsDual_Button.Size = new Size(48, 32);
+            FrogsDual_Button.TabIndex = 42;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label16.ForeColor = SystemColors.Control;
+            label16.Location = new Point(153, 214);
+            label16.Name = "label16";
+            label16.Size = new Size(75, 15);
+            label16.TabIndex = 43;
+            label16.Text = "Always Hints";
             // 
             // SettingsPanel
             // 
             BackColor = Color.Black;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(label16);
+            Controls.Add(FrogsDual_Button);
+            Controls.Add(CastleFairies_Button);
+            Controls.Add(Trials_Button);
+            Controls.Add(IceDual_Button);
+            Controls.Add(Skulls50_Button);
+            Controls.Add(Skulls40_Button);
+            Controls.Add(Skulls30_Button);
+            Controls.Add(Skulls20_Button);
+            Controls.Add(SkullMask_Button);
+            Controls.Add(Frogs2_Button);
+            Controls.Add(BigGoron_Button);
+            Controls.Add(Nocturne_Button);
+            Controls.Add(SongOfTime_Button);
             Controls.Add(label15);
             Controls.Add(Important_Hint_Counter);
             Controls.Add(label14);
-            Controls.Add(ShopShuffle_Button);
-            Controls.Add(ExpensiveMerchants_Button);
+            Controls.Add(ShopShuffle);
+            Controls.Add(ExpensiveMerchants);
             Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label1);
@@ -475,7 +637,8 @@ namespace CeddyMapTracker
             Form.WotHPanel.Goal_Count = WotH_Hint_Counter.Value;
             Form.WotHPanel.DeleteHintsAndStones();
             Form.WotHPanel.GenerateHintsAndStones();
-            //Change Always Hints Panel           
+            //Change Always Hints Panel
+            GiveSettingValuesToAlwaysPanel(Form);
             Form.AlwaysHints.DeleteItems();
             Form.AlwaysHints.DrawPanel();  
             //Chagne Sometimes Hints Panel          
@@ -504,6 +667,9 @@ namespace CeddyMapTracker
                     i.State = 0;
                 }
             }
+            //Reset extra checks
+            MapTracker.ExpensiveMerchantShuffle = false;
+            MapTracker.ShopShuffle = false;                      
             //Read json file
             StreamReader r = new($"Presets/{comboBox1.Text}");
             string json = r.ReadToEnd();
@@ -536,7 +702,7 @@ namespace CeddyMapTracker
             sometimes.GenerateHintsAndStones();
             //Update Important Hint Panel
             form.ImportantHint.DeleteHints();
-            form.ImportantHint.GenerateHints();
+            form.ImportantHint.GenerateHints();           
             //int test = 0;
             //test = itemPanel.Starting_Items[0].Length;
             Visible = false;
@@ -567,6 +733,22 @@ namespace CeddyMapTracker
             }
 
 
+        }
+        public void GiveSettingValuesToAlwaysPanel(Form1 Form)
+        {
+            Form.AlwaysHints.SongOfTime.Active = SongOfTime_Button.CheckBox.Checked;
+            Form.AlwaysHints.Nocturne.Active = Nocturne_Button.CheckBox.Checked;
+            Form.AlwaysHints.BigGoron.Active = BigGoron_Button.CheckBox.Checked;
+            Form.AlwaysHints.Frogs2.Active = Frogs2_Button.CheckBox.Checked;
+            Form.AlwaysHints.SkullMask.Active = SkullMask_Button.CheckBox.Checked;
+            Form.AlwaysHints.Trials.Active = Trials_Button.CheckBox.Checked;
+            Form.AlwaysHints.Skulls20.Active = Skulls20_Button.CheckBox.Checked;
+            Form.AlwaysHints.Skulls30.Active = Skulls30_Button.CheckBox.Checked;
+            Form.AlwaysHints.Skulls40.Active = Skulls40_Button.CheckBox.Checked;
+            Form.AlwaysHints.Skulls50.Active = Skulls50_Button.CheckBox.Checked;
+            Form.AlwaysHints.IceDual.Active = IceDual_Button.CheckBox.Checked;
+            Form.AlwaysHints.CastleFairies.Active = CastleFairies_Button.CheckBox.Checked;
+            Form.AlwaysHints.FrogsDual.Active = FrogsDual_Button.CheckBox.Checked;
         }
         public event EventHandler ValueChanged;
         protected virtual void OnValueChanged(EventArgs e)

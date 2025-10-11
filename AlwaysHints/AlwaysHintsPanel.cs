@@ -23,32 +23,36 @@ namespace CeddyMapTracker
         public AlwaysHint Skulls30 = new("Gossipstone");
         public AlwaysHint Skulls40 = new("Gossipstone");
         public AlwaysHint Skulls50 = new("Gossipstone");
-        public AlwaysHint Trials = new("Trial");
+        public AlwaysHint Trials = new("Dual");
+        public AlwaysHint IceDual = new("Dual");
+        public AlwaysHint CastleFairies = new("Dual");
+        public AlwaysHint FrogsDual = new("Dual");
         public List<AlwaysHint> AlwaysHintsList = [];
         private List<AlwaysHint> ActiveHints = [];
         public AlwaysHintsPanel(Point _location)
         {
-            AlwaysHintsList = [SongOfTime, Nocturne, BigGoron, Frogs2, SkullMask, Skulls20, Skulls30, Skulls40, Skulls50, Trials];
+            AlwaysHintsList = [SongOfTime, Nocturne, BigGoron, Frogs2, SkullMask, Skulls20, Skulls30, Skulls40, Skulls50, Trials, IceDual, CastleFairies, FrogsDual];
             SongOfTime.PictureBox.Image = Resources.OoT3D_Ocarina_of_Time_Icon;
             Nocturne.PictureBox.Image = Resources.nocturne_32x40;
             BigGoron.PictureBox.Image = Resources.biggoron_32x32;
-            Frogs2.PictureBox.Image = Resources.frogs_32x32;
+            Frogs2.PictureBox.Image = Resources.Frogs2;
             SkullMask.PictureBox.Image = Resources.OoT3D_Skull_Mask_Icon;
-            Skulls20.PictureBox.Image = Resources.Soldout;
-            Skulls30.PictureBox.Image = Resources._30_gold_skulltula_32x32;
-            Skulls40.PictureBox.Image = Resources._40_gold_skulltula_32x32;
-            Skulls50.PictureBox.Image = Resources._50_gold_skulltula_32x32;
+            Skulls20.PictureBox.Image = Resources.Skulltulas20;
+            Skulls30.PictureBox.Image = Resources.Skulltulas30;
+            Skulls40.PictureBox.Image = Resources.Skulltulas40;
+            Skulls50.PictureBox.Image = Resources.Skulltulas50;
             Trials.PictureBox.Image = Resources.trials;
-            Size = new Size(180, 155);
+            FrogsDual.PictureBox.Image = Resources.Frogs_Dual;
+            IceDual.PictureBox.Image = Resources.IceCavern;
+            CastleFairies.PictureBox.Image = Resources.Castle_Fairy_Dual;        
+            Size = new Size(180, 0);
+            AutoSize = true;
             BackColor = Color.Black;
             Location = _location;
             Label label = new() { Text = "Always Hints", Location = new Point(0, 0), ForeColor = Color.White };
             Controls.Add(label);
             bitmaps = [];
-            Font = new Font("Arial", 12, GraphicsUnit.Pixel);
-            SongOfTime.Active = true;
-            Nocturne.Active = true;
-            Skulls40.Active = true;
+            Font = new Font("Arial", 12, GraphicsUnit.Pixel);           
         }
         public void DrawPanel()
         {          
@@ -66,10 +70,20 @@ namespace CeddyMapTracker
                     Controls.Add(ActiveHints[i]);
                     ActiveHints[i].Location = new Point(0, i * 32 + 28);
                 }
+                else if (8 > i)
+                {
+                    Controls.Add(ActiveHints[i]);
+                    ActiveHints[i].Location = new Point(ActiveHints[i - 4].Location.X + 66, (i - 4) * 32 + 28);
+                }
+                else if (12 > i)
+                {
+                    Controls.Add(ActiveHints[i]);
+                    ActiveHints[i].Location = new Point(ActiveHints[i - 4].Location.X + 66, (i - 8) * 32 + 28);
+                }
                 else
                 {
                     Controls.Add(ActiveHints[i]);
-                    ActiveHints[i].Location = new Point(130, (i - 4) * 32 + 28);                 
+                    ActiveHints[i].Location = new Point(ActiveHints[i - 4].Location.X + 66, (i - 12) * 32 + 28);
                 }
 
             }

@@ -16,7 +16,7 @@ namespace CeddyMapTracker
         private List<Gossipstone> gossipStones = [];
         public SometimesHints(Point _location)
         {
-            Width = 300;
+            Width = 270;
             AutoSize = true;
             BackColor = Color.Black;
             Location = _location;

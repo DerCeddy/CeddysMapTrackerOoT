@@ -12,8 +12,9 @@ namespace CeddyMapTracker
         public bool Active;
         public PictureBox PictureBox = new();
         public Gossipstone Gossipstone = new ();
-        public ComboBox TrialHint1 = new();
-        public ComboBox TrialHint2 = new();
+        public Gossipstone Gossipstone2 = new();
+        //public ComboBox TrialHint1 = new();
+        //public ComboBox TrialHint2 = new();
         public AlwaysHint(string Type)
         {      
             BackColor = Color.Black;
@@ -21,19 +22,22 @@ namespace CeddyMapTracker
             PictureBox.Location = new Point(0, 0);
             PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;      
             Controls.Add(PictureBox);
-            Gossipstone.Location = new Point(32, 0);
-            TrialHint1.Location = new Point(50, 0);
-            TrialHint2.Location = new Point(120,0);
+            Gossipstone.Location = new Point(32, 4);            
+            //TrialHint1.Location = new Point(50, 0);
+            //TrialHint2.Location = new Point(120,0);
             if (Type == "Gossipstone")
             {
                 Controls.Add(Gossipstone);
                 Size = new Size(56, 32);
             }
-            else if(Type == "Trial")
+            else if(Type == "Dual")
             {
-                Controls.Add(TrialHint1);
-                Controls.Add(TrialHint2);
-                Size = new Size(96, 32);
+                //Controls.Add(TrialHint1);
+                //Controls.Add(TrialHint2);
+                Controls.Add(Gossipstone);
+                Controls.Add(Gossipstone2);
+                Gossipstone2.Location = new Point(56, 4);
+                Size = new Size(88, 32);
             }
         }       
     }

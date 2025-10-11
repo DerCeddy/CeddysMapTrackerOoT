@@ -13,7 +13,7 @@ namespace CeddyMapTracker
         public GoalPicture(Point _location)
         {
             Location = _location;
-            Image = Resources.unknown_32x32;           
+            Image = Resources.Unknown;           
             Size = new Size(24, 24);
             SizeMode = PictureBoxSizeMode.StretchImage;
             MouseDown += (sender, e) => GoalClick(e);
@@ -61,7 +61,7 @@ namespace CeddyMapTracker
                     Image = Resources.gohma_32x32;
                     break;
                 case 0:
-                    Image = Resources.unknown_32x32;
+                    Image = Resources.Unknown;
                     break;
                 case 1:
                     Image = Resources.pg_32x32;
@@ -77,6 +77,9 @@ namespace CeddyMapTracker
                     break;
                 case 5:
                     Image = Resources.twinrova_32x32;
+                    break;
+                case 6:
+                    Image = Resources.Ganons_Tower;
                     break;
             }
         }

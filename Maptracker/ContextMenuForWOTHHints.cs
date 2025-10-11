@@ -37,14 +37,16 @@ namespace CeddyMapTracker
             CloseButton.Location = new Point(54, 54);
             CloseButton.Size = new Size(32,32);
             CloseButton.SizeMode = PictureBoxSizeMode.StretchImage;
-            ContextMenuGoalButton PhantomGanon = new(Resources.pg_32x32, new Point(56, 0), 1);
-            ContextMenuGoalButton Volvagia = new(Resources.volvagia_32x32, new Point(95, 20), 2);
-            ContextMenuGoalButton Morpha = new(Resources.morpha_32x32, new Point(110, 56), 3);
-            ContextMenuGoalButton Bongo = new(Resources.bongo_32x32, new Point(95, 92), 4);
-            ContextMenuGoalButton Twinrova = new(Resources.twinrova_32x32, new Point(56, 110), 5);
-            ContextMenuGoalButton Gohma = new(Resources.gohma_32x32, new Point(17, 92), -1);
-            ContextMenuGoalButton Dodongo = new(Resources.dodongo_32x32, new Point(2, 56), -2);
-            ContextMenuGoalButton Barinade = new(Resources.barinade_32x32, new Point(17, 20), -3);
+            ContextMenuGoalButton PhantomGanon = new(Resources.pg_32x32, new Point(58, 0), 1);
+            ContextMenuGoalButton Volvagia = new(Resources.volvagia_32x32, new Point(90, 16), 2);
+            ContextMenuGoalButton Morpha = new(Resources.morpha_32x32, new Point(110, 44), 3);
+            ContextMenuGoalButton Bongo = new(Resources.bongo_32x32, new Point(110, 72), 4);
+            ContextMenuGoalButton Twinrova = new(Resources.twinrova_32x32, new Point(90, 100), 5);
+            ContextMenuGoalButton Gohma = new(Resources.gohma_32x32, new Point(58, 116), -1);
+            ContextMenuGoalButton Dodongo = new(Resources.dodongo_32x32, new Point(26, 100), -2);
+            ContextMenuGoalButton Barinade = new(Resources.barinade_32x32, new Point(4, 72), -3);
+            ContextMenuGoalButton Tower = new(Resources.Ganons_Tower, new Point(4, 44), 6);
+            ContextMenuGoalButton Important = new(Resources.ImportantHint, new Point(26, 16), 7);
             Controls.Add(CloseButton);
             Controls.Add(PhantomGanon); 
             Controls.Add(Volvagia);
@@ -54,6 +56,8 @@ namespace CeddyMapTracker
             Controls.Add(Gohma);
             Controls.Add(Dodongo);
             Controls.Add(Barinade);
+            Controls.Add(Tower);
+            Controls.Add(Important);
             CloseButton.MouseDown += (sender, e) => CloseContextMenu();
             foreach (Control c in Controls)
             {
@@ -110,6 +114,12 @@ namespace CeddyMapTracker
                     break;
                 case 5:
                     Goal = 5;
+                    break;
+                case 6:
+                    Goal = 6;
+                    break;
+                case 7:
+                    Goal = 7;
                     break;
             }        
             Visible = false;

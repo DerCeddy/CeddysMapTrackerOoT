@@ -12,6 +12,7 @@ namespace CeddyMapTracker
         public AlwaysHintsPanel AlwaysHints = new(new Point(420, 150));
         public ImportantHintPanel ImportantHint = new(new Point(380,700));
         public Maptracker? MapTracker;
+        public SettingsPanel Settings = new(new Point(0, 0));
         public KeyPanel Keys;
         public Form1()
         {        
@@ -20,12 +21,28 @@ namespace CeddyMapTracker
             MapTracker = new(WotHPanel,new Point(720, 0), Stats); 
             AutoScaleMode = AutoScaleMode.None;
             MapTracker.AutoScaleMode = AutoScaleMode.None;
-            Keys = new(new Point(640, 0));
-            SettingsPanel SettingsPanel = new(new Point(0,0));
-            SettingsPanel.Visible = false;
+            Keys = new(new Point(640, 0));    
+            Settings.Visible = false;
             SettingsButton SettingsButton = new (new Point (0, 490));
-            SettingsButton.MouseDown += (sender, e) => SettingsButton.ClickEvent(SettingsPanel);          
-            //DungeonCounter dungeoncounter = new(maptracker);          
+            SettingsButton.MouseDown += (sender, e) => SettingsButton.ClickEvent(Settings);
+            //DungeonCounter dungeoncounter = new(maptracker);
+            //Add ContextWheel
+            ContextMenuForWOTHHints ContextWheel = new();
+            MapTracker.MouseDown += (sender, e) => MapTracker.GetRegionName(e, ContextWheel);
+            MapTracker.Controls.Add(ContextWheel);
+            ContextWheel.Visible = false;
+            ContextWheel.ValueChanged += (sender, e) => MapTracker.UpdateWOTHGoals(WotHPanel, ImportantHint, ContextWheel);
+            foreach(Region Region in MapTracker.DenseRegions)
+            {
+                if (Region.RegionButton != null)
+                {
+                    Region.RegionButton.MouseDown += (sender, e) => MapTracker.AddContextMenu(e, ContextWheel, Region);
+                }
+                if (Region.DungeonButton != null)
+                {
+                    Region.DungeonButton.MouseDown += (sender, e) => MapTracker.AddContextMenu(e, ContextWheel, Region.DungeonButton);
+                }
+            }
             Controls.Add(WotHPanel);           
             Controls.Add(AlwaysHints);           
             Controls.Add(SometimesHints);           
@@ -33,7 +50,7 @@ namespace CeddyMapTracker
             Controls.Add(Stats);
             Controls.Add(SettingsButton);
             Controls.Add(ItemPanel);
-            Controls.Add(SettingsPanel);          
+            Controls.Add(Settings);          
             ItemPanel.LoadItems();
             ItemPanel.LoadEquips();
             ItemPanel.LoadQuestItems();
@@ -76,16 +93,16 @@ namespace CeddyMapTracker
                 }
             } 
             //Settingspanel assign functions
-            SettingsPanel.button1.MouseDown += (sender,e) => SettingsPanel.ConfirmSettings(this);
-            SettingsPanel.button1.MouseDown += (sender, e) => UpdateLocations();
-            SettingsPanel.Load_Preset_Button.MouseDown += (sender, e) => SettingsPanel.LoadPreset(ItemPanel, this, SometimesHints, AlwaysHints, WotHPanel, MapTracker);
-            SettingsPanel.Load_Preset_Button.MouseDown += (sender, e) => UpdateLocations();
-            SettingsPanel.Load_Preset_Button.MouseDown += (sender, e) => MapTracker.UpdateStatVariables(Stats);
-            SettingsPanel.changeStyleButton1.MouseDown += (sender, e) => SettingsPanel.changeStyleButton1.OnClick(ItemPanel);
-            SettingsPanel.ValueChanged += (sender, e) => SetShuffleOptionsForMaptracker(SettingsPanel);
-            SettingsPanel.ExpensiveMerchants_Button.ValueChanged += (sender, e) => MapTracker.AddExpensiveMerchants();
-            SettingsPanel.ShopShuffle_Button.ValueChanged += (sender, e) => MapTracker.AddShopShuffle();
-            SettingsPanel.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, Keys);
+            Settings.button1.MouseDown += (sender,e) => Settings.ConfirmSettings(this);
+            Settings.button1.MouseDown += (sender, e) => UpdateLocations();
+            Settings.Load_Preset_Button.MouseDown += (sender, e) => Settings.LoadPreset(ItemPanel, this, SometimesHints, AlwaysHints, WotHPanel, MapTracker);
+            Settings.Load_Preset_Button.MouseDown += (sender, e) => UpdateLocations();
+            Settings.Load_Preset_Button.MouseDown += (sender, e) => MapTracker.UpdateStatVariables(Stats);
+            Settings.changeStyleButton1.MouseDown += (sender, e) => Settings.changeStyleButton1.OnClick(ItemPanel);
+            Settings.ValueChanged += (sender, e) => SetShuffleOptionsForMaptracker(Settings);
+            Settings.ExpensiveMerchants.ValueChanged += (sender, e) => MapTracker.AddExpensiveMerchants();
+            Settings.ShopShuffle.ValueChanged += (sender, e) => MapTracker.AddShopShuffle();
+            Settings.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, Keys);
             //SettingsPanel.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
             //Update text color for richtooltip
             AssignTextToRichToolTips();
@@ -140,8 +157,8 @@ namespace CeddyMapTracker
         }
         public void SetShuffleOptionsForMaptracker(SettingsPanel SettingsPanel)
         {
-            MapTracker.ExpensiveMerchantShuffle = SettingsPanel.ExpensiveMerchants_Button.Checked;
-            MapTracker.ShopShuffle = SettingsPanel.ShopShuffle_Button.Checked;
+            MapTracker.ExpensiveMerchantShuffle = SettingsPanel.ExpensiveMerchants.Checked;
+            MapTracker.ShopShuffle = SettingsPanel.ShopShuffle.Checked;
         }
     }
 }

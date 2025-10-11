@@ -27,6 +27,7 @@ namespace CeddyMapTracker
             RegionName.Location = new Point(24,3); 
             RegionName.Size = new Size(200,23);
             RegionName.BackColor = Color.Goldenrod;
+            RegionName.MouseDown += (sender, e) => RegionName.Text = string.Empty;
             Controls.Add(Counter);
             Controls.Add(RegionName);
         }
