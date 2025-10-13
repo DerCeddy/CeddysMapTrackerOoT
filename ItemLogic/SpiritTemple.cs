@@ -49,7 +49,7 @@ namespace CeddyMapTracker
 
             }
             //Child Climb
-            if ((Has(i.Reqiuem) && keys.Spirit_SmallKeys.currentKeys == 5 && (Has(i.Slingshot) || Has(i.Boomerang))) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && keys.Spirit_SmallKeys.currentKeys >= 1 && i.Strength.State >= 2 && (((Has(i.Slingshot) || Has(i.Boomerang)) && (Has(i.Bow) || Has(i.Hookshot))) || i.Bomb.State == 1)))
+            if ((Has(i.Reqiuem) && keys.Spirit_SmallKeys.currentKeys == 5 && (Has(i.Slingshot) || Has(i.Boomerang))) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && keys.Spirit_SmallKeys.currentKeys >= 1  && (((Has(i.Slingshot) || Has(i.Boomerang)) && (Has(i.Bow) || Has(i.Hookshot))) || i.Bomb.State == 1)))
             {
                 SpiritChildClimbNorthChest.ForeColor = Available;
                 SpiritChildClimbEastChest.ForeColor = Available;
@@ -72,17 +72,17 @@ namespace CeddyMapTracker
                 SpiritChildClimbEastChest.ForeColor = NotAvailable;
             }
             //Map Chest
-            if ((Has(i.Reqiuem) && keys.Spirit_SmallKeys.currentKeys == 5 && i.Bomb.State == 1) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && Has(i.Bomb) && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 1 && has_firesource))
+            if ((Has(i.Reqiuem) && keys.Spirit_SmallKeys.currentKeys == 5 && i.Bomb.State == 1) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && Has(i.Bomb) && keys.Spirit_SmallKeys.currentKeys >= 1 && has_firesource))
             {
                 SpiritMapChest.ForeColor = Available;
                 SpiritSunBlockRoomChest.ForeColor = Available;
             }
-            else if ((Has(i.Reqiuem) && (keys.Spirit_SmallKeys.currentKeys == 5 || (Has(i.Dins) && Has(i.Magic) && keys.Spirit_SmallKeys.currentKeys >= 1)) && Has(i.Bombchu) && (Has(i.Slingshot) || Has(i.Boomerang))) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))))
+            else if ((Has(i.Reqiuem) && (keys.Spirit_SmallKeys.currentKeys == 5 || (Has(i.Dins) && Has(i.Magic) && keys.Spirit_SmallKeys.currentKeys >= 1)) && Has(i.Bombchu)) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))))
             {
                 SpiritMapChest.ForeColor = OoLwithBombchus;
                 SpiritSunBlockRoomChest.ForeColor = OoLwithBombchus;
             }
-            else if ((Has(i.Reqiuem) && ((Has(i.Dins) && Has(i.Magic))) && i.Bomb.State == 1 && (Has(i.Slingshot) || Has(i.Boomerang))) || (desertaccess == 1 && i.Strength.State >= 2 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))))
+            else if ((Has(i.Reqiuem) && i.Bomb.State == 1) || (desertaccess == 1 && i.Strength.State >= 2  && has_firesource && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && Has(i.Bomb) && has_firesource))
             {
                 SpiritMapChest.ForeColor = coulddo;
                 SpiritSunBlockRoomChest.ForeColor = coulddo;
