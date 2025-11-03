@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace CeddyMapTracker
         public Color color;
         private Color Color_Done = Color.Gray;
         public RichToolTip RichToolTip = new();
+        [Browsable(true), Description("test property"), Category("Appearance")]
+        public int CheckIndex {  get; set; }
+        public bool PressedCheck;
         public bool Done
         {
             get
@@ -33,6 +37,7 @@ namespace CeddyMapTracker
             BackColor = color;
             ForeColor = Color.Black;
             MouseDown += (sender,e) => ChangeColor();
+            ValueChanged += (sender, e) => UpdateColor();
             FlatAppearance.BorderSize = 1;
             FlatAppearance.BorderColor = Color.Black;    
             RichToolTip.Location = this.Location;            
@@ -50,14 +55,20 @@ namespace CeddyMapTracker
         public void ChangeColor()
         {          
             if(!Done)
-            {             
-                BackColor = Color_Done;
+            {                             
                 Done = true;
             }             
             else
             {
-                BackColor = color;
                 Done = false;
+            }
+            if(!PressedCheck)
+            {
+                PressedCheck = true;
+            }
+            else
+            {
+                PressedCheck = false;
             }
         }
         public void UpdateColor()

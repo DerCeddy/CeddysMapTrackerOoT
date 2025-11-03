@@ -11,6 +11,8 @@ namespace CeddyMapTracker
         public string _name;
         public bool IsBoss;
         public RichToolTip RichToolTip = new();
+        public int CheckIndex;
+        public bool UserClickedCheck;
         public bool State
         {
             get
@@ -51,6 +53,14 @@ namespace CeddyMapTracker
                         Checked = false;
                         State = false;
                     }
+                    if (!UserClickedCheck)
+                    {
+                        UserClickedCheck = true;                        
+                    }
+                    else
+                    {
+                        UserClickedCheck = false;                        
+                    }
                     break;                   
             }
         }
@@ -64,7 +74,7 @@ namespace CeddyMapTracker
 
     public partial class Maptracker
     {
-        public Region_Panel_Check KakAnjuasChild = new("Anju as Child");
+        public Region_Panel_Check KakAnjuasChild = new("Anju as Child") { CheckIndex = 54};
         public Region_Panel_Check KakAnjuasAdult = new("Anju as Adult");
         public Region_Panel_Check KakImpasHouseFreestandingPoH = new("Impas House Freestanding PoH");
         public Region_Panel_Check KakWindmillFreestandingPoH = new("Windmill Freestanding PoH");
@@ -73,21 +83,21 @@ namespace CeddyMapTracker
         public Region_Panel_Check KakOpenGrottoChest = new("Open Grotto Chest");
         public Region_Panel_Check KakRedeadGrottoChest = new("Redead Grotto Chest");
         public Region_Panel_Check KakShootingGalleryReward = new("Shooting Gallery Reward");
-        public Region_Panel_Check KakShiek = new("Shiek at Kakariko");
+        public Region_Panel_Check KakShiek = new("Shiek at Kakariko") { CheckIndex = 2 };
         public Region_Panel_Check Kak10GoldSkulltulaReward = new("10 Gold Skulltula Reward");
-        public Region_Panel_Check Kak20GoldSkulltulaReward = new("20 Gold Skulltula Reward");
-        public Region_Panel_Check Kak30GoldSkulltulaReward = new("30 Gold Skulltula Reward");
-        public Region_Panel_Check Kak40GoldSkulltulaReward = new("40 Gold Skulltula Reward");
-        public Region_Panel_Check Kak50GoldSkulltulaReward = new("50 Gold Skulltula Reward");
+        public Region_Panel_Check Kak20GoldSkulltulaReward = new("20 Gold Skulltula Reward") { CheckIndex = 11};
+        public Region_Panel_Check Kak30GoldSkulltulaReward = new("30 Gold Skulltula Reward") { CheckIndex = 12 };
+        public Region_Panel_Check Kak40GoldSkulltulaReward = new("40 Gold Skulltula Reward") { CheckIndex = 13 };
+        public Region_Panel_Check Kak50GoldSkulltulaReward = new("50 Gold Skulltula Reward") { CheckIndex = 14 };
         public Region_Panel_Check GraveyardShieldGraveChest = new("Shield Grave Chest");
-        public Region_Panel_Check GraveyardHeartPieceGraveChest = new("Heart Piece Grave Chest");
-        public Region_Panel_Check GraveyardRoyalFamilysTombChest = new("Royal Familys Tomb Chest");
+        public Region_Panel_Check GraveyardHeartPieceGraveChest = new("Heart Piece Grave Chest") { CheckIndex = 55};
+        public Region_Panel_Check GraveyardRoyalFamilysTombChest = new("Royal Familys Tomb Chest") { CheckIndex = 121 };
         public Region_Panel_Check GraveyardFreestandingPoH = new("Freestanding PoH");
         public Region_Panel_Check GraveyardDampeGravediggingTour = new("Dampe Gravedigging Tour");
         public Region_Panel_Check GraveyardDampeRaceHookshotChest = new("Dampe Race Hookshot Chest");
         public Region_Panel_Check GraveyardDampeRaceFreestandingPoH = new("Dampe Race Freestanding PoH");
-        public Region_Panel_Check GraveyardComposerSong = new("Composer Song");
-        public Region_Panel_Check GCDaruniasJoy = new("Darunias Joy");
+        public Region_Panel_Check GraveyardComposerSong = new("Composer Song") { CheckIndex = 122 };
+        public Region_Panel_Check GCDaruniasJoy = new("Darunias Joy") { CheckIndex = 56};
         public Region_Panel_Check GCPotFreestandingPoH = new("Pot Freestanding PoH");
         public Region_Panel_Check GCRollingGoronasChild = new("Rolling Goron as Child");
         public Region_Panel_Check GCRollingGoronasAdult = new("Rolling Goron as Adult");
@@ -110,7 +120,7 @@ namespace CeddyMapTracker
         public Region_Panel_Check DodongosCavernEndofBridgeChest = new("End of Bridge Chest");
         public Region_Panel_Check DodongosCavernBossRoomChest = new("Boss Room Chest");
         public Region_Panel_Check DodongosCavernKingDodongoHeart = new("King Dodongo Heart") { IsBoss = true };
-        public Region_Panel_Check JabuJabusBellyBoomerangChest = new("Boomerang Chest");
+        public Region_Panel_Check JabuJabusBellyBoomerangChest = new("Boomerang Chest") { CheckIndex = 62};
         public Region_Panel_Check JabuJabusBellyMapChest = new("Map Chest");
         public Region_Panel_Check JabuJabusBellyCompassChest = new("Compass Chest");
         public Region_Panel_Check JabuJabusBellyBarinadeHeart = new("Barinade Heart") { IsBoss = true };
@@ -152,9 +162,9 @@ namespace CeddyMapTracker
         public Region_Panel_Check FireMapChest = new("Map Chest");
         public Region_Panel_Check FireBoulderMazeShortcutChest = new("Boulder Maze Shortcut Chest");
         public Region_Panel_Check FireBoulderMazeUpperChest = new("Boulder Maze Upper Chest");
-        public Region_Panel_Check FireScarecrowChest = new("Scarecrow Chest");
+        public Region_Panel_Check FireScarecrowChest = new("Scarecrow Chest") { CheckIndex = 64 };
         public Region_Panel_Check FireCompassChest = new("Compass Chest");
-        public Region_Panel_Check FireMegatonHammerChest = new("Megaton Hammer Chest");
+        public Region_Panel_Check FireMegatonHammerChest = new("Megaton Hammer Chest") { CheckIndex = 63};
         public Region_Panel_Check FireHighestGoronChest = new("Highest Goron Chest");
         public Region_Panel_Check FireVolvagiaHeart = new("Volvagia Heart") { IsBoss = true };
         public Region_Panel_Check WaterCompassChest = new("Compass Chest");
@@ -162,10 +172,10 @@ namespace CeddyMapTracker
         public Region_Panel_Check WaterCrackedWallChest = new("Cracked Wall Chest");
         public Region_Panel_Check WaterTorchesChest = new("Torches Chest");
         public Region_Panel_Check WaterBossKeyChest = new("Boss Key Chest");
-        public Region_Panel_Check WaterCentralPillarChest = new("Central Pillar Chest");
+        public Region_Panel_Check WaterCentralPillarChest = new("Central Pillar Chest") { CheckIndex = 65 };
         public Region_Panel_Check WaterCentralBowTargetChest = new("Central Bow Target Chest");
-        public Region_Panel_Check WaterLongshotChest = new("Longshot Chest");
-        public Region_Panel_Check WaterRiverChest = new("River Chest");
+        public Region_Panel_Check WaterLongshotChest = new("Longshot Chest") { CheckIndex = 127 };
+        public Region_Panel_Check WaterRiverChest = new("River Chest") { CheckIndex = 128 };
         public Region_Panel_Check WaterDragonChest = new("Dragon Chest");
         public Region_Panel_Check WaterMorphaHeart = new("Morpha Heart") { IsBoss = true };
         public Region_Panel_Check ShadowMapChest = new("Map Chest");
@@ -192,7 +202,7 @@ namespace CeddyMapTracker
         public Region_Panel_Check SpiritChildClimbEastChest = new("Child Climb East Chest");
         public Region_Panel_Check SpiritMapChest = new("Map Chest");
         public Region_Panel_Check SpiritSunBlockRoomChest = new("Sun Block Room Chest");
-        public Region_Panel_Check SpiritSilverGauntletsChest = new("Silver Gauntlets Chest");
+        public Region_Panel_Check SpiritSilverGauntletsChest = new("Silver Gauntlets Chest") { CheckIndex = 129 };
         public Region_Panel_Check SpiritCompassChest = new("Compass Chest");
         public Region_Panel_Check SpiritEarlyAdultRightChest = new("Early Adult Right Chest");
         public Region_Panel_Check SpiritFirstMirrorLeftChest = new("First Mirror Left Chest");
@@ -202,15 +212,15 @@ namespace CeddyMapTracker
         public Region_Panel_Check SpiritNearFourArmosChest = new("Near Four Armos Chest");
         public Region_Panel_Check SpiritHallwayRightInvisibleChest = new("Hallway Right Invisible Chest");
         public Region_Panel_Check SpiritHallwayLeftInvisibleChest = new("Hallway Left Invisible Chest");
-        public Region_Panel_Check SpiritMirrorShieldChest = new("Mirror Shield Chest");
+        public Region_Panel_Check SpiritMirrorShieldChest = new("Mirror Shield Chest") { CheckIndex = 130 };
         public Region_Panel_Check SpiritBossKeyChest = new("Boss Key Chest");
         public Region_Panel_Check SpiritTopmostChest = new("Topmost Chest");
         public Region_Panel_Check SpiritTwinrovaHeart = new("Twinrova Heart") { IsBoss = true };
         public Region_Panel_Check IceCavernMapChest = new("Map Chest");
         public Region_Panel_Check IceCavernCompassChest = new("Compass Chest");
-        public Region_Panel_Check IceCavernIronBootsChest = new("Iron Boots Chest");
+        public Region_Panel_Check IceCavernIronBootsChest = new("Iron Boots Chest") { CheckIndex = 6 };
         public Region_Panel_Check IceCavernFreestandingPoH = new("Freestanding PoH");
-        public Region_Panel_Check IceCavernShiek = new("Song from Shiek");
+        public Region_Panel_Check IceCavernShiek = new("Song from Shiek") { CheckIndex = 7 };
         public Region_Panel_Check GTGLobbyLeftChest = new("Lobby Left Chest");
         public Region_Panel_Check GTGLobbyRightChest = new("Lobby Right Chest");
         public Region_Panel_Check GTGStalfosChest = new("Stalfos Chest");
@@ -226,7 +236,7 @@ namespace CeddyMapTracker
         public Region_Panel_Check GTGFreestandingKey = new("Freestanding Key");
         public Region_Panel_Check GTGMazeRightCentralChest = new("Maze Right Central Chest");
         public Region_Panel_Check GTGMazeRightSideChest = new("Maze Right Side Chest");
-        public Region_Panel_Check GTGUnderwaterSilverRupeeChest = new("Underwater Silver Rupee Chest");
+        public Region_Panel_Check GTGUnderwaterSilverRupeeChest = new("Underwater Silver Rupee Chest") { CheckIndex = 66 };
         public Region_Panel_Check GTGBeamosChest = new("Beamos Chest");
         public Region_Panel_Check GTGHiddenCeilingChest = new("Hidden Ceiling Chest");
         public Region_Panel_Check GTGMazePathFirstChest = new("Maze Path First Chest");

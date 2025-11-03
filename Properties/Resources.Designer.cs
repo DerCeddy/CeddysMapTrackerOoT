@@ -123,6 +123,16 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap closed_chest_48 {
+            get {
+                object obj = ResourceManager.GetObject("closed_chest_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dodongo_32x32 {
             get {
                 object obj = ResourceManager.GetObject("dodongo_32x32", resourceCulture);
@@ -217,6 +227,16 @@ namespace CeddyMapTracker.Properties {
             get {
                 object obj = ResourceManager.GetObject("gossip_stone_bw_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] HyliaSerifBeta_Regular {
+            get {
+                object obj = ResourceManager.GetObject("HyliaSerifBeta-Regular", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -496,6 +516,16 @@ namespace CeddyMapTracker.Properties {
         internal static System.Drawing.Bitmap OoT3D_Token_Icon_forLabel1 {
             get {
                 object obj = ResourceManager.GetObject("OoT3D_Token_Icon_forLabel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_chest_48 {
+            get {
+                object obj = ResourceManager.GetObject("open_chest_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

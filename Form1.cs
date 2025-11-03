@@ -7,17 +7,18 @@ namespace CeddyMapTracker
     public partial class Form1 : Form
     {  
         public ItemPanel ItemPanel = new(new Point(0, 0));
-        public SometimesHints SometimesHints = new(new Point(420, 360));
+        public SometimesHintsPanel SometimesHints = new(new Point(420, 360));
         public WOTHPanel WotHPanel = new(new Point(380, 0));
         public AlwaysHintsPanel AlwaysHints = new(new Point(420, 150));
         public ImportantHintPanel ImportantHint = new(new Point(380,700));
         public Maptracker? MapTracker;
         public SettingsPanel Settings = new(new Point(0, 0));
         public KeyPanel Keys;
+        public Stats Stats = new(new Point(0, 700));
+        public DungeonInfoPanel DungeonInfo = new() { Location = new Point(50,500)};
         public Form1()
         {        
-            InitializeComponent();                                                             
-            Stats Stats = new(new Point(0, 700));
+            InitializeComponent();                                                                       
             MapTracker = new(WotHPanel,new Point(720, 0), Stats); 
             AutoScaleMode = AutoScaleMode.None;
             MapTracker.AutoScaleMode = AutoScaleMode.None;
@@ -55,7 +56,8 @@ namespace CeddyMapTracker
             ItemPanel.LoadEquips();
             ItemPanel.LoadQuestItems();
             ItemPanel.LoadSongs();          
-            Controls.Add(Keys);          
+            Controls.Add(Keys); 
+            Controls.Add(DungeonInfo);
             List<Keys> SmallKeys = [Keys.Forest_SmallKeys, Keys.Fire_SmallKeys, Keys.Water_SmallKeys, Keys.Shadow_SmallKeys, Keys.Spirit_SmallKeys, Keys.BotW_SmallKeys, Keys.GTG_SmallKeys];
             List<Item> BossKeys = [ItemPanel.ForestBossKey, ItemPanel.FireBossKey, ItemPanel.WaterBossKey, ItemPanel.ShadowBossKey, ItemPanel.SpiritBossKey];                    
             Keys.LoadSmallKeys(SmallKeys);
@@ -137,8 +139,23 @@ namespace CeddyMapTracker
             MapTracker.ShopShuffle = false;
             MapTracker.AddExtraChecks();          
             UpdateLocations();
+            //Test for automatic checking of hints
+            foreach (AlwaysHint Alwayshint in AlwaysHints.AlwaysHintsList)
+            {
+                Alwayshint.Gossipstone.ValueChanged += (sender, e) => { Alwayshint.CheckCheckOnMaptracker(MapTracker,Alwayshint.Gossipstone, Alwayshint.AlwaysHintIndex); };
+                Alwayshint.Gossipstone.ValueChanged += (sender, e) => { Alwayshint.Gossipstone.UpdateImage(); };
+                Alwayshint.Gossipstone.ValueChanged += (sender, e) => { MapTracker.UpdateDenseLocations(); };
+                Alwayshint.Gossipstone.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
+                Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { Alwayshint.CheckCheckOnMaptracker(MapTracker, Alwayshint.Gossipstone2, Alwayshint.AlwaysHintIndex2); };
+                Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { Alwayshint.Gossipstone2.UpdateImage(); };
+                Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateDenseLocations(); };
+                Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
+            }
+            AssignFunctionsToGossipstonesInSometimesPanel(Stats);
+            //Dungeon Info
+            DungeonInfo.ForestTemple.Checks = MapTracker.ForestTemple_Check_List;
+            MapTracker.ForestFirstRoomChest.MouseDown += (sender, e) => DungeonInfo.ForestTemple.UpdateItemCounterText(Keys.Forest_SmallKeys);
         }
-
         public void UpdateLocations()
         {
             ImportantHint.Location = new Point(AlwaysHints.Location.X, WotHPanel.Size.Height + 1);
@@ -159,6 +176,23 @@ namespace CeddyMapTracker
         {
             MapTracker.ExpensiveMerchantShuffle = SettingsPanel.ExpensiveMerchants.Checked;
             MapTracker.ShopShuffle = SettingsPanel.ShopShuffle.Checked;
+        }
+        public void AssignFunctionsToGossipstonesInSometimesPanel(Stats Stats)
+        {
+            ////Test for automatic checking of hints in sometimes panel
+            foreach (SometimesHint SometimesHint in SometimesHints.SometimesHints)
+            {
+                SometimesHint.Gossipstone.ValueChanged += (sender, e) => { SometimesHint.AssignIndexFromText(SometimesHint.ComboBox.Text); };
+                SometimesHint.Gossipstone.ValueChanged += (sender, e) => { SometimesHint.CheckCheckOnMaptracker(MapTracker, SometimesHint.ComboBox.Text); };
+                SometimesHint.Gossipstone.ValueChanged += (sender, e) => { SometimesHint.Gossipstone.UpdateImage(); };
+                SometimesHint.Gossipstone.ValueChanged += (sender, e) => { MapTracker.UpdateDenseLocations(); };
+                SometimesHint.Gossipstone.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
+                SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { SometimesHint.AssignIndexFromText(SometimesHint.ComboBox.Text); };
+                SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { SometimesHint.CheckCheckOnMaptracker(MapTracker, SometimesHint.ComboBox.Text); };
+                SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { SometimesHint.Gossipstone2.UpdateImage(); };
+                SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateDenseLocations(); };
+                SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
+            }
         }
     }
 }

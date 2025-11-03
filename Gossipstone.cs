@@ -1,10 +1,11 @@
 ﻿using CeddyMapTracker.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
+using static System.Windows.Forms.AxHost;
 
 namespace CeddyMapTracker
 {
@@ -14,7 +15,19 @@ namespace CeddyMapTracker
         public Point PreviousMousePos;
         public int PreviousState;
         public Image PreviousImg;       
-        public int _state;
+        public int State
+        {
+            get
+            {
+                return _state;
+            }
+            set
+            {
+                _state = value;
+                OnValueChanged(null);
+            }
+        }
+        private int _state;
         public Gossipstone(Point _location)
         {      
             Image = Resources.gossip_stone_bw_32x32;
@@ -28,6 +41,7 @@ namespace CeddyMapTracker
             MouseDown += (sender, e) => Drag_MouseDown(e, this);
             MouseMove += (sender, e) => MouseMoveForDrag(e, this);
             MouseDown += (sender, e) => GossipStone_Click(e, this);
+            ValueChanged += (sender, e) => UpdateImage();
         }
         public Gossipstone()
         {           
@@ -46,21 +60,20 @@ namespace CeddyMapTracker
         {
             if (e.Button == MouseButtons.Right)
             {
-                PathStone._state--;
-                if (PathStone._state <= -1)
+                PathStone.State--;
+                if (PathStone.State <= -1)
                 {
-                    PathStone._state = 0;
+                    PathStone.State = 0;
                 }
             }
             if (e.Button == MouseButtons.Left)
             {
-                PathStone._state++;
-                if (PathStone._state >= 4)
+                PathStone.State++;
+                if (PathStone.State >= 4)
                 {
-                    PathStone._state = 3;
+                    PathStone.State = 3;
                 }
-            }
-            PathStone.UpdateImage();
+            }          
         }
         public void GossipStone_MouseUp(object sender, MouseEventArgs e)
         {
@@ -76,6 +89,7 @@ namespace CeddyMapTracker
         }
         static void GossipStone_DragDrop(DragEventArgs e, Gossipstone PathStone)
         {
+            PathStone.State = 0;
             Bitmap bmp = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
             PathStone.Image = bmp;           
         }
@@ -85,17 +99,17 @@ namespace CeddyMapTracker
             {
                 IsDragging = true;
                 PreviousMousePos = e.Location;
-                PreviousState = g._state;
+                PreviousState = g.State;
                 PreviousImg = g.Image;
             }
         }
         private void DragAndDrop(Gossipstone pb)
         {
             IsDragging = false;
-            var img = pb.PreviousImg;
+            var img = pb.PreviousImg;         
             if (img == null) return;
             pb.Image = Resources.gossip_stone_bw_32x32;
-            DoDragDrop(img, DragDropEffects.Move);
+            DoDragDrop(img, DragDropEffects.Move);          
         }
         private void MouseMoveForDrag(MouseEventArgs e, Gossipstone p)
         {
@@ -104,13 +118,13 @@ namespace CeddyMapTracker
                 if ((System.Math.Abs(e.X - PreviousMousePos.X) > 10) || (System.Math.Abs(e.Y - PreviousMousePos.Y) > 10))
                 {
                     DragAndDrop(p);
-                    p._state = 0;                 
+                    p.State = 0;                 
                 }
             }
         }
-        private void UpdateImage()
+        public void UpdateImage()
         {
-            switch (_state)
+            switch (State)
             {
                 case 0:
                     Image = Resources.gossip_stone_bw_32x32;
@@ -125,6 +139,12 @@ namespace CeddyMapTracker
                     Image = Resources.MM3D_Boss_Key_Icon;
                     break;
             }
+        }
+        public event EventHandler ValueChanged;
+        protected virtual void OnValueChanged(EventArgs e)
+        {
+            if (ValueChanged != null)
+                ValueChanged(this, e);
         }
     }
 }

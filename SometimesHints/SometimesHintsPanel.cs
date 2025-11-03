@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace CeddyMapTracker
 {
-    public class SometimesHints : Panel
+    public class SometimesHintsPanel : Panel
     {
         public string[] SingleHints = ["", "20 Skulls", "Big Poes", "Chickens", "Composer Torches", "Darunia's Joy", "Frogs 1", "Goron Pot", "King Zora", "Lab Dive", "Shoot the Sun", "Skull Kid", "Sun's Song Grave", "Target in the Woods", "Treasure Chest Game", "Wasteland Torches", "ZF Icy Waters", "Fire Temple Hammer Chest", "Fire Temple Scarecrow", "Ganon's Castle Shadow Trial 2", "GTG Toilet", "Ice Cavern Final Chest", "Jabu Stingers", "Shadow Temple Skull Pot", "Water Temple BK Chest", "Water Temple Central Pillar"];
         public string[] DualHints = ["", "Adult Lake Bean Checks", "Bombchu Bowling", "Castle Great Fairies", "Child Domain", "Gerudo Valley PoH Ledges", "Horseback Archery", "BotW Dead Hand", "Fire Temple Lower Hammer Loop", "Ganon's Castle Spirit Trial", "Shadow Temple Invisible Blades", "Shadow Temple Spiked Walls", "Spirit Temple Child Loop", "Spirit Temple Colossus Hands", "Spirit Temple Early Adult", "Water Temple Dark Link Loop"];
         public decimal Hint_Count = 8;
         public decimal Dual_Hint_Count = 2;
-        private List<ComboBox> comboBoxes = [];
-        private List<Gossipstone> gossipStones = [];
-        public SometimesHints(Point _location)
+        public List<SometimesHint> SometimesHints = [];      
+        public SometimesHintsPanel(Point _location)
         {
             Width = 270;
             AutoSize = true;
@@ -24,46 +23,42 @@ namespace CeddyMapTracker
             Controls.Add(label);
             Font = new Font("Arial", 12, GraphicsUnit.Pixel);
             //SingleHints = ["","20 Skulls", "Big Poes", "Chickens", "Composer Torches", "Darunia's Joy" , "Frogs 1", "Goron Pot", "King Zora", "Lab Dive", "Shoot the Sun", "Skull Kid", "Sun's Song Grave", "Target in the Woods", "Treasure Chest Game", "Wasteland Torches", "ZF Icy Waters", "Fire Temple Hammer Chest", "Fire Temple Scarecrow", "Ganon's Castle Shadow Trial 2", "GTG Toilet", "Ice Cavern Final Chest", "Jabu Stingers", "Shadow Temple Skull Pot", "Water Temple BK Chest", "Water Temple Central Pillar"];
-            //DualHints = ["", "Adult Lake Bean Checks", "Bombchu Bowling", "Castle Great Fairies", "Child Domain", "Gerudo Valley PoH Ledges", "Horseback Archery", "BotW Dead Hand", "Fire Temple Lower Hammer Loop", "Ganon's Castle Spirit Trial", "Shadow Temple Invisible Blades", "Shadow Temple Spiked Walls", "Spirit Temple Child Loop", "Spirit Temple Colossus Hands", "Spirit Temple Early Adult", "Water Temple Dark Link Loop"];                    
+            //DualHints = ["", "Adult Lake Bean Checks", "Bombchu Bowling", "Castle Great Fairies", "Child Domain", "Gerudo Valley PoH Ledges", "Horseback Archery", "BotW Dead Hand", "Fire Temple Lower Hammer Loop", "Ganon's Castle Spirit Trial", "Shadow Temple Invisible Blades", "Shadow Temple Spiked Walls", "Spirit Temple Child Loop", "Spirit Temple Colossus Hands", "Spirit Temple Early Adult", "Water Temple Dark Link Loop"];                              
         }
         public void GenerateHintsAndStones()
         {
             for (int i = 0; i < Hint_Count; i++)
             {
-                //Comboboxes
-                ComboBox comboBox = new() { Size = new Size(200, 20), Location = new Point(10, i * 28 + 24) };
-                Controls.Add(comboBox);
-                comboBoxes.Add(comboBox);
+                //Comboboxes               
                 //Gossipstones
                 if (Dual_Hint_Count > i)
                 {
-                    comboBox.Items.AddRange(DualHints);
-                    for (int j = 0; j < 2; j++)
-                    {
-                        Gossipstone gossipstone = new(new Point(220 + (24 * j), i * 28 + 24));
-                        Controls.Add(gossipstone);
-                        gossipStones.Add(gossipstone);
-                    }
+                    SometimesHint SometimesHint = new("Dual");
+                    SometimesHints.Add(SometimesHint);
+                    SometimesHint.Location = new Point(0,i * 24 + 24);
+                    SometimesHint.ComboBox.Items.AddRange(DualHints);
+                    Controls.Add(SometimesHint);
+
                 }
                 else
                 {
-                    comboBox.Items.AddRange(SingleHints);
-                    Gossipstone gossipstone = new(new Point(220, i * 28 + 24));
-                    Controls.Add(gossipstone);
-                    gossipStones.Add(gossipstone);
+                    SometimesHint SometimesHint = new("Single");
+                    SometimesHints.Add(SometimesHint);
+                    SometimesHint.Location = new Point(0, i * 24 + 24);
+                    SometimesHint.ComboBox.Items.AddRange(SingleHints);
+                    Controls.Add(SometimesHint);
                 }
             }
         }
         public void DeleteHintsAndStones()
         {
-            foreach (ComboBox cb in comboBoxes)
+            foreach (SometimesHint SometimesHint in SometimesHints)
             {
-                cb?.Dispose();
+                SometimesHint?.Dispose();
             }        
-            foreach (Gossipstone gs in gossipStones)
-            {
-                gs?.Dispose();
-            }           
+            SometimesHints.Clear();
         }
+        
+        
     }
 }

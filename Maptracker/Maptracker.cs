@@ -17,6 +17,8 @@ namespace CeddyMapTracker
         public List<Region> DenseRegions;
         public List<OverworldRegions> OverworldRegions;
         public List<int> SmallKeys = [];
+        public List<Region_Panel_Check> AlwaysHintChecks;
+        public List<Region_Panel_Check> SometimesHintChecks;
         public OverworldRegions LLR = new();
         public OverworldRegions Wasteland = new();
         public OverworldRegions Colossus = new();
@@ -282,7 +284,9 @@ namespace CeddyMapTracker
                 spc.MouseEnter += (sender, e) => spc.RichToolTip.PreventTooltipOoB(this, spc.Location);
                 spc.MouseLeave += (sender, e) => spc.RichToolTip.DeleteToolTip(this);
                 spc.MouseEnter += (sender, e) => spc.RichToolTip.Location = new Point(spc.Location.X + 300, spc.Location.Y + 65);
-            }                    
+            }                         
+            AlwaysHintChecks = [IceCavernShiek, IceCavernIronBootsChest,Kak20GoldSkulltulaReward, Kak30GoldSkulltulaReward, Kak40GoldSkulltulaReward, Kak50GoldSkulltulaReward, KakShiek];           
+            SometimesHintChecks = [GraveyardRoyalFamilysTombChest, GraveyardComposerSong, KakAnjuasChild, GraveyardHeartPieceGraveChest, GCDaruniasJoy, JabuJabusBellyBoomerangChest, FireMegatonHammerChest, FireScarecrowChest, WaterCentralPillarChest, GTGUnderwaterSilverRupeeChest, WaterLongshotChest, WaterRiverChest, SpiritSilverGauntletsChest, SpiritMirrorShieldChest, IceCavernIronBootsChest, IceCavernShiek];
         }
 
         public void UpdateCheckColors()

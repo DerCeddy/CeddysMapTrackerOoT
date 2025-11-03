@@ -49,6 +49,7 @@ namespace CeddyMapTracker
                         foreach (Region_Panel_Check rpc in Checks)
                         {
                             rpc.Checked = true;
+                            rpc.UserClickedCheck = true;
                         }
                         foreach (ShopPanelCheck spc in ShopChecks)
                         {
@@ -60,6 +61,7 @@ namespace CeddyMapTracker
                         foreach (Region_Panel_Check rpc in Checks)
                         {
                             rpc.Checked = false;
+                            rpc.UserClickedCheck = false;
                         }
                         foreach (ShopPanelCheck spc in ShopChecks)
                         {

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CeddyMapTracker.Properties;
+using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
@@ -10,9 +13,9 @@ namespace CeddyMapTracker
     public class GoalTextBox : TextBox
     {
         public GoalTextBox(Point _location)
-        {
+        {          
             Size = new Size(129, 24);
-            Font = new Font("Arial",12, GraphicsUnit.Pixel);
+            Font = new Font("Arial",10, GraphicsUnit.Pixel);
             //TextAlign = HorizontalAlignment.Left;
             BackColor = Color.DeepSkyBlue;
             Location = _location;

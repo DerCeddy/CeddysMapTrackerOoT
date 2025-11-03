@@ -657,7 +657,7 @@ namespace CeddyMapTracker
             Form.ImportantHint.GenerateHints();
             Visible = false;
         }
-        public void LoadPreset(ItemPanel itemPanel, Form1 form, SometimesHints sometimes, AlwaysHintsPanel always, WOTHPanel wothpanel, Maptracker MapTracker)
+        public void LoadPreset(ItemPanel itemPanel, Form1 form, SometimesHintsPanel sometimes, AlwaysHintsPanel always, WOTHPanel wothpanel, Maptracker MapTracker)
         {
             //Reset Item states
             foreach (Control c in itemPanel.Controls)
@@ -669,7 +669,10 @@ namespace CeddyMapTracker
             }
             //Reset extra checks
             MapTracker.ExpensiveMerchantShuffle = false;
-            MapTracker.ShopShuffle = false;                      
+            MapTracker.ShopShuffle = false;
+            //Reset sometimes panel
+            //sometimes.gossipStones.Clear();
+            //sometimes.comboBoxes.Clear();
             //Read json file
             StreamReader r = new($"Presets/{comboBox1.Text}");
             string json = r.ReadToEnd();
@@ -698,8 +701,10 @@ namespace CeddyMapTracker
             always.DeleteItems();
             always.DrawPanel();
             //Update sometimes hint panel
+            
             sometimes.DeleteHintsAndStones();
             sometimes.GenerateHintsAndStones();
+            form.AssignFunctionsToGossipstonesInSometimesPanel(form.Stats);
             //Update Important Hint Panel
             form.ImportantHint.DeleteHints();
             form.ImportantHint.GenerateHints();           
