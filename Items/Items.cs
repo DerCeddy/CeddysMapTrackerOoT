@@ -1,6 +1,7 @@
 ﻿using CeddyMapTracker.Properties;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,9 @@ namespace CeddyMapTracker
         }
         private int _state;
         public PictureBox? ItemPictureBox;
-        public required int MaxCount;
-        public required int MinCount;
-        public required Bitmap ItemPicture;
+        public int MaxCount;
+        public int MinCount;
+        public Bitmap ItemPicture;
         public Bitmap? ItemPicture1;
         public Bitmap? ItemPicture2;
         public Bitmap? ItemPicture3;
@@ -52,6 +53,7 @@ namespace CeddyMapTracker
             MouseMove += (sender, e) => MouseMoveForDrag(sender, e, this);
             BackColor = Color.Transparent;
             SizeMode = PictureBoxSizeMode.StretchImage;
+            
         }
         public void MouseClickOnItem(MouseEventArgs e, Item i)
         {
@@ -158,6 +160,7 @@ namespace CeddyMapTracker
         {          
             if (ValueChanged != null)
                 ValueChanged(this, e);
-        }
-    } 
-}
+        }              
+    }
+} 
+

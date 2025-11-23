@@ -223,6 +223,26 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GoMode {
+            get {
+                object obj = ResourceManager.GetObject("GoMode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GoMode_bw {
+            get {
+                object obj = ResourceManager.GetObject("GoMode_bw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gossip_stone_bw_32x32 {
             get {
                 object obj = ResourceManager.GetObject("gossip_stone_bw_32x32", resourceCulture);
@@ -743,6 +763,16 @@ namespace CeddyMapTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sunrays {
+            get {
+                object obj = ResourceManager.GetObject("sunrays", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap suns_song_32x40 {
             get {
                 object obj = ResourceManager.GetObject("suns_song_32x40", resourceCulture);
@@ -756,6 +786,16 @@ namespace CeddyMapTracker.Properties {
         internal static System.Drawing.Bitmap suns_song_bw_32x40 {
             get {
                 object obj = ResourceManager.GetObject("suns_song_bw_32x40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TransparentBackground {
+            get {
+                object obj = ResourceManager.GetObject("TransparentBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

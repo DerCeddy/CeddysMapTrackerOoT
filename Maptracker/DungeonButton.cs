@@ -87,7 +87,7 @@ namespace CeddyMapTracker
                     int MaxChecks = 0;
                     foreach (Control c in Checks)
                     {
-                        if (c is CheckBox cb)
+                        if (c is Region_Panel_Check cb)
                         {
                             MaxChecks++;
                             if (cb.Checked)
@@ -100,9 +100,10 @@ namespace CeddyMapTracker
                     {
                         foreach (Control c in Checks)
                         {
-                            if (c is CheckBox cb)
+                            if (c is Region_Panel_Check cb)
                             {
                                 cb.Checked = true;
+                                cb.State = true;
                             }
                         }
                     }
@@ -110,9 +111,10 @@ namespace CeddyMapTracker
                     {
                         foreach (Control c in Checks)
                         {
-                            if (c is CheckBox cb)
+                            if (c is Region_Panel_Check cb)
                             {
                                 cb.Checked = false;
+                                cb.State = false;
                             }
                         }
                     }

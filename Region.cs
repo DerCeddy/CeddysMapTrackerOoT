@@ -52,7 +52,16 @@ namespace CeddyMapTracker
         {
             if (e.Button == MouseButtons.Left)
             {
-                Panel panel = new() { Location = new Point(0, 0), Size = new Size(857, 728) , BackColor = Color.FromArgb(160, Color.Black) };                              
+                int DistanceBetweenHeadlineAndChecks = 0;
+                if(Region.RegionName == "Bottom of the Well" || Region.RegionName == "GTG")
+                {
+                    DistanceBetweenHeadlineAndChecks = 60;
+                }
+                else
+                {
+                    DistanceBetweenHeadlineAndChecks = 20;
+                }
+                Panel panel = new() { Location = new Point(0, 0), Size = new Size(857, 728), BackColor = Color.FromArgb(160, Color.Black) };                              
                 maptracker.Controls.Add(panel);
                 panel.BringToFront();
                 Panel p = new();
@@ -78,7 +87,7 @@ namespace CeddyMapTracker
                 for (int i = 0; i < Region.Checks.Count; i++)
                 {
                     var temp = i;
-                    Region.Checks[temp].Location = new Point(40, 24 * temp + 20);
+                    Region.Checks[temp].Location = new Point(40, 24 * temp + DistanceBetweenHeadlineAndChecks);
                     Region.Checks[temp].ValueChanged += (sender, e) => Region.UpdateCounter();
                     Region.Checks[temp].ValueChanged += (sender, e) => Region.StateChange = 1;    
                     p.Controls.Add(Region.Checks[temp]);

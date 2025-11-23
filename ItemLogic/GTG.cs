@@ -8,7 +8,7 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
-        public void ItemLogic_GTG(ItemPanel i, KeyPanel keys)
+        public void ItemLogic_GTG(ItemPanel i, DungeonInfoPanel DungeonInfoPanel)
         {
             gtg_available_checks = 0;
             //LobbyChests
@@ -58,12 +58,12 @@ namespace CeddyMapTracker
                 GTGUnderwaterSilverRupeeChest.ForeColor = NotAvailable;
             }       
             //Freestanding Key
-            if (has_or_can_get_gerudocard && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || keys.GTG_SmallKeys.currentKeys == 9))
+            if (has_or_can_get_gerudocard && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
             {
                 GTGFreestandingKey.ForeColor = Available;
                 gtg_available_checks++;
             }
-            else if (has_or_can_get_gerudocard && (Has(i.Bombchu) && Has(i.SongOfTime) || keys.GTG_SmallKeys.currentKeys == 9))
+            else if (has_or_can_get_gerudocard && (Has(i.Bombchu) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
             {
                 GTGFreestandingKey.ForeColor = OoLwithBombchus;
             }
@@ -133,7 +133,7 @@ namespace CeddyMapTracker
                 GTGHammerRoomSwitchChest.ForeColor = NotAvailable;
             }
             //Hidden Ceiling
-            if (has_or_can_get_gerudocard && keys.GTG_SmallKeys.currentKeys >= 3)
+            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 3)
             {
                 GTGHiddenCeilingChest.ForeColor = Available;
                 gtg_available_checks++;
@@ -147,7 +147,7 @@ namespace CeddyMapTracker
                 GTGHiddenCeilingChest.ForeColor = NotAvailable;
             }
             //Maze 1
-            if (has_or_can_get_gerudocard && keys.GTG_SmallKeys.currentKeys >= 4)
+            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 4)
             {
                 GTGMazePathFirstChest.ForeColor = Available;
                 gtg_available_checks++;
@@ -161,7 +161,7 @@ namespace CeddyMapTracker
                 GTGMazePathFirstChest.ForeColor = NotAvailable;
             }
             //Maze 2
-            if (has_or_can_get_gerudocard && keys.GTG_SmallKeys.currentKeys >= 6)
+            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 6)
             {
                 GTGMazePathSecondChest.ForeColor = Available;
             }
@@ -174,7 +174,7 @@ namespace CeddyMapTracker
                 GTGMazePathSecondChest.ForeColor = NotAvailable;
             }
             //Maze 3
-            if (has_or_can_get_gerudocard && keys.GTG_SmallKeys.currentKeys >= 7)
+            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 7)
             {
                 GTGMazePathThirdChest.ForeColor = Available;
             }
@@ -187,7 +187,7 @@ namespace CeddyMapTracker
                 GTGMazePathThirdChest.ForeColor = NotAvailable;
             }
             //Maze 4
-            if (has_or_can_get_gerudocard && keys.GTG_SmallKeys.currentKeys >= 9)
+            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 9)
             {
                 GTGMazePathFinalChest.ForeColor = Available;
             }
@@ -200,13 +200,13 @@ namespace CeddyMapTracker
                 GTGMazePathFinalChest.ForeColor = NotAvailable;
             }
             //Maze Right Chests
-            if (has_or_can_get_gerudocard && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || keys.GTG_SmallKeys.currentKeys == 9))
+            if (has_or_can_get_gerudocard && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
             {
                 GTGMazeRightCentralChest.ForeColor = Available;
                 GTGMazeRightSideChest.ForeColor = Available;
                 gtg_available_checks += 2;
             }
-            else if (has_or_can_get_gerudocard && (Has(i.Bombchu) && Has(i.SongOfTime) || keys.GTG_SmallKeys.currentKeys == 9))
+            else if (has_or_can_get_gerudocard && (Has(i.Bombchu) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
             {
                 GTGMazeRightCentralChest.ForeColor = OoLwithBombchus;
                 GTGMazeRightSideChest.ForeColor = OoLwithBombchus;

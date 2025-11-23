@@ -8,7 +8,7 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
-        public void ItemLogic_ShadowTemple(ItemPanel i, KeyPanel keys)
+        public void ItemLogic_ShadowTemple(ItemPanel i, DungeonInfoPanel DungeonInfoPanel)
         {
             //Shadow Entrance      
             if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && (Has(i.Hookshot) || Has(i.HoverBoots)))
@@ -33,14 +33,14 @@ namespace CeddyMapTracker
                 ShadowEarlySilverRupeeChest.ForeColor = NotAvailable;
             }
             //Shadow beyond Beamos
-            if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && i.Bomb.State == 1 && keys.Shadow_SmallKeys.currentKeys >= 1)
+            if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && i.Bomb.State == 1 && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 1)
             {
                 ShadowInvisibleBladesInvisibleChest.ForeColor = Available;
                 ShadowInvisibleBladesVisibleChest.ForeColor = Available;
                 ShadowFallingSpikesLowerChest.ForeColor = Available;
                 tokensAvailable += 2;
             }
-            else if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && keys.Shadow_SmallKeys.currentKeys >= 1)
+            else if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 1)
             {
                 ShadowInvisibleBladesInvisibleChest.ForeColor = OoLwithBombchus;
                 ShadowInvisibleBladesVisibleChest.ForeColor = OoLwithBombchus;
@@ -60,12 +60,12 @@ namespace CeddyMapTracker
                 ShadowFallingSpikesLowerChest.ForeColor = NotAvailable;
             }
             //Shadow Upper Falling Spike
-            if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && Has(i.Strength) && keys.Shadow_SmallKeys.currentKeys >= 1)
+            if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && Has(i.Strength) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 1)
             {
                 ShadowFallingSpikesUpperChest.ForeColor = Available;
                 ShadowFallingSpikesSwitchChest.ForeColor = Available;
             }
-            else if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && Has(i.Strength) && keys.Shadow_SmallKeys.currentKeys >= 1)
+            else if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && Has(i.Strength) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 1)
             {
                 ShadowFallingSpikesUpperChest.ForeColor = OoLwithBombchus;
                 ShadowFallingSpikesSwitchChest.ForeColor = OoLwithBombchus;
@@ -81,13 +81,13 @@ namespace CeddyMapTracker
                 ShadowFallingSpikesSwitchChest.ForeColor = NotAvailable;
             }
             //Shadow Invisible Spikes
-            if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && keys.Shadow_SmallKeys.currentKeys >= 2)
+            if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 2)
             {
                 ShadowInvisibleSpikesChest.ForeColor = Available;
                 ShadowFreestandingKey.ForeColor = Available;
                 tokensAvailable++;
             }
-            else if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && keys.Shadow_SmallKeys.currentKeys >= 2)
+            else if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 2)
             {
                 ShadowInvisibleSpikesChest.ForeColor = OoLwithBombchus;
                 ShadowFreestandingKey.ForeColor = OoLwithBombchus;
@@ -104,13 +104,13 @@ namespace CeddyMapTracker
                 ShadowFreestandingKey.ForeColor = NotAvailable;
             }
             //Shadow Beyond Spikes
-            if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && Has(i.Hookshot) && keys.Shadow_SmallKeys.currentKeys >= 3)
+            if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && Has(i.Hookshot) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 3)
             {
                 ShadowWindHintChest.ForeColor = Available;
                 ShadowAfterWindEnemyChest.ForeColor = Available;
                 ShadowAfterWindHiddenChest.ForeColor = Available;
             }
-            else if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && Has(i.Hookshot) && keys.Shadow_SmallKeys.currentKeys >= 3)
+            else if (Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && Has(i.Hookshot) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 3)
             {
                 ShadowWindHintChest.ForeColor = OoLwithBombchus;
                 ShadowAfterWindEnemyChest.ForeColor = OoLwithBombchus;
@@ -131,14 +131,14 @@ namespace CeddyMapTracker
 
             }
             //Shadow Beyond Boat
-            if (Has(i.ZeldasLullaby) && Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && Has(i.Hookshot) && keys.Shadow_SmallKeys.currentKeys >= 4)
+            if (Has(i.ZeldasLullaby) && Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && Has(i.Hookshot) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 4)
             {
                 ShadowInvisibleFloormasterChest.ForeColor = Available;
                 ShadowSpikeWallsLeftChest.ForeColor = Available;
                 ShadowBossKeyChest.ForeColor = Available;
                 tokensAvailable++;
             }
-            else if (Has(i.ZeldasLullaby) && Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && Has(i.Hookshot) && keys.Shadow_SmallKeys.currentKeys >= 4)
+            else if (Has(i.ZeldasLullaby) && Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && Has(i.Hookshot) && DungeonInfoPanel.ShadowTemple.CurrentKeys >= 4)
             {
                 ShadowInvisibleFloormasterChest.ForeColor = OoLwithBombchus;
                 ShadowSpikeWallsLeftChest.ForeColor = OoLwithBombchus;
@@ -158,11 +158,11 @@ namespace CeddyMapTracker
                 ShadowBossKeyChest.ForeColor = NotAvailable;
             }
             //Shadow Bongo 
-            if (Has(i.ZeldasLullaby) && Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && (has_longshot || Has(i.Bow)) && keys.Shadow_SmallKeys.currentKeys == 5 && Has(i.ShadowBossKey))
+            if (Has(i.ZeldasLullaby) && Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bomb) && (has_longshot || Has(i.Bow)) && DungeonInfoPanel.ShadowTemple.CurrentKeys == 5 && Has(DungeonInfoPanel.ShadowBossKey))
             {
                 ShadowBongoBongoHeart.ForeColor = Available;
             }
-            else if (Has(i.ZeldasLullaby) && Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && (has_longshot || Has(i.Bow)) && keys.Shadow_SmallKeys.currentKeys == 5 && Has(i.ShadowBossKey))
+            else if (Has(i.ZeldasLullaby) && Has(i.Dins) && Has(i.Nocturne) && Has(i.Magic) && Has(i.HoverBoots) && Has(i.Bombchu) && (has_longshot || Has(i.Bow)) && DungeonInfoPanel.ShadowTemple.CurrentKeys == 5 && Has(DungeonInfoPanel.ShadowBossKey))
             {
                 ShadowBongoBongoHeart.ForeColor = OoLwithBombchus;
             }

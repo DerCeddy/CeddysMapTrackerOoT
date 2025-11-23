@@ -50,6 +50,7 @@ namespace CeddyMapTracker
                         {
                             rpc.Checked = true;
                             rpc.UserClickedCheck = true;
+                            rpc.State = true;
                         }
                         foreach (ShopPanelCheck spc in ShopChecks)
                         {
@@ -62,6 +63,7 @@ namespace CeddyMapTracker
                         {
                             rpc.Checked = false;
                             rpc.UserClickedCheck = false;
+                            rpc.State = false;
                         }
                         foreach (ShopPanelCheck spc in ShopChecks)
                         {

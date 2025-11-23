@@ -13,18 +13,18 @@ namespace CeddyMapTracker
         public ImportantHintPanel ImportantHint = new(new Point(380,700));
         public Maptracker? MapTracker;
         public SettingsPanel Settings = new(new Point(0, 0));
-        public KeyPanel Keys;
+        //public KeyPanel Keys;
         public Stats Stats = new(new Point(0, 700));
-        public DungeonInfoPanel DungeonInfo = new() { Location = new Point(50,500)};
+        public DungeonInfoPanel DungeonInfo = new() { Location = new Point(0,456)};
         public Form1()
         {        
             InitializeComponent();                                                                       
             MapTracker = new(WotHPanel,new Point(720, 0), Stats); 
             AutoScaleMode = AutoScaleMode.None;
             MapTracker.AutoScaleMode = AutoScaleMode.None;
-            Keys = new(new Point(640, 0));    
+            //Keys = new(new Point(640, 0));    
             Settings.Visible = false;
-            SettingsButton SettingsButton = new (new Point (0, 490));
+            SettingsButton SettingsButton = new (new Point (0, 660));
             SettingsButton.MouseDown += (sender, e) => SettingsButton.ClickEvent(Settings);
             //DungeonCounter dungeoncounter = new(maptracker);
             //Add ContextWheel
@@ -55,13 +55,15 @@ namespace CeddyMapTracker
             ItemPanel.LoadItems();
             ItemPanel.LoadEquips();
             ItemPanel.LoadQuestItems();
-            ItemPanel.LoadSongs();          
-            Controls.Add(Keys); 
+            ItemPanel.LoadSongs(); 
+            //Controls.Add(Keys); 
             Controls.Add(DungeonInfo);
+            /*
             List<Keys> SmallKeys = [Keys.Forest_SmallKeys, Keys.Fire_SmallKeys, Keys.Water_SmallKeys, Keys.Shadow_SmallKeys, Keys.Spirit_SmallKeys, Keys.BotW_SmallKeys, Keys.GTG_SmallKeys];
             List<Item> BossKeys = [ItemPanel.ForestBossKey, ItemPanel.FireBossKey, ItemPanel.WaterBossKey, ItemPanel.ShadowBossKey, ItemPanel.SpiritBossKey];                    
             Keys.LoadSmallKeys(SmallKeys);
             Keys.LoadBossKeys(BossKeys);
+            */
             //Precise locations
             Stats.Location = new Point(MapTracker.Location.X, MapTracker.Location.Y);
             Stats.BringToFront();
@@ -73,38 +75,38 @@ namespace CeddyMapTracker
             SometimesHints.GenerateHintsAndStones();
             //Load logic for the first time
             MapTracker.Sphere0Checks();
-            MapTracker.ItemLogic(ItemPanel, Keys);
+            MapTracker.ItemLogic(ItemPanel, DungeonInfo);
             MapTracker.MarketPotionShop.UpdateColor();
             //Stats
             MapTracker.UpdateStatVariables(Stats);
-            MapTracker.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, Keys);
+            MapTracker.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
             MapTracker.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
             MapTracker.ValueChanged += (sender, e) => MapTracker.UpdateDenseLocations();
             //Update checks and stats
-            ItemPanel.ValueChanged += (sender,e) => MapTracker.ItemLogic(ItemPanel, Keys);
+            ItemPanel.ValueChanged += (sender,e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
             ItemPanel.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
             //Update checks and stats
-            Keys.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, Keys);
-            Keys.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
+            DungeonInfo.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
+            DungeonInfo.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
             //Update checks and stats after changing shop prices
             foreach(Control c  in MapTracker.Controls)
             {
                 if(c != null && c is ShopButton ShopButton)
                 {
-                    ShopButton.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, Keys);
+                    ShopButton.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
                 }
             } 
             //Settingspanel assign functions
             Settings.button1.MouseDown += (sender,e) => Settings.ConfirmSettings(this);
-            Settings.button1.MouseDown += (sender, e) => UpdateLocations();
+            Settings.button1.MouseDown += (sender, e) => UpdateLocationsOfTrackerElements();
             Settings.Load_Preset_Button.MouseDown += (sender, e) => Settings.LoadPreset(ItemPanel, this, SometimesHints, AlwaysHints, WotHPanel, MapTracker);
-            Settings.Load_Preset_Button.MouseDown += (sender, e) => UpdateLocations();
+            Settings.Load_Preset_Button.MouseDown += (sender, e) => UpdateLocationsOfTrackerElements();
             Settings.Load_Preset_Button.MouseDown += (sender, e) => MapTracker.UpdateStatVariables(Stats);
             Settings.changeStyleButton1.MouseDown += (sender, e) => Settings.changeStyleButton1.OnClick(ItemPanel);
             Settings.ValueChanged += (sender, e) => SetShuffleOptionsForMaptracker(Settings);
             Settings.ExpensiveMerchants.ValueChanged += (sender, e) => MapTracker.AddExpensiveMerchants();
             Settings.ShopShuffle.ValueChanged += (sender, e) => MapTracker.AddShopShuffle();
-            Settings.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, Keys);
+            Settings.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
             //SettingsPanel.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
             //Update text color for richtooltip
             AssignTextToRichToolTips();
@@ -113,32 +115,32 @@ namespace CeddyMapTracker
             {
                 if(c is Check check && c != null)
                 {
-                    check.MouseEnter += (sender, e) => check.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys, MapTracker);
+                    check.MouseEnter += (sender, e) => check.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);
                 }
                 if(c is ShopButton ShopButton && c != null)
                 {
-                    ShopButton.MouseEnter += (sender, e) => ShopButton.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys, MapTracker);
+                    ShopButton.MouseEnter += (sender, e) => ShopButton.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);
                 }
                 
             }   
             foreach(Region Region in MapTracker.DenseRegions)
             {
-                Region.ValueChanged += (sender,e) => MapTracker.ItemLogic(ItemPanel, Keys);
+                Region.ValueChanged += (sender,e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
                 foreach (Region_Panel_Check c in Region.Checks)
                 {
-                    c.MouseEnter += (sender, e) => c.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys, MapTracker);                   
+                    c.MouseEnter += (sender, e) => c.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);                   
                 }
             }
             //Assign tooltips to Goron City and Zora's Domain Shops
             List<ShopPanelCheck> KakAndGCShopChecks = [MapTracker.GoronShopTopLeft, MapTracker.GoronShopTopRight, MapTracker.GoronShopBottomLeft, MapTracker.GoronShopBottomRight, MapTracker.KakBazaarTopLeft, MapTracker.KakBazaarTopRight, MapTracker.KakBazaarBottomLeft, MapTracker.KakBazaarBottomRight, MapTracker.KakPotionShopTopLeft, MapTracker.KakPotionShopTopRight, MapTracker.KakPotionShopBottomLeft, MapTracker.KakPotionShopBottomRight];
             foreach (ShopPanelCheck spc in KakAndGCShopChecks)
             {
-                spc.MouseEnter += (sender, e) => spc.RichToolTip.RichToolTipTextChanged(ItemPanel, Keys, MapTracker);
+                spc.MouseEnter += (sender, e) => spc.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);
             }
             MapTracker.ExpensiveMerchantShuffle = false;
             MapTracker.ShopShuffle = false;
             MapTracker.AddExtraChecks();          
-            UpdateLocations();
+            UpdateLocationsOfTrackerElements();
             //Test for automatic checking of hints
             foreach (AlwaysHint Alwayshint in AlwaysHints.AlwaysHintsList)
             {
@@ -153,10 +155,20 @@ namespace CeddyMapTracker
             }
             AssignFunctionsToGossipstonesInSometimesPanel(Stats);
             //Dungeon Info
-            DungeonInfo.ForestTemple.Checks = MapTracker.ForestTemple_Check_List;
-            MapTracker.ForestFirstRoomChest.MouseDown += (sender, e) => DungeonInfo.ForestTemple.UpdateItemCounterText(Keys.Forest_SmallKeys);
+            List<List<Region_Panel_Check>> DungeonCheckLists = [MapTracker.ForestTemple_Check_List, MapTracker.FireTemple_Check_List, MapTracker.WaterTemple_Check_List, MapTracker.ShadowTemple_Check_List, MapTracker.SpiritTemple_Check_List, MapTracker.BotW_Check_List, MapTracker.GTG_Check_List];
+            for (int i = 0; DungeonInfo.DungeonInfoElements.Count > i; i++)
+            {
+                var temp = i;
+                DungeonInfo.DungeonInfoElements[temp].Checks = DungeonCheckLists[temp];
+                foreach (Region_Panel_Check Check in DungeonCheckLists[temp])
+                {
+                    Check.MouseDown += (sender, e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
+                    Check.ValueChanged += (sender,e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
+                }
+                DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
+            }                      
         }
-        public void UpdateLocations()
+        public void UpdateLocationsOfTrackerElements()
         {
             ImportantHint.Location = new Point(AlwaysHints.Location.X, WotHPanel.Size.Height + 1);
             if(ImportantHint.Goal_Count > 0)
@@ -179,7 +191,7 @@ namespace CeddyMapTracker
         }
         public void AssignFunctionsToGossipstonesInSometimesPanel(Stats Stats)
         {
-            ////Test for automatic checking of hints in sometimes panel
+            //Test for automatic checking of hints in sometimes panel
             foreach (SometimesHint SometimesHint in SometimesHints.SometimesHints)
             {
                 SometimesHint.Gossipstone.ValueChanged += (sender, e) => { SometimesHint.AssignIndexFromText(SometimesHint.ComboBox.Text); };

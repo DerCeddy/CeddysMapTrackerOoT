@@ -10,7 +10,7 @@ namespace CeddyMapTracker
 {
     public partial class Maptracker
     {
-        public void ItemLogic_BotW(ItemPanel i, KeyPanel keys)
+        public void ItemLogic_BotW(ItemPanel i, DungeonInfoPanel DungeonInfopanel)
         {           
             //Access
             if (Has(i.SongOfStorms))
@@ -61,7 +61,7 @@ namespace CeddyMapTracker
                 BotWLensofTruthChest.ForeColor = NotAvailable;
             }
             //Map Chest
-            if (Has(i.SongOfStorms) && ((i.Bomb.State == 1) || (Has(i.Strength) && ((keys.BotW_SmallKeys.currentKeys == 3) || (Has(i.Dins) && Has(i.Magic))))))
+            if (Has(i.SongOfStorms) && ((i.Bomb.State == 1) || (Has(i.Strength) && ((DungeonInfopanel.BotW.CurrentKeys == 3) || (Has(i.Dins) && Has(i.Magic))))))
             {
                 BotWMapChest.ForeColor = Available;
             }
@@ -78,7 +78,7 @@ namespace CeddyMapTracker
                 BotWMapChest.ForeColor = NotAvailable;
             }
             //Behind Locked Doors
-            if (Has(i.SongOfStorms) && keys.BotW_SmallKeys.currentKeys == 3)
+            if (Has(i.SongOfStorms) && DungeonInfopanel.BotW.CurrentKeys == 3)
             {
                 BotWLikeLikeChest.ForeColor = Available;
                 BotWFireKeeseChest.ForeColor = Available;
@@ -94,7 +94,7 @@ namespace CeddyMapTracker
                 BotWFireKeeseChest.ForeColor = NotAvailable;
             }
             //Skulltula
-            if (Has(i.SongOfStorms) && keys.BotW_SmallKeys.currentKeys == 3 && Has(i.Boomerang))
+            if (Has(i.SongOfStorms) && DungeonInfopanel.BotW.CurrentKeys == 3 && Has(i.Boomerang))
             {
                 tokensAvailable += 3;
             }

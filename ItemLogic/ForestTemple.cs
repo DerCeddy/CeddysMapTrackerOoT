@@ -9,7 +9,7 @@ namespace CeddyMapTracker
     partial class Maptracker
     {
         
-        public void ItemLogic_ForestTemple(ItemPanel i, KeyPanel keys)
+        public void ItemLogic_ForestTemple(ItemPanel i, DungeonInfoPanel DungeonInfoPanel)
         {
             //ForestFirst2Checks
             if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot))
@@ -38,7 +38,7 @@ namespace CeddyMapTracker
                 ForestWellChest.ForeColor = NotAvailable;
             }
             //Forest Eye Switch Chest
-            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && keys.Forest_SmallKeys.currentKeys >= 1 && Has(i.Bow) && Has(i.Strength))
+            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && DungeonInfoPanel.ForestTemple.CurrentKeys >= 1 && Has(i.Bow) && Has(i.Strength))
             {
                 ForestEyeSwitchChest.ForeColor = Available;
             }
@@ -51,7 +51,7 @@ namespace CeddyMapTracker
                 ForestEyeSwitchChest.ForeColor = NotAvailable;
             }
             //Forest Floormaster
-            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && ((Has(i.Strength) && keys.Forest_SmallKeys.currentKeys >= 2 && Has(i.Bow)) || (Has(i.HoverBoots) && keys.Forest_SmallKeys.currentKeys >= 1)))
+            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && ((Has(i.Strength) && DungeonInfoPanel.ForestTemple.CurrentKeys >= 2 && Has(i.Bow)) || (Has(i.HoverBoots) && DungeonInfoPanel.ForestTemple.CurrentKeys >= 1)))
             {
                 ForestFloormasterChest.ForeColor = Available;
                 tokensAvailable++;
@@ -66,7 +66,7 @@ namespace CeddyMapTracker
                 ForestFloormasterChest.ForeColor = NotAvailable;
             }
             //Forest Boss Key
-            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && Has(i.Strength) && keys.Forest_SmallKeys.currentKeys >= 2 && Has(i.Bow))
+            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && Has(i.Strength) && DungeonInfoPanel.ForestTemple.CurrentKeys >= 2 && Has(i.Bow))
             {
                 ForestBossKeyChest.ForeColor = Available;
             }
@@ -79,7 +79,7 @@ namespace CeddyMapTracker
                 ForestBossKeyChest.ForeColor = NotAvailable;
             }
             //ForestWithStrength
-            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && keys.Forest_SmallKeys.currentKeys >= 3 && Has(i.Strength))
+            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && DungeonInfoPanel.ForestTemple.CurrentKeys >= 3 && Has(i.Strength))
             {
                 ForestBowChest.ForeColor = Available;
             }
@@ -92,7 +92,7 @@ namespace CeddyMapTracker
                 ForestBowChest.ForeColor = NotAvailable;
             }
             //Red and Blue Poe
-            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && keys.Forest_SmallKeys.currentKeys >= 3 && Has(i.Strength) && Has(i.Bow))
+            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && DungeonInfoPanel.ForestTemple.CurrentKeys >= 3 && Has(i.Strength) && Has(i.Bow))
             {
                 ForestRedPoeChest.ForeColor = Available;
                 ForestBluePoeChest.ForeColor = Available;
@@ -108,7 +108,7 @@ namespace CeddyMapTracker
                 ForestBluePoeChest.ForeColor = NotAvailable;
             }
             //ForestRest
-            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && Has(i.Bow) && Has(i.Strength) && keys.Forest_SmallKeys.currentKeys == 5)
+            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && Has(i.Bow) && Has(i.Strength) && DungeonInfoPanel.ForestTemple.CurrentKeys == 5)
             {
                 ForestFallingCeillingRoomChest.ForeColor = Available;
                 ForestBasementChest.ForeColor = Available;
@@ -126,7 +126,7 @@ namespace CeddyMapTracker
                 ForestBasementChest.ForeColor = NotAvailable;
             }
             //Boss
-            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && Has(i.Bow) && Has(i.Strength) && keys.Forest_SmallKeys.currentKeys == 5 && Has(i.ForestBossKey))
+            if ((Has(i.SariasSong) || Has(i.Minuet)) && Has(i.Hookshot) && Has(i.Bow) && Has(i.Strength) && DungeonInfoPanel.ForestTemple.CurrentKeys == 5 && Has(DungeonInfoPanel.ForestBossKey))
             {
                 ForestPhantomGanonHeart.ForeColor = Available;
 

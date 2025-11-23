@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,14 +79,9 @@ namespace CeddyMapTracker
         public Item Agony = new() { ItemPicture = (Bitmap)Image.FromFile("Textures/N64/Stone_of_Agony_N64.png"), State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = (Bitmap)Image.FromFile("Textures/N64/Stone_of_Agony_N64_bw.png"), Item_Name = "Stone of Agony" };
         public Item DoubleDefense = new() { ItemPicture = Resources.OoT3D_Heart_Container_Icon, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.OoT3D_Heart_Container_Icon_bw, Item_Name = "Double Defense" };
         public Item GoMode = new() { ItemPicture = Resources.go_mode_32x32, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.go_mode_bw_32x32, Item_Name = "." };
-        public Item ForestBossKey = new() { ItemPicture = Resources.OoT3D_Boss_Key_Icon, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.OoT3D_Boss_Key_Icon_bw, Item_Name = "Forest Temple Boss Key" };
-        public Item FireBossKey = new() { ItemPicture = Resources.OoT3D_Boss_Key_Icon, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.OoT3D_Boss_Key_Icon_bw, Item_Name = "Fire Temple Boss Key" };
-        public Item WaterBossKey = new() { ItemPicture = Resources.OoT3D_Boss_Key_Icon, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.OoT3D_Boss_Key_Icon_bw, Item_Name = "Water Temple Boss Key" };
-        public Item ShadowBossKey = new() { ItemPicture = Resources.OoT3D_Boss_Key_Icon, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.OoT3D_Boss_Key_Icon_bw, Item_Name = "Shadow Temple Boss Key" };
-        public Item SpiritBossKey = new() { ItemPicture = Resources.OoT3D_Boss_Key_Icon, State = 0, MaxCount = 1, MinCount = 0, ItemPicture_bw = Resources.OoT3D_Boss_Key_Icon_bw, Item_Name = "Spirit Temple Boss Key" };       
         public List<int> Goallabel_States = [];
         public List<Item> Items = [];
-        public List<string> Starting_Items = [];
+        public List<string> Starting_Items = [];      
         private int distanceX = 49;
         private int startX = 8;
         private int startY = 9;
@@ -105,8 +101,8 @@ namespace CeddyMapTracker
         private int _state;
         public ItemPanel(Point location)
         {
-            InitializeComponent();          
-            Location = location;         
+            InitializeComponent();             
+            Location = location;          
         }
         public void LoadItems()
         {
@@ -132,12 +128,12 @@ namespace CeddyMapTracker
                     case < 24:
                         list[i].Location = new Point((i - 18) * distanceX + startX, 3 * distanceY + startY);
                         break;
-                }
+                }              
             }
         }
         public void LoadEquips()
         {
-            List<Item> list = [KokiriSword, MasterSword, BiggoronSword, Agony, GerudoCard, DekuShield, HylianShield, MirrorShield, Strength, Scales, Wallet, KokiriTunic, GoronTunic, ZoraTunic, GoMode, DoubleDefense, Magic, KokiriBoots, IronBoots, HoverBoots];
+            List<Item> list = [KokiriSword, MasterSword, BiggoronSword, Agony, GerudoCard, DekuShield, HylianShield, MirrorShield, Strength, Scales, Wallet, KokiriTunic, GoronTunic, ZoraTunic, DoubleDefense, Magic, KokiriBoots, IronBoots, HoverBoots];
             for (int i = 0; i < list.Count; i++)
             {
                 var temp = i;
@@ -152,16 +148,23 @@ namespace CeddyMapTracker
                     case < 11:
                         list[i].Location = new Point((i - 5) * distanceX + startX, 1 * distanceY + startY + 206);
                         break;
-                    case < 17:
+                    case < 14:
                         list[i].Location = new Point((i - 11) * distanceX + startX, 2 * distanceY + startY + 206);
                         break;
-                    case < 23:
-                        list[i].Location = new Point((i - 17) * distanceX + startX, 3 * distanceY + startY + 206);
+                    case < 16:
+                        list[i].Location = new Point((i - 11 + 1) * distanceX + startX, 2 * distanceY + startY + 206);
                         break;
-                }
+                    case < 23:
+                        list[i].Location = new Point((i - 17 + 1) * distanceX + startX, 3 * distanceY + startY + 206);
+                        break;
+                }               
+                list[i].BringToFront();
             }
             SkulltulaTracker skulltulatracker = new(new Point(253, 200));
-            Controls.Add(skulltulatracker);
+            Controls.Add(skulltulatracker);                      
+            GoMode Go = new();          
+            Go.Location = new Point(136, 294);
+            Controls.Add(Go);
         }
         public void LoadQuestItems()
         {
@@ -187,6 +190,8 @@ namespace CeddyMapTracker
                         goallabel.Location = new Point((i - 3) * distanceX + 1, startY + 452);
                         break;
                 }
+                goallabel.BringToFront();
+                list[i].BringToFront();
             }         
         }
         public void LoadSongs()
@@ -203,6 +208,8 @@ namespace CeddyMapTracker
                 Controls.Add(list[i]);
                 list[i].ValueChanged += (sender, e) => State = 1;
                 list[i].Location = new Point(308, i * 41);
+                gossipstone.BringToFront();
+                list[i].BringToFront();
             }
         }
         public event EventHandler ValueChanged;
@@ -210,6 +217,6 @@ namespace CeddyMapTracker
         {
             if (ValueChanged != null)
                 ValueChanged(this, e);
-        }
+        }      
     }
 }

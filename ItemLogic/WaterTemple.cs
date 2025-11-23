@@ -10,7 +10,7 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
-        public void ItemLogic_WaterTemple(ItemPanel i, KeyPanel keys)
+        public void ItemLogic_WaterTemple(ItemPanel i, DungeonInfoPanel DungeonInfoPanel)
         {
             //Entrance Chests
             if (Has(i.Hookshot) && Has(i.IronBoots))
@@ -24,7 +24,7 @@ namespace CeddyMapTracker
                 WaterCompassChest.ForeColor = NotAvailable;
             }
             //Dragon Chest
-            if (Has(i.Hookshot) && Has(i.IronBoots)  && (Has(i.Strength) && Has(i.ZeldasLullaby) || (Has(i.Bow) && Has(i.IronBoots) && keys.Water_SmallKeys.currentKeys >= 5 && Has(i.SongOfTime))))
+            if (Has(i.Hookshot) && Has(i.IronBoots)  && (Has(i.Strength) && Has(i.ZeldasLullaby) || (Has(i.Bow) && Has(i.IronBoots) && DungeonInfoPanel.WaterTemple.CurrentKeys >= 5 && Has(i.SongOfTime))))
             {
                 WaterDragonChest.ForeColor = Available;
             }
@@ -46,11 +46,11 @@ namespace CeddyMapTracker
                 WaterTorchesChest.ForeColor = NotAvailable;
             }
             //Cracked Wall
-            if (Has(i.Hookshot) && Has(i.IronBoots) && Has(i.ZeldasLullaby) && i.Bomb.State == 1 && (Has(i.Bow) || (Has(i.Dins) && Has(i.Magic)) || keys.Water_SmallKeys.currentKeys >= 5))
+            if (Has(i.Hookshot) && Has(i.IronBoots) && Has(i.ZeldasLullaby) && i.Bomb.State == 1 && (Has(i.Bow) || (Has(i.Dins) && Has(i.Magic)) || DungeonInfoPanel.WaterTemple.CurrentKeys >= 5))
             {
                 WaterCrackedWallChest.ForeColor = Available;
             }
-            else if (Has(i.Hookshot) && Has(i.IronBoots) && Has(i.ZeldasLullaby) && Has(i.Bombchu) && (Has(i.Bow) || (Has(i.Dins) && Has(i.Magic)) || keys.Water_SmallKeys.currentKeys >= 5))
+            else if (Has(i.Hookshot) && Has(i.IronBoots) && Has(i.ZeldasLullaby) && Has(i.Bombchu) && (Has(i.Bow) || (Has(i.Dins) && Has(i.Magic)) || DungeonInfoPanel.WaterTemple.CurrentKeys >= 5))
             {
                 WaterCrackedWallChest.ForeColor = OoLwithBombchus;
             }
@@ -63,7 +63,7 @@ namespace CeddyMapTracker
                 WaterCrackedWallChest.ForeColor = NotAvailable;
             }
             //Longshot Chest
-            if (Has(i.Hookshot) && Has(i.IronBoots) && keys.Water_SmallKeys.currentKeys >= 5)
+            if (Has(i.Hookshot) && Has(i.IronBoots) && DungeonInfoPanel.WaterTemple.CurrentKeys >= 5)
             {
                 WaterLongshotChest.ForeColor = Available;
             }
@@ -85,7 +85,7 @@ namespace CeddyMapTracker
                 WaterCentralBowTargetChest.ForeColor = NotAvailable;
             }
             //Central Pillar
-            if (Has(i.Hookshot) && Has(i.IronBoots) && Has(i.ZeldasLullaby) && (Has(i.ZoraTunic) || (i.Wallet.State == 2 && (Has(i.RutoLetter) && (Has(i.Bomb) ||Has(i.Scales)) || rainbowbridge == true && has_bottle))) && (keys.Water_SmallKeys.currentKeys >= 5 || Has(i.Bow) || (Has(i.Dins) && Has(i.Magic))))
+            if (Has(i.Hookshot) && Has(i.IronBoots) && Has(i.ZeldasLullaby) && (Has(i.ZoraTunic) || (i.Wallet.State == 2 && (Has(i.RutoLetter) && (Has(i.Bomb) ||Has(i.Scales)) || rainbowbridge == true && has_bottle))) && (DungeonInfoPanel.WaterTemple.CurrentKeys >= 5 || Has(i.Bow) || (Has(i.Dins) && Has(i.Magic))))
             {
                 WaterCentralPillarChest.ForeColor = Available;
             }
@@ -98,12 +98,12 @@ namespace CeddyMapTracker
                 WaterCentralPillarChest.ForeColor = NotAvailable;
             }
             //Boss Key
-            if (has_longshot && Has(i.IronBoots) && keys.Water_SmallKeys.currentKeys >= 5 && (Has(i.HoverBoots) || (Has(i.Bomb) && Has(i.Strength))))
+            if (has_longshot && Has(i.IronBoots) && DungeonInfoPanel.WaterTemple.CurrentKeys >= 5 && (Has(i.HoverBoots) || (Has(i.Bomb) && Has(i.Strength))))
             {
                 WaterBossKeyChest.ForeColor = Available;
                 tokensAvailable++;
             }
-            else if (has_longshot && Has(i.IronBoots) && keys.Water_SmallKeys.currentKeys >= 5 && (Has(i.HoverBoots) || (Has(i.Bombchu) && Has(i.Strength))))
+            else if (has_longshot && Has(i.IronBoots) && DungeonInfoPanel.WaterTemple.CurrentKeys >= 5 && (Has(i.HoverBoots) || (Has(i.Bombchu) && Has(i.Strength))))
             {
                 WaterBossKeyChest.ForeColor = OoLwithBombchus;
             }
@@ -117,7 +117,7 @@ namespace CeddyMapTracker
                 WaterBossKeyChest.ForeColor = NotAvailable;
             }
             //River Chest
-            if (Has(i.Hookshot) && Has(i.IronBoots) &&  Has(i.Bow) && Has(i.SongOfTime) && keys.Water_SmallKeys.currentKeys >= 5)
+            if (Has(i.Hookshot) && Has(i.IronBoots) &&  Has(i.Bow) && Has(i.SongOfTime) && DungeonInfoPanel.WaterTemple.CurrentKeys >= 5)
             {
                 WaterRiverChest.ForeColor = Available;
                 tokensAvailable++;
@@ -132,7 +132,7 @@ namespace CeddyMapTracker
                 WaterRiverChest.ForeColor = NotAvailable;
             }
             //Morpha Heart
-            if (has_longshot && Has(i.IronBoots) && Has(i.WaterBossKey))
+            if (has_longshot && Has(i.IronBoots) && Has(DungeonInfoPanel.WaterBossKey))
             {
                 WaterMorphaHeart.ForeColor = Available;
             }
@@ -145,7 +145,7 @@ namespace CeddyMapTracker
                 WaterMorphaHeart.ForeColor = NotAvailable;
             }
             //Skulltula
-            if (has_longshot && Has(i.IronBoots) && keys.Water_SmallKeys.currentKeys >= 5)
+            if (has_longshot && Has(i.IronBoots) && DungeonInfoPanel.WaterTemple.CurrentKeys >= 5)
             {
                 tokensAvailable++;
             }

@@ -163,7 +163,6 @@ namespace CeddyMapTracker
         {
             InitializeComponent();
             Location = location;
-            
             //Assign checks to check list
             ForestTemple_Check_List = [ForestFirstRoomChest, ForestFirstStalfosRoomChest, ForestRaisedIslandCourtyardChest, ForestMapChest, ForestWellChest, ForestEyeSwitchChest, ForestBossKeyChest, ForestFloormasterChest, ForestRedPoeChest, ForestBowChest, ForestBluePoeChest, ForestFallingCeillingRoomChest, ForestBasementChest, ForestPhantomGanonHeart];
             Kakariko_Check_List = [KakAnjuasChild, KakAnjuasAdult, KakImpasHouseFreestandingPoH, KakWindmillFreestandingPoH, WindmillSong, KakManonRoof, KakOpenGrottoChest, KakRedeadGrottoChest, KakShootingGalleryReward, KakShiek, Kak10GoldSkulltulaReward, Kak20GoldSkulltulaReward, Kak30GoldSkulltulaReward, Kak40GoldSkulltulaReward, Kak50GoldSkulltulaReward];
@@ -180,9 +179,9 @@ namespace CeddyMapTracker
             GanonsCastle_Check_List = [GanonsCastleForestTrialChest, GanonsCastleWaterTrialLeftChest, GanonsCastleWaterTrialRightChest, GanonsCastleShadowTrialFrontChest, GanonsCastleShadowTrialGoldenGauntletsChest, GanonsCastleLightTrialFirstLeftChest, GanonsCastleLightTrialSecondLeftChest, GanonsCastleLightTrialThirdLeftChest, GanonsCastleLightTrialFirstRightChest, GanonsCastleLightTrialSecondRightChest, GanonsCastleLightTrialThirdRightChest, GanonsCastleLightTrialInvisibleEnemiesChest, GanonsCastleLightTrialLullabyChest, GanonsCastleSpiritTrialCrystalSwitchChest, GanonsCastleSpiritTrialInvisibleChest, GanonsTowerBossKeyChest];
             IceCavern_Check_List = [IceCavernMapChest, IceCavernCompassChest, IceCavernIronBootsChest, IceCavernFreestandingPoH, IceCavernShiek];
             GoronCity_Check_List = [GCDaruniasJoy, GCPotFreestandingPoH, GCRollingGoronasChild, GCRollingGoronasAdult, GCMazeLeftChest, GCMazeCenterChest, GCMazeRightChest];
-            BotW_Check_List = [BotWFrontLeftFakeWallChest, BotWFrontCenterBombableChest, BotWBackLeftBombableChest, BotWUnderwaterLeftChest, BotWFreestandingKey, BotWCompassChest, BotWCenterSkulltulaChest, BotWRightBottomFakeWallChest, BotWFireKeeseChest, BotWLikeLikeChest, BotWMapChest, BotWUnderwaterFrontChest, BotWInvisibleChest, BotWLensofTruthChest];           
+            BotW_Check_List = [BotWFrontLeftFakeWallChest, BotWFrontCenterBombableChest, BotWBackLeftBombableChest, BotWUnderwaterLeftChest, BotWFreestandingKey, BotWCompassChest, BotWCenterSkulltulaChest, BotWRightBottomFakeWallChest, BotWFireKeeseChest, BotWLikeLikeChest, BotWMapChest, BotWUnderwaterFrontChest, BotWInvisibleChest, BotWLensofTruthChest];
             //Combine everything to the class region
-            Region ForestTemple = new(Forest_Button, ForestTemple_Check_List, this) { RegionName = "Forest Temple"};
+            Region ForestTemple = new(Forest_Button, ForestTemple_Check_List, this) { RegionName = "Forest Temple" };
             Region FireTemple = new(Fire_Button, FireTemple_Check_List, this) { RegionName = "Fire Temple" };
             Region WaterTemple = new(Water_Button, WaterTemple_Check_List, this) { RegionName = "Water Temple" };
             Region SpiritTemple = new(Spirit_Button, SpiritTemple_Check_List, this) { RegionName = "Spirit Temple" };
@@ -195,7 +194,7 @@ namespace CeddyMapTracker
             Region GTG = new(GTG_Button, GTG_Check_List, this) { RegionName = "Gerudo Training Ground" };
             Region Kakariko = new(Kakariko_Button, Kakariko_Check_List, this) { RegionName = "Kakariko", ShopChecks = KakarikoShops };
             Region Graveyard = new(Graveyard_Button, Graveyard_Check_List, this) { RegionName = "Graveyard" };
-            Region GoronCity = new(GoronCity_Button, GoronCity_Check_List, this) { RegionName = "Goron City", ShopChecks =  GoronShop};
+            Region GoronCity = new(GoronCity_Button, GoronCity_Check_List, this) { RegionName = "Goron City", ShopChecks = GoronShop };
             Region ToT = new(ToT_Button, ToT_Check_List, this) { RegionName = "Temple of Time" };
             Region GanonsCastle = new(GanonsCastle_Button, GanonsCastle_Check_List, this) { RegionName = "Ganon's Castle" };
             DenseRegions = [ForestTemple, FireTemple, WaterTemple, SpiritTemple, ShadowTemple, DekuTree, DodongosCavern, JabuJabu, BotW, IceCavern, GTG, Kakariko, Graveyard, GoronCity, ToT, GanonsCastle];
@@ -221,14 +220,14 @@ namespace CeddyMapTracker
             OverworldRegions = [LLR, Wasteland, Colossus, GerudoFortress, GerudoValley, HyruleField, LakeHylia, KokiriForest, LostWoods, SFM, ZoraRiver, ZoraDomain, ZoraFountain, DMT, DMC, Market, HC, OGC];
             //MarketTest.Checks = Market_Check_List;
             //Assign checks to region buttons
-            List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];           
+            List<string> Region_Names = ["Haunted Wasteland", "Desert Colossus", "Gerudo Fortress", "Gerudo Valley", "Hyrule Field", "Lake Hylia", "Kokiri Forest", "Lost Woods", "Sacred Forest Meadow", "Zora River", "Zora Domain", "Zora Fountain", "Death Mountain Trail", "Death Mountain Crater", "Market", "Hyrule Castle", "Outside Ganons Castle", "Lon-Lon-Ranch", "Temple of Time"];
             //Add region panels to the map
             ExpensiveMerchantShuffle = true;
             ShopShuffle = true;
             AddExtraChecks();
-            var temp = 0;         
+            var temp = 0;
             foreach (Region region in DenseRegions)
-            {               
+            {
                 if (region.RegionButton != null)
                 {
                     region.RegionButton._name = Denselocations_Names[temp];
@@ -239,13 +238,13 @@ namespace CeddyMapTracker
                 }
                 foreach (Region_Panel_Check c in region.Checks)
                 {
-                    
+
                     c.MouseEnter += (sender, e) => c.RichToolTip.DrawToolTip(this);
                     c.MouseLeave += (sender, e) => c.RichToolTip.DeleteToolTip(this);
                     //c.MouseEnter += (sender,e) => c.RichToolTip.SetRegionCheckLocation(c) ;
                     c.MouseEnter += (sender, e) => c.RichToolTip.Location = new Point(c.Location.X + 300, c.Location.Y + 65);
                     //c.RichToolTip.SetLocation(this);
-                }       
+                }
                 //Test stage change
                 region.ValueChanged += (sender, e) => UpdateStatVariables(stats);
                 temp++;
@@ -277,16 +276,17 @@ namespace CeddyMapTracker
                 }
             }
             //Assign tooltips to Goron City and Zora's Domain Shops
-            List<ShopPanelCheck> KakAndGCShopChecks = [GoronShopTopLeft, GoronShopTopRight, GoronShopBottomLeft, GoronShopBottomRight,KakBazaarTopLeft, KakBazaarTopRight, KakBazaarBottomLeft, KakBazaarBottomRight, KakPotionShopTopLeft, KakPotionShopTopRight, KakPotionShopBottomLeft, KakPotionShopBottomRight];
+            List<ShopPanelCheck> KakAndGCShopChecks = [GoronShopTopLeft, GoronShopTopRight, GoronShopBottomLeft, GoronShopBottomRight, KakBazaarTopLeft, KakBazaarTopRight, KakBazaarBottomLeft, KakBazaarBottomRight, KakPotionShopTopLeft, KakPotionShopTopRight, KakPotionShopBottomLeft, KakPotionShopBottomRight];
             foreach (ShopPanelCheck spc in KakAndGCShopChecks)
             {
                 spc.MouseEnter += (sender, e) => spc.RichToolTip.DrawToolTip(this);
                 spc.MouseEnter += (sender, e) => spc.RichToolTip.PreventTooltipOoB(this, spc.Location);
                 spc.MouseLeave += (sender, e) => spc.RichToolTip.DeleteToolTip(this);
                 spc.MouseEnter += (sender, e) => spc.RichToolTip.Location = new Point(spc.Location.X + 300, spc.Location.Y + 65);
-            }                         
-            AlwaysHintChecks = [IceCavernShiek, IceCavernIronBootsChest,Kak20GoldSkulltulaReward, Kak30GoldSkulltulaReward, Kak40GoldSkulltulaReward, Kak50GoldSkulltulaReward, KakShiek];           
+            }
+            AlwaysHintChecks = [IceCavernShiek, IceCavernIronBootsChest, Kak20GoldSkulltulaReward, Kak30GoldSkulltulaReward, Kak40GoldSkulltulaReward, Kak50GoldSkulltulaReward, KakShiek];
             SometimesHintChecks = [GraveyardRoyalFamilysTombChest, GraveyardComposerSong, KakAnjuasChild, GraveyardHeartPieceGraveChest, GCDaruniasJoy, JabuJabusBellyBoomerangChest, FireMegatonHammerChest, FireScarecrowChest, WaterCentralPillarChest, GTGUnderwaterSilverRupeeChest, WaterLongshotChest, WaterRiverChest, SpiritSilverGauntletsChest, SpiritMirrorShieldChest, IceCavernIronBootsChest, IceCavernShiek];
+            
         }
 
         public void UpdateCheckColors()

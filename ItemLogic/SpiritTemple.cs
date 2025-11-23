@@ -10,7 +10,7 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
-        public void ItemLogic_SpiritTemple(ItemPanel i, KeyPanel keys)
+        public void ItemLogic_SpiritTemple(ItemPanel i, DungeonInfoPanel DungeonInfoPanel)
         {
             bool childside_access = false;
             bool adultside_access = false;
@@ -49,13 +49,13 @@ namespace CeddyMapTracker
 
             }
             //Child Climb
-            if ((Has(i.Reqiuem) && keys.Spirit_SmallKeys.currentKeys == 5 && (Has(i.Slingshot) || Has(i.Boomerang))) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && keys.Spirit_SmallKeys.currentKeys >= 1  && (((Has(i.Slingshot) || Has(i.Boomerang)) && (Has(i.Bow) || Has(i.Hookshot))) || i.Bomb.State == 1)))
+            if ((Has(i.Reqiuem) && DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 && (Has(i.Slingshot) || Has(i.Boomerang))) || (desertaccess == 1 && i.Strength.State >= 2 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3 && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 1  && (((Has(i.Slingshot) || Has(i.Boomerang)) && (Has(i.Bow) || Has(i.Hookshot))) || i.Bomb.State == 1)))
             {
                 SpiritChildClimbNorthChest.ForeColor = Available;
                 SpiritChildClimbEastChest.ForeColor = Available;
                 tokensAvailable++;
             }
-            else if ((Has(i.Reqiuem) && keys.Spirit_SmallKeys.currentKeys == 5 && (Has(i.Slingshot) || Has(i.Boomerang))) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && keys.Spirit_SmallKeys.currentKeys >= 1 && Has(i.Bombchu)))
+            else if ((Has(i.Reqiuem) && DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 && (Has(i.Slingshot) || Has(i.Boomerang))) || (desertaccess == 1 && i.Strength.State >= 2 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3 && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 1 && Has(i.Bombchu)))
             {
                 SpiritChildClimbNorthChest.ForeColor = OoLwithBombchus;
                 SpiritChildClimbEastChest.ForeColor = OoLwithBombchus;               
@@ -72,12 +72,12 @@ namespace CeddyMapTracker
                 SpiritChildClimbEastChest.ForeColor = NotAvailable;
             }
             //Map Chest
-            if ((Has(i.Reqiuem) && keys.Spirit_SmallKeys.currentKeys == 5 && i.Bomb.State == 1) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && Has(i.Bomb) && keys.Spirit_SmallKeys.currentKeys >= 1 && has_firesource))
+            if ((Has(i.Reqiuem) && DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 && i.Bomb.State == 1) || (desertaccess == 1 && i.Strength.State >= 2 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))) || (desertaccess == 1 && Has(i.Bomb) && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 1 && has_firesource))
             {
                 SpiritMapChest.ForeColor = Available;
                 SpiritSunBlockRoomChest.ForeColor = Available;
             }
-            else if ((Has(i.Reqiuem) && (keys.Spirit_SmallKeys.currentKeys == 5 || (Has(i.Dins) && Has(i.Magic) && keys.Spirit_SmallKeys.currentKeys >= 1)) && Has(i.Bombchu)) || (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))))
+            else if ((Has(i.Reqiuem) && (DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 || (Has(i.Dins) && Has(i.Magic) && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 1)) && Has(i.Bombchu)) || (desertaccess == 1 && i.Strength.State >= 2 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3 && has_firesource && (Has(i.Hookshot) || Has(i.Bow))))
             {
                 SpiritMapChest.ForeColor = OoLwithBombchus;
                 SpiritSunBlockRoomChest.ForeColor = OoLwithBombchus;
@@ -93,11 +93,11 @@ namespace CeddyMapTracker
                 SpiritSunBlockRoomChest.ForeColor = NotAvailable;
             }
             //Silver Gauntlets
-            if ((Has(i.Reqiuem) && i.Bomb.State == 1 && keys.Spirit_SmallKeys.currentKeys == 5) || (desertaccess == 1 && i.Strength.State >= 2 && has_longshot && Has(i.Bomb) && keys.Spirit_SmallKeys.currentKeys >= 3))
+            if ((Has(i.Reqiuem) && i.Bomb.State == 1 && DungeonInfoPanel.SpiritTemple.CurrentKeys == 5) || (desertaccess == 1 && i.Strength.State >= 2 && has_longshot && Has(i.Bomb) && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3))
             {
                 SpiritSilverGauntletsChest.ForeColor = Available;
             }
-            else if ((Has(i.Reqiuem) && (Has(i.Slingshot) || Has(i.Boomerang)) && Has(i.Bombchu) && keys.Spirit_SmallKeys.currentKeys == 5) || (desertaccess == 1 && i.Strength.State >= 2 && has_longshot && Has(i.Bombchu) && keys.Spirit_SmallKeys.currentKeys >= 3))
+            else if ((Has(i.Reqiuem) && (Has(i.Slingshot) || Has(i.Boomerang)) && Has(i.Bombchu) && DungeonInfoPanel.SpiritTemple.CurrentKeys == 5) || (desertaccess == 1 && i.Strength.State >= 2 && has_longshot && Has(i.Bombchu) && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3))
             {
                 SpiritSilverGauntletsChest.ForeColor = OoLwithBombchus;
             }
@@ -132,7 +132,7 @@ namespace CeddyMapTracker
                 SpiritCompassChest.ForeColor = NotAvailable;
             }
             //Adult Climb
-            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3)
+            if (desertaccess == 1 && i.Strength.State >= 2 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3)
             {
 
                 SpiritFirstMirrorLeftChest.ForeColor = Available;
@@ -150,7 +150,7 @@ namespace CeddyMapTracker
                 SpiritFirstMirrorRightChest.ForeColor = NotAvailable;
             }
             //Adult Centerroom
-            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 3  && Has(i.ZeldasLullaby))
+            if (desertaccess == 1 && i.Strength.State >= 2 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3  && Has(i.ZeldasLullaby))
             {
                 SpiritStatueRoomHandChest.ForeColor = Available;
             }
@@ -163,7 +163,7 @@ namespace CeddyMapTracker
                 SpiritStatueRoomHandChest.ForeColor = NotAvailable;
             }
             //Adult Statue Northeast Chest
-            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.Hookshot) && Has(i.ZeldasLullaby) && keys.Spirit_SmallKeys.currentKeys >= 3)
+            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.Hookshot) && Has(i.ZeldasLullaby) && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3)
             {
                 SpiritStatueRoomNortheastChest.ForeColor = Available;
             }
@@ -176,7 +176,7 @@ namespace CeddyMapTracker
                 SpiritStatueRoomNortheastChest.ForeColor = NotAvailable;
             }
             //Adult beyond Anubis Room
-            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys >= 4 && i.Bomb.State == 1)
+            if (desertaccess == 1 && i.Strength.State >= 2 && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 4 && i.Bomb.State == 1)
             {
                 SpiritHallwayLeftInvisibleChest.ForeColor = Available;
                 SpiritHallwayRightInvisibleChest.ForeColor = Available;
@@ -195,7 +195,7 @@ namespace CeddyMapTracker
                 SpiritMirrorShieldChest.ForeColor = NotAvailable;
             }
             //Near Four Armors
-            if (desertaccess == 1 && i.Strength.State >= 2 && i.Bomb.State == 1 && Has(i.MirrorShield) && keys.Spirit_SmallKeys.currentKeys >= 4)
+            if (desertaccess == 1 && i.Strength.State >= 2 && i.Bomb.State == 1 && Has(i.MirrorShield) && DungeonInfoPanel.SpiritTemple.CurrentKeys >= 4)
             {
                 SpiritNearFourArmosChest.ForeColor = Available;
             }
@@ -208,7 +208,7 @@ namespace CeddyMapTracker
                 SpiritNearFourArmosChest.ForeColor = NotAvailable;
             }
             //Boss Key Chest
-            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.ZeldasLullaby) && keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.Hookshot) && Has(i.Bow))
+            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.ZeldasLullaby) && DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 && Has(i.Hookshot) && Has(i.Bow))
             {
                 SpiritBossKeyChest.ForeColor = Available;
             }
@@ -221,7 +221,7 @@ namespace CeddyMapTracker
                 SpiritBossKeyChest.ForeColor = NotAvailable;
             }
             //Topmost Chest
-            if (desertaccess == 1 && i.Strength.State >= 2 && keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.MirrorShield) && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Hammer) || Has(i.Bomb)))
+            if (desertaccess == 1 && i.Strength.State >= 2 && DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 && Has(i.MirrorShield) && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Hammer) || Has(i.Bomb)))
             {
                 SpiritTopmostChest.ForeColor = Available;
             }
@@ -234,7 +234,7 @@ namespace CeddyMapTracker
                 SpiritTopmostChest.ForeColor = NotAvailable;
             }
             //Twinrova Heart
-            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.MirrorShield) && Has(i.SpiritBossKey) && keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.Hookshot) && Has(i.Bomb))
+            if (desertaccess == 1 && i.Strength.State >= 2 && Has(i.MirrorShield) && Has(DungeonInfoPanel.SpiritBossKey) && DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 && Has(i.Hookshot) && Has(i.Bomb))
             {
                 SpiritTwinrovaHeart.ForeColor = Available;
             }
@@ -251,11 +251,11 @@ namespace CeddyMapTracker
             {
                 tokensAvailable++;
             }
-            if ((keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.Boomerang)) || (keys.Spirit_SmallKeys.currentKeys >= 3 && (Has(i.Hookshot) || Has(i.HoverBoots))))
+            if ((DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 && Has(i.Boomerang)) || (DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3 && (Has(i.Hookshot) || Has(i.HoverBoots))))
             {
                 tokensAvailable++;
             }
-            if ((keys.Spirit_SmallKeys.currentKeys == 5 && Has(i.Boomerang)) || (keys.Spirit_SmallKeys.currentKeys >= 3 && Has(i.Hookshot)))
+            if ((DungeonInfoPanel.SpiritTemple.CurrentKeys == 5 && Has(i.Boomerang)) || (DungeonInfoPanel.SpiritTemple.CurrentKeys >= 3 && Has(i.Hookshot)))
             {
                 tokensAvailable++;
             }

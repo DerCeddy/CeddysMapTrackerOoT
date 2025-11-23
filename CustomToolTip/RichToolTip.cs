@@ -52,7 +52,7 @@ namespace CeddyMapTracker
         {
             Check.RichToolTip.Location = new Point(Check.Location.X, Check.Location.Y + 20);
         }
-        public void RichToolTipTextChanged(ItemPanel i, KeyPanel KeyPanel, Maptracker MapTracker)
+        public void RichToolTipTextChanged(ItemPanel i, DungeonInfoPanel DungeonInfoPanel, Maptracker MapTracker)
         {
             CheckKeyWord("Nothing", Color.LimeGreen, 0);
             CheckKeyWord("•", Color.White, 0);
@@ -76,10 +76,11 @@ namespace CeddyMapTracker
                     }
                }               
             }
-            foreach (Control c in KeyPanel.Controls)
+            foreach (Control c in DungeonInfoPanel.Controls)
             {
-                if (c is Keys Key && c != null)
+                if (c is DungeonInfoElement Key && c != null)
                 {
+                    CheckKeyWord(Key.BossKey.Item_Name, Key.BossKey.NameColor, 0);                  
                     CheckKeyWord(Key.KeyCount1, Key.KeyCount1_Color, 0);
                     if (Key.KeyCount1 != null)
                     {
@@ -117,11 +118,7 @@ namespace CeddyMapTracker
                     {
                         CheckKeyWord(Key.KeyCount9, Key.KeyCount9_Color, 0);
                     }
-                }
-                if(c is Item Bosskey && c != null)
-                {
-                    CheckKeyWord(Bosskey.Item_Name, Bosskey.NameColor, 0);
-                }
+                }              
             }
         }
         public void CheckKeyWord(string Word, Color Color, int StartIndex)

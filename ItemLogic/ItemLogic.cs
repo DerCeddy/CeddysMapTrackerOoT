@@ -85,27 +85,27 @@ namespace CeddyMapTracker
             MarketRichard.color = Available;
             HFOpenGrottoChest.color = Available;            
         }
-        public void ItemLogic(ItemPanel i, KeyPanel keyPanel)
+        public void ItemLogic(ItemPanel i, DungeonInfoPanel DungeonInfoPanel)
         {          
             //Forest_SmallKeys = 
             tokensAvailable = 13;
             gtg_available_checks = 0;
             ItemLogic_Helper(i);
-            ItemLogic_BotW(i, keyPanel);
+            ItemLogic_BotW(i, DungeonInfoPanel);
             ItemLogic_Castles(i);
             ItemLogic_DekuTree(i);
             ItemLogic_DesertColossus(i);
             ItemLogic_DMC(i);
             ItemLogic_DMT(i);
             ItemLogic_DodongosCavern(i);
-            ItemLogic_FireTemple(i, keyPanel);
-            ItemLogic_ForestTemple(i, keyPanel);           
+            ItemLogic_FireTemple(i, DungeonInfoPanel);
+            ItemLogic_ForestTemple(i, DungeonInfoPanel);           
             ItemLogic_GanonsCastle(i);
             ItemLogic_GerudoFortress(i);
             ItemLogic_GerudoValley(i);
             ItemLogic_GoronCity(i);
             ItemLogic_Graveyard(i);
-            ItemLogic_GTG(i, keyPanel);
+            ItemLogic_GTG(i, DungeonInfoPanel);
             ItemLogic_HyruleField(i);
             ItemLogic_IceCavern(i);
             ItemLogic_Jabu(i);
@@ -116,12 +116,12 @@ namespace CeddyMapTracker
             ItemLogic_Market(i);
             //ItemLogic_ScrubShuffle(i);
             ItemLogic_SFM(i);
-            ItemLogic_ShadowTemple(i, keyPanel);
+            ItemLogic_ShadowTemple(i, DungeonInfoPanel);
             ItemLogic_ShopShuffle(i);
-            ItemLogic_SpiritTemple(i, keyPanel);
+            ItemLogic_SpiritTemple(i, DungeonInfoPanel);
             ItemLogic_ToT(i);
             ItemLogic_Wasteland(i);
-            ItemLogic_WaterTemple(i, keyPanel);
+            ItemLogic_WaterTemple(i, DungeonInfoPanel);
             ItemLogic_ZoraDomain(i);
             ItemLogic_ZoraFountain(i);
             ItemLogic_ZoraRiver(i);         
