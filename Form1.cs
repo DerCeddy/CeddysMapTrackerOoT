@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Diagnostics.Metrics;
 using System.Drawing;
+using static System.Windows.Forms.AxHost;
 
 namespace CeddyMapTracker
 {
@@ -30,9 +31,14 @@ namespace CeddyMapTracker
             //Add ContextWheel
             ContextMenuForWOTHHints ContextWheel = new();
             MapTracker.MouseDown += (sender, e) => MapTracker.GetRegionName(e, ContextWheel);
+            foreach(DungeonButton button in MapTracker.DungeonButtons)
+            {
+                button.MouseDown += (sender, e) => button.AddContextMenu(e, ContextWheel, button);
+            }
             MapTracker.Controls.Add(ContextWheel);
             ContextWheel.Visible = false;
             ContextWheel.ValueChanged += (sender, e) => MapTracker.UpdateWOTHGoals(WotHPanel, ImportantHint, ContextWheel);
+            /*
             foreach(Region Region in MapTracker.DenseRegions)
             {
                 if (Region.RegionButton != null)
@@ -44,6 +50,7 @@ namespace CeddyMapTracker
                     Region.DungeonButton.MouseDown += (sender, e) => MapTracker.AddContextMenu(e, ContextWheel, Region.DungeonButton);
                 }
             }
+            */
             Controls.Add(WotHPanel);           
             Controls.Add(AlwaysHints);           
             Controls.Add(SometimesHints);           
@@ -81,7 +88,6 @@ namespace CeddyMapTracker
             MapTracker.UpdateStatVariables(Stats);
             MapTracker.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
             MapTracker.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
-            MapTracker.ValueChanged += (sender, e) => MapTracker.UpdateDenseLocations();
             //Update checks and stats
             ItemPanel.ValueChanged += (sender,e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
             ItemPanel.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
@@ -122,7 +128,8 @@ namespace CeddyMapTracker
                     ShopButton.MouseEnter += (sender, e) => ShopButton.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);
                 }
                 
-            }   
+            }  
+            /*
             foreach(Region Region in MapTracker.DenseRegions)
             {
                 Region.ValueChanged += (sender,e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
@@ -131,6 +138,7 @@ namespace CeddyMapTracker
                     c.MouseEnter += (sender, e) => c.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);                   
                 }
             }
+            */
             //Assign tooltips to Goron City and Zora's Domain Shops
             List<ShopPanelCheck> KakAndGCShopChecks = [MapTracker.GoronShopTopLeft, MapTracker.GoronShopTopRight, MapTracker.GoronShopBottomLeft, MapTracker.GoronShopBottomRight, MapTracker.KakBazaarTopLeft, MapTracker.KakBazaarTopRight, MapTracker.KakBazaarBottomLeft, MapTracker.KakBazaarBottomRight, MapTracker.KakPotionShopTopLeft, MapTracker.KakPotionShopTopRight, MapTracker.KakPotionShopBottomLeft, MapTracker.KakPotionShopBottomRight];
             foreach (ShopPanelCheck spc in KakAndGCShopChecks)
@@ -146,27 +154,43 @@ namespace CeddyMapTracker
             {
                 Alwayshint.Gossipstone.ValueChanged += (sender, e) => { Alwayshint.CheckCheckOnMaptracker(MapTracker,Alwayshint.Gossipstone, Alwayshint.AlwaysHintIndex); };
                 Alwayshint.Gossipstone.ValueChanged += (sender, e) => { Alwayshint.Gossipstone.UpdateImage(); };
-                Alwayshint.Gossipstone.ValueChanged += (sender, e) => { MapTracker.UpdateDenseLocations(); };
                 Alwayshint.Gossipstone.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
                 Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { Alwayshint.CheckCheckOnMaptracker(MapTracker, Alwayshint.Gossipstone2, Alwayshint.AlwaysHintIndex2); };
                 Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { Alwayshint.Gossipstone2.UpdateImage(); };
-                Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateDenseLocations(); };
                 Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
             }
             AssignFunctionsToGossipstonesInSometimesPanel(Stats);
             //Dungeon Info
-            List<List<Region_Panel_Check>> DungeonCheckLists = [MapTracker.ForestTemple_Check_List, MapTracker.FireTemple_Check_List, MapTracker.WaterTemple_Check_List, MapTracker.ShadowTemple_Check_List, MapTracker.SpiritTemple_Check_List, MapTracker.BotW_Check_List, MapTracker.GTG_Check_List];
+            
+            //List<List<Region_Panel_Check>> DungeonCheckLists = [MapTracker.ForestTemple_Check_List, MapTracker.FireTemple_Check_List, MapTracker.WaterTemple_Check_List, MapTracker.ShadowTemple_Check_List, MapTracker.SpiritTemple_Check_List, MapTracker.BotW_Check_List, MapTracker.GTG_Check_List];
+            /*
             for (int i = 0; DungeonInfo.DungeonInfoElements.Count > i; i++)
             {
                 var temp = i;
-                DungeonInfo.DungeonInfoElements[temp].Checks = DungeonCheckLists[temp];
-                foreach (Region_Panel_Check Check in DungeonCheckLists[temp])
+                DungeonInfo.DungeonInfoElements[temp].Checks = MapTracker.RegionWithKeys[temp].Checks;
+                foreach (Region_Panel_Check Check in MapTracker.RegionWithKeys[temp].Checks)
                 {
+                    Check.MouseDown += (sender, e) => MarkCheckAndUpdateKeyCount(e, Check, DungeonInfo.DungeonInfoElements[temp], MapTracker.RegionWithKeys[temp]);
                     Check.MouseDown += (sender, e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
                     Check.ValueChanged += (sender,e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
                 }
                 DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
-            }                      
+                MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => DungeonInfo.DungeonInfoElements[temp].CurrentKeys += 1;
+                MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
+                MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => MapTracker.UpdateStatVariables(Stats);
+                MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => MapTracker.UpdateDenseLocations();
+                MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
+                MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => DungeonInfo.DungeonInfoElements[temp].CurrentKeys -= 1;
+                MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
+                MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => MapTracker.UpdateStatVariables(Stats);
+                MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => MapTracker.UpdateDenseLocations();
+                MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
+            }
+            */
+            //MapTracker.RegionWithKeys[3].DungeonButton = MapTracker.Forest_Button;
+            //MapTracker.DungeonERWheel.ValueChanged += (sender, e) => MapTracker.UpdateDungeonLocation(MapTracker.DungeonERWheel, ItemPanel);
+            //MapTracker.dungeonerGossipstone1.MouseDown += (sender, e) => MapTracker.AssignDungeonToEntrances(ItemPanel,MapTracker.Forest_Temple_Access,0,MapTracker.Forest_Button,MapTracker.Shadow_RegionPanel);
+            //InitiateDungeonEntranceLogic(MapTracker);
         }
         public void UpdateLocationsOfTrackerElements()
         {
@@ -197,14 +221,42 @@ namespace CeddyMapTracker
                 SometimesHint.Gossipstone.ValueChanged += (sender, e) => { SometimesHint.AssignIndexFromText(SometimesHint.ComboBox.Text); };
                 SometimesHint.Gossipstone.ValueChanged += (sender, e) => { SometimesHint.CheckCheckOnMaptracker(MapTracker, SometimesHint.ComboBox.Text); };
                 SometimesHint.Gossipstone.ValueChanged += (sender, e) => { SometimesHint.Gossipstone.UpdateImage(); };
-                SometimesHint.Gossipstone.ValueChanged += (sender, e) => { MapTracker.UpdateDenseLocations(); };
                 SometimesHint.Gossipstone.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
                 SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { SometimesHint.AssignIndexFromText(SometimesHint.ComboBox.Text); };
                 SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { SometimesHint.CheckCheckOnMaptracker(MapTracker, SometimesHint.ComboBox.Text); };
                 SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { SometimesHint.Gossipstone2.UpdateImage(); };
-                SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateDenseLocations(); };
                 SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
             }
+        }
+        public void MarkCheckAndUpdateKeyCount(MouseEventArgs e, Region_Panel_Check Check, DungeonInfoElement DungeonInfoElement, Region Region)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                if (!Check.Checked)
+                {
+                    Check.Checked = true;
+                    Check.State = true;
+                    //DungeonInfoElement.CurrentKeys += 1;
+                    //Region.KeyUp = 1;
+                }
+                else
+                {
+                    Check.Checked = false;
+                    Check.State = false;
+                }
+                if (!Check.UserClickedCheck)
+                {
+                    Check.UserClickedCheck = true;
+                }
+                else
+                {
+                    Check.UserClickedCheck = false;
+                }               
+            }
+        }
+        public void InitiateDungeonEntranceLogic(Maptracker Maptracker)
+        {
+            Maptracker.Forest_Temple_Access = Maptracker.DungeonER1(Maptracker.Forest_Temple_Access, ItemPanel, 3);
         }
     }
 }

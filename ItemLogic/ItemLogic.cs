@@ -91,6 +91,7 @@ namespace CeddyMapTracker
             tokensAvailable = 13;
             gtg_available_checks = 0;
             ItemLogic_Helper(i);
+            AssignDungeonToEntrances(i);
             ItemLogic_BotW(i, DungeonInfoPanel);
             ItemLogic_Castles(i);
             ItemLogic_DekuTree(i);
@@ -127,7 +128,7 @@ namespace CeddyMapTracker
             ItemLogic_ZoraRiver(i);         
             ItemLogic_Skulltulas(i);
             UpdateCheckColors();
-            UpdateDenseLocations();
+            //UpdateDenseLocations();
             return;
         }               
     }

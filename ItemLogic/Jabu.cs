@@ -8,10 +8,11 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
+        public bool Jabu_Access;
         public void ItemLogic_Jabu(ItemPanel i)
         {
             //Boomerang Chest
-            if (Has(i.RutoLetter) && (Has(i.Scales) || (i.Bomb.State == 1 && Has(i.ZeldasLullaby))))
+            if (Jabu_Access && (Has(i.Slingshot) || Has(i.Boomerang) || Has(i.Bomb)))
             {
                 JabuJabusBellyBoomerangChest.ForeColor = Available;
                 tokensAvailable += 1;
@@ -25,19 +26,21 @@ namespace CeddyMapTracker
                 JabuJabusBellyBoomerangChest.ForeColor = NotAvailable;
             }
             //Rest
-            if (Has(i.RutoLetter) && ((Has(i.ZeldasLullaby) && i.Bomb.State == 1) || Has(i.Scales)) && Has(i.Boomerang))
+            if (Jabu_Access && Has(i.Boomerang))
             {
                 JabuJabusBellyBarinadeHeart.ForeColor = Available;
                 JabuJabusBellyCompassChest.ForeColor = Available;
                 JabuJabusBellyMapChest.ForeColor = Available;
                 tokensAvailable += 3;
             }
+            /*
             else if (Has(i.RutoLetter) && Has(i.ZeldasLullaby) && Has(i.Bombchu) && Has(i.Boomerang))
             {
                 JabuJabusBellyBarinadeHeart.ForeColor = OoLwithBombchus;
                 JabuJabusBellyCompassChest.ForeColor = OoLwithBombchus;
                 JabuJabusBellyMapChest.ForeColor = OoLwithBombchus;
             }
+            */
             else
             {
                 JabuJabusBellyBarinadeHeart.ForeColor = NotAvailable;

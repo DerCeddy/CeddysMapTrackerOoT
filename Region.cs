@@ -9,13 +9,34 @@ using System.Xml.Linq;
 
 namespace CeddyMapTracker
 {
+    /*
     public class Region
     {
-        public Region_Button_Dense RegionButton;       
+        public Region_Button_Dense RegionButton; 
+        public RegionPanel RegionPanel = new();
         public List<Region_Panel_Check> Checks;
         public List<ShopPanelCheck> ShopChecks = [];
-        public DungeonButton DungeonButton;
-        public string RegionName;
+        public DungeonButton DungeonButton
+        {
+            get
+            {
+                return dungeonButton;
+            }
+            set
+            {
+                dungeonButton = value;
+                DungeonButtonChanged(null);
+            }
+        }
+        private DungeonButton dungeonButton;
+        public event EventHandler DungeonButtonChangedEvent;
+        protected virtual void DungeonButtonChanged(EventArgs e)
+        {
+            if (DungeonButtonChangedEvent != null)
+                DungeonButtonChangedEvent(this, e);
+        }
+        //public string RegionName;
+        public int DungeonEntrance;
         public int StateChange
         {
             get
@@ -29,6 +50,32 @@ namespace CeddyMapTracker
             }
         }
         private int _StateChange;
+        public int KeyUp
+        {
+            get
+            {
+                return _keyup;
+            }
+            set
+            {
+                _keyup = value;
+                KeyValueChangedUp(null);
+            }
+        }
+        private int _keyup;
+        public int KeyDown
+        {
+            get
+            {
+                return _keydown;
+            }
+            set
+            {
+                _keydown = value;
+                KeyValueChangedDown(null);
+            }
+        }
+        private int _keydown;
         //public int _check_count;
         public Region(Region_Button_Dense rb, List<Region_Panel_Check> lc, Maptracker maptracker)
         {
@@ -44,18 +91,26 @@ namespace CeddyMapTracker
             DungeonButton = db;
             Checks = lc;
             DungeonButton.MouseDown += (sender, e) => SelectDungeonRegion(e, maptracker, this);
-            DungeonButton.MouseDown += (sender, e) => DungeonButton.ButtonClick(e,Checks);
+            DungeonButton.MouseDown += (sender, e) => DungeonButton.ButtonClick(e, Checks);
             DungeonButton.MouseDown += (sender, e) => UpdateDungeonCounter();
-            DungeonButton.MouseDown += (sender, e) => StateChange = 1;           
+            DungeonButton.MouseDown += (sender, e) => StateChange = 1;
         }       
-        public static void SelectRegion(MouseEventArgs e, Maptracker maptracker, Region Region)
+        public void SelectRegion(MouseEventArgs e, Maptracker maptracker, Region Region)
         {
             if (e.Button == MouseButtons.Left)
             {
+                Panel p = new();
                 int DistanceBetweenHeadlineAndChecks = 0;
-                if(Region.RegionName == "Bottom of the Well" || Region.RegionName == "GTG")
+                if(Region.RegionName == "Bottom of the Well" || Region.RegionName == "Gerudo Training Ground")
                 {
                     DistanceBetweenHeadlineAndChecks = 60;
+                    //Key Buttons
+                    Button KeysUp = new() { Text = "Key Value up", Location = new Point(150, 20), Size = new Size(120, 30), ForeColor = Color.White };
+                    Button KeysDown = new() { Text = "Key Value down", Location = new Point(30, 20), Size = new Size(120, 30), ForeColor = Color.White };
+                    KeysUp.MouseDown += (sender, e) => KeyUp = 1;
+                    KeysDown.MouseDown += (sender, e) => KeyDown = 1;
+                    p.Controls.Add(KeysUp);
+                    p.Controls.Add(KeysDown);
                 }
                 else
                 {
@@ -64,7 +119,6 @@ namespace CeddyMapTracker
                 Panel panel = new() { Location = new Point(0, 0), Size = new Size(857, 728), BackColor = Color.FromArgb(160, Color.Black) };                              
                 maptracker.Controls.Add(panel);
                 panel.BringToFront();
-                Panel p = new();
                 maptracker.Controls.Add(p);
                 p.BringToFront();
                 p.Size = new Size(300, 650);
@@ -82,7 +136,7 @@ namespace CeddyMapTracker
                     Font = new Font("Arial", 16, GraphicsUnit.Pixel),
                     //Font = new Font("Arial", 24, FontStyle.Bold)
                 };
-                p.Controls.Add(label);
+                p.Controls.Add(label);           
                 var RegionChecksEnd = 0;
                 for (int i = 0; i < Region.Checks.Count; i++)
                 {
@@ -107,14 +161,35 @@ namespace CeddyMapTracker
                 panel.MouseDown += (sender, e) => DeletePanel(p);             
             }
         }
-        public static void SelectDungeonRegion(MouseEventArgs e, Maptracker maptracker, Region Region)
+        public void SelectDungeonRegion(MouseEventArgs e, Maptracker maptracker, Region Region)
         {
             if (e.Button == MouseButtons.Left)
             {
+                maptracker.Controls.Add(RegionPanel);
+                RegionPanel.AddChecks(Region);
+                //Panel p = new();
+                /*
+                int DistanceBetweenHeadlineAndChecks = 0;
+                if (Region.RegionName == "Forest Temple" || Region.RegionName == "Fire Temple" || Region.RegionName == "Water Temple" || Region.RegionName == "Shadow Temple" || Region.RegionName == "Spirit Temple")
+                {
+                    DistanceBetweenHeadlineAndChecks = 60;
+                    //Key Buttons
+                    Button KeysUp = new() { Text = "Key Value up", Location = new Point(150, 20), Size = new Size(120, 30), ForeColor = Color.White };
+                    Button KeysDown = new() { Text = "Key Value down", Location = new Point(30, 20), Size = new Size(120, 30), ForeColor = Color.White };
+                    KeysUp.MouseDown += (sender, e) => KeyUp = 1;
+                    KeysDown.MouseDown += (sender, e) => KeyDown = 1;
+                    p.Controls.Add(KeysUp);
+                    p.Controls.Add(KeysDown);
+                }
+                else
+                {
+                    DistanceBetweenHeadlineAndChecks = 20;
+                }
+                
                 Panel panel = new() { Location = new Point(0, 0), Size = new Size(857, 728), BackColor = Color.FromArgb(160, Color.Black) };
                 maptracker.Controls.Add(panel);
+                /*
                 panel.BringToFront();
-                Panel p = new();
                 maptracker.Controls.Add(p);
                 p.BringToFront();
                 p.Size = new Size(300, 650);
@@ -137,14 +212,15 @@ namespace CeddyMapTracker
                 for (int i = 0; i < Region.Checks.Count; i++)
                 {
                     var temp = i;
-                    Region.Checks[temp].Location = new Point(40, 24 * temp + 20);
+                    Region.Checks[temp].Location = new Point(40, 24 * temp + DistanceBetweenHeadlineAndChecks);
                     Region.Checks[temp].ValueChanged += (sender, e) => Region.UpdateDungeonCounter();
                     Region.Checks[temp].ValueChanged += (sender, e) => Region.StateChange = 1;
                     p.Controls.Add(Region.Checks[temp]);
                     RegionChecksEnd = i;
-                }               
+                }  
+                
                 panel.MouseDown += (sender, e) => DeletePanel(panel);
-                panel.MouseDown += (sender, e) => DeletePanel(p);
+                panel.MouseDown += (sender, e) => DeletePanel(RegionPanel);
             }
         }
         public void UpdateCounter()
@@ -208,7 +284,7 @@ namespace CeddyMapTracker
                 RegionButton.BackColor = Color.Red;
             }         
             RegionButton.Text = check_open.ToString();
-        }
+        }       
         public void UpdateDungeonCounter()
         {
             int max_checks = 0;
@@ -283,6 +359,20 @@ namespace CeddyMapTracker
         {
             if (ValueChanged != null)
                 ValueChanged(this, e);
-        }     
+        }
+        public event EventHandler KeyValueChangedPositive;
+        protected virtual void KeyValueChangedUp(EventArgs e)
+        {
+            if (KeyValueChangedPositive != null)
+                KeyValueChangedPositive(this, e);
+        }
+        public event EventHandler KeyValueChangedNegative;
+        protected virtual void KeyValueChangedDown(EventArgs e)
+        {
+            if (KeyValueChangedNegative != null)
+                KeyValueChangedNegative(this, e);
+        }
+        
     }
+    */
 }

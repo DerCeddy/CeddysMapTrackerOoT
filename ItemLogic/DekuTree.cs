@@ -10,16 +10,15 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
+        public bool Deku_Tree_Access;
         public void ItemLogic_DekuTree(ItemPanel i)
         {           
             //Deku Tree Entry
-            if (Has(i.KokiriSword))
+            if (Deku_Tree_Access)
             {
                 DekuTreeMapChest.ForeColor = Available;
                 DekuTreeCompassChest.ForeColor = Available;
                 DekuTreeCompassRoomSideChest.ForeColor = Available;
-                DekuTreeSlingshotChest.ForeColor = Available;
-                DekuTreeSlingshotRoomSideChest.ForeColor = Available;
                 DekuTreeBasementChest.ForeColor = Available;
                 tokensAvailable += 2;
             }
@@ -28,12 +27,23 @@ namespace CeddyMapTracker
                 DekuTreeMapChest.ForeColor = NotAvailable;
                 DekuTreeCompassChest.ForeColor = NotAvailable;
                 DekuTreeCompassRoomSideChest.ForeColor = NotAvailable;
-                DekuTreeSlingshotChest.ForeColor = NotAvailable;
-                DekuTreeSlingshotRoomSideChest.ForeColor = NotAvailable;
                 DekuTreeBasementChest.ForeColor = NotAvailable;
             }
+            //Deku Slingshot room
+            if(Deku_Tree_Access && (Has(i.HylianShield) || Has(i.DekuShield)))
+            {
+                DekuTreeSlingshotChest.ForeColor = Available;
+                DekuTreeSlingshotRoomSideChest.ForeColor = Available;
+
+            }
+            else
+            {
+                DekuTreeSlingshotChest.ForeColor = NotAvailable;
+                DekuTreeSlingshotRoomSideChest.ForeColor = NotAvailable;
+
+            }
             //Deku Tree Gohma
-            if (Has(i.KokiriSword) && Has(i.Slingshot))
+            if (Deku_Tree_Access && ((Has(i.Slingshot) && Has(i.DekuShield)) || (Has(i.HylianShield) && has_firesource)))
             {
                 DekuTreeQueenGohmaHeart.ForeColor = Available;
             }

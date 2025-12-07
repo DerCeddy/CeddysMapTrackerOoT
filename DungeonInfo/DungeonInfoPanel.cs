@@ -20,10 +20,9 @@ namespace CeddyMapTracker
         public DungeonInfoElement WaterTemple = new(Resources.morpha_32x32, 6) { KeyCount1 = "Water Temple Small Keys 1x", KeyCount2 = "Water Temple Small Keys 2x", KeyCount3 = "Water Temple Small Keys 3x", KeyCount4 = "Water Temple Small Keys 4x", KeyCount5 = "Water Temple Small Keys 5x", KeyCount6 = "Water Temple Small Keys 6x" };
         public DungeonInfoElement ShadowTemple = new(Resources.bongo_32x32, 5) { KeyCount1 = "Shadow Temple Small Keys 1x", KeyCount2 = "Shadow Temple Small Keys 2x", KeyCount3 = "Shadow Temple Small Keys 3x", KeyCount4 = "Shadow Temple Small Keys 4x", KeyCount5 = "Shadow Temple Small Keys 5x" };
         public DungeonInfoElement SpiritTemple = new(Resources.twinrova_32x32, 5) { KeyCount1 = "Spirit Temple Small Keys 1x", KeyCount2 = "Spirit Temple Small Keys 2x", KeyCount3 = "Spirit Temple Small Keys 3x", KeyCount4 = "Spirit Temple Small Keys 4x", KeyCount5 = "Spirit Temple Small Keys 5x" };       
-        public DungeonInfoElement BotW = new(Resources.pg_32x32, 3) { KeyCount1 = "Bottom of the Well Small Keys 1x", KeyCount2 = "Bottom of the Well Small Keys 2x", KeyCount3 = "Bottom of the Well Small Keys 3x" };
-        public DungeonInfoElement GTG = new(Resources.pg_32x32, 9) { KeyCount1 = "Gerudo Training Ground Small Keys 1x", KeyCount2 = "Gerudo Training Ground Small Keys 2x", KeyCount3 = "Gerudo Training Ground Small Keys 3x", KeyCount4 = "Gerudo Training Ground Small Keys 4x", KeyCount5 = "Gerudo Training Ground Small Keys 5x", KeyCount6 = "Gerudo Training Ground Small Keys 6x", KeyCount7 = "Fire Temple Small Keys 7x", KeyCount8 = "Gerudo Training Ground Small Keys 8x", KeyCount9 = "Gerudo Training Ground Small Keys 9x" };
-        public List<DungeonInfoElement> DungeonInfoElements = [];
-
+        public DungeonInfoElement BotW = new((Bitmap)Image.FromFile("Textures/3DS/OoT3D_Lens_of_Truth_Icon.png"), 3) { KeyCount1 = "Bottom of the Well Small Keys 1x", KeyCount2 = "Bottom of the Well Small Keys 2x", KeyCount3 = "Bottom of the Well Small Keys 3x" };
+        public DungeonInfoElement GTG = new((Bitmap)Image.FromFile("Textures/3DS/OoT3D_Gerudo_Token_Icon.png"), 9) { KeyCount1 = "Gerudo Training Ground Small Keys 1x", KeyCount2 = "Gerudo Training Ground Small Keys 2x", KeyCount3 = "Gerudo Training Ground Small Keys 3x", KeyCount4 = "Gerudo Training Ground Small Keys 4x", KeyCount5 = "Gerudo Training Ground Small Keys 5x", KeyCount6 = "Gerudo Training Ground Small Keys 6x", KeyCount7 = "Fire Temple Small Keys 7x", KeyCount8 = "Gerudo Training Ground Small Keys 8x", KeyCount9 = "Gerudo Training Ground Small Keys 9x" };
+        public List<DungeonInfoElement> DungeonInfoElements = [];      
         public int State
         {
             get
@@ -60,19 +59,21 @@ namespace CeddyMapTracker
         {
             for(int i = 0; i < DungeonInfoElements.Count; i++)
             {
+                var temp = i;
                 Controls.Add(DungeonInfoElements[i]);
                 if(i >= 5)
                 {
-                    DungeonInfoElements[i].Location = new Point(48 * i, 0);
-                    DungeonInfoElements[i].Controls.Add(DungeonInfoElements[i].BossKey);
+                    DungeonInfoElements[temp].Location = new Point(48 * temp, 0);
+                    DungeonInfoElements[temp].Controls.Add(DungeonInfoElements[temp].BossKey);
                 }
                 else
                 {
-                    DungeonInfoElements[i].Location = new Point(48 * i, 0);
-                    DungeonInfoElements[i].Controls.Add(DungeonInfoElements[i].BossKey);
-                    DungeonInfoElements[i].BossKey.Location = new Point(0, 154);
-                    DungeonInfoElements[i].BossKey.ValueChanged += (sender,e) => State = 1;
-                    DungeonInfoElements[i].BossKey.Image = DungeonInfoElements[i].BossKey.ItemPicture_bw;
+                    DungeonInfoElements[temp].Location = new Point(48 * temp, 0);
+                    DungeonInfoElements[temp].Controls.Add(DungeonInfoElements[temp].BossKey);
+                    DungeonInfoElements[temp].BossKey.Location = new Point(0, 154);
+                    DungeonInfoElements[temp].BossKey.ValueChanged += (sender,e) => State = 1;
+                    DungeonInfoElements[temp].BossKey.ValueChanged += (sender, e) => DungeonInfoElements[temp].UpdateItemCounterText();
+                    DungeonInfoElements[temp].BossKey.Image = DungeonInfoElements[temp].BossKey.ItemPicture_bw;
 
                 }                    
             }          

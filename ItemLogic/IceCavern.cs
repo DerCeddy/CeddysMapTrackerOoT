@@ -8,9 +8,10 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
+        public bool Ice_Access;
         public void ItemLogic_IceCavern(ItemPanel i)
         {
-            if (Has(i.RutoLetter) && Has(i.ZeldasLullaby) && (Has(i.Bomb) || Has(i.Scales)))
+            if (Ice_Access && has_bottle)
             {
                 IceCavernMapChest.ForeColor = Available;
                 IceCavernCompassChest.ForeColor = Available;
@@ -18,7 +19,7 @@ namespace CeddyMapTracker
                 IceCavernIronBootsChest.ForeColor = Available;
                 IceCavernShiek.ForeColor = Available;
             }
-            else if (Has(i.RutoLetter) && Has(i.ZeldasLullaby) && Has(i.Bombchu))
+            else if (Has(i.RutoLetter) && Has(i.ZeldasLullaby) && Has(i.Bombchu) && Ice_Button.RegionPanel == Ice_RegionPanel)
             {
                 IceCavernMapChest.ForeColor = OoLwithBombchus;
                 IceCavernCompassChest.ForeColor = OoLwithBombchus;
@@ -34,7 +35,7 @@ namespace CeddyMapTracker
                 IceCavernIronBootsChest.ForeColor = NotAvailable;
                 IceCavernShiek.ForeColor = NotAvailable;
             }
-            if (Has(i.RutoLetter) && Has(i.ZeldasLullaby) && (Has(i.Bomb) || Has(i.Scales)) && Has(i.Hookshot))
+            if (Ice_Access && has_bottle && Has(i.Hookshot))
             {
                 tokensAvailable += 3;
             }

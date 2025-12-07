@@ -12,7 +12,7 @@ namespace CeddyMapTracker
         public bool IsBoss;
         public RichToolTip RichToolTip = new();
         public int CheckIndex;
-        public bool UserClickedCheck;
+        public bool UserClickedCheck;      
         public bool State
         {
             get
@@ -36,7 +36,9 @@ namespace CeddyMapTracker
             AutoSize = true;
             AutoCheck = false;
             MouseDown += (sender, e) => ClickEvent(e);
+            MouseEnter += (sender, e) => OnValueChanged_RichTooltip(null);
             //RichToolTip.Location = new Point(Location.X, Location.Y + 30);
+            
         }
         public void ClickEvent(MouseEventArgs e)
         {
@@ -70,6 +72,13 @@ namespace CeddyMapTracker
             if (ValueChanged != null)
                 ValueChanged(this, e);
         }
+        public event EventHandler CallForRichToolTip;
+        protected virtual void OnValueChanged_RichTooltip(EventArgs e)
+        {
+            CallForRichToolTip?.Invoke(this, e);
+            //if (CallForContextMenu != null)
+            //    CallForContextMenu(this, e);
+        }      
     }
 
     public partial class Maptracker

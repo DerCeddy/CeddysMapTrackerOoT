@@ -12,7 +12,7 @@ namespace CeddyMapTracker
         public Color RainBowBridge_Color = Color.Red;
         public decimal Medallions = 0;
         public decimal Stones = 0;
-        public decimal DungeonRewards = 0;
+        public decimal DungeonRewards = 0;     
         public void ItemLogic_Helper(ItemPanel i)
         {                           
             //Explosives
@@ -59,6 +59,7 @@ namespace CeddyMapTracker
             {
                 has_or_can_red_tunic = 0;
             }
+            //Gerudo card
             if (Has(i.GerudoCard) || Has(i.EponasSong) || has_longshot)
             {
                 has_or_can_get_gerudocard = true;
@@ -109,93 +110,103 @@ namespace CeddyMapTracker
             {
                 craterplatformaccess = 0;
             }
-            //Rainbowbridge
-            switch (Goalrequirement)
+            //Raise water level
+            if(Has(i.HoverBoots) || Has(i.Hookshot) || Has(i.Bow))
             {
-                case "Spiritual Stones":
-                    {                    
-                        int StonesGotten = 0;
-                        List<int> stones = new() { i.KokiriStone.State, i.GoronStone.State, i.ZoraStone.State };
-                        for (int j = 0; j < stones.Count; j++)
-                        {
-                            if (stones[j] == 1)
-                            {
-                                StonesGotten++;
-                            }
-                        }
-                        if (StonesGotten >= Stones)
-                        {
-                            rainbowbridge = true;
-                            RainBowBridge_Color = Color.LimeGreen;
-                        }
-                        else
-                        {
-                            rainbowbridge = false;
-                            RainBowBridge_Color = Color.Red;
-                        }
-                        break;                                              
-                    }                   
-                case "Medallions":
-                    {
-                        int MedsGotten = 0;
-                        List<int> meds = new() { i.ForestMedallion.State, i.FireMedallion.State, i.WaterMedallion.State, i.SpiritMedallion.State, i.ShadowMedallion.State, i.LightMedallion.State };
-                        for (int j = 0; j < meds.Count; j++)
-                        {
-                            if (meds[j] == 1)
-                            {
-                                MedsGotten++;
-                            }
-                        }
-                        if (MedsGotten >= Medallions)
-                        {
-                            rainbowbridge = true;
-                            RainBowBridge_Color = Color.LimeGreen;
-                        }
-                        else
-                        {
-                            rainbowbridge = false;
-                            RainBowBridge_Color = Color.Red;
-                        }
-                        break;
-                    }
-                case "Dungeon Rewards":
-                    {
-                        int DungeonRewardsGotten = 0;
-                        List<int> dungeonrewards = new() { i.KokiriStone.State, i.GoronStone.State, i.ZoraStone.State, i.ForestMedallion.State, i.FireMedallion.State, i.WaterMedallion.State, i.SpiritMedallion.State, i.ShadowMedallion.State, i.LightMedallion.State };
-                        for (int j = 0; j < dungeonrewards.Count; j++)
-                        {
-                            if (dungeonrewards[j] == 1)
-                            {
-                                DungeonRewardsGotten++;
-                            }
-                        }
-                        if (DungeonRewardsGotten >= DungeonRewards)
-                        {
-                            rainbowbridge = true;
-                            RainBowBridge_Color = Color.LimeGreen;
-                        }
-                        else
-                        {
-                            rainbowbridge = false;
-                            RainBowBridge_Color = Color.Red;
-                        }
-                        break;
-                    }      
-                case "Vanilla Requirements":
-                    {
-                        if (Has(i.SpiritMedallion) && Has(i.ShadowMedallion) && Has(i.LightArrow))
-                        {
-                            rainbowbridge = true;
-                            RainBowBridge_Color = Color.LimeGreen;
-                        }
-                        else
-                        {
-                            rainbowbridge = false;
-                            RainBowBridge_Color = Color.Red;
-                        }
-                        break;
-                    }
+                Raise_Water_Level = true;
             }
+            else
+            {
+                Raise_Water_Level = false;
+            }
+                //Rainbowbridge
+                switch (Goalrequirement)
+                {
+                    case "Spiritual Stones":
+                        {
+                            int StonesGotten = 0;
+                            List<int> stones = new() { i.KokiriStone.State, i.GoronStone.State, i.ZoraStone.State };
+                            for (int j = 0; j < stones.Count; j++)
+                            {
+                                if (stones[j] == 1)
+                                {
+                                    StonesGotten++;
+                                }
+                            }
+                            if (StonesGotten >= Stones)
+                            {
+                                rainbowbridge = true;
+                                RainBowBridge_Color = Color.LimeGreen;
+                            }
+                            else
+                            {
+                                rainbowbridge = false;
+                                RainBowBridge_Color = Color.Red;
+                            }
+                            break;
+                        }
+                    case "Medallions":
+                        {
+                            int MedsGotten = 0;
+                            List<int> meds = new() { i.ForestMedallion.State, i.FireMedallion.State, i.WaterMedallion.State, i.SpiritMedallion.State, i.ShadowMedallion.State, i.LightMedallion.State };
+                            for (int j = 0; j < meds.Count; j++)
+                            {
+                                if (meds[j] == 1)
+                                {
+                                    MedsGotten++;
+                                }
+                            }
+                            if (MedsGotten >= Medallions)
+                            {
+                                rainbowbridge = true;
+                                RainBowBridge_Color = Color.LimeGreen;
+                            }
+                            else
+                            {
+                                rainbowbridge = false;
+                                RainBowBridge_Color = Color.Red;
+                            }
+                            break;
+                        }
+                    case "Dungeon Rewards":
+                        {
+                            int DungeonRewardsGotten = 0;
+                            List<int> dungeonrewards = new() { i.KokiriStone.State, i.GoronStone.State, i.ZoraStone.State, i.ForestMedallion.State, i.FireMedallion.State, i.WaterMedallion.State, i.SpiritMedallion.State, i.ShadowMedallion.State, i.LightMedallion.State };
+                            for (int j = 0; j < dungeonrewards.Count; j++)
+                            {
+                                if (dungeonrewards[j] == 1)
+                                {
+                                    DungeonRewardsGotten++;
+                                }
+                            }
+                            if (DungeonRewardsGotten >= DungeonRewards)
+                            {
+                                rainbowbridge = true;
+                                RainBowBridge_Color = Color.LimeGreen;
+                            }
+                            else
+                            {
+                                rainbowbridge = false;
+                                RainBowBridge_Color = Color.Red;
+                            }
+                            break;
+                        }
+                    case "Vanilla Requirements":
+                        {
+                            if (Has(i.SpiritMedallion) && Has(i.ShadowMedallion) && Has(i.LightArrow))
+                            {
+                                rainbowbridge = true;
+                                RainBowBridge_Color = Color.LimeGreen;
+                            }
+                            else
+                            {
+                                rainbowbridge = false;
+                                RainBowBridge_Color = Color.Red;
+                            }
+                            break;
+                        }
+                }
+            
         }
     }
 }

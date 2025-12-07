@@ -33,9 +33,9 @@ namespace CeddyMapTracker
         {
             Size = new Size(32, 32);
             SizeMode = PictureBoxSizeMode.StretchImage;
-            MouseDown += (sender,e) => KeyClick(sender,e, this);
+            MouseDown += (sender,e) => KeyClick(e, this);
         }
-        public static void KeyClick(object sender, MouseEventArgs e, Keys key)
+        public static void KeyClick(MouseEventArgs e, Keys key)
         {
             switch (e.Button)
             {

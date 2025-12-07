@@ -8,10 +8,11 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
+        public bool Fire_Temple_Access;
         public void ItemLogic_FireTemple(ItemPanel i, DungeonInfoPanel DungeonPanelInfo)
         {                    
             //Near Boss
-            if (craterplatformaccess == 1)
+            if (Fire_Temple_Access)
             {
                 FireNearBossChest.ForeColor = Available;              
             }
@@ -20,7 +21,7 @@ namespace CeddyMapTracker
                 FireNearBossChest.ForeColor = NotAvailable;
             }
             //Beginning Hammer locked checks
-            if (Has(i.Hammer) && craterplatformaccess == 1)
+            if (Has(i.Hammer) && Fire_Temple_Access)
             {
                 FireBossKeyChest.ForeColor = Available;
                 FireFlareDancerChest.ForeColor = Available;
@@ -32,11 +33,11 @@ namespace CeddyMapTracker
                 FireFlareDancerChest.ForeColor = NotAvailable;
             }
             //Big Lava Lower
-            if (DungeonPanelInfo.FireTemple.CurrentKeys >= 1 && craterplatformaccess == 1)
+            if (DungeonPanelInfo.FireTemple.CurrentKeys >= 1 && Fire_Temple_Access)
             {
                 FireBigLavaRoomLowerDoorChest.ForeColor = Available;
             }
-            else if (craterplatformaccess == 1)
+            else if (Fire_Temple_Access)
             {
                 FireBigLavaRoomLowerDoorChest.ForeColor = coulddo;
             }
@@ -45,11 +46,11 @@ namespace CeddyMapTracker
                 FireBigLavaRoomLowerDoorChest.ForeColor = NotAvailable;
             }
             //Blocked door
-            if (i.Bomb.State == 1 && DungeonPanelInfo.FireTemple.CurrentKeys >= 1 && craterplatformaccess == 1)
+            if (i.Bomb.State == 1 && DungeonPanelInfo.FireTemple.CurrentKeys >= 1 && Fire_Temple_Access)
             {
                 FireBigLavaRoomBlockedDoorChest.ForeColor = Available;
             }
-            else if (i.Bomb.State == 1 && craterplatformaccess == 1)
+            else if (i.Bomb.State == 1 && Fire_Temple_Access)
             {
                 FireBigLavaRoomBlockedDoorChest.ForeColor = coulddo;
             }
@@ -58,12 +59,12 @@ namespace CeddyMapTracker
                 FireBigLavaRoomBlockedDoorChest.ForeColor = NotAvailable;
             }
             //Bouldermaze lower
-            if (has_or_can_red_tunic == 1 && Has(i.Strength) && DungeonPanelInfo.FireTemple.CurrentKeys >= 3 && craterplatformaccess == 1)
+            if (has_or_can_red_tunic == 1 && Has(i.Strength) && DungeonPanelInfo.FireTemple.CurrentKeys >= 3 && Fire_Temple_Access)
             {
                 FireBoulderMazeLowerChest.ForeColor = Available;
                 FireBoulderMazeSideRoomChest.ForeColor = Available;
             }
-            else if (has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1)
+            else if (has_or_can_red_tunic == 1 && Has(i.Strength) && Fire_Temple_Access)
             {
                 FireBoulderMazeLowerChest.ForeColor = coulddo;
                 FireBoulderMazeSideRoomChest.ForeColor = coulddo;
@@ -74,11 +75,11 @@ namespace CeddyMapTracker
                 FireBoulderMazeSideRoomChest.ForeColor = NotAvailable;
             }
             //Mapchest
-            if (has_or_can_red_tunic == 1 && Has(i.Strength) && ((DungeonPanelInfo.FireTemple.CurrentKeys >= 4 && Has(i.Bow)) || DungeonPanelInfo.FireTemple.CurrentKeys >= 5) && craterplatformaccess == 1)
+            if (has_or_can_red_tunic == 1 && Has(i.Strength) && ((DungeonPanelInfo.FireTemple.CurrentKeys >= 4 && Has(i.Bow)) || DungeonPanelInfo.FireTemple.CurrentKeys >= 5) && Fire_Temple_Access)
             {
                 FireMapChest.ForeColor = Available;
             }
-            else if (has_or_can_red_tunic == 1 && Has(i.Strength) && Has(i.Bow) && craterplatformaccess == 1)
+            else if (has_or_can_red_tunic == 1 && Has(i.Strength) && Has(i.Bow) && Fire_Temple_Access)
             {
                 FireMapChest.ForeColor = coulddo;
             }
@@ -87,11 +88,11 @@ namespace CeddyMapTracker
                 FireMapChest.ForeColor = NotAvailable;
             }
             //Upper Maze
-            if (craterplatformaccess == 1 && has_or_can_red_tunic == 1 && Has(i.Strength) && DungeonPanelInfo.FireTemple.CurrentKeys >= 5)
+            if (Fire_Temple_Access && has_or_can_red_tunic == 1 && Has(i.Strength) && DungeonPanelInfo.FireTemple.CurrentKeys >= 5)
             {
                 FireBoulderMazeUpperChest.ForeColor = Available;
             }
-            else if (craterplatformaccess == 1 && has_or_can_red_tunic == 1 && Has(i.Strength))
+            else if (Fire_Temple_Access && has_or_can_red_tunic == 1 && Has(i.Strength))
             {
                 FireBoulderMazeUpperChest.ForeColor = coulddo;
             }
@@ -100,12 +101,12 @@ namespace CeddyMapTracker
                 FireBoulderMazeUpperChest.ForeColor = NotAvailable;
             }
             //Scarecrow Chest
-            if (craterplatformaccess == 1 && has_or_can_red_tunic == 1 && Has(i.Strength) && DungeonPanelInfo.FireTemple.CurrentKeys >= 5 && Has(i.Hookshot))
+            if (Fire_Temple_Access && has_or_can_red_tunic == 1 && Has(i.Strength) && DungeonPanelInfo.FireTemple.CurrentKeys >= 5 && Has(i.Hookshot))
             {
                 FireScarecrowChest.ForeColor = Available;
                 tokensAvailable += 2;
             }
-            else if (craterplatformaccess == 1 && has_or_can_red_tunic == 1 && Has(i.Strength) && Has(i.Hookshot))
+            else if (Fire_Temple_Access && has_or_can_red_tunic == 1 && Has(i.Strength) && Has(i.Hookshot))
             {
                 FireScarecrowChest.ForeColor = coulddo;
                 tokensAvailable += 2;
@@ -115,11 +116,11 @@ namespace CeddyMapTracker
                 FireScarecrowChest.ForeColor = NotAvailable;
             }
             //Shortcut chest
-            if (i.Bomb.State == 1 && has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1 && DungeonPanelInfo.FireTemple.CurrentKeys >= 5)
+            if (i.Bomb.State == 1 && has_or_can_red_tunic == 1 && Has(i.Strength) && Fire_Temple_Access && DungeonPanelInfo.FireTemple.CurrentKeys >= 5)
             {
                 FireBoulderMazeShortcutChest.ForeColor = Available;
             }
-            else if (i.Bomb.State == 1 && has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1)
+            else if (i.Bomb.State == 1 && has_or_can_red_tunic == 1 && Has(i.Strength) && Fire_Temple_Access)
             {
                 FireBoulderMazeShortcutChest.ForeColor = coulddo;
             }
@@ -128,11 +129,11 @@ namespace CeddyMapTracker
                 FireBoulderMazeShortcutChest.ForeColor = NotAvailable;
             }
             //Compass Chest
-            if (craterplatformaccess == 1 && DungeonPanelInfo.FireTemple.CurrentKeys >= 6 && Has(i.Strength) && has_or_can_red_tunic == 1)
+            if (Fire_Temple_Access && DungeonPanelInfo.FireTemple.CurrentKeys >= 6 && Has(i.Strength) && has_or_can_red_tunic == 1)
             {
                 FireCompassChest.ForeColor = Available;
             }
-            else if (craterplatformaccess == 1 && Has(i.Strength) && has_or_can_red_tunic == 1)
+            else if (Fire_Temple_Access && Has(i.Strength) && has_or_can_red_tunic == 1)
             {
                 FireCompassChest.ForeColor = coulddo;
             }
@@ -141,11 +142,11 @@ namespace CeddyMapTracker
                 FireCompassChest.ForeColor = NotAvailable;
             }
             //Highest Goron chest
-            if ((DungeonPanelInfo.FireTemple.CurrentKeys >= 7 || (Has(i.HoverBoots) && DungeonPanelInfo.FireTemple.CurrentKeys >= 6)) && Has(i.Hammer) && (Has(i.SongOfTime) || Has(i.HoverBoots) || i.Bomb.State == 1) && has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1)
+            if ((DungeonPanelInfo.FireTemple.CurrentKeys >= 7 || (Has(i.HoverBoots) && DungeonPanelInfo.FireTemple.CurrentKeys >= 6)) && Has(i.Hammer) && (Has(i.SongOfTime) || Has(i.HoverBoots) || i.Bomb.State == 1) && has_or_can_red_tunic == 1 && Has(i.Strength) && Fire_Temple_Access)
             {
                 FireHighestGoronChest.ForeColor = Available;
             }
-            else if (Has(i.Hammer) && Has(i.HoverBoots) && Has(i.Hammer) && (Has(i.SongOfTime) || Has(i.HoverBoots) || i.Bomb.State == 1) && has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1)
+            else if (Has(i.Hammer) && Has(i.HoverBoots) && Has(i.Hammer) && (Has(i.SongOfTime) || Has(i.HoverBoots) || i.Bomb.State == 1) && has_or_can_red_tunic == 1 && Has(i.Strength) && Fire_Temple_Access)
             {
                 FireHighestGoronChest.ForeColor = coulddo;
             }
@@ -154,11 +155,11 @@ namespace CeddyMapTracker
                 FireHighestGoronChest.ForeColor = NotAvailable;
             }
             //Hammer Chest
-            if ((DungeonPanelInfo.FireTemple.CurrentKeys >= 7 || (Has(i.Hammer) && Has(i.HoverBoots) && DungeonPanelInfo.FireTemple.CurrentKeys >= 6)) && i.Bomb.State == 1 && Has(i.Strength) && (Has(i.GoronTunic) || Has(i.Wallet)))
+            if ((DungeonPanelInfo.FireTemple.CurrentKeys >= 7 || (Has(i.Hammer) && Has(i.HoverBoots) && DungeonPanelInfo.FireTemple.CurrentKeys >= 6)) && i.Bomb.State == 1 && Has(i.Strength) && (Has(i.GoronTunic) || Has(i.Wallet)) && Fire_Temple_Access)
             {
                 FireMegatonHammerChest.ForeColor = Available;
             }
-            else if (Has(i.Hammer) && Has(i.HoverBoots) && i.Bomb.State == 1 && Has(i.Strength) && (Has(i.GoronTunic) || Has(i.Wallet)))
+            else if (Has(i.Hammer) && Has(i.HoverBoots) && i.Bomb.State == 1 && Has(i.Strength) && (Has(i.GoronTunic) || Has(i.Wallet)) && Fire_Temple_Access)
             {
                 FireMegatonHammerChest.ForeColor = coulddo;
             }
@@ -167,11 +168,11 @@ namespace CeddyMapTracker
                 FireMegatonHammerChest.ForeColor = NotAvailable;
             }
             //Volvo defeat
-            if (Has(i.Hammer) && has_or_can_red_tunic == 1 && craterplatformaccess == 1 && Has(DungeonPanelInfo.FireBossKey) && (Has(i.HoverBoots) || DungeonPanelInfo.FireTemple.CurrentKeys >= 7 && (Has(i.Bomb) || Has(i.SongOfTime))))
+            if (Has(i.Hammer) && has_or_can_red_tunic == 1 && Fire_Temple_Access && Has(DungeonPanelInfo.FireBossKey) && (Has(i.HoverBoots) || DungeonPanelInfo.FireTemple.CurrentKeys >= 7 && (Has(i.Bomb) || Has(i.SongOfTime))))
             {
                 FireVolvagiaHeart.ForeColor = Available;
             }
-            else if (Has(i.Hammer) && has_or_can_red_tunic == 1 && craterplatformaccess == 1 && Has(i.HoverBoots))
+            else if (Has(i.Hammer) && has_or_can_red_tunic == 1 && Fire_Temple_Access && Has(i.HoverBoots))
             {
                 FireVolvagiaHeart.ForeColor = coulddo;
             }
@@ -180,11 +181,11 @@ namespace CeddyMapTracker
                 FireVolvagiaHeart.ForeColor = NotAvailable;
             }
             //Skulltula
-            if (craterplatformaccess == 1 && Has(i.SongOfTime))
+            if (Fire_Temple_Access && Has(i.SongOfTime))
             {
                 tokensAvailable++;
             }
-            if (has_or_can_red_tunic == 1 && Has(i.Strength) && craterplatformaccess == 1 && Has(i.Bomb))
+            if (has_or_can_red_tunic == 1 && Has(i.Strength) && Fire_Temple_Access && Has(i.Bomb))
             {
                 tokensAvailable++;
             }

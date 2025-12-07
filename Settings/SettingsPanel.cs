@@ -691,8 +691,7 @@ namespace CeddyMapTracker
                 if (c != null && c is Check check)
                 {
                     check.UpdateColor();
-                }              
-                MapTracker.UpdateDenseLocations();         
+                }                                      
             }
             //Update WotH hint panel
             wothpanel.DeleteHintsAndStones();

@@ -22,6 +22,14 @@ namespace CeddyMapTracker
             set
             {
                 _currentKeys = value;
+                if(CurrentKeys >= MaxKeys)
+                {
+                    _currentKeys = MaxKeys;
+                }
+                if (CurrentKeys < 0)
+                {
+                    CurrentKeys = 0;
+                }
                 OnValueChanged(null);
             }
         }

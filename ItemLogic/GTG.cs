@@ -8,11 +8,12 @@ namespace CeddyMapTracker
 {
     partial class Maptracker
     {
+        public bool GTG_Access;
         public void ItemLogic_GTG(ItemPanel i, DungeonInfoPanel DungeonInfoPanel)
         {
             gtg_available_checks = 0;
             //LobbyChests
-            if (has_or_can_get_gerudocard && Has(i.Bow))
+            if (GTG_Access && Has(i.Bow))
             {
                 GTGLobbyLeftChest.ForeColor = Available;
                 GTGLobbyRightChest.ForeColor = Available;
@@ -24,7 +25,7 @@ namespace CeddyMapTracker
                 GTGLobbyRightChest.ForeColor = NotAvailable;
             }
             //Stalfos
-            if (has_or_can_get_gerudocard)
+            if (GTG_Access)
             {
                 GTGStalfosChest.ForeColor = Available;
                 gtg_available_checks++;
@@ -34,12 +35,12 @@ namespace CeddyMapTracker
                 GTGStalfosChest.ForeColor = NotAvailable;
             }
             //Beamos
-            if (has_or_can_get_gerudocard && i.Bomb.State == 1)
+            if (GTG_Access && i.Bomb.State == 1)
             {
                 GTGBeamosChest.ForeColor = Available;
                 gtg_available_checks++;
             }
-            else if (has_or_can_get_gerudocard && Has(i.Bombchu))
+            else if (GTG_Access && Has(i.Bombchu))
             {
                 GTGBeamosChest.ForeColor = OoLwithBombchus;
             }
@@ -48,7 +49,7 @@ namespace CeddyMapTracker
                 GTGBeamosChest.ForeColor = NotAvailable;
             }
             //Toilet
-            if (has_or_can_get_gerudocard && Has(i.IronBoots) && Has(i.SongOfTime) && Has(i.Hookshot))
+            if (GTG_Access && Has(i.IronBoots) && Has(i.SongOfTime) && Has(i.Hookshot))
             {
                 GTGUnderwaterSilverRupeeChest.ForeColor = Available;
                 gtg_available_checks++;
@@ -58,16 +59,16 @@ namespace CeddyMapTracker
                 GTGUnderwaterSilverRupeeChest.ForeColor = NotAvailable;
             }       
             //Freestanding Key
-            if (has_or_can_get_gerudocard && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
+            if (GTG_Access && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
             {
                 GTGFreestandingKey.ForeColor = Available;
                 gtg_available_checks++;
             }
-            else if (has_or_can_get_gerudocard && (Has(i.Bombchu) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
+            else if (GTG_Access && (Has(i.Bombchu) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
             {
                 GTGFreestandingKey.ForeColor = OoLwithBombchus;
             }
-            else if (has_or_can_get_gerudocard && (i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime))
+            else if (GTG_Access && (i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime))
             {
                 GTGFreestandingKey.ForeColor = coulddo;
             }
@@ -76,7 +77,7 @@ namespace CeddyMapTracker
                 GTGFreestandingKey.ForeColor = NotAvailable;
             }
             //Before Heavy Block
-            if (has_or_can_get_gerudocard && Has(i.Hookshot))
+            if (GTG_Access && Has(i.Hookshot))
             {
                 GTGBeforeHeavyBlockChest.ForeColor = Available;
                 gtg_available_checks++;
@@ -86,7 +87,7 @@ namespace CeddyMapTracker
                 GTGBeforeHeavyBlockChest.ForeColor = NotAvailable;
             }
             //Heavy Block Chests
-            if (has_or_can_get_gerudocard && Has(i.Hookshot) && i.Strength.State >= 2)
+            if (GTG_Access && Has(i.Hookshot) && i.Strength.State >= 2)
             {
                 GTGHeavyBlockFirstChest.ForeColor = Available;
                 GTGHeavyBlockFourthChest.ForeColor = Available;
@@ -102,7 +103,7 @@ namespace CeddyMapTracker
                 GTGHeavyBlockThirdChest.ForeColor = NotAvailable;
             }
             //Eye Statue Chests
-            if (has_or_can_get_gerudocard && Has(i.Hookshot) && Has(i.Bow))
+            if (GTG_Access && Has(i.Hookshot) && Has(i.Bow))
             {
                 GTGEyeStatueChest.ForeColor = Available;
                 GTGNearScarecrowChest.ForeColor = Available;
@@ -114,7 +115,7 @@ namespace CeddyMapTracker
                 GTGNearScarecrowChest.ForeColor = NotAvailable;
             }
             //Hammer room
-            if (has_or_can_get_gerudocard && Has(i.Hookshot))
+            if (GTG_Access && Has(i.Hookshot))
             {
                 GTGHammerRoomClearChest.ForeColor = Available;
                 gtg_available_checks++;
@@ -123,7 +124,7 @@ namespace CeddyMapTracker
             {
                 GTGHammerRoomClearChest.ForeColor = NotAvailable;
             }
-            if (has_or_can_get_gerudocard && Has(i.Hookshot) && Has(i.Hammer))
+            if (GTG_Access && Has(i.Hookshot) && Has(i.Hammer))
             {
                 GTGHammerRoomSwitchChest.ForeColor = Available;
                 gtg_available_checks++;
@@ -133,12 +134,12 @@ namespace CeddyMapTracker
                 GTGHammerRoomSwitchChest.ForeColor = NotAvailable;
             }
             //Hidden Ceiling
-            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 3)
+            if (GTG_Access && DungeonInfoPanel.GTG.CurrentKeys >= 3)
             {
                 GTGHiddenCeilingChest.ForeColor = Available;
                 gtg_available_checks++;
             }
-            else if (has_or_can_get_gerudocard && gtg_available_checks >= 3)
+            else if (GTG_Access && gtg_available_checks >= 3)
             {
                 GTGHiddenCeilingChest.ForeColor = coulddo;               
             }
@@ -147,12 +148,12 @@ namespace CeddyMapTracker
                 GTGHiddenCeilingChest.ForeColor = NotAvailable;
             }
             //Maze 1
-            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 4)
+            if (GTG_Access && DungeonInfoPanel.GTG.CurrentKeys >= 4)
             {
                 GTGMazePathFirstChest.ForeColor = Available;
                 gtg_available_checks++;
             }
-            else if (has_or_can_get_gerudocard && gtg_available_checks >= 4)
+            else if (GTG_Access && gtg_available_checks >= 4)
             {
                 GTGMazePathFirstChest.ForeColor = coulddo;               
             }
@@ -161,11 +162,11 @@ namespace CeddyMapTracker
                 GTGMazePathFirstChest.ForeColor = NotAvailable;
             }
             //Maze 2
-            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 6)
+            if (GTG_Access && DungeonInfoPanel.GTG.CurrentKeys >= 6)
             {
                 GTGMazePathSecondChest.ForeColor = Available;
             }
-            else if (has_or_can_get_gerudocard && gtg_available_checks >= 6)
+            else if (GTG_Access && gtg_available_checks >= 6)
             {
                 GTGMazePathSecondChest.ForeColor = coulddo;
             }
@@ -174,11 +175,11 @@ namespace CeddyMapTracker
                 GTGMazePathSecondChest.ForeColor = NotAvailable;
             }
             //Maze 3
-            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 7)
+            if (GTG_Access && DungeonInfoPanel.GTG.CurrentKeys >= 7)
             {
                 GTGMazePathThirdChest.ForeColor = Available;
             }
-            else if (has_or_can_get_gerudocard && gtg_available_checks >= 7)
+            else if (GTG_Access && gtg_available_checks >= 7)
             {
                 GTGMazePathThirdChest.ForeColor = coulddo;
             }
@@ -187,11 +188,11 @@ namespace CeddyMapTracker
                 GTGMazePathThirdChest.ForeColor = NotAvailable;
             }
             //Maze 4
-            if (has_or_can_get_gerudocard && DungeonInfoPanel.GTG.CurrentKeys >= 9)
+            if (GTG_Access && DungeonInfoPanel.GTG.CurrentKeys >= 9)
             {
                 GTGMazePathFinalChest.ForeColor = Available;
             }
-            else if (has_or_can_get_gerudocard && gtg_available_checks >= 9)
+            else if (GTG_Access && gtg_available_checks >= 9)
             {
                 GTGMazePathFinalChest.ForeColor = coulddo;
             }
@@ -200,18 +201,18 @@ namespace CeddyMapTracker
                 GTGMazePathFinalChest.ForeColor = NotAvailable;
             }
             //Maze Right Chests
-            if (has_or_can_get_gerudocard && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
+            if (GTG_Access && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
             {
                 GTGMazeRightCentralChest.ForeColor = Available;
                 GTGMazeRightSideChest.ForeColor = Available;
                 gtg_available_checks += 2;
             }
-            else if (has_or_can_get_gerudocard && (Has(i.Bombchu) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
+            else if (GTG_Access && (Has(i.Bombchu) && Has(i.SongOfTime) || DungeonInfoPanel.GTG.CurrentKeys == 9))
             {
                 GTGMazeRightCentralChest.ForeColor = OoLwithBombchus;
                 GTGMazeRightSideChest.ForeColor = OoLwithBombchus;
             }
-            else if (has_or_can_get_gerudocard && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || gtg_available_checks >= 9))
+            else if (GTG_Access && ((i.Bomb.State == 1 || Has(i.Hookshot)) && Has(i.SongOfTime) || gtg_available_checks >= 9))
             {
                 GTGMazeRightCentralChest.ForeColor = coulddo;
                 GTGMazeRightSideChest.ForeColor = coulddo;
