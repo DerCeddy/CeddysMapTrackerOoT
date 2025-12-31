@@ -12,8 +12,17 @@ namespace CeddyMapTracker
         public void ItemLogic_GTG(ItemPanel i, DungeonInfoPanel DungeonInfoPanel)
         {
             gtg_available_checks = 0;
+            bool is_child;
+            if (Deku_Button.RegionPanel == GTG_RegionPanel || DC_Button.RegionPanel == GTG_RegionPanel || Jabu_Button.RegionPanel == GTG_RegionPanel || BotW_Button.RegionPanel == GTG_RegionPanel || (Fire_Button.RegionPanel == GTG_RegionPanel && Has(i.Bolero)) || Shadow_Button.RegionPanel == GTG_RegionPanel || (Spirit_Button.RegionPanel == GTG_RegionPanel && Has(i.Reqiuem)))
+            {
+                is_child = true;
+            }
+            else
+            {
+                is_child = false;
+            }
             //LobbyChests
-            if (GTG_Access && Has(i.Bow))
+            if (GTG_Access && (Has(i.Bow) || (is_child && Has(i.Slingshot))))
             {
                 GTGLobbyLeftChest.ForeColor = Available;
                 GTGLobbyRightChest.ForeColor = Available;

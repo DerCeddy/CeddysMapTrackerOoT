@@ -11,7 +11,7 @@ namespace CeddyMapTracker
         public bool Ice_Access;
         public void ItemLogic_IceCavern(ItemPanel i)
         {
-            if (Ice_Access && has_bottle)
+            if (Ice_Access && (has_bottle || can_use_bluefirearrows))
             {
                 IceCavernMapChest.ForeColor = Available;
                 IceCavernCompassChest.ForeColor = Available;

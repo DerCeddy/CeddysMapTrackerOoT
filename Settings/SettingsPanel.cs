@@ -104,6 +104,10 @@ namespace CeddyMapTracker
         private SettingsAlwaysHint CastleFairies_Button;
         private SettingsAlwaysHint FrogsDual_Button;
         private Label label16;
+        public ShuffleButton DungeonERShuffle;
+        private Label label17;
+        private Label label18;
+        public ShuffleButton BlueFireArrows;
         public Button button1;
 
         private void InitializeComponent()
@@ -151,6 +155,10 @@ namespace CeddyMapTracker
             CastleFairies_Button = new SettingsAlwaysHint();
             FrogsDual_Button = new SettingsAlwaysHint();
             label16 = new Label();
+            DungeonERShuffle = new ShuffleButton();
+            label17 = new Label();
+            label18 = new Label();
+            BlueFireArrows = new ShuffleButton();
             ((System.ComponentModel.ISupportInitialize)WotH_Hint_Counter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Sometimes_Hint_Counter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Sometimes_DualHint_Counter).BeginInit();
@@ -288,12 +296,12 @@ namespace CeddyMapTracker
             // 
             Rainbow_Bridge_Requirements_ComboBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             Rainbow_Bridge_Requirements_ComboBox.FormattingEnabled = true;
-            Rainbow_Bridge_Requirements_ComboBox.Items.AddRange(new object[] { "Vanilla Requirements", "Spiritual Stones", "Medallions", "Dungeon Rewards" });
+            Rainbow_Bridge_Requirements_ComboBox.Items.AddRange(new object[] { "Vanilla", "Spiritual Stones", "Medallions", "Dungeon Rewards" });
             Rainbow_Bridge_Requirements_ComboBox.Location = new Point(640, 94);
             Rainbow_Bridge_Requirements_ComboBox.Name = "Rainbow_Bridge_Requirements_ComboBox";
             Rainbow_Bridge_Requirements_ComboBox.Size = new Size(147, 23);
             Rainbow_Bridge_Requirements_ComboBox.TabIndex = 13;
-            Rainbow_Bridge_Requirements_ComboBox.Text = "Vanilla Requirements";
+            Rainbow_Bridge_Requirements_ComboBox.Text = "Vanilla";
             // 
             // Goal_Condition_Counter
             // 
@@ -335,7 +343,7 @@ namespace CeddyMapTracker
             // changeStyleButton1
             // 
             changeStyleButton1.BackColor = Color.White;
-            changeStyleButton1.Location = new Point(1185, 78);
+            changeStyleButton1.Location = new Point(1489, 78);
             changeStyleButton1.Name = "changeStyleButton1";
             changeStyleButton1.Size = new Size(48, 48);
             changeStyleButton1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -378,7 +386,7 @@ namespace CeddyMapTracker
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1149, 41);
+            label1.Location = new Point(1453, 41);
             label1.Name = "label1";
             label1.Size = new Size(57, 15);
             label1.TabIndex = 22;
@@ -389,7 +397,7 @@ namespace CeddyMapTracker
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(1121, 96);
+            label12.Location = new Point(1425, 96);
             label12.Name = "label12";
             label12.Size = new Size(58, 15);
             label12.TabIndex = 23;
@@ -569,10 +577,64 @@ namespace CeddyMapTracker
             label16.TabIndex = 43;
             label16.Text = "Always Hints";
             // 
+            // DungeonERShuffle
+            // 
+            DungeonERShuffle.AutoCheck = false;
+            DungeonERShuffle.AutoSize = true;
+            DungeonERShuffle.BackColor = Color.Black;
+            DungeonERShuffle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            DungeonERShuffle.ForeColor = Color.White;
+            DungeonERShuffle.Location = new Point(801, 144);
+            DungeonERShuffle.Name = "DungeonERShuffle";
+            DungeonERShuffle.Size = new Size(169, 19);
+            DungeonERShuffle.State = false;
+            DungeonERShuffle.TabIndex = 44;
+            DungeonERShuffle.Text = "Shuffle Dungeon Entrances";
+            DungeonERShuffle.UseVisualStyleBackColor = false;
+            // 
+            // label17
+            // 
+            label17.BorderStyle = BorderStyle.Fixed3D;
+            label17.Location = new Point(1417, 60);
+            label17.Name = "label17";
+            label17.Size = new Size(2, 310);
+            label17.TabIndex = 45;
+            label17.Text = "label17";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label18.ForeColor = SystemColors.Control;
+            label18.Location = new Point(1223, 41);
+            label18.Name = "label18";
+            label18.Size = new Size(81, 15);
+            label18.TabIndex = 46;
+            label18.Text = "Logic Settings";
+            // 
+            // BlueFireArrows
+            // 
+            BlueFireArrows.AutoCheck = false;
+            BlueFireArrows.AutoSize = true;
+            BlueFireArrows.BackColor = Color.Black;
+            BlueFireArrows.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            BlueFireArrows.ForeColor = Color.White;
+            BlueFireArrows.Location = new Point(1121, 94);
+            BlueFireArrows.Name = "BlueFireArrows";
+            BlueFireArrows.Size = new Size(111, 19);
+            BlueFireArrows.State = false;
+            BlueFireArrows.TabIndex = 47;
+            BlueFireArrows.Text = "Blue Fire Arrows";
+            BlueFireArrows.UseVisualStyleBackColor = false;
+            // 
             // SettingsPanel
             // 
             BackColor = Color.Black;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(BlueFireArrows);
+            Controls.Add(label18);
+            Controls.Add(label17);
+            Controls.Add(DungeonERShuffle);
             Controls.Add(label16);
             Controls.Add(FrogsDual_Button);
             Controls.Add(CastleFairies_Button);
@@ -647,7 +709,7 @@ namespace CeddyMapTracker
             Form.SometimesHints.DeleteHintsAndStones();
             Form.SometimesHints.GenerateHintsAndStones();   
             //Change Maptracker Goal Conditions                   
-            Form.MapTracker.Goalrequirement = Rainbow_Bridge_Requirements_ComboBox.SelectedItem.ToString();
+            Form.MapTracker.GoalRequirement = Rainbow_Bridge_Requirements_ComboBox.SelectedItem.ToString();
             Form.MapTracker.Medallions = Goal_Condition_Counter.Value;
             Form.MapTracker.Stones = Goal_Condition_Counter.Value;
             Form.MapTracker.DungeonRewards = Goal_Condition_Counter.Value;
@@ -699,8 +761,7 @@ namespace CeddyMapTracker
             //Update always hint panel
             always.DeleteItems();
             always.DrawPanel();
-            //Update sometimes hint panel
-            
+            //Update sometimes hint panel           
             sometimes.DeleteHintsAndStones();
             sometimes.GenerateHintsAndStones();
             form.AssignFunctionsToGossipstonesInSometimesPanel(form.Stats);
@@ -715,7 +776,7 @@ namespace CeddyMapTracker
         {
             switch (Rainbow_Bridge_Requirements_ComboBox.Text)
             {
-                case "Vanilla Requirements":
+                case "Vanilla":
                     Goal_Condition_Counter.Visible = false;
                     Goal_Condition_Counter_Text.Visible = false;
                     break;

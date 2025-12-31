@@ -24,7 +24,7 @@ namespace CeddyMapTracker
                 HCGreatFairy.color = NotAvailable;
             }
             //OGC
-            if (i.Strength.State == 3)
+            if (i.Strength.State == 3 && Has(i.ZeldasLullaby))
             {
                 OGCGreatFairy.color = Available;
             }

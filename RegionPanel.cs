@@ -58,11 +58,11 @@ namespace CeddyMapTracker
         private int _keydown;
         public RegionPanel()
         {
-            Visible = false;
-            //Checks.ListChanged += (sender, e) => AddChecks();
+            Visible = false;           
         }   
         public void DrawPanel()
         {
+            RemoveChecks();
             DistanceBetweenHeadlineAndChecks = 0;
             if (IsKeyDungeon)
             {
@@ -105,7 +105,6 @@ namespace CeddyMapTracker
             {
                 var temp = i;
                 Checks[temp].Location = new Point(40, 24 * temp + DistanceBetweenHeadlineAndChecks);
-                //Checks[temp].ValueChanged += (sender, e) => UpdateDungeonCounter();
                 Checks[temp].ValueChanged += (sender, e) => CheckState = 1;
                 Controls.Add(Checks[temp]);
                 RegionChecksEnd = i;
@@ -118,11 +117,14 @@ namespace CeddyMapTracker
                     ShopChecks[temp].Location = new Point(40, 24 * (temp + RegionChecksEnd + 1) + 20);
                     ShopChecks[temp].AddGossipstone(this, new Point(205, ShopChecks[temp].Location.Y - 4));
                     ShopChecks[temp].AddNummericUpAndDown(this, new Point(235, ShopChecks[temp].Location.Y - 4));
-                    //ShopChecks[temp].ValueChanged += (sender, e) => UpdateCounter();
                     ShopChecks[temp].ValueChanged += (sender, e) => CheckState = 1;
                     Controls.Add(ShopChecks[temp]);
                 }
             }
+        }
+        public void RemoveChecks()
+        {           
+            Controls.Clear();
         }
         public event EventHandler CheckStateChanged;
         protected virtual void OnCheckStateChanged(EventArgs e)

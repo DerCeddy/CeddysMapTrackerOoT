@@ -13,6 +13,7 @@ namespace CeddyMapTracker
     public class DungeonButton : Button
     {
         public int DungeonAccess {  get; set; }
+        public RichToolTip RichToolTip = new();
         private Color _bossSquare = Color.Red;
         private Color _checkSquare = Color.Red;
         private Color _borderColor = Color.Black;
@@ -75,7 +76,7 @@ namespace CeddyMapTracker
             Font = new("Arial", 11, GraphicsUnit.Pixel );
             MouseDown += (sender,e) => ButtonClick(e);
             //CheckCountChanged += (sender,e) => Text = CheckCount.ToString();
-            RegionPanelChanged += (sender, e) => ChangeChecks();
+            RegionPanelChanged += (sender, e) => ChangeChecks();        
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -278,6 +279,7 @@ namespace CeddyMapTracker
             {
                 check.ValueChanged += (sender, e) => UpdateDungeonCounter();
                 check.ForeColorChanged += (sender, e) => UpdateDungeonCounter();
+                check.CheckedChanged += (sender, e) => UpdateDungeonCounter();
             }
         }
         public event EventHandler CallForContextMenu;

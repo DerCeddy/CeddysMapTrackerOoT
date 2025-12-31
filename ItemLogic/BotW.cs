@@ -14,7 +14,6 @@ namespace CeddyMapTracker
         public bool BotW_Access;
         public void ItemLogic_BotW(ItemPanel i, DungeonInfoPanel DungeonInfopanel)
         {     
-            
             //Access
             if (BotW_Access)
             {

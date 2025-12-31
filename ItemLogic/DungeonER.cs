@@ -25,11 +25,12 @@ namespace CeddyMapTracker
         }
         public bool DungeonER1(bool Dungeon, ItemPanel i, int DungeonAccess)
         {
+            bool is_child = false;        
             //Dungeon Access
             switch (DungeonAccess)
             {
                 case 0:
-                    if(Has(i.KokiriSword))
+                    if (Has(i.KokiriSword))
                     {
                         Dungeon = true;
                     }
@@ -39,10 +40,33 @@ namespace CeddyMapTracker
                     }
                     return Dungeon;
                 case 1:
-                    Dungeon = true;
+                    //Age check
+                    if (DC_Button.RegionPanel == Jabu_RegionPanel || DC_Button.RegionPanel == BotW_RegionPanel || DC_Button.RegionPanel == Spirit_RegionPanel)
+                    {
+                        is_child = true;
+                    }
+                    else
+                    {
+                        is_child = false;
+                    }
+                    if (is_child)
+                    {
+                        if (Has(i.Bomb) || Has(i.Strength))
+                        {
+                            Dungeon = true;
+                        }
+                        else
+                        {
+                            Dungeon = false;
+                        }
+                    }
+                    else
+                    {
+                        Dungeon = true;
+                    }
                     return Dungeon;
                 case 2:
-                    if(Has(i.RutoLetter) && (Has(i.Scales) || (i.Bomb.State == 1 && Has(i.ZeldasLullaby)))) 
+                    if (Has(i.RutoLetter) && (Has(i.Scales) || (i.Bomb.State == 1 && Has(i.ZeldasLullaby))))
                     {
                         Dungeon = true;
                     }
@@ -62,7 +86,15 @@ namespace CeddyMapTracker
                     }
                     return Dungeon;
                 case 4:
-                    if(craterplatformaccess == 1)
+                    if (Fire_Button.RegionPanel == Jabu_RegionPanel || Fire_Button.RegionPanel == BotW_RegionPanel)
+                    {
+                        is_child = true;
+                    }
+                    else
+                    {
+                        is_child = false;
+                    }
+                    if (craterplatformaccess == 1 && !is_child || (is_child && Has(i.Bolero)))
                     {
                         Dungeon = true;
                     }
@@ -72,7 +104,7 @@ namespace CeddyMapTracker
                     }
                     return Dungeon;
                 case 5:
-                    if((Has(i.Hookshot) && Has(i.IronBoots)) || (has_longshot && i.Scales.State == 2))
+                    if ((Has(i.Hookshot) && Has(i.IronBoots)) || (has_longshot && i.Scales.State == 2))
                     {
                         Dungeon = true;
                     }
@@ -82,7 +114,7 @@ namespace CeddyMapTracker
                     }
                     return Dungeon;
                 case 6:
-                    if(Has(i.Dins) && Has(i.Magic) && Has(i.Nocturne))
+                    if (Has(i.Dins) && Has(i.Magic) && Has(i.Nocturne))
                     {
                         Dungeon = true;
                     }
@@ -92,17 +124,41 @@ namespace CeddyMapTracker
                     }
                     return Dungeon;
                 case 7:
-                    if(desertaccess == 1)
+                    //Age check
+                    if (Spirit_Button.RegionPanel == Jabu_RegionPanel || Spirit_Button.RegionPanel == BotW_RegionPanel)
                     {
-                        Dungeon = true;
+                        is_child = true;
                     }
                     else
                     {
-                        Dungeon = false;
+                        is_child = false;
                     }
+                    if(is_child)
+                    {
+                        if(Has(i.Reqiuem))
+                        {
+                            Dungeon = true;
+                        }
+                        else
+                        {
+                            Dungeon = false;
+                        }
+                    }
+                    else
+                    {
+                        if (desertaccess == 1)
+                        {
+                            Dungeon = true;
+                        }
+                        else
+                        {
+                            Dungeon = false;
+                        }
+                    }
+                    
                     return Dungeon;
                 case 8:
-                    if(Has(i.SongOfStorms))
+                    if (Has(i.SongOfStorms))
                     {
                         Dungeon = true;
                     }
@@ -122,7 +178,7 @@ namespace CeddyMapTracker
                     }
                     return Dungeon;
                 case 10:
-                    if(Has(i.RutoLetter) && Has(i.ZeldasLullaby) && (Has(i.Bomb) || Has(i.Scales)))
+                    if (Has(i.RutoLetter) && Has(i.ZeldasLullaby) && (Has(i.Bomb) || Has(i.Scales)))
                     {
                         Dungeon = true;
                     }

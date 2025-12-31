@@ -25,7 +25,7 @@ namespace CeddyMapTracker
         }
         public void DrawToolTip(Control Control)
         {
-            Control.Controls.Add(this);          
+            Control.Controls.Add(this);    
             DrawText();
             BringToFront();
         }       

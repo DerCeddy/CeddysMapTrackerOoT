@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using static System.Windows.Forms.AxHost;
@@ -32,6 +33,10 @@ namespace CeddyMapTracker
             ContextMenuForWOTHHints ContextWheel = new();
             MapTracker.MouseDown += (sender, e) => MapTracker.GetRegionName(e, ContextWheel);
             foreach(DungeonButton button in MapTracker.DungeonButtons)
+            {
+                button.MouseDown += (sender, e) => button.AddContextMenu(e, ContextWheel, button);
+            }
+            foreach (RegionButton button in MapTracker.RegionButtons)
             {
                 button.MouseDown += (sender, e) => button.AddContextMenu(e, ContextWheel, button);
             }
@@ -112,6 +117,8 @@ namespace CeddyMapTracker
             Settings.ValueChanged += (sender, e) => SetShuffleOptionsForMaptracker(Settings);
             Settings.ExpensiveMerchants.ValueChanged += (sender, e) => MapTracker.AddExpensiveMerchants();
             Settings.ShopShuffle.ValueChanged += (sender, e) => MapTracker.AddShopShuffle();
+            Settings.DungeonERShuffle.ValueChanged += (sender, e) => MapTracker.AddDungeonER();
+            Settings.BlueFireArrows.ValueChanged += (sender, e) => ChangeBlueFireArrowMode();
             Settings.ValueChanged += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
             //SettingsPanel.ValueChanged += (sender, e) => MapTracker.UpdateStatVariables(Stats);
             //Update text color for richtooltip
@@ -129,16 +136,21 @@ namespace CeddyMapTracker
                 }
                 
             }  
-            /*
-            foreach(Region Region in MapTracker.DenseRegions)
-            {
-                Region.ValueChanged += (sender,e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
-                foreach (Region_Panel_Check c in Region.Checks)
+            foreach(DungeonButton DungeonButtons in MapTracker.DungeonButtons)
+            {              
+                foreach (Region_Panel_Check c in DungeonButtons.RegionPanel.Checks)
                 {
                     c.MouseEnter += (sender, e) => c.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);                   
                 }
+                DungeonButtons.MouseEnter += (sender, e) => DungeonButtons.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);
             }
-            */
+            foreach (RegionButton RegionButtons in MapTracker.RegionButtons)
+            {
+                foreach (Region_Panel_Check c in RegionButtons.RegionPanel.Checks)
+                {
+                    c.MouseEnter += (sender, e) => c.RichToolTip.RichToolTipTextChanged(ItemPanel, DungeonInfo, MapTracker);
+                }
+            }
             //Assign tooltips to Goron City and Zora's Domain Shops
             List<ShopPanelCheck> KakAndGCShopChecks = [MapTracker.GoronShopTopLeft, MapTracker.GoronShopTopRight, MapTracker.GoronShopBottomLeft, MapTracker.GoronShopBottomRight, MapTracker.KakBazaarTopLeft, MapTracker.KakBazaarTopRight, MapTracker.KakBazaarBottomLeft, MapTracker.KakBazaarBottomRight, MapTracker.KakPotionShopTopLeft, MapTracker.KakPotionShopTopRight, MapTracker.KakPotionShopBottomLeft, MapTracker.KakPotionShopBottomRight];
             foreach (ShopPanelCheck spc in KakAndGCShopChecks)
@@ -147,7 +159,8 @@ namespace CeddyMapTracker
             }
             MapTracker.ExpensiveMerchantShuffle = false;
             MapTracker.ShopShuffle = false;
-            MapTracker.AddExtraChecks();          
+            MapTracker.AddExtraChecks();
+            MapTracker.AddDungeonER();
             UpdateLocationsOfTrackerElements();
             //Test for automatic checking of hints
             foreach (AlwaysHint Alwayshint in AlwaysHints.AlwaysHintsList)
@@ -160,10 +173,8 @@ namespace CeddyMapTracker
                 Alwayshint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
             }
             AssignFunctionsToGossipstonesInSometimesPanel(Stats);
-            //Dungeon Info
-            
-            //List<List<Region_Panel_Check>> DungeonCheckLists = [MapTracker.ForestTemple_Check_List, MapTracker.FireTemple_Check_List, MapTracker.WaterTemple_Check_List, MapTracker.ShadowTemple_Check_List, MapTracker.SpiritTemple_Check_List, MapTracker.BotW_Check_List, MapTracker.GTG_Check_List];
-            /*
+            //Dungeon Info           
+            List<BindingList<Region_Panel_Check>> DungeonCheckLists = [MapTracker.ForestTemple_Check_List, MapTracker.FireTemple_Check_List, MapTracker.WaterTemple_Check_List, MapTracker.ShadowTemple_Check_List, MapTracker.SpiritTemple_Check_List, MapTracker.BotW_Check_List, MapTracker.GTG_Check_List];           
             for (int i = 0; DungeonInfo.DungeonInfoElements.Count > i; i++)
             {
                 var temp = i;
@@ -178,19 +189,12 @@ namespace CeddyMapTracker
                 MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => DungeonInfo.DungeonInfoElements[temp].CurrentKeys += 1;
                 MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
                 MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => MapTracker.UpdateStatVariables(Stats);
-                MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => MapTracker.UpdateDenseLocations();
                 MapTracker.RegionWithKeys[temp].KeyValueChangedPositive += (sender, e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
                 MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => DungeonInfo.DungeonInfoElements[temp].CurrentKeys -= 1;
                 MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
                 MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => MapTracker.UpdateStatVariables(Stats);
-                MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => MapTracker.UpdateDenseLocations();
                 MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
-            }
-            */
-            //MapTracker.RegionWithKeys[3].DungeonButton = MapTracker.Forest_Button;
-            //MapTracker.DungeonERWheel.ValueChanged += (sender, e) => MapTracker.UpdateDungeonLocation(MapTracker.DungeonERWheel, ItemPanel);
-            //MapTracker.dungeonerGossipstone1.MouseDown += (sender, e) => MapTracker.AssignDungeonToEntrances(ItemPanel,MapTracker.Forest_Temple_Access,0,MapTracker.Forest_Button,MapTracker.Shadow_RegionPanel);
-            //InitiateDungeonEntranceLogic(MapTracker);
+            }                     
         }
         public void UpdateLocationsOfTrackerElements()
         {
@@ -212,6 +216,7 @@ namespace CeddyMapTracker
         {
             MapTracker.ExpensiveMerchantShuffle = SettingsPanel.ExpensiveMerchants.Checked;
             MapTracker.ShopShuffle = SettingsPanel.ShopShuffle.Checked;
+            MapTracker.DungeonER = SettingsPanel.DungeonERShuffle.Checked;
         }
         public void AssignFunctionsToGossipstonesInSometimesPanel(Stats Stats)
         {
@@ -228,7 +233,7 @@ namespace CeddyMapTracker
                 SometimesHint.Gossipstone2.ValueChanged += (sender, e) => { MapTracker.UpdateStatVariables(Stats); };
             }
         }
-        public void MarkCheckAndUpdateKeyCount(MouseEventArgs e, Region_Panel_Check Check, DungeonInfoElement DungeonInfoElement, Region Region)
+        public void MarkCheckAndUpdateKeyCount(MouseEventArgs e, Region_Panel_Check Check, DungeonInfoElement DungeonInfoElement, RegionPanel Region)
         {
             if(e.Button == MouseButtons.Right)
             {
@@ -236,8 +241,7 @@ namespace CeddyMapTracker
                 {
                     Check.Checked = true;
                     Check.State = true;
-                    //DungeonInfoElement.CurrentKeys += 1;
-                    //Region.KeyUp = 1;
+                    Region.KeyCountUp += 1;                   
                 }
                 else
                 {
@@ -253,6 +257,31 @@ namespace CeddyMapTracker
                     Check.UserClickedCheck = false;
                 }               
             }
+        }
+        public void ChangeBlueFireArrowMode()
+        {
+            if(Settings.BlueFireArrows.Checked)
+            {
+                MapTracker.BlueFireArrowsEnabled = true;
+                MapTracker.ZDKingZora.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.RutoLetter.Item_Name} and ({ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name})) or ({ItemPanel.Bottle2.Item_Name} and ({ItemPanel.Wallet.Item_Name1} or Ganon's Castle Access)) or ({ItemPanel.Bow.Item_Name} and {ItemPanel.IceArrow.Item_Name} and {ItemPanel.Magic.Item_Name})\r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
+                MapTracker.IceCavernMapChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name}) or ({ItemPanel.Bow.Item_Name} and {ItemPanel.IceArrow.Item_Name} and {ItemPanel.Magic.Item_Name})";
+                MapTracker.IceCavernCompassChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name}) or ({ItemPanel.Bow.Item_Name} and {ItemPanel.IceArrow.Item_Name} and {ItemPanel.Magic.Item_Name})";
+                MapTracker.IceCavernIronBootsChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name}) or ({ItemPanel.Bow.Item_Name} and {ItemPanel.IceArrow.Item_Name} and {ItemPanel.Magic.Item_Name})";
+                MapTracker.IceCavernFreestandingPoH.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name}) or ({ItemPanel.Bow.Item_Name} and {ItemPanel.IceArrow.Item_Name} and {ItemPanel.Magic.Item_Name})";
+                MapTracker.IceCavernShiek.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name}) or ({ItemPanel.Bow.Item_Name} and {ItemPanel.IceArrow.Item_Name} and {ItemPanel.Magic.Item_Name})";
+            }
+            else
+            {
+                MapTracker.BlueFireArrowsEnabled = false;
+                MapTracker.ZDKingZora.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.RutoLetter.Item_Name} and ({ItemPanel.Bomb.Item_Name} or {ItemPanel.Scales.Item_Name})) or ({ItemPanel.Bottle2.Item_Name} and ({ItemPanel.Wallet.Item_Name1} or Ganon's Castle Access))\r\n• {ItemPanel.ZeldasLullaby.Item_Name}";
+                MapTracker.IceCavernMapChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name})";
+                MapTracker.IceCavernCompassChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name})";
+                MapTracker.IceCavernIronBootsChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name})";
+                MapTracker.IceCavernFreestandingPoH.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name})";
+                MapTracker.IceCavernShiek.RichToolTip.CheckLogic = $"• {ItemPanel.Bottle2.Item_Name} or (({ItemPanel.Bomb.Item_Name} and {ItemPanel.ZeldasLullaby.Item_Name}) or {ItemPanel.Scales.Item_Name} and {ItemPanel.RutoLetter.Item_Name})";
+            }
+            MapTracker.ItemLogic(ItemPanel,DungeonInfo);
+            MapTracker.UpdateStatVariables(Stats);
         }
         public void InitiateDungeonEntranceLogic(Maptracker Maptracker)
         {

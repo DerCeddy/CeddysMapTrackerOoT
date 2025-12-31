@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Maptracker));
             ToT_Button2 = new RegionButton();
-            GoronCity_Button = new Region_Button_Dense();
-            Graveyard_Button = new Region_Button_Dense();
-            Kakariko_Button = new Region_Button_Dense();
             DMCShiek = new Check();
             DMCGreatFairy = new Check();
             DMCUpperGrotto = new Check();
@@ -107,7 +104,6 @@
             Deku_Button = new DungeonButton();
             Shadow_Button = new DungeonButton();
             GanonsCastle_Button = new DungeonButton();
-            ToT_Button = new Region_Button_Dense();
             WastelandSalesman = new Check();
             MarketPotionShop = new ShopButton();
             MarketBazaar = new ShopButton();
@@ -128,6 +124,10 @@
             Jabu_DungeonER_Gossipstone = new DungeonERGossipstone();
             DC_DungeonER_Gossipstone = new DungeonERGossipstone();
             BotW_DungeonER_Gossipstone = new DungeonERGossipstone();
+            Kakariko_Button = new RegionButton();
+            Graveyard_Button = new RegionButton();
+            GoronCity_Button = new RegionButton();
+            ToT_Button = new RegionButton();
             ((System.ComponentModel.ISupportInitialize)Shadow_DungeonER_Gossipstone).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Forest_DungeonER_Gossipstone).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Deku_DungeonER_Gossipstone).BeginInit();
@@ -144,10 +144,13 @@
             // ToT_Button2
             // 
             ToT_Button2.BackColor = Color.Transparent;
+            ToT_Button2.CheckCount = 0;
             ToT_Button2.FlatAppearance.BorderSize = 0;
             ToT_Button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
             ToT_Button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
             ToT_Button2.FlatStyle = FlatStyle.Flat;
+            ToT_Button2.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
+            ToT_Button2.ForeColor = Color.Transparent;
             ToT_Button2.Location = new Point(256, 123);
             ToT_Button2.Margin = new Padding(1, 2, 1, 2);
             ToT_Button2.Name = "ToT_Button2";
@@ -155,56 +158,9 @@
             ToT_Button2.TabIndex = 210;
             ToT_Button2.UseVisualStyleBackColor = false;
             // 
-            // GoronCity_Button
-            // 
-            GoronCity_Button.BackColor = Color.Red;
-            GoronCity_Button.FlatAppearance.BorderColor = Color.Black;
-            GoronCity_Button.FlatAppearance.BorderSize = 0;
-            GoronCity_Button.FlatStyle = FlatStyle.Flat;
-            GoronCity_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            GoronCity_Button.ForeColor = Color.Black;
-            GoronCity_Button.Location = new Point(632, 178);
-            GoronCity_Button.Margin = new Padding(1, 2, 1, 2);
-            GoronCity_Button.Name = "GoronCity_Button";
-            GoronCity_Button.Size = new Size(24, 24);
-            GoronCity_Button.TabIndex = 185;
-            GoronCity_Button.Text = "region_Button_Dense2";
-            GoronCity_Button.UseVisualStyleBackColor = false;
-            // 
-            // Graveyard_Button
-            // 
-            Graveyard_Button.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Graveyard_Button.BackColor = Color.Red;
-            Graveyard_Button.FlatAppearance.BorderSize = 0;
-            Graveyard_Button.FlatStyle = FlatStyle.Flat;
-            Graveyard_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Graveyard_Button.ForeColor = Color.Black;
-            Graveyard_Button.Location = new Point(659, 279);
-            Graveyard_Button.Margin = new Padding(1, 2, 1, 2);
-            Graveyard_Button.Name = "Graveyard_Button";
-            Graveyard_Button.Size = new Size(24, 24);
-            Graveyard_Button.TabIndex = 179;
-            Graveyard_Button.Text = "region_Button_Dense1";
-            Graveyard_Button.UseVisualStyleBackColor = true;
-            // 
-            // Kakariko_Button
-            // 
-            Kakariko_Button.BackColor = Color.Red;
-            Kakariko_Button.FlatAppearance.BorderSize = 0;
-            Kakariko_Button.FlatStyle = FlatStyle.Flat;
-            Kakariko_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel, 0);
-            Kakariko_Button.ForeColor = Color.Black;
-            Kakariko_Button.Location = new Point(579, 282);
-            Kakariko_Button.Margin = new Padding(1, 2, 1, 2);
-            Kakariko_Button.Name = "Kakariko_Button";
-            Kakariko_Button.Size = new Size(24, 24);
-            Kakariko_Button.TabIndex = 176;
-            Kakariko_Button.Text = "20";
-            Kakariko_Button.UseVisualStyleBackColor = true;
-            // 
             // DMCShiek
             // 
-            DMCShiek.CheckIndex = 0;
+            DMCShiek.CheckIndex = 76;
             DMCShiek.Done = false;
             DMCShiek.FlatAppearance.BorderColor = Color.Black;
             DMCShiek.FlatAppearance.BorderSize = 0;
@@ -354,7 +310,7 @@
             // 
             // LHShootTheSun
             // 
-            LHShootTheSun.CheckIndex = 0;
+            LHShootTheSun.CheckIndex = 70;
             LHShootTheSun.Done = false;
             LHShootTheSun.FlatAppearance.BorderColor = Color.Black;
             LHShootTheSun.FlatAppearance.BorderSize = 0;
@@ -834,7 +790,7 @@
             // 
             // SFMShiek
             // 
-            SFMShiek.CheckIndex = 0;
+            SFMShiek.CheckIndex = 74;
             SFMShiek.Done = false;
             SFMShiek.FlatAppearance.BorderColor = Color.Black;
             SFMShiek.FlatAppearance.BorderSize = 0;
@@ -1059,7 +1015,7 @@
             // 
             // ColossusShiek
             // 
-            ColossusShiek.CheckIndex = 0;
+            ColossusShiek.CheckIndex = 78;
             ColossusShiek.Done = false;
             ColossusShiek.FlatAppearance.BorderColor = Color.Black;
             ColossusShiek.FlatAppearance.BorderSize = 0;
@@ -1089,7 +1045,7 @@
             // 
             // GVCratePoH
             // 
-            GVCratePoH.CheckIndex = 0;
+            GVCratePoH.CheckIndex = 133;
             GVCratePoH.Done = false;
             GVCratePoH.FlatAppearance.BorderColor = Color.Black;
             GVCratePoH.FlatAppearance.BorderSize = 0;
@@ -1104,7 +1060,7 @@
             // 
             // GVWaterFallPoH
             // 
-            GVWaterFallPoH.CheckIndex = 0;
+            GVWaterFallPoH.CheckIndex = 134;
             GVWaterFallPoH.Done = false;
             GVWaterFallPoH.FlatAppearance.BorderColor = Color.Black;
             GVWaterFallPoH.FlatAppearance.BorderSize = 0;
@@ -1330,23 +1286,6 @@
             GanonsCastle_Button.Text = "dungeonButton1";
             GanonsCastle_Button.UseVisualStyleBackColor = false;
             // 
-            // ToT_Button
-            // 
-            ToT_Button.BackColor = Color.Red;
-            ToT_Button.FlatAppearance.BorderColor = Color.Black;
-            ToT_Button.FlatAppearance.BorderSize = 0;
-            ToT_Button.FlatStyle = FlatStyle.Flat;
-            ToT_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
-            ToT_Button.ForeColor = Color.Black;
-            ToT_Button.Location = new Point(559, 210);
-            ToT_Button.Margin = new Padding(1, 2, 1, 2);
-            ToT_Button.Name = "ToT_Button";
-            ToT_Button.Size = new Size(24, 24);
-            ToT_Button.TabIndex = 222;
-            ToT_Button.Tag = "";
-            ToT_Button.Text = "region_Button_Dense1";
-            ToT_Button.UseVisualStyleBackColor = false;
-            // 
             // WastelandSalesman
             // 
             WastelandSalesman.CheckIndex = 0;
@@ -1434,6 +1373,7 @@
             // Shadow_DungeonER_Gossipstone
             // 
             Shadow_DungeonER_Gossipstone.AllowDrop = true;
+            Shadow_DungeonER_Gossipstone.BackColor = Color.Transparent;
             Shadow_DungeonER_Gossipstone.Image = (Image)resources.GetObject("Shadow_DungeonER_Gossipstone.Image");
             Shadow_DungeonER_Gossipstone.Location = new Point(723, 235);
             Shadow_DungeonER_Gossipstone.Name = "Shadow_DungeonER_Gossipstone";
@@ -1494,6 +1434,7 @@
             // Forest_DungeonER_Gossipstone
             // 
             Forest_DungeonER_Gossipstone.AllowDrop = true;
+            Forest_DungeonER_Gossipstone.BackColor = Color.Transparent;
             Forest_DungeonER_Gossipstone.Image = (Image)resources.GetObject("Forest_DungeonER_Gossipstone.Image");
             Forest_DungeonER_Gossipstone.Location = new Point(731, 344);
             Forest_DungeonER_Gossipstone.Name = "Forest_DungeonER_Gossipstone";
@@ -1506,6 +1447,7 @@
             // Deku_DungeonER_Gossipstone
             // 
             Deku_DungeonER_Gossipstone.AllowDrop = true;
+            Deku_DungeonER_Gossipstone.BackColor = Color.Transparent;
             Deku_DungeonER_Gossipstone.Image = (Image)resources.GetObject("Deku_DungeonER_Gossipstone.Image");
             Deku_DungeonER_Gossipstone.Location = new Point(748, 634);
             Deku_DungeonER_Gossipstone.Name = "Deku_DungeonER_Gossipstone";
@@ -1518,6 +1460,7 @@
             // Water_DungeonER_Gossipstone
             // 
             Water_DungeonER_Gossipstone.AllowDrop = true;
+            Water_DungeonER_Gossipstone.BackColor = Color.Transparent;
             Water_DungeonER_Gossipstone.Image = (Image)resources.GetObject("Water_DungeonER_Gossipstone.Image");
             Water_DungeonER_Gossipstone.Location = new Point(430, 631);
             Water_DungeonER_Gossipstone.Name = "Water_DungeonER_Gossipstone";
@@ -1530,6 +1473,7 @@
             // Spirit_DungeonER_Gossipstone
             // 
             Spirit_DungeonER_Gossipstone.AllowDrop = true;
+            Spirit_DungeonER_Gossipstone.BackColor = Color.Transparent;
             Spirit_DungeonER_Gossipstone.Image = (Image)resources.GetObject("Spirit_DungeonER_Gossipstone.Image");
             Spirit_DungeonER_Gossipstone.Location = new Point(0, 270);
             Spirit_DungeonER_Gossipstone.Name = "Spirit_DungeonER_Gossipstone";
@@ -1542,6 +1486,7 @@
             // GTG_DungeonER_Gossipstone
             // 
             GTG_DungeonER_Gossipstone.AllowDrop = true;
+            GTG_DungeonER_Gossipstone.BackColor = Color.Transparent;
             GTG_DungeonER_Gossipstone.Image = (Image)resources.GetObject("GTG_DungeonER_Gossipstone.Image");
             GTG_DungeonER_Gossipstone.Location = new Point(302, 297);
             GTG_DungeonER_Gossipstone.Name = "GTG_DungeonER_Gossipstone";
@@ -1554,6 +1499,7 @@
             // Fire_DungeonER_Gossipstone
             // 
             Fire_DungeonER_Gossipstone.AllowDrop = true;
+            Fire_DungeonER_Gossipstone.BackColor = Color.Transparent;
             Fire_DungeonER_Gossipstone.Image = (Image)resources.GetObject("Fire_DungeonER_Gossipstone.Image");
             Fire_DungeonER_Gossipstone.Location = new Point(619, 23);
             Fire_DungeonER_Gossipstone.Name = "Fire_DungeonER_Gossipstone";
@@ -1566,6 +1512,7 @@
             // Ice_DungeonER_Gossipstone
             // 
             Ice_DungeonER_Gossipstone.AllowDrop = true;
+            Ice_DungeonER_Gossipstone.BackColor = Color.Transparent;
             Ice_DungeonER_Gossipstone.Image = (Image)resources.GetObject("Ice_DungeonER_Gossipstone.Image");
             Ice_DungeonER_Gossipstone.Location = new Point(715, 123);
             Ice_DungeonER_Gossipstone.Name = "Ice_DungeonER_Gossipstone";
@@ -1578,6 +1525,7 @@
             // Jabu_DungeonER_Gossipstone
             // 
             Jabu_DungeonER_Gossipstone.AllowDrop = true;
+            Jabu_DungeonER_Gossipstone.BackColor = Color.Transparent;
             Jabu_DungeonER_Gossipstone.Image = (Image)resources.GetObject("Jabu_DungeonER_Gossipstone.Image");
             Jabu_DungeonER_Gossipstone.Location = new Point(791, 173);
             Jabu_DungeonER_Gossipstone.Name = "Jabu_DungeonER_Gossipstone";
@@ -1590,6 +1538,7 @@
             // DC_DungeonER_Gossipstone
             // 
             DC_DungeonER_Gossipstone.AllowDrop = true;
+            DC_DungeonER_Gossipstone.BackColor = Color.Transparent;
             DC_DungeonER_Gossipstone.Image = (Image)resources.GetObject("DC_DungeonER_Gossipstone.Image");
             DC_DungeonER_Gossipstone.Location = new Point(596, 236);
             DC_DungeonER_Gossipstone.Name = "DC_DungeonER_Gossipstone";
@@ -1602,6 +1551,7 @@
             // BotW_DungeonER_Gossipstone
             // 
             BotW_DungeonER_Gossipstone.AllowDrop = true;
+            BotW_DungeonER_Gossipstone.BackColor = Color.Transparent;
             BotW_DungeonER_Gossipstone.Image = (Image)resources.GetObject("BotW_DungeonER_Gossipstone.Image");
             BotW_DungeonER_Gossipstone.Location = new Point(632, 279);
             BotW_DungeonER_Gossipstone.Name = "BotW_DungeonER_Gossipstone";
@@ -1611,12 +1561,76 @@
             BotW_DungeonER_Gossipstone.TabIndex = 242;
             BotW_DungeonER_Gossipstone.TabStop = false;
             // 
+            // Kakariko_Button
+            // 
+            Kakariko_Button.BackColor = Color.Red;
+            Kakariko_Button.CheckCount = 0;
+            Kakariko_Button.FlatAppearance.BorderColor = Color.Black;
+            Kakariko_Button.FlatStyle = FlatStyle.Flat;
+            Kakariko_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
+            Kakariko_Button.ForeColor = Color.Black;
+            Kakariko_Button.Location = new Point(575, 282);
+            Kakariko_Button.Name = "Kakariko_Button";
+            Kakariko_Button.Size = new Size(26, 26);
+            Kakariko_Button.TabIndex = 243;
+            Kakariko_Button.Text = "regionButton1";
+            Kakariko_Button.UseVisualStyleBackColor = false;
+            // 
+            // Graveyard_Button
+            // 
+            Graveyard_Button.BackColor = Color.Red;
+            Graveyard_Button.CheckCount = 0;
+            Graveyard_Button.FlatAppearance.BorderColor = Color.Black;
+            Graveyard_Button.FlatStyle = FlatStyle.Flat;
+            Graveyard_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
+            Graveyard_Button.ForeColor = Color.Black;
+            Graveyard_Button.Location = new Point(659, 279);
+            Graveyard_Button.Name = "Graveyard_Button";
+            Graveyard_Button.Size = new Size(26, 26);
+            Graveyard_Button.TabIndex = 244;
+            Graveyard_Button.Text = "regionButton1";
+            Graveyard_Button.UseVisualStyleBackColor = false;
+            // 
+            // GoronCity_Button
+            // 
+            GoronCity_Button.BackColor = Color.Red;
+            GoronCity_Button.CheckCount = 0;
+            GoronCity_Button.FlatAppearance.BorderColor = Color.Black;
+            GoronCity_Button.FlatStyle = FlatStyle.Flat;
+            GoronCity_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
+            GoronCity_Button.ForeColor = Color.Black;
+            GoronCity_Button.Location = new Point(632, 178);
+            GoronCity_Button.Name = "GoronCity_Button";
+            GoronCity_Button.Size = new Size(26, 26);
+            GoronCity_Button.TabIndex = 245;
+            GoronCity_Button.Text = "regionButton2";
+            GoronCity_Button.UseVisualStyleBackColor = false;
+            // 
+            // ToT_Button
+            // 
+            ToT_Button.BackColor = Color.Red;
+            ToT_Button.CheckCount = 0;
+            ToT_Button.FlatAppearance.BorderColor = Color.Black;
+            ToT_Button.FlatStyle = FlatStyle.Flat;
+            ToT_Button.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Pixel);
+            ToT_Button.ForeColor = Color.Black;
+            ToT_Button.Location = new Point(559, 210);
+            ToT_Button.Name = "ToT_Button";
+            ToT_Button.Size = new Size(26, 26);
+            ToT_Button.TabIndex = 246;
+            ToT_Button.Text = "regionButton1";
+            ToT_Button.UseVisualStyleBackColor = false;
+            // 
             // Maptracker
             // 
             AutoScaleDimensions = new SizeF(5F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(ToT_Button);
+            Controls.Add(GoronCity_Button);
+            Controls.Add(Graveyard_Button);
+            Controls.Add(Kakariko_Button);
             Controls.Add(BotW_DungeonER_Gossipstone);
             Controls.Add(DC_DungeonER_Gossipstone);
             Controls.Add(Jabu_DungeonER_Gossipstone);
@@ -1637,7 +1651,6 @@
             Controls.Add(MarketBazaar);
             Controls.Add(MarketPotionShop);
             Controls.Add(WastelandSalesman);
-            Controls.Add(ToT_Button);
             Controls.Add(GanonsCastle_Button);
             Controls.Add(Shadow_Button);
             Controls.Add(Deku_Button);
@@ -1648,9 +1661,6 @@
             Controls.Add(Forest_Button);
             Controls.Add(Spirit_Button);
             Controls.Add(ToT_Button2);
-            Controls.Add(GoronCity_Button);
-            Controls.Add(Graveyard_Button);
-            Controls.Add(Kakariko_Button);
             Controls.Add(DMCShiek);
             Controls.Add(DMCGreatFairy);
             Controls.Add(DMCUpperGrotto);
@@ -1737,10 +1747,6 @@
 
         #endregion
         private RegionButton ToT_Button2;
-        private Region_Button_Dense GoronCity_Button;
-        private Region_Button_Dense Graveyard_Button;
-        private Region_Button_Dense Kakariko_Button;
-        private DungeonButton GanonsCastle_Button;
         public Check LHShootTheSun;
         public Check LHFreestandingPoH;
         public Check LHLabDive;
@@ -1805,7 +1811,6 @@
         public Check DMTStormsGrotto;
         public Check DMTChest;
         public Check DMTPoH;
-        private Region_Button_Dense ToT_Button;
         public Check GFChest;
         public Check WastelandSalesman;
         public ShopButton MarketPotionShop;
@@ -1821,9 +1826,6 @@
         public DungeonButton Fire_Button;
         public DungeonButton Deku_Button;
         public DungeonButton Shadow_Button;
-        private DungeonButton BotW_Button;
-        private DungeonButton GTG_Button;
-        private DungeonButton Ice_Button;
         public DungeonERGossipstone Shadow_DungeonER_Gossipstone;
         private DungeonERGossipstone Forest_DungeonER_Gossipstone;
         private DungeonERGossipstone Deku_DungeonER_Gossipstone;
@@ -1835,5 +1837,13 @@
         private DungeonERGossipstone Jabu_DungeonER_Gossipstone;
         private DungeonERGossipstone DC_DungeonER_Gossipstone;
         private DungeonERGossipstone BotW_DungeonER_Gossipstone;
+        private RegionButton Kakariko_Button;
+        private RegionButton Graveyard_Button;
+        private RegionButton GoronCity_Button;
+        private RegionButton ToT_Button;
+        public DungeonButton BotW_Button;
+        public DungeonButton GTG_Button;
+        public DungeonButton Ice_Button;
+        public DungeonButton GanonsCastle_Button;
     }
 }

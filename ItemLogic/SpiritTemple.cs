@@ -20,15 +20,40 @@ namespace CeddyMapTracker
             bool centralchamber_access = false;
 
             //Childside access
-            if (((Has(i.Reqiuem) && Spirit_Button.RegionPanel == Spirit_RegionPanel) || Spirit_Temple_Access) && (Has(i.Slingshot) || Has(i.Boomerang)))
+            if(DungeonER)
             {
-                childside_access = true;
+                if (Has(i.Reqiuem) && Spirit_Button.RegionPanel == Spirit_RegionPanel || Has(i.Bolero) && Fire_Button.RegionPanel == Spirit_RegionPanel)
+                {
+                    childside_access = true;
+                }
+                else if (Spirit_Button.RegionPanel == Spirit_RegionPanel || Fire_Button.RegionPanel == Spirit_RegionPanel)
+                {
+                    childside_access = false;
+                }
+                else
+                {
+                    if(Spirit_Temple_Access)
+                    {
+                        childside_access = true;
+                    }
+                    else
+                    {
+                        childside_access = false;
+                    }
+                }      
             }
             else
             {
-                childside_access = false;
-            }
-            //Adulutside Access
+                if (Has(i.Reqiuem))
+                {
+                    childside_access = true;
+                }
+                else
+                {
+                    childside_access = false;
+                }
+            }      
+            //Adultside Access
             if(Spirit_Temple_Access && i.Strength.State >= 2 && (Has(i.Hookshot) || Has(i.Bow) || Has(i.Bomb)))
             {
                 adultside_access = true;
@@ -38,7 +63,7 @@ namespace CeddyMapTracker
                 adultside_access= false;
             }
             //Early Child Checks
-            if (childside_access)
+            if (childside_access && (Has(i.Slingshot) || Has(i.Boomerang)))
             {
                 SpiritChildBridgeChest.ForeColor = Available;
                 SpiritChildEarlyTorchesChest.ForeColor = Available;

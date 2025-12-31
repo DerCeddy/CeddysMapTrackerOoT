@@ -24,7 +24,7 @@ namespace CeddyMapTracker
                 WaterMapChest.ForeColor = NotAvailable;
             }
             //Compass Chest
-            if (Water_Temple_Access && (Has(i.IronBoots) || Has(i.ZeldasLullaby)) && Has(i.Hookshot))
+            if (Water_Temple_Access && Has(i.IronBoots) && Has(i.Hookshot))
             {
                 WaterCompassChest.ForeColor = Available;
             }
@@ -33,11 +33,11 @@ namespace CeddyMapTracker
                 WaterCompassChest.ForeColor = NotAvailable;
             }
             //Dragon Chest
-            if (Water_Temple_Access && Has(i.Hookshot) && Has(i.IronBoots)  && (Has(i.Strength) && Has(i.ZeldasLullaby) || (Has(i.Bow) && Has(i.IronBoots) && DungeonInfoPanel.WaterTemple.CurrentKeys >= 5 && Has(i.SongOfTime))))
+            if (Water_Temple_Access && Has(i.Hookshot) && Has(i.IronBoots) && (Has(i.Strength) && Has(i.ZeldasLullaby) || (Has(i.Bow) && Has(i.IronBoots) && DungeonInfoPanel.WaterTemple.CurrentKeys >= 5 && Has(i.SongOfTime))))
             {
                 WaterDragonChest.ForeColor = Available;
             }
-            else if (Water_Temple_Access && Has(i.Hookshot) && Has(i.IronBoots)  && (Has(i.Strength) && Has(i.ZeldasLullaby) || (Has(i.Bow) && Has(i.IronBoots) && Has(i.SongOfTime))))
+            else if (Water_Temple_Access && Has(i.Hookshot) && Has(i.IronBoots) && (Has(i.Strength) && Has(i.ZeldasLullaby) || (Has(i.Bow) && Has(i.IronBoots) && Has(i.SongOfTime))))
             {
                 WaterDragonChest.ForeColor = coulddo;
             }

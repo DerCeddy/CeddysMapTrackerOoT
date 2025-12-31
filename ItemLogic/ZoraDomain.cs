@@ -27,7 +27,7 @@ namespace CeddyMapTracker
                 ZDDivingGame.color = NotAvailable;
             }
             //King Zora Thawed
-            if (Has(i.ZeldasLullaby) && ((Has(i.RutoLetter) && (Has(i.Bomb) || Has(i.Scales))) || ((i.Wallet.State == 2 || rainbowbridge) && has_bottle)))
+            if (Has(i.ZeldasLullaby) && (((Has(i.RutoLetter) && (Has(i.Bomb) || Has(i.Scales))) || ((i.Wallet.State == 2 || rainbowbridge) && has_bottle)) || can_use_bluefirearrows))
             {
                 ZDKingZora.color = Available;
             }

@@ -9,15 +9,15 @@ namespace CeddyMapTracker
 {
     public class SometimesHint : UserControl
     {
-        public ComboBox ComboBox = new() { Size = new Size(200, 20), Location = new Point(0,0)};
-        public Gossipstone Gossipstone = new() { Location = new Point(200,0)};
-        public Gossipstone Gossipstone2 = new() { Location = new Point(224, 0) };
+        public ComboBox ComboBox = new() { Size = new Size(250, 20), Location = new Point(0,0) };
+        public Gossipstone Gossipstone = new() { Location = new Point(250,0)};
+        public Gossipstone Gossipstone2 = new() { Location = new Point(274, 0) };
         public int SometimesHintIndex;
         public int SometimesHintIndex2;
 
         public SometimesHint(string Type)
         {
-            Size = new Size(270, 24);
+            Size = new Size(300, 24);
             BackColor = Color.Black;
             Controls.Add(ComboBox);
             if (Type == "Single")
@@ -30,101 +30,105 @@ namespace CeddyMapTracker
                 Controls.Add(Gossipstone);
                 Controls.Add(Gossipstone2);               
                 //Size = new Size(88, 32);
-            }
+            }                     
         }
         public void CheckCheckOnMaptracker(Maptracker Maptracker, string Checkname)
         {
-            AssignIndexFromText(Checkname);
+            //AssignIndexFromText(Checkname);
             //Gossipstone 1
-            if (Gossipstone.State == 1)
+            if (ComboBox.SelectedItem is SometimesHintElement HintElement)
             {
-                foreach (Control control in Maptracker.Controls)
+                if (Gossipstone.State == 1)
                 {
-                    if (control != null && control is Check Check)
+                    foreach (Control control in Maptracker.Controls)
                     {
-                        if (Check.CheckIndex == SometimesHintIndex && Check.CheckIndex != 0)
+                        if (control != null && control is Check Check)
                         {
-                            Check.Done = true;
+                            if (Check.CheckIndex == HintElement.CheckIndex && Check.CheckIndex != 0)
+                            {
+                                Check.Done = true;
+                            }
+                        }
+                    }
+                    foreach (Region_Panel_Check RegionCheck in Maptracker.SometimesHintChecks)
+                    {
+                        if (RegionCheck.CheckIndex == HintElement.CheckIndex && RegionCheck.CheckIndex != 0)
+                        {
+                            RegionCheck.Checked = true;
                         }
                     }
                 }
-                foreach (Region_Panel_Check RegionCheck in Maptracker.SometimesHintChecks)
+                else
                 {
-                    if (RegionCheck.CheckIndex == SometimesHintIndex && RegionCheck.CheckIndex != 0)
+                    foreach (Control control in Maptracker.Controls)
                     {
-                        RegionCheck.Checked = true;
-                    }
-                }
-            }
-            else
-            {
-                foreach (Control control in Maptracker.Controls)
-                {
-                    if (control != null && control is Check Check)
-                    {
-                        if (Check.CheckIndex == SometimesHintIndex)
+                        if (control != null && control is Check Check)
                         {
-                            if (Check.PressedCheck == false)
+                            if (Check.CheckIndex == HintElement.CheckIndex)
                             {
-                                Check.Done = false;
+                                if (Check.PressedCheck == false)
+                                {
+                                    Check.Done = false;
+                                }
+                            }
+                        }
+                    }
+                    foreach (Region_Panel_Check RegionCheck in Maptracker.SometimesHintChecks)
+                    {
+                        if (RegionCheck.CheckIndex == HintElement.CheckIndex)
+                        {
+                            if (RegionCheck.UserClickedCheck == false)
+                            {
+                                RegionCheck.Checked = false;
                             }
                         }
                     }
                 }
-                foreach (Region_Panel_Check RegionCheck in Maptracker.SometimesHintChecks)
+
+                //Gossipstone 2        
+                if (Gossipstone2.State == 1)
                 {
-                    if (RegionCheck.CheckIndex == SometimesHintIndex)
+                    foreach (Control control in Maptracker.Controls)
                     {
-                        if (RegionCheck.UserClickedCheck == false)
+                        if (control != null && control is Check Check)
                         {
-                            RegionCheck.Checked = false;
-                        }
-                    }
-                }
-            }
-            //Gossipstone 2
-            if (Gossipstone2.State == 1)
-            {
-                foreach (Control control in Maptracker.Controls)
-                {
-                    if (control != null && control is Check Check)
-                    {
-                        if (Check.CheckIndex == SometimesHintIndex2 && Check.CheckIndex != 0)
-                        {
-                            Check.Done = true;
-                        }
-                    }
-                }
-                foreach (Region_Panel_Check RegionCheck in Maptracker.SometimesHintChecks)
-                {
-                    if (RegionCheck.CheckIndex == SometimesHintIndex2 && RegionCheck.CheckIndex != 0)
-                    {
-                        RegionCheck.Checked = true;
-                    }
-                }
-            }
-            else
-            {
-                foreach (Control control in Maptracker.Controls)
-                {
-                    if (control != null && control is Check Check)
-                    {
-                        if (Check.CheckIndex == SometimesHintIndex2)
-                        {
-                            if (Check.PressedCheck == false)
+                            if (Check.CheckIndex == HintElement.CheckIndexDual && Check.CheckIndex != 0)
                             {
-                                Check.Done = false;
+                                Check.Done = true;
                             }
                         }
                     }
-                }
-                foreach (Region_Panel_Check RegionCheck in Maptracker.SometimesHintChecks)
-                {
-                    if (RegionCheck.CheckIndex == SometimesHintIndex2)
+                    foreach (Region_Panel_Check RegionCheck in Maptracker.SometimesHintChecks)
                     {
-                        if (RegionCheck.UserClickedCheck == false)
+                        if (RegionCheck.CheckIndex == HintElement.CheckIndexDual && RegionCheck.CheckIndex != 0)
                         {
-                            RegionCheck.Checked = false;
+                            RegionCheck.Checked = true;
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (Control control in Maptracker.Controls)
+                    {
+                        if (control != null && control is Check Check)
+                        {
+                            if (Check.CheckIndex == HintElement.CheckIndexDual)
+                            {
+                                if (Check.PressedCheck == false)
+                                {
+                                    Check.Done = false;
+                                }
+                            }
+                        }
+                    }
+                    foreach (Region_Panel_Check RegionCheck in Maptracker.SometimesHintChecks)
+                    {
+                        if (RegionCheck.CheckIndex == HintElement.CheckIndexDual)
+                        {
+                            if (RegionCheck.UserClickedCheck == false)
+                            {
+                                RegionCheck.Checked = false;
+                            }
                         }
                     }
                 }
@@ -132,6 +136,14 @@ namespace CeddyMapTracker
         }
         public void AssignIndexFromText(string CheckName)
         {
+            if (ComboBox.SelectedItem is SometimesHintElement HintElement)
+            {
+                SometimesHintIndex = 1;
+            }
+            else
+            {
+                SometimesHintIndex = 1;
+            }
             switch (CheckName)
             {
                 case "Lost Woods Target in the Woods":
@@ -226,6 +238,7 @@ namespace CeddyMapTracker
                     SometimesHintIndex2 = 0;
                     break;
             }
+            
         }
     }
 }

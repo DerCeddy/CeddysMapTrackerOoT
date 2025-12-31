@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,8 +37,8 @@ namespace CeddyMapTracker
         private int _currentKeys;
         public Label CurrentKeys_Label = new() { Size = new Size(16,20), Font = new Font("Arial",16,GraphicsUnit.Pixel), ForeColor = Color.White};
         public Label MaxKeys_Label = new() { Size = new Size(28, 20), Font = new Font("Arial", 16, GraphicsUnit.Pixel), ForeColor = Color.White };
-        public int MaxKeys;
-        public List<Region_Panel_Check> Checks = new();
+        public int MaxKeys;      
+        public BindingList<Region_Panel_Check> Checks = new();
         public string KeyCount1;
         public string KeyCount2;
         public string KeyCount3;

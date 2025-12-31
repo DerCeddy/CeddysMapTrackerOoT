@@ -27,15 +27,22 @@ namespace CeddyMapTracker
             if (Forest_Temple_Access && (Has(i.SongOfTime) || Has(i.Bow)))
             {
                 ForestMapChest.ForeColor = Available;
-                ForestRaisedIslandCourtyardChest.ForeColor = Available;
                 ForestWellChest.ForeColor = Available;
-                tokensAvailable++;
             }
             else
             {
                 ForestMapChest.ForeColor = NotAvailable;
-                ForestRaisedIslandCourtyardChest.ForeColor = NotAvailable;
                 ForestWellChest.ForeColor = NotAvailable;
+            }
+            //Forest raised island courtyard
+            if (Forest_Temple_Access && ((Has(i.SongOfTime) || Has(i.Bow)) && Has(i.Hookshot)) || DungeonInfoPanel.ForestTemple.CurrentKeys == 5)
+            {
+                ForestRaisedIslandCourtyardChest.ForeColor = Available;
+                tokensAvailable++;
+            }
+            else
+            {
+                ForestRaisedIslandCourtyardChest.ForeColor = NotAvailable;
             }
             //Forest Eye Switch Chest
             if (Forest_Temple_Access && DungeonInfoPanel.ForestTemple.CurrentKeys >= 1 && Has(i.Bow) && Has(i.Strength))
