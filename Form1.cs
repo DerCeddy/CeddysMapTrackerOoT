@@ -43,19 +43,6 @@ namespace CeddyMapTracker
             MapTracker.Controls.Add(ContextWheel);
             ContextWheel.Visible = false;
             ContextWheel.ValueChanged += (sender, e) => MapTracker.UpdateWOTHGoals(WotHPanel, ImportantHint, ContextWheel);
-            /*
-            foreach(Region Region in MapTracker.DenseRegions)
-            {
-                if (Region.RegionButton != null)
-                {
-                    Region.RegionButton.MouseDown += (sender, e) => MapTracker.AddContextMenu(e, ContextWheel, Region);
-                }
-                if (Region.DungeonButton != null)
-                {
-                    Region.DungeonButton.MouseDown += (sender, e) => MapTracker.AddContextMenu(e, ContextWheel, Region.DungeonButton);
-                }
-            }
-            */
             Controls.Add(WotHPanel);           
             Controls.Add(AlwaysHints);           
             Controls.Add(SometimesHints);           
@@ -67,21 +54,13 @@ namespace CeddyMapTracker
             ItemPanel.LoadItems();
             ItemPanel.LoadEquips();
             ItemPanel.LoadQuestItems();
-            ItemPanel.LoadSongs(); 
-            //Controls.Add(Keys); 
-            Controls.Add(DungeonInfo);
-            /*
-            List<Keys> SmallKeys = [Keys.Forest_SmallKeys, Keys.Fire_SmallKeys, Keys.Water_SmallKeys, Keys.Shadow_SmallKeys, Keys.Spirit_SmallKeys, Keys.BotW_SmallKeys, Keys.GTG_SmallKeys];
-            List<Item> BossKeys = [ItemPanel.ForestBossKey, ItemPanel.FireBossKey, ItemPanel.WaterBossKey, ItemPanel.ShadowBossKey, ItemPanel.SpiritBossKey];                    
-            Keys.LoadSmallKeys(SmallKeys);
-            Keys.LoadBossKeys(BossKeys);
-            */
+            ItemPanel.LoadSongs();            
+            Controls.Add(DungeonInfo);       
             //Precise locations
             Stats.Location = new Point(MapTracker.Location.X, MapTracker.Location.Y);
             Stats.BringToFront();
             AlwaysHints.Location = new Point(WotHPanel.Location.X, WotHPanel.Size.Height + 1);
-            SometimesHints.Location = new Point(AlwaysHints.Location.X, AlwaysHints.Size.Height + AlwaysHints.Location.Y + 1);
-            //Controls.Add(dungeoncounter);
+            SometimesHints.Location = new Point(AlwaysHints.Location.X, AlwaysHints.Size.Height + AlwaysHints.Location.Y + 1);           
             //Load Hints
             AlwaysHints.DrawPanel();
             SometimesHints.GenerateHintsAndStones();
@@ -161,6 +140,7 @@ namespace CeddyMapTracker
             MapTracker.ShopShuffle = false;
             MapTracker.AddExtraChecks();
             MapTracker.AddDungeonER();
+            MapTracker.Jabu_Button.RegionPanelChanged += (sender, e) => UpdateDCToolTips(MapTracker.Jabu_Button);
             UpdateLocationsOfTrackerElements();
             //Test for automatic checking of hints
             foreach (AlwaysHint Alwayshint in AlwaysHints.AlwaysHintsList)
@@ -194,7 +174,8 @@ namespace CeddyMapTracker
                 MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => MapTracker.ItemLogic(ItemPanel, DungeonInfo);
                 MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => MapTracker.UpdateStatVariables(Stats);
                 MapTracker.RegionWithKeys[temp].KeyValueChangedNegative += (sender, e) => DungeonInfo.DungeonInfoElements[temp].UpdateItemCounterText();
-            }                     
+            }    
+            
         }
         public void UpdateLocationsOfTrackerElements()
         {
@@ -282,6 +263,29 @@ namespace CeddyMapTracker
             }
             MapTracker.ItemLogic(ItemPanel,DungeonInfo);
             MapTracker.UpdateStatVariables(Stats);
+        }
+        public void UpdateDCToolTips(DungeonButton DungeonButton)
+        {
+            if(DungeonButton.RegionPanel == MapTracker.DC_RegionPanel)
+            {
+                MapTracker.DodongosCavernMapChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Strength.Item_Name}";
+                MapTracker.DodongosCavernCompassChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Strength.Item_Name}";
+                MapTracker.DodongosCavernBombFlowerPlatformChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Strength.Item_Name}";
+                MapTracker.DodongosCavernBombBagChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Strength.Item_Name}\r\n• {ItemPanel.Slingshot.Item_Name}";
+                MapTracker.DodongosCavernEndofBridgeChest.RichToolTip.CheckLogic = $"{ItemPanel.Bomb.Item_Name}\r\n• {ItemPanel.Slingshot.Item_Name}";
+                MapTracker.DodongosCavernBossRoomChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name}\r\n• {ItemPanel.Slingshot.Item_Name}";
+                MapTracker.DodongosCavernKingDodongoHeart.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name}\r\n• {ItemPanel.Slingshot.Item_Name}";
+            }
+            else
+            {
+                MapTracker.DodongosCavernMapChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Strength.Item_Name} or {ItemPanel.Hammer.Item_Name}";
+                MapTracker.DodongosCavernCompassChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Strength.Item_Name} or {ItemPanel.Hammer.Item_Name}";
+                MapTracker.DodongosCavernBombFlowerPlatformChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Strength.Item_Name} or ({ItemPanel.Hammer.Item_Name} and {ItemPanel.Magic.Item_Name} and {ItemPanel.Dins.Item_Name})";
+                MapTracker.DodongosCavernBombBagChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name} or {ItemPanel.Strength.Item_Name} or ({ItemPanel.Hammer.Item_Name} and {ItemPanel.Magic.Item_Name} and {ItemPanel.Dins.Item_Name})";
+                MapTracker.DodongosCavernEndofBridgeChest.RichToolTip.CheckLogic = $"{ItemPanel.Bomb.Item_Name} or ({ItemPanel.Hammer.Item_Name} and ({ItemPanel.Strength.Item_Name} or ({ItemPanel.Dins.Item_Name} and {ItemPanel.Magic.Item_Name})))";
+                MapTracker.DodongosCavernBossRoomChest.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name}";
+                MapTracker.DodongosCavernKingDodongoHeart.RichToolTip.CheckLogic = $"• {ItemPanel.Bomb.Item_Name}";
+            }
         }
         public void InitiateDungeonEntranceLogic(Maptracker Maptracker)
         {

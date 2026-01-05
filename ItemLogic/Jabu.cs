@@ -17,10 +17,12 @@ namespace CeddyMapTracker
                 JabuJabusBellyBoomerangChest.ForeColor = Available;
                 tokensAvailable += 1;
             }
+            /*
             else if (Has(i.RutoLetter) && Has(i.Bombchu) && Has(i.ZeldasLullaby))
             {
                 JabuJabusBellyBoomerangChest.ForeColor = OoLwithBombchus;
             }
+            */
             else
             {
                 JabuJabusBellyBoomerangChest.ForeColor = NotAvailable;
