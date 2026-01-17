@@ -21,7 +21,7 @@ namespace CeddyMapTracker
                 Pb("Gerudo Fortress", "Carpenter", maptracker_Panel).ForeColor = red;
             }  
             */
-            if (has_or_can_get_gerudocard && Has(i.EponasSong) && Has(i.Bow))
+            if (Has(i.GerudoCard) && Has(i.EponasSong) && Has(i.Bow))
             {
                 HBA.color = Available;              
             }
@@ -29,7 +29,7 @@ namespace CeddyMapTracker
             {
                 HBA.color = NotAvailable;
             }
-            if ((Has(i.Hookshot) || Has(i.HoverBoots)) && has_or_can_get_gerudocard)
+            if ((Has(i.Hookshot) || Has(i.HoverBoots)) && Has(i.GerudoCard))
             {
                 GFChest.color = Available;
             }
@@ -38,7 +38,7 @@ namespace CeddyMapTracker
                 GFChest.color = NotAvailable;
             }
             //Skulltula
-            if ((Has(i.EponasSong) || has_longshot) && Has(i.Hookshot))
+            if ((Has(i.EponasSong) || has_longshot) && Has(i.Hookshot) && Has(i.GerudoCard))
             {
                 tokensAvailable += 2;
             }

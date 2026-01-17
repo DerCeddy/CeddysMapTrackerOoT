@@ -96,6 +96,8 @@ namespace CeddyMapTracker
             public string? WaterTempleCentralPillarChest;
             public string? WaterTempleBossKeyChest;
             public string? WaterTempleRiverChest;
+            public string? SpiritTempleSilverGauntletChest;
+            public string? SpiritTempleMirrorShieldChest;
             public string? GanonsCastleShadowTrial2;
             public string? GTGUnderwaterSilverRupeeChest;
             public string? IceCavernFinalChest;
@@ -199,6 +201,8 @@ namespace CeddyMapTracker
             WaterTempleCentralPillarChest.CheckName = Konfig.sometimesHint.WaterTempleCentralPillarChest;
             WaterTempleBossKeyChest.CheckName = Konfig.sometimesHint.WaterTempleBossKeyChest;
             WaterTempleRiverChest.CheckName = Konfig.sometimesHint.WaterTempleRiverChest;
+            SpiritTempleSilverGauntletChest.CheckName = Konfig.sometimesHint.SpiritTempleSilverGauntletChest;
+            SpiritTempleMirrorShieldChest.CheckName = Konfig.sometimesHint.SpiritTempleMirrorShieldChest;
             GanonsCastleShadowTrial2.CheckName = Konfig.sometimesHint.GanonsCastleShadowTrial2;
             GTGUnderwaterSilverRupeeChest.CheckName = Konfig.sometimesHint.GTGUnderwaterSilverRupeeChest;
             IceCavernFinalChest.CheckName = Konfig.sometimesHint.IceCavernFinalChest;

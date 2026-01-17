@@ -15,7 +15,8 @@ namespace CeddyMapTracker
         private Color Color_Done = Color.Gray;
         public RichToolTip RichToolTip = new();
         [Browsable(true), Description("test property"), Category("Appearance")]
-        public int CheckIndex {  get; set; }
+        public int CheckIndex { get; set; }
+        public Color BorderColor { get; set; }
         public bool PressedCheck;
         public bool Done
         {
@@ -40,6 +41,7 @@ namespace CeddyMapTracker
             ValueChanged += (sender, e) => UpdateColor();
             FlatAppearance.BorderSize = 1;
             FlatAppearance.BorderColor = Color.Black;    
+            BorderColor = Color.Black;
             RichToolTip.Location = this.Location;            
         }
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
@@ -49,8 +51,9 @@ namespace CeddyMapTracker
             this.Region = new System.Drawing.Region(grPath);
             base.OnPaint(e);
             Graphics g = e.Graphics;
-            using Pen selPen = new(Color.Black, 2);
+            using Pen selPen = new(BorderColor, 2);
             g.DrawEllipse(selPen, 0, 0, 13, 13);
+            selPen.Dispose();
         }
         public void ChangeColor()
         {          

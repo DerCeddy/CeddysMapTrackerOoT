@@ -173,7 +173,7 @@ namespace CeddyMapTracker
             {               
                 Goallabel_States.Add(0);
                 var formId = i;
-                MedallionLabel goallabel = new();
+                MedallionLabel goallabel = new() { Font = new Font("Segoe Fluent Icons", 12, FontStyle.Bold, GraphicsUnit.Pixel)};
                 list[i].Image = list[i].ItemPicture_bw;
                 Controls.Add(list[i]);
                 Controls.Add(goallabel);
@@ -183,11 +183,14 @@ namespace CeddyMapTracker
                 {
                     case < 3:
                         list[i].Location = new Point(i * distanceX + 10 + 144, 3 * distanceY + startY + 206);
-                        goallabel.Location = new Point((i + 3) * distanceX + 1, 3 * distanceY + startY + 246);
+                        
+                        goallabel.Location = new Point((i + 3) * distanceX + 8, 3 * distanceY + startY + 246);
+                        goallabel.InitialPosX = goallabel.Location.X + (goallabel.Width / 2);
                         break;
                     case < 10:
                         list[i].Location = new Point((i - 3) * distanceX + 8, startY + 410);
-                        goallabel.Location = new Point((i - 3) * distanceX + 1, startY + 452);
+                        goallabel.Location = new Point((i - 3) * distanceX + 10, startY + 452);
+                        goallabel.InitialPosX = goallabel.Location.X + (goallabel.Width / 2);
                         break;
                 }
                 goallabel.BringToFront();

@@ -141,8 +141,8 @@ namespace CeddyMapTracker
             MapTracker.GVCratePoH.RichToolTip.CheckLogic = $"\r\n• Nothing";
             MapTracker.GVChest.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.EponasSong.Item_Name} or {ItemPanel.Hookshot.Item_Name1}\r\n• {ItemPanel.Hammer.Item_Name}";
             //Gerudo Fortress
-            MapTracker.HBA.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.EponasSong.Item_Name}\r\n• {ItemPanel.Bow.Item_Name}";
-            MapTracker.GFChest.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.EponasSong.Item_Name} and ({ItemPanel.Hookshot.Item_Name} or {ItemPanel.HoverBoots.Item_Name})) or {ItemPanel.Hookshot.Item_Name1}";
+            MapTracker.HBA.RichToolTip.CheckLogic = $"\r\n• {ItemPanel.EponasSong.Item_Name}\r\n• {ItemPanel.Bow.Item_Name}\r\n• {ItemPanel.GerudoCard.Item_Name}";
+            MapTracker.GFChest.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.EponasSong.Item_Name} and ({ItemPanel.Hookshot.Item_Name} or {ItemPanel.HoverBoots.Item_Name})) or {ItemPanel.Hookshot.Item_Name1}\r\n• {ItemPanel.GerudoCard.Item_Name}";
             //Wasteland
             MapTracker.WastelandChest.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.EponasSong.Item_Name} and {ItemPanel.HoverBoots.Item_Name}) or {ItemPanel.Hookshot.Item_Name1}\r\n• ({ItemPanel.Bow.Item_Name} and {ItemPanel.FireArrow.Item_Name}) or {ItemPanel.Dins.Item_Name}\r\n• {ItemPanel.Magic.Item_Name}";
             MapTracker.WastelandSalesman.RichToolTip.CheckLogic = $"\r\n• ({ItemPanel.EponasSong.Item_Name} and {ItemPanel.HoverBoots.Item_Name}) or {ItemPanel.Hookshot.Item_Name1}\r\n• {ItemPanel.Wallet.Item_Name}";

@@ -160,6 +160,7 @@
             // 
             // DMCShiek
             // 
+            DMCShiek.BorderColor = Color.Black;
             DMCShiek.CheckIndex = 76;
             DMCShiek.Done = false;
             DMCShiek.FlatAppearance.BorderColor = Color.Black;
@@ -175,6 +176,7 @@
             // 
             // DMCGreatFairy
             // 
+            DMCGreatFairy.BorderColor = Color.Black;
             DMCGreatFairy.CheckIndex = 0;
             DMCGreatFairy.Done = false;
             DMCGreatFairy.FlatAppearance.BorderColor = Color.Black;
@@ -190,6 +192,7 @@
             // 
             // DMCUpperGrotto
             // 
+            DMCUpperGrotto.BorderColor = Color.Black;
             DMCUpperGrotto.CheckIndex = 0;
             DMCUpperGrotto.Done = false;
             DMCUpperGrotto.FlatAppearance.BorderColor = Color.Black;
@@ -205,6 +208,7 @@
             // 
             // DMCWallPoH
             // 
+            DMCWallPoH.BorderColor = Color.Black;
             DMCWallPoH.CheckIndex = 0;
             DMCWallPoH.Done = false;
             DMCWallPoH.FlatAppearance.BorderColor = Color.Black;
@@ -220,6 +224,7 @@
             // 
             // DMCVolcanoPoH
             // 
+            DMCVolcanoPoH.BorderColor = Color.Black;
             DMCVolcanoPoH.CheckIndex = 0;
             DMCVolcanoPoH.Done = false;
             DMCVolcanoPoH.FlatAppearance.BorderColor = Color.Black;
@@ -235,6 +240,7 @@
             // 
             // DMTBiggoron
             // 
+            DMTBiggoron.BorderColor = Color.Black;
             DMTBiggoron.CheckIndex = 3;
             DMTBiggoron.Done = false;
             DMTBiggoron.FlatAppearance.BorderColor = Color.Black;
@@ -250,6 +256,7 @@
             // 
             // DMTGreatFairy
             // 
+            DMTGreatFairy.BorderColor = Color.Black;
             DMTGreatFairy.CheckIndex = 0;
             DMTGreatFairy.Done = false;
             DMTGreatFairy.FlatAppearance.BorderColor = Color.Black;
@@ -265,6 +272,7 @@
             // 
             // DMTStormsGrotto
             // 
+            DMTStormsGrotto.BorderColor = Color.Black;
             DMTStormsGrotto.CheckIndex = 0;
             DMTStormsGrotto.Done = false;
             DMTStormsGrotto.FlatAppearance.BorderColor = Color.Black;
@@ -280,6 +288,7 @@
             // 
             // DMTChest
             // 
+            DMTChest.BorderColor = Color.Black;
             DMTChest.CheckIndex = 0;
             DMTChest.Done = false;
             DMTChest.FlatAppearance.BorderColor = Color.Black;
@@ -295,6 +304,7 @@
             // 
             // DMTPoH
             // 
+            DMTPoH.BorderColor = Color.Black;
             DMTPoH.CheckIndex = 0;
             DMTPoH.Done = false;
             DMTPoH.FlatAppearance.BorderColor = Color.Black;
@@ -310,6 +320,7 @@
             // 
             // LHShootTheSun
             // 
+            LHShootTheSun.BorderColor = Color.Black;
             LHShootTheSun.CheckIndex = 70;
             LHShootTheSun.Done = false;
             LHShootTheSun.FlatAppearance.BorderColor = Color.Black;
@@ -325,6 +336,7 @@
             // 
             // LHFreestandingPoH
             // 
+            LHFreestandingPoH.BorderColor = Color.Black;
             LHFreestandingPoH.CheckIndex = 123;
             LHFreestandingPoH.Done = false;
             LHFreestandingPoH.FlatAppearance.BorderColor = Color.Black;
@@ -340,6 +352,7 @@
             // 
             // LHLabDive
             // 
+            LHLabDive.BorderColor = Color.Black;
             LHLabDive.CheckIndex = 57;
             LHLabDive.Done = false;
             LHLabDive.FlatAppearance.BorderColor = Color.Black;
@@ -355,6 +368,7 @@
             // 
             // LHUnderwaterItem
             // 
+            LHUnderwaterItem.BorderColor = Color.Black;
             LHUnderwaterItem.CheckIndex = 0;
             LHUnderwaterItem.Done = false;
             LHUnderwaterItem.FlatAppearance.BorderColor = Color.Black;
@@ -370,6 +384,7 @@
             // 
             // LHAdultFishing
             // 
+            LHAdultFishing.BorderColor = Color.Black;
             LHAdultFishing.CheckIndex = 124;
             LHAdultFishing.Done = false;
             LHAdultFishing.FlatAppearance.BorderColor = Color.Black;
@@ -385,6 +400,7 @@
             // 
             // LHChildFishing
             // 
+            LHChildFishing.BorderColor = Color.Black;
             LHChildFishing.CheckIndex = 0;
             LHChildFishing.Done = false;
             LHChildFishing.FlatAppearance.BorderColor = Color.Black;
@@ -400,6 +416,7 @@
             // 
             // ZFBottomPoH
             // 
+            ZFBottomPoH.BorderColor = Color.Black;
             ZFBottomPoH.CheckIndex = 60;
             ZFBottomPoH.Done = false;
             ZFBottomPoH.FlatAppearance.BorderColor = Color.Black;
@@ -415,6 +432,7 @@
             // 
             // ZFFreestandingPoH
             // 
+            ZFFreestandingPoH.BorderColor = Color.Black;
             ZFFreestandingPoH.CheckIndex = 0;
             ZFFreestandingPoH.Done = false;
             ZFFreestandingPoH.FlatAppearance.BorderColor = Color.Black;
@@ -430,6 +448,7 @@
             // 
             // ZFGreatFairy
             // 
+            ZFGreatFairy.BorderColor = Color.Black;
             ZFGreatFairy.CheckIndex = 0;
             ZFGreatFairy.Done = false;
             ZFGreatFairy.FlatAppearance.BorderColor = Color.Black;
@@ -445,6 +464,7 @@
             // 
             // ZDDivingGame
             // 
+            ZDDivingGame.BorderColor = Color.Black;
             ZDDivingGame.CheckIndex = 131;
             ZDDivingGame.Done = false;
             ZDDivingGame.FlatAppearance.BorderColor = Color.Black;
@@ -460,6 +480,7 @@
             // 
             // ZDChest
             // 
+            ZDChest.BorderColor = Color.Black;
             ZDChest.CheckIndex = 132;
             ZDChest.Done = false;
             ZDChest.FlatAppearance.BorderColor = Color.Black;
@@ -475,6 +496,7 @@
             // 
             // ZDKingZora
             // 
+            ZDKingZora.BorderColor = Color.Black;
             ZDKingZora.CheckIndex = 59;
             ZDKingZora.Done = false;
             ZDKingZora.FlatAppearance.BorderColor = Color.Black;
@@ -490,6 +512,7 @@
             // 
             // ZRPoHNearDomain
             // 
+            ZRPoHNearDomain.BorderColor = Color.Black;
             ZRPoHNearDomain.CheckIndex = 0;
             ZRPoHNearDomain.Done = false;
             ZRPoHNearDomain.FlatAppearance.BorderColor = Color.Black;
@@ -505,6 +528,7 @@
             // 
             // ZRFrogsGame
             // 
+            ZRFrogsGame.BorderColor = Color.Black;
             ZRFrogsGame.CheckIndex = 4;
             ZRFrogsGame.Done = false;
             ZRFrogsGame.FlatAppearance.BorderColor = Color.Black;
@@ -520,6 +544,7 @@
             // 
             // ZRFrogsStorms
             // 
+            ZRFrogsStorms.BorderColor = Color.Black;
             ZRFrogsStorms.CheckIndex = 10;
             ZRFrogsStorms.Done = false;
             ZRFrogsStorms.FlatAppearance.BorderColor = Color.Black;
@@ -535,6 +560,7 @@
             // 
             // ZROpenGrotto
             // 
+            ZROpenGrotto.BorderColor = Color.Black;
             ZROpenGrotto.CheckIndex = 0;
             ZROpenGrotto.Done = false;
             ZROpenGrotto.FlatAppearance.BorderColor = Color.Black;
@@ -550,6 +576,7 @@
             // 
             // ZRNearGrottoPoH
             // 
+            ZRNearGrottoPoH.BorderColor = Color.Black;
             ZRNearGrottoPoH.CheckIndex = 0;
             ZRNearGrottoPoH.Done = false;
             ZRNearGrottoPoH.FlatAppearance.BorderColor = Color.Black;
@@ -565,6 +592,7 @@
             // 
             // LLRPoH
             // 
+            LLRPoH.BorderColor = Color.Black;
             LLRPoH.CheckIndex = 0;
             LLRPoH.Done = false;
             LLRPoH.FlatAppearance.BorderColor = Color.Black;
@@ -580,6 +608,7 @@
             // 
             // LLRMalon
             // 
+            LLRMalon.BorderColor = Color.Black;
             LLRMalon.CheckIndex = 0;
             LLRMalon.Done = false;
             LLRMalon.FlatAppearance.BorderColor = Color.Black;
@@ -595,6 +624,7 @@
             // 
             // LLRTalon
             // 
+            LLRTalon.BorderColor = Color.Black;
             LLRTalon.CheckIndex = 0;
             LLRTalon.Done = false;
             LLRTalon.FlatAppearance.BorderColor = Color.Black;
@@ -610,6 +640,7 @@
             // 
             // HCGreatFairy
             // 
+            HCGreatFairy.BorderColor = Color.Black;
             HCGreatFairy.CheckIndex = 8;
             HCGreatFairy.Done = false;
             HCGreatFairy.FlatAppearance.BorderColor = Color.Black;
@@ -625,6 +656,7 @@
             // 
             // MarketBigPoes
             // 
+            MarketBigPoes.BorderColor = Color.Black;
             MarketBigPoes.CheckIndex = 52;
             MarketBigPoes.Done = false;
             MarketBigPoes.FlatAppearance.BorderColor = Color.Black;
@@ -640,6 +672,7 @@
             // 
             // MarketRichard
             // 
+            MarketRichard.BorderColor = Color.Black;
             MarketRichard.CheckIndex = 0;
             MarketRichard.Done = false;
             MarketRichard.FlatAppearance.BorderColor = Color.Black;
@@ -655,6 +688,7 @@
             // 
             // MarketTreasureChestGame
             // 
+            MarketTreasureChestGame.BorderColor = Color.Black;
             MarketTreasureChestGame.CheckIndex = 53;
             MarketTreasureChestGame.Done = false;
             MarketTreasureChestGame.FlatAppearance.BorderColor = Color.Black;
@@ -670,6 +704,7 @@
             // 
             // MarketBombchuBowling
             // 
+            MarketBombchuBowling.BorderColor = Color.Black;
             MarketBombchuBowling.CheckIndex = 125;
             MarketBombchuBowling.Done = false;
             MarketBombchuBowling.FlatAppearance.BorderColor = Color.Black;
@@ -685,6 +720,7 @@
             // 
             // MarketShootingGalleryReward
             // 
+            MarketShootingGalleryReward.BorderColor = Color.Black;
             MarketShootingGalleryReward.CheckIndex = 0;
             MarketShootingGalleryReward.Done = false;
             MarketShootingGalleryReward.FlatAppearance.BorderColor = Color.Black;
@@ -700,6 +736,7 @@
             // 
             // HFOoT
             // 
+            HFOoT.BorderColor = Color.Black;
             HFOoT.CheckIndex = 1;
             HFOoT.Done = false;
             HFOoT.FlatAppearance.BorderColor = Color.Black;
@@ -715,6 +752,7 @@
             // 
             // HFSalesman
             // 
+            HFSalesman.BorderColor = Color.Yellow;
             HFSalesman.CheckIndex = 0;
             HFSalesman.Done = false;
             HFSalesman.FlatAppearance.BorderColor = Color.Black;
@@ -730,6 +768,7 @@
             // 
             // HFOpenGrottoChest
             // 
+            HFOpenGrottoChest.BorderColor = Color.Black;
             HFOpenGrottoChest.CheckIndex = 0;
             HFOpenGrottoChest.Done = false;
             HFOpenGrottoChest.FlatAppearance.BorderColor = Color.Black;
@@ -745,6 +784,7 @@
             // 
             // HFSoutheastGrottoChest
             // 
+            HFSoutheastGrottoChest.BorderColor = Color.Yellow;
             HFSoutheastGrottoChest.CheckIndex = 0;
             HFSoutheastGrottoChest.Done = false;
             HFSoutheastGrottoChest.FlatAppearance.BorderColor = Color.Black;
@@ -760,6 +800,7 @@
             // 
             // HFTektikeGrottoPoH
             // 
+            HFTektikeGrottoPoH.BorderColor = Color.Yellow;
             HFTektikeGrottoPoH.CheckIndex = 0;
             HFTektikeGrottoPoH.Done = false;
             HFTektikeGrottoPoH.FlatAppearance.BorderColor = Color.Black;
@@ -775,6 +816,7 @@
             // 
             // HFNearMarketGrottoChest
             // 
+            HFNearMarketGrottoChest.BorderColor = Color.Yellow;
             HFNearMarketGrottoChest.CheckIndex = 0;
             HFNearMarketGrottoChest.Done = false;
             HFNearMarketGrottoChest.FlatAppearance.BorderColor = Color.Black;
@@ -790,6 +832,7 @@
             // 
             // SFMShiek
             // 
+            SFMShiek.BorderColor = Color.Black;
             SFMShiek.CheckIndex = 74;
             SFMShiek.Done = false;
             SFMShiek.FlatAppearance.BorderColor = Color.Black;
@@ -805,6 +848,7 @@
             // 
             // SFMSaria
             // 
+            SFMSaria.BorderColor = Color.Black;
             SFMSaria.CheckIndex = 0;
             SFMSaria.Done = false;
             SFMSaria.FlatAppearance.BorderColor = Color.Black;
@@ -820,6 +864,7 @@
             // 
             // SFMWolfosGrotto
             // 
+            SFMWolfosGrotto.BorderColor = Color.Black;
             SFMWolfosGrotto.CheckIndex = 0;
             SFMWolfosGrotto.Done = false;
             SFMWolfosGrotto.FlatAppearance.BorderColor = Color.Black;
@@ -835,6 +880,7 @@
             // 
             // LWScrubGrottoFront
             // 
+            LWScrubGrottoFront.BorderColor = Color.Black;
             LWScrubGrottoFront.CheckIndex = 0;
             LWScrubGrottoFront.Done = false;
             LWScrubGrottoFront.FlatAppearance.BorderColor = Color.Black;
@@ -850,6 +896,7 @@
             // 
             // LWSkullMask
             // 
+            LWSkullMask.BorderColor = Color.Black;
             LWSkullMask.CheckIndex = 5;
             LWSkullMask.Done = false;
             LWSkullMask.FlatAppearance.BorderColor = Color.Black;
@@ -865,6 +912,7 @@
             // 
             // LWNearShortcutGrottoChest
             // 
+            LWNearShortcutGrottoChest.BorderColor = Color.Black;
             LWNearShortcutGrottoChest.CheckIndex = 0;
             LWNearShortcutGrottoChest.Done = false;
             LWNearShortcutGrottoChest.FlatAppearance.BorderColor = Color.Black;
@@ -880,6 +928,7 @@
             // 
             // LWTarget
             // 
+            LWTarget.BorderColor = Color.Black;
             LWTarget.CheckIndex = 50;
             LWTarget.Done = false;
             LWTarget.FlatAppearance.BorderColor = Color.Black;
@@ -895,6 +944,7 @@
             // 
             // LWOcarinaGame
             // 
+            LWOcarinaGame.BorderColor = Color.Black;
             LWOcarinaGame.CheckIndex = 0;
             LWOcarinaGame.Done = false;
             LWOcarinaGame.FlatAppearance.BorderColor = Color.Black;
@@ -910,6 +960,7 @@
             // 
             // LWSkullKid
             // 
+            LWSkullKid.BorderColor = Color.Black;
             LWSkullKid.CheckIndex = 51;
             LWSkullKid.Done = false;
             LWSkullKid.FlatAppearance.BorderColor = Color.Black;
@@ -925,6 +976,7 @@
             // 
             // LWScrubNearBridge
             // 
+            LWScrubNearBridge.BorderColor = Color.Black;
             LWScrubNearBridge.CheckIndex = 0;
             LWScrubNearBridge.Done = false;
             LWScrubNearBridge.FlatAppearance.BorderColor = Color.Black;
@@ -940,6 +992,7 @@
             // 
             // KFStormGrottoChest
             // 
+            KFStormGrottoChest.BorderColor = Color.Black;
             KFStormGrottoChest.CheckIndex = 0;
             KFStormGrottoChest.Done = false;
             KFStormGrottoChest.FlatAppearance.BorderColor = Color.Black;
@@ -955,6 +1008,7 @@
             // 
             // KFKokiriSwordChest
             // 
+            KFKokiriSwordChest.BorderColor = Color.Black;
             KFKokiriSwordChest.CheckIndex = 0;
             KFKokiriSwordChest.Done = false;
             KFKokiriSwordChest.FlatAppearance.BorderColor = Color.Black;
@@ -970,6 +1024,7 @@
             // 
             // KFMidos
             // 
+            KFMidos.BorderColor = Color.Black;
             KFMidos.CheckIndex = 0;
             KFMidos.Done = false;
             KFMidos.FlatAppearance.BorderColor = Color.Black;
@@ -985,6 +1040,7 @@
             // 
             // OGCGreatFairy
             // 
+            OGCGreatFairy.BorderColor = Color.Black;
             OGCGreatFairy.CheckIndex = 9;
             OGCGreatFairy.Done = false;
             OGCGreatFairy.FlatAppearance.BorderColor = Color.Black;
@@ -1000,6 +1056,7 @@
             // 
             // ColossusPoH
             // 
+            ColossusPoH.BorderColor = Color.Black;
             ColossusPoH.CheckIndex = 0;
             ColossusPoH.Done = false;
             ColossusPoH.FlatAppearance.BorderColor = Color.Black;
@@ -1015,6 +1072,7 @@
             // 
             // ColossusShiek
             // 
+            ColossusShiek.BorderColor = Color.Black;
             ColossusShiek.CheckIndex = 78;
             ColossusShiek.Done = false;
             ColossusShiek.FlatAppearance.BorderColor = Color.Black;
@@ -1030,6 +1088,7 @@
             // 
             // ColossusGreatFairy
             // 
+            ColossusGreatFairy.BorderColor = Color.Black;
             ColossusGreatFairy.CheckIndex = 0;
             ColossusGreatFairy.Done = false;
             ColossusGreatFairy.FlatAppearance.BorderColor = Color.Black;
@@ -1045,6 +1104,7 @@
             // 
             // GVCratePoH
             // 
+            GVCratePoH.BorderColor = Color.Black;
             GVCratePoH.CheckIndex = 133;
             GVCratePoH.Done = false;
             GVCratePoH.FlatAppearance.BorderColor = Color.Black;
@@ -1060,6 +1120,7 @@
             // 
             // GVWaterFallPoH
             // 
+            GVWaterFallPoH.BorderColor = Color.Black;
             GVWaterFallPoH.CheckIndex = 134;
             GVWaterFallPoH.Done = false;
             GVWaterFallPoH.FlatAppearance.BorderColor = Color.Black;
@@ -1075,6 +1136,7 @@
             // 
             // GVChest
             // 
+            GVChest.BorderColor = Color.Black;
             GVChest.CheckIndex = 0;
             GVChest.Done = false;
             GVChest.FlatAppearance.BorderColor = Color.Black;
@@ -1090,6 +1152,7 @@
             // 
             // HBA
             // 
+            HBA.BorderColor = Color.Black;
             HBA.CheckIndex = 120;
             HBA.Done = false;
             HBA.FlatAppearance.BorderColor = Color.Black;
@@ -1105,6 +1168,7 @@
             // 
             // GFChest
             // 
+            GFChest.BorderColor = Color.Black;
             GFChest.CheckIndex = 0;
             GFChest.Done = false;
             GFChest.FlatAppearance.BorderColor = Color.Black;
@@ -1120,6 +1184,7 @@
             // 
             // WastelandChest
             // 
+            WastelandChest.BorderColor = Color.Black;
             WastelandChest.CheckIndex = 61;
             WastelandChest.Done = false;
             WastelandChest.FlatAppearance.BorderColor = Color.Black;
@@ -1288,6 +1353,7 @@
             // 
             // WastelandSalesman
             // 
+            WastelandSalesman.BorderColor = Color.Black;
             WastelandSalesman.CheckIndex = 0;
             WastelandSalesman.Done = false;
             WastelandSalesman.FlatAppearance.BorderColor = Color.Black;

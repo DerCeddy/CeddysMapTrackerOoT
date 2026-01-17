@@ -11,60 +11,68 @@ namespace CeddyMapTracker
     public class MedallionLabel : Label
     {
         public int _state;
+        public int InitialPosX;       
         public MedallionLabel()
         {
             MouseWheel += (sender, e) => Scroll(e);
             ForeColor = Color.White;
-            AutoSize = false;
+            AutoSize = true;
             BackColor = Color.Transparent;
             Size = new Size(52,18);           
             Font = new Font("Segoe Fluent Icons", 12, FontStyle.Bold, GraphicsUnit.Pixel);
-            TextAlign = ContentAlignment.TopCenter;
+            TextAlign = ContentAlignment.MiddleCenter;
             Text = "FREE";
         }
-        private static void CheckLabelState(int x, MedallionLabel dungeon)
+        public void SetNewLocation()
+        {
+            int x = 0;
+            x = InitialPosX - (Width / 2);
+            Location = new Point(x, Location.Y);
+        }
+        private void CheckLabelState(int x, MedallionLabel dungeon)
         {
             Size ShadowSize = new Size(54,18);
-            Size NormalSize = new Size(52,18);
+            Size NormalSize = new Size(52,18);          
             switch (x)
             {
                 case -3:
                     dungeon.Text = "JABU";
-                    dungeon.Size = NormalSize;
+                    //dungeon.Size = NormalSize;
                     break;
                 case -2:
                     dungeon.Text = "DC";
-                    dungeon.Size = NormalSize;
+                    //dungeon.Size = NormalSize;
                     break;
                 case -1:
                     dungeon.Text = "DEKU";
-                    dungeon.Size = NormalSize;
+                    //dungeon.Size = NormalSize;
                     break;
                 case 0:
                     dungeon.Text = "FREE";
-                    dungeon.Size = NormalSize;
+                    //dungeon.Size = NormalSize;
                     break;
                 case 1:
                     dungeon.Text = "FOREST";
-                    dungeon.Size = NormalSize;
+                    //dungeon.Size = NormalSize;
                     break;
                 case 2:
                     dungeon.Text = "FIRE";
-                    dungeon.Size = NormalSize;
+                    //dungeon.Size = NormalSize;
                     break;
                 case 3:
                     dungeon.Text = "WATER";
-                    dungeon.Size = NormalSize;
+                    //dungeon.Size = NormalSize;
                     break;
                 case 4:
                     dungeon.Text = "SHADOW";
-                    dungeon.Size = ShadowSize;
+                    //dungeon.Size = ShadowSize;
                     break;
                 case 5:
                     dungeon.Text = "SPIRIT";
-                    dungeon.Size = NormalSize;
+                    //dungeon.Size = NormalSize;
                     break;
             }
+            SetNewLocation();
         }
         public void Scroll(MouseEventArgs e)
         {
